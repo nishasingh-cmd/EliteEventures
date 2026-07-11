@@ -65,7 +65,7 @@ const Hero = () => {
 
           {/* Desktop Navigation Links */}
           <nav className="desktop-nav">
-            <a href="#home" className="nav-link active">Home</a>
+            <a href="#" className="nav-link active">Home</a>
             <a href="#gallery" className="nav-link">Gallery</a>
             <a href="#services" className="nav-link">Services</a>
             <a href="#about" className="nav-link">About Us</a>
