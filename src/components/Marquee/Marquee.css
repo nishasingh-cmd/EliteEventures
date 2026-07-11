@@ -1,0 +1,86 @@
+/* Infinite Scrolling Marquee Section */
+
+.marquee-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #070708;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.9rem 0;
+  display: flex;
+  z-index: 10;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  flex-wrap: nowrap;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding-right: 4rem; /* Match the gap to prevent spacing jumps */
+  animation: marquee-scroll 24s linear infinite;
+  will-change: transform;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.marquee-text {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.marquee-star-icon {
+  color: var(--color-gold-brand);
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+/* Infinite Loop Scroll Animation */
+@keyframes marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+/* Hover pauses marquee for luxury experience */
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+/* Tablet Responsive Sizing */
+@media (max-width: 768px) {
+  .marquee-container {
+    padding: 1.2rem 0;
+  }
+  
+  .marquee-text {
+    font-size: 1.2rem;
+  }
+  
+  .marquee-content {
+    gap: 3rem;
+    padding-right: 3rem;
+  }
+  
+  .marquee-item {
+    gap: 3rem;
+  }
+}

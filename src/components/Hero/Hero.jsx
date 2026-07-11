@@ -1,0 +1,150 @@
+import React, { useState, useEffect } from 'react';
+import './Hero.css';
+
+const Hero = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Monitor scroll state to toggle between full-width transparent and floating pill navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  return (
+    <div className="hero-container">
+      {/* Background Video with Dark Overlay */}
+      <div className="video-background">
+        <div className="video-overlay"></div>
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          className="bg-video"
+        >
+          <source src="/EliteEventureVideo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      {/* Header / Navbar */}
+      <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+        <div className="navbar-container">
+          <a href="#" className="logo-brand-container">
+            <div className="logo-main">
+              <span className="logo-big-e">E</span>
+              <div className="logo-rows">
+                <div className="logo-row-top">LITE</div>
+                <div className="logo-row-bottom">
+                  <svg className="logo-v-arrow" viewBox="0 0 24 30" fill="none" stroke="var(--color-gold-brand)" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M 2 6 L 10 24 L 20 6" />
+                    <path d="M 13 6 L 20 6 L 20 13" />
+                  </svg>
+                  ENTURE
+                </div>
+              </div>
+            </div>
+            <div className="logo-divider"></div>
+            <div className="logo-tagline">
+              <span className="tagline-left">Exhibition</span>
+              <span className="tagline-right">Events | Visual events | Activation | Mice</span>
+            </div>
+          </a>
+
+          {/* Desktop Navigation Links */}
+          <nav className="desktop-nav">
+            <a href="#home" className="nav-link active">Home</a>
+            <a href="#about" className="nav-link">About</a>
+            <a href="#services" className="nav-link">Services</a>
+            <a href="#projects" className="nav-link">Projects</a>
+            <a href="#industries" className="nav-link">Industries</a>
+            <a href="#why-us" className="nav-link">Why Us</a>
+            <a href="#gallery" className="nav-link">Gallery</a>
+            <a href="#clients" className="nav-link">Clients</a>
+          </nav>
+
+          {/* Right Action Menu */}
+          <div className="nav-actions">
+            <button className="theme-toggle" aria-label="Toggle Theme">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+              </svg>
+            </button>
+            
+            <a href="#contact" className="btn btn-talk">
+              Let's Talk ↗
+            </a>
+
+            {/* Hamburger Button for Mobile */}
+            <button 
+              className={`hamburger ${mobileMenuOpen ? 'open' : ''}`} 
+              onClick={toggleMobileMenu}
+              aria-label="Toggle Mobile Menu"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile Navigation Dropdown */}
+      <div className={`mobile-nav-menu ${mobileMenuOpen ? 'open' : ''}`}>
+        <nav className="mobile-nav-links">
+          <a href="#home" className="mobile-link" onClick={toggleMobileMenu}>Home</a>
+          <a href="#about" className="mobile-link" onClick={toggleMobileMenu}>About</a>
+          <a href="#services" className="mobile-link" onClick={toggleMobileMenu}>Services</a>
+          <a href="#projects" className="mobile-link" onClick={toggleMobileMenu}>Projects</a>
+          <a href="#industries" className="mobile-link" onClick={toggleMobileMenu}>Industries</a>
+          <a href="#why-us" className="mobile-link" onClick={toggleMobileMenu}>Why Us</a>
+          <a href="#gallery" className="mobile-link" onClick={toggleMobileMenu}>Gallery</a>
+          <a href="#clients" className="mobile-link" onClick={toggleMobileMenu}>Clients</a>
+          <a href="#contact" className="btn btn-mobile-talk" onClick={toggleMobileMenu}>
+            Let's Talk ↗
+          </a>
+        </nav>
+      </div>
+
+      {/* Split Bottom Hero Layout */}
+      <main className="hero-content split-layout">
+        {/* Left Column: Headline and CTA */}
+        <div className="hero-left-col">
+          <h6 className="hero-split-headline">
+            Your Brand.<br />
+            Our Stage.
+          </h6>
+        </div>
+
+        {/* Right Column: Paragraph and Statistics */}
+        <div className="hero-right-col">
+          <p className="hero-split-paragraph text-small">
+            We design exhibition stalls and immersive event experiences that bring brands to life and create meaningful connections.
+          </p>
+          
+            <div className="hero-left-actions">
+            <a href="#projects" className="btn btn-gold-pill">
+              Explore Projects ↗
+            </a>
+          </div>
+  
+        </div>
+      </main>
+    </div>
+  );
+};
+
+export default Hero;
