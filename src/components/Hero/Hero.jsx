@@ -66,13 +66,10 @@ const Hero = () => {
           {/* Desktop Navigation Links */}
           <nav className="desktop-nav">
             <a href="#home" className="nav-link active">Home</a>
-            <a href="#about" className="nav-link">About</a>
-            <a href="#services" className="nav-link">Services</a>
-            <a href="#projects" className="nav-link">Projects</a>
-            <a href="#industries" className="nav-link">Industries</a>
-            <a href="#why-us" className="nav-link">Why Us</a>
             <a href="#gallery" className="nav-link">Gallery</a>
-            <a href="#clients" className="nav-link">Clients</a>
+            <a href="#services" className="nav-link">Services</a>
+            <a href="#about" className="nav-link">About Us</a>
+            <a href="#contact" className="nav-link">Contact</a>
           </nav>
 
           {/* Right Action Menu */}
@@ -106,13 +103,10 @@ const Hero = () => {
       <div className={`mobile-nav-menu ${mobileMenuOpen ? 'open' : ''}`}>
         <nav className="mobile-nav-links">
           <a href="#home" className="mobile-link" onClick={toggleMobileMenu}>Home</a>
-          <a href="#about" className="mobile-link" onClick={toggleMobileMenu}>About</a>
-          <a href="#services" className="mobile-link" onClick={toggleMobileMenu}>Services</a>
-          <a href="#projects" className="mobile-link" onClick={toggleMobileMenu}>Projects</a>
-          <a href="#industries" className="mobile-link" onClick={toggleMobileMenu}>Industries</a>
-          <a href="#why-us" className="mobile-link" onClick={toggleMobileMenu}>Why Us</a>
           <a href="#gallery" className="mobile-link" onClick={toggleMobileMenu}>Gallery</a>
-          <a href="#clients" className="mobile-link" onClick={toggleMobileMenu}>Clients</a>
+          <a href="#services" className="mobile-link" onClick={toggleMobileMenu}>Services</a>
+          <a href="#about" className="mobile-link" onClick={toggleMobileMenu}>About Us</a>
+          <a href="#contact" className="mobile-link" onClick={toggleMobileMenu}>Contact</a>
           <a href="#contact" className="btn btn-mobile-talk" onClick={toggleMobileMenu}>
             Let's Talk ↗
           </a>

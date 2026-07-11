@@ -10,12 +10,12 @@ function AboutSection() {
           {/* Capsule Badge */}
 
           <h2 className="about-headline">
-            Welcome To <br />
+            About <br />
             <span className="gold-italic">Elite Eventure</span>
           </h2>
           
           <p className="about-paragraph">
-            At Elite Eventure, we specialise in delivering exceptional corporate events, conferences, exhibitions, MICE, product launches, and virtual events. With a blend of creativity and precision, we bring your vision to life, ensuring that every detail is perfect.
+            Welcome to Elite Eventure, your trusted partner for innovative exhibition stall designs and event solutions. With years of expertise, we transform brand visions into engaging experiences through creative design, strategic planning, and flawless execution. Every stall is thoughtfully crafted to reflect your brand identity and leave a lasting impression.
           </p>
 
           {/* 2x2 Grid of Stats Cards */}

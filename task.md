@@ -17,4 +17,7 @@
 - [x] Generate 3 custom high-end event images and lay them out in an overlapping collage
 - [x] Render outline 'Our story' button
 - [x] Spread left and right columns of AboutSection to edges (container max-width 100%, gap 5.5rem)
+- [x] Increase paragraph width to 720px and line-height to 1.85 (breathable spacing)
+- [x] Make collage layout larger (620px height, 600px width) with 2px borders and float hovers
+- [x] Decrease top padding of AboutSection to 5rem to pull it closer to the Marquee
 - [ ] Wait for user to review and provide screenshot for the next section
