@@ -21,92 +21,55 @@
   text-align: center;
 }
 
-/* Brand Logo Sizing */
-.loader-logo {
-  display: flex;
-  align-items: flex-end;
-  gap: 4px;
-  text-decoration: none;
-  margin-bottom: 1.2rem;
-}
-
-.loader-logo-big-e {
-  font-family: var(--font-sans);
-  font-weight: 800;
-  font-size: 3.4rem;
-  color: #ffffff;
-  line-height: 0.78;
-  letter-spacing: -0.05em;
-}
-
-.loader-logo-rows {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 2.6rem;
-}
-
-.loader-logo-row-top {
-  font-family: var(--font-sans);
-  font-weight: 800;
-  font-size: 1.3rem;
-  color: #ffffff;
-  line-height: 0.9;
-  letter-spacing: 0.03em;
-}
-
-.loader-logo-row-bottom {
-  font-family: var(--font-sans);
-  font-weight: 800;
-  font-size: 1.3rem;
-  color: #ffffff;
-  line-height: 0.9;
-  letter-spacing: 0.03em;
+/* Animated Logo Circle enclosing E */
+.loader-circle-wrap {
+  width: 96px;
+  height: 96px;
   display: flex;
   align-items: center;
-  gap: 2px;
+  justify-content: center;
+  margin-bottom: 2.2rem;
 }
 
-.loader-logo-v-arrow {
-  height: 1.45rem;
-  width: auto;
-  vertical-align: bottom;
-  margin-top: -4px;
+.loader-circle-svg {
+  width: 100%;
+  height: 100%;
 }
 
-/* Tagline Sizing */
-.loader-tagline {
+/* Minimal spaced brand title */
+.loader-brand-title {
   font-family: var(--font-sans);
-  font-size: 0.9rem;
+  font-size: 0.65rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.75);
-  letter-spacing: 3px;
+  color: #ffffff;
+  letter-spacing: 6px;
   text-transform: uppercase;
-  margin-top: 0.8rem;
+  margin-bottom: 0.95rem;
 }
 
-.loader-tagline .gold-italic {
-  color: #D4AF37;
-  font-style: italic;
-  font-family: serif;
-  text-transform: none;
-  letter-spacing: 0.5px;
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-
-/* Loader progress bar styling */
-.loader-bar-outer {
-  width: 140px;
-  height: 2px;
+/* Gold horizontal line that grows */
+.loader-divider-container {
+  width: 168px;
+  height: 1px;
   background-color: rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
-  margin-top: 2.2rem;
+  position: relative;
+  margin-bottom: 0.8rem;
   overflow: hidden;
 }
 
-.loader-bar-inner {
+.loader-divider-line {
   height: 100%;
   background-color: #D4AF37;
-  box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.4);
+  transition: width 0.1s linear;
+  width: 0%;
+}
+
+/* Small gray counter */
+.loader-percent-text {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 1.5px;
 }

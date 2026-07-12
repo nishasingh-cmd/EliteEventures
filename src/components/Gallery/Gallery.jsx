@@ -148,13 +148,9 @@ function Gallery() {
         initial="hidden"
         animate={controls}
       >
-        {/* Left — single-line headline */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-          <span className="section-mini-label">PORTFOLIO</span>
-          <motion.h2 className="gallery-headline" variants={itemVariants}>
-            Moments We've <span className="gallery-headline-gold">Crafted</span>
-          </motion.h2>
-        </div>
+        <motion.h2 className="gallery-headline" variants={itemVariants}>
+          Moments We've <span className="gallery-headline-gold">Crafted</span>
+        </motion.h2>
 
         {/* Right — paragraph */}
         <motion.p className="gallery-subtext" variants={itemVariants}>

@@ -148,7 +148,6 @@ function ExpertiseSection() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="expertise-header">
-            <span className="section-mini-label">SERVICES</span>
             <h2 className="expertise-headline">
               Our <span className="expertise-gold">Expertise</span>
             </h2>

@@ -1,8 +1,29 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import './Loader.css'
 
 function Loader() {
+  const [progress, setProgress] = useState(0)
+
+  useEffect(() => {
+    let start = 0
+    const duration = 1200 // 1.2s total loader time
+    const interval = 15
+    const step = 100 / (duration / interval)
+
+    const timer = setInterval(() => {
+      start += step
+      if (start >= 100) {
+        setProgress(100)
+        clearInterval(timer)
+      } else {
+        setProgress(Math.floor(start))
+      }
+    }, interval)
+
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <motion.div 
       className="loader-overlay"
@@ -12,34 +33,47 @@ function Loader() {
     >
       <div className="loader-content">
         
-        {/* Brand logo container */}
-        <div className="loader-logo">
-          <span className="loader-logo-big-e">E</span>
-          <div className="loader-logo-rows">
-            <div className="loader-logo-row-top">LITE</div>
-            <div className="loader-logo-row-bottom">
-              <svg className="loader-logo-v-arrow" viewBox="0 0 24 30" fill="none" stroke="#eab308" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M 2 6 L 10 24 L 20 6" />
-                <path d="M 13 6 L 20 6 L 20 13" />
-              </svg>
-              ENTURE
-            </div>
-          </div>
+        {/* Animated logo symbol with circle and letter E */}
+        <div className="loader-circle-wrap">
+          <svg className="loader-circle-svg" viewBox="0 0 100 100">
+            {/* Animating outer ring path with a gap */}
+            <motion.path
+              d="M 80 50 A 30 30 0 1 1 80 49.9"
+              stroke="#D4AF37"
+              strokeWidth="2.2"
+              fill="none"
+              strokeLinecap="round"
+              initial={{ pathLength: 0, rotate: -90 }}
+              animate={{ pathLength: 0.85, rotate: 270 }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+            />
+            {/* Animating Letter E inside */}
+            <motion.path
+              d="M 40 37 H 60 M 40 50 H 55 M 40 63 H 60 M 40 37 V 63"
+              stroke="#D4AF37"
+              strokeWidth="3.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ duration: 1.0, delay: 0.2, ease: "easeInOut" }}
+            />
+          </svg>
         </div>
 
-        {/* Brand Tagline */}
-        <div className="loader-tagline">
-          Crafting <span className="gold-italic">Extraordinary</span> Experiences
+        {/* Brand Text styled like screenshot */}
+        <div className="loader-brand-title">
+          ELITE EVENTURE
         </div>
 
-        {/* Loading progress bar */}
-        <div className="loader-bar-outer">
-          <motion.div 
-            className="loader-bar-inner"
-            initial={{ width: '0%' }}
-            animate={{ width: '100%' }}
-            transition={{ duration: 1.0, ease: 'easeInOut' }}
-          />
+        {/* Grow Line and Percent wrapper */}
+        <div className="loader-divider-container">
+          <div className="loader-divider-line" style={{ width: `${progress}%` }} />
+        </div>
+
+        <div className="loader-percent-text">
+          {progress}%
         </div>
 
       </div>

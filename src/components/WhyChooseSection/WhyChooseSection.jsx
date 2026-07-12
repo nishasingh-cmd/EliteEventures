@@ -150,9 +150,7 @@ function WhyChooseSection() {
     <section className="why-section" id="why-us">
       <div className="why-bg-glow" />
 
-      {/* ── HEADING ── */}
       <div className="why-header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-        <span className="section-mini-label">WHY CHOOSE US</span>
         <motion.h2
           className="why-headline"
           initial={{ opacity: 0, y: 20 }}

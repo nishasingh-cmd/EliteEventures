@@ -14,8 +14,6 @@ function AboutSection() {
       >
         {/* Left Column: Copy, Grid & Button */}
         <div className="about-left-col">
-          {/* Apple style sub-label */}
-          <span className="section-mini-label">ABOUT US</span>
 
           <h2 className="about-headline">
             About <br />

@@ -116,7 +116,6 @@ function ContactSection() {
         >
           {/* LEFT SIDE - Info Panel */}
           <div className="contact-info-panel">
-            <span className="section-mini-label">CONTACT US</span>
             <h2 className="contact-title">
               Let's build <br />
               <span className="contact-title-gold">something <br /> unforgettable.</span>
