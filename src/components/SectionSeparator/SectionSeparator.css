@@ -1,0 +1,62 @@
+/* Elite Eventure - Section Separator Stylesheet */
+
+.section-separator-container {
+  position: relative;
+  width: 100%;
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #070707;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Soft radial golden glow behind divider (5-8% opacity) */
+.separator-glow-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.07) 0%, transparent 70%);
+  filter: blur(15px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Thin horizontal divider with a subtle gold gradient fading towards both ends */
+.separator-line-wrap {
+  position: relative;
+  width: 65%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(212, 175, 55, 0.55) 50%,
+    transparent 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Small centered gold diamond dot decorative element */
+.separator-diamond-node {
+  width: 6px;
+  height: 6px;
+  background-color: #D4AF37;
+  transform: rotate(45deg);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+}
+
+@media (max-width: 768px) {
+  .section-separator-container {
+    padding: 50px 0;
+  }
+  .separator-line-wrap {
+    width: 80%;
+  }
+}

@@ -6,6 +6,8 @@ import Gallery from './components/Gallery/Gallery'
 import ExpertiseSection from './components/ExpertiseSection/ExpertiseSection'
 import BrandsSection from './components/BrandsSection/BrandsSection'
 import WhyChooseSection from './components/WhyChooseSection/WhyChooseSection'
+import SectionSeparator from './components/SectionSeparator/SectionSeparator'
+import ContactSection from './components/ContactSection/ContactSection'
 
 function App() {
   return (
@@ -17,7 +19,8 @@ function App() {
       <ExpertiseSection />
       <BrandsSection />
       <WhyChooseSection />
-      {/* Subsequent sections will be added here section by section */}
+      <SectionSeparator />
+      <ContactSection />
     </>
   )
 }
