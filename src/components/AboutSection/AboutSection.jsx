@@ -1,6 +1,32 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useEffect, useRef, useState } from 'react'
+import { motion, useInView, animate } from 'framer-motion'
 import './AboutSection.css'
+
+// Reusable AnimatedCounter component
+function AnimatedCounter({ endValue, suffix = '', duration = 2.2, delay = 0 }) {
+  const [count, setCount] = useState(0)
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.4 })
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(0, endValue, {
+        duration,
+        delay,
+        ease: 'easeOut',
+        onUpdate: (value) => setCount(Math.floor(value)),
+      })
+      return () => controls.stop()
+    }
+  }, [isInView, endValue, duration, delay])
+
+  return (
+    <span ref={ref}>
+      {count}
+      {suffix}
+    </span>
+  )
+}
 
 function AboutSection() {
   return (
@@ -27,19 +53,27 @@ function AboutSection() {
           {/* 2x2 Grid of Stats Cards */}
           <div className="about-stats-grid">
             <div className="about-stat-card">
-              <span className="stat-number">500+</span>
+              <span className="stat-number">
+                <AnimatedCounter endValue={500} suffix="+" duration={2.2} delay={0} />
+              </span>
               <span className="stat-label">Projects Delivered</span>
             </div>
             <div className="about-stat-card">
-              <span className="stat-number">120+</span>
+              <span className="stat-number">
+                <AnimatedCounter endValue={120} suffix="+" duration={2.2} delay={0.15} />
+              </span>
               <span className="stat-label">Global Brands</span>
             </div>
             <div className="about-stat-card">
-              <span className="stat-number">15+</span>
+              <span className="stat-number">
+                <AnimatedCounter endValue={15} suffix="+" duration={2.2} delay={0.3} />
+              </span>
               <span className="stat-label">Years of Craft</span>
             </div>
             <div className="about-stat-card">
-              <span className="stat-number">98%</span>
+              <span className="stat-number">
+                <AnimatedCounter endValue={98} suffix="%" duration={2.2} delay={0.45} />
+              </span>
               <span className="stat-label">Client Satisfaction</span>
             </div>
           </div>
