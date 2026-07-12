@@ -8,6 +8,7 @@ import BrandsSection from './components/BrandsSection/BrandsSection'
 import WhyChooseSection from './components/WhyChooseSection/WhyChooseSection'
 import SectionSeparator from './components/SectionSeparator/SectionSeparator'
 import ContactSection from './components/ContactSection/ContactSection'
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <WhyChooseSection />
       <SectionSeparator />
       <ContactSection />
+      <Footer />
     </>
   )
 }

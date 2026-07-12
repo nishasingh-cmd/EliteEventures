@@ -1,0 +1,234 @@
+/* Elite Eventure - Minimal Footer Stylesheet */
+
+.footer-minimal-wrapper {
+  position: relative;
+  background-color: #070707;
+  padding: 4.5rem 60px;
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.footer-minimal-container {
+  position: relative;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 4rem;
+  z-index: 10;
+}
+
+/* LEFT COLUMN - Brand & Socials */
+.footer-minimal-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 120px;
+  flex-shrink: 0;
+}
+
+/* Standard Transparent Logo styling matching site header */
+.footer-logo-brand-container {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.footer-logo-main {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.footer-logo-big-e {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 2.6rem;
+  color: var(--text-primary);
+  line-height: 0.78;
+  letter-spacing: -0.05em;
+}
+
+.footer-logo-rows {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 2.0rem;
+}
+
+.footer-logo-row-top {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 1.0rem;
+  color: var(--text-primary);
+  line-height: 0.9;
+  letter-spacing: 0.03em;
+}
+
+.footer-logo-row-bottom {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 1.0rem;
+  color: var(--text-primary);
+  line-height: 0.9;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.footer-logo-v-arrow {
+  height: 1.1rem;
+  width: auto;
+  vertical-align: bottom;
+  margin-top: -3px;
+}
+
+.footer-logo-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--text-primary);
+  margin: 4px 0 3px 0;
+  opacity: 0.9;
+}
+
+.footer-logo-tagline {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.46rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.01em;
+}
+
+.f-tagline-left {
+  text-align: left;
+}
+
+.f-tagline-right {
+  text-align: right;
+  opacity: 0.7;
+}
+
+/* Social icons with solid white background circles as in screenshot */
+.footer-minimal-socials {
+  display: flex;
+  gap: 0.85rem;
+  margin-top: auto;
+}
+
+.footer-minimal-social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #070707;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.footer-minimal-social-btn:hover {
+  background-color: #eab308;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(234, 179, 8, 0.3);
+}
+
+.footer-minimal-social-btn svg {
+  width: 17px;
+  height: 17px;
+}
+
+
+/* RIGHT COLUMN - Gold Divider & Navigation Menu */
+.footer-minimal-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-grow: 1;
+  min-height: 120px;
+  padding-top: 0.8rem;
+}
+
+/* Horizontal thin gold separator line */
+.footer-minimal-divider-line {
+  height: 1px;
+  background-color: #D4AF37;
+  width: 100%;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.15);
+  margin-bottom: auto;
+}
+
+/* Spread horizontal list of navigation links at the bottom */
+.footer-minimal-nav-links {
+  display: flex;
+  gap: 3rem;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: auto;
+}
+
+.footer-minimal-nav-item {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-minimal-nav-item:hover {
+  color: #D4AF37;
+  transform: translateY(-1px);
+}
+
+
+/* RESPONSIVE LAYOUT BREAKPOINTS */
+
+@media (max-width: 768px) {
+  .footer-minimal-wrapper {
+    padding: 3.5rem 30px;
+  }
+  
+  .footer-minimal-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2.5rem;
+  }
+  
+  .footer-minimal-left {
+    align-items: center;
+    min-height: unset;
+    gap: 1.5rem;
+  }
+  
+  .footer-minimal-right {
+    align-items: center;
+    width: 100%;
+    min-height: unset;
+    gap: 1.8rem;
+    padding-top: 0;
+  }
+  
+  .footer-minimal-divider-line {
+    display: none; /* Hide gold divider on mobile stacking */
+  }
+  
+  .footer-minimal-nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 2rem;
+  }
+}

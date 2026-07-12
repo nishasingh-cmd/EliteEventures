@@ -194,7 +194,7 @@ function ContactSection() {
             <div className="contact-glass-card">
               <form onSubmit={handleSubmit} noValidate>
                 <div className="contact-form-grid">
-                  
+
                   {/* Full Name */}
                   <div className="form-field-group">
                     <label className="form-field-label">Full Name</label>
