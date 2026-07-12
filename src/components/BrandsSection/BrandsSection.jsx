@@ -130,11 +130,12 @@ function BrandsSection() {
         initial="hidden"
         animate={controls}
         variants={headingVariants}
+        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}
       >
+        <span className="section-mini-label">OUR PARTNERS</span>
         <motion.h2 className="brands-headline" variants={itemVariants}>
           Brands We've <span className="brands-gold">Worked With</span>
         </motion.h2>
-
       </motion.div>
 
       {/* Marquee */}

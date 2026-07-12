@@ -66,7 +66,7 @@
   padding: 15px 0;
   display: flex;
   justify-content: center;
-  transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .navbar-container {
@@ -74,7 +74,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 100%;
+  max-width: 1400px;
   padding: 12px 60px;
   background: rgba(10, 10, 12, 0);
   border: 1px solid rgba(255, 255, 255, 0);
@@ -82,7 +82,7 @@
   box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
-  transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .navbar.scrolled {
@@ -90,10 +90,10 @@
 }
 
 .navbar.scrolled .navbar-container {
-  background: rgba(7, 7, 9, 0.75);
+  background: rgba(7, 7, 7, 0.75);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.25);
   border-radius: 100px;
   padding: 10px 30px;
   max-width: 960px;
@@ -260,17 +260,18 @@
   background-color: var(--color-gold-brand);
   color: #070708;
   padding: 0.7rem 1.6rem;
-  border-radius: 100px;
+  border-radius: var(--radius-button);
   font-size: 0.88rem;
   font-weight: 600;
   text-transform: none;
   letter-spacing: 0;
   box-shadow: 0 4px 14px rgba(234, 179, 8, 0.15);
+  transition: var(--transition-premium);
 }
 
 .btn-talk:hover {
   background-color: var(--color-gold-hover);
-  transform: translateY(-2px);
+  transform: scale(1.02);
   box-shadow: 0 6px 20px rgba(234, 179, 8, 0.3);
 }
 
@@ -505,16 +506,16 @@ h6.hero-split-headline {
   background-color: var(--color-gold-brand);
   color: #070708;
   padding: 0.65rem 1.6rem;
-  border-radius: 100px;
+  border-radius: var(--radius-button);
   font-size: 0.88rem;
   font-weight: 600;
   box-shadow: 0 8px 20px rgba(234, 179, 8, 0.15);
-  transition: all 0.3s ease;
+  transition: var(--transition-premium);
 }
 
 .btn-gold-pill:hover {
   background-color: var(--color-gold-hover);
-  transform: translateY(-2px);
+  transform: scale(1.02);
   box-shadow: 0 12px 28px rgba(234, 179, 8, 0.3);
 }
 

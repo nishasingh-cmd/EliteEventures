@@ -4,8 +4,8 @@
 
 .why-section {
   position: relative;
-  background-color: #070708;
-  padding: 3.15rem 60px 3.5rem 60px;
+  background-color: #070707;
+  padding: 80px 60px;
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
@@ -141,17 +141,15 @@
   width: 100%;
   aspect-ratio: 1.52;
   overflow: hidden;
-  border-radius: 20px;
-  border: 2px solid rgba(234, 179, 8, 0.35);
+  border-radius: var(--radius-image);
+  border: 1.5px solid rgba(234, 179, 8, 0.35);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  transition: var(--transition-premium);
 }
 
 .project-card:hover .project-card-img-wrap {
   border-color: rgba(234, 179, 8, 0.85);
-  box-shadow:
-    0 15px 30px rgba(0, 0, 0, 0.65),
-    0 0 20px rgba(234, 179, 8, 0.18);
+  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.12);
 }
 
 .project-card-img {
@@ -159,11 +157,21 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: var(--transition-premium), filter 0.8s ease;
 }
 
-.project-card:hover .project-card-img {
-  transform: scale(1.07);
+.project-card-img.loading {
+  filter: blur(10px);
+  transform: scale(0.96);
+}
+
+.project-card-img.loaded {
+  filter: blur(0px);
+  transform: scale(1);
+}
+
+.project-card:hover .project-card-img.loaded {
+  transform: scale(1.04);
 }
 
 .project-card-img-overlay {
@@ -271,11 +279,11 @@
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1.5px solid rgba(234, 179, 8, 0.25);
-  border-radius: 24px;
+  border-radius: var(--radius-card);
   padding: 2rem 2.2rem;
   box-sizing: border-box;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+  transition: var(--transition-premium);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -284,10 +292,22 @@
 
 .review-card:hover {
   border-color: rgba(234, 179, 8, 0.55);
-  transform: translateY(-5px);
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.45),
-    0 0 20px rgba(234, 179, 8, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.12);
+}
+
+/* Background Large Quote */
+.review-quote-bg {
+  position: absolute;
+  top: -20px;
+  right: 15px;
+  font-size: 8rem;
+  font-family: serif;
+  color: rgba(212, 175, 55, 0.08);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
 }
 
 .review-card-top {

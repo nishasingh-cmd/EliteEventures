@@ -1,0 +1,112 @@
+/* Elite Eventure - Loader Stylesheet */
+
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #070707;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Brand Logo Sizing */
+.loader-logo {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  text-decoration: none;
+  margin-bottom: 1.2rem;
+}
+
+.loader-logo-big-e {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 3.4rem;
+  color: #ffffff;
+  line-height: 0.78;
+  letter-spacing: -0.05em;
+}
+
+.loader-logo-rows {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 2.6rem;
+}
+
+.loader-logo-row-top {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: #ffffff;
+  line-height: 0.9;
+  letter-spacing: 0.03em;
+}
+
+.loader-logo-row-bottom {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: #ffffff;
+  line-height: 0.9;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.loader-logo-v-arrow {
+  height: 1.45rem;
+  width: auto;
+  vertical-align: bottom;
+  margin-top: -4px;
+}
+
+/* Tagline Sizing */
+.loader-tagline {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 0.8rem;
+}
+
+.loader-tagline .gold-italic {
+  color: #D4AF37;
+  font-style: italic;
+  font-family: serif;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* Loader progress bar styling */
+.loader-bar-outer {
+  width: 140px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  margin-top: 2.2rem;
+  overflow: hidden;
+}
+
+.loader-bar-inner {
+  height: 100%;
+  background-color: #D4AF37;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+}

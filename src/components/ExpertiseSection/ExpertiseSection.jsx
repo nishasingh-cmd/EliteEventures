@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import './ExpertiseSection.css'
 
@@ -44,6 +44,19 @@ const CheckIcon = () => (
 )
 
 function ExpertiseSection() {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 12 // -6px to 6px
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 12
+    setMousePos({ x, y })
+  }
+
+  const handleMouseLeave = () => {
+    setMousePos({ x: 0, y: 0 })
+  }
+
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: (index) => ({
@@ -52,7 +65,7 @@ function ExpertiseSection() {
       transition: {
         duration: 0.65,
         delay: index * 0.1,
-        ease: [0.16, 1, 0.3, 1],
+        ease: [0.22, 1, 0.36, 1],
       },
     }),
   }
@@ -67,9 +80,21 @@ function ExpertiseSection() {
       <div className="expertise-title-spotlight" />
 
       <div className="expertise-container">
-        {/* ── LEFT SIDE — Layered Image Collage ── */}
-        <div className="expertise-left">
-          <div className="collage-container">
+        {/* ── LEFT SIDE — Layered Image Collage with Slide & Parallax ── */}
+        <motion.div 
+          className="expertise-left"
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <motion.div 
+            className="collage-container"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            animate={{ x: mousePos.x, y: mousePos.y }}
+            transition={{ type: 'tween', ease: 'easeOut', duration: 0.3 }}
+          >
             {/* Floating background particles */}
             <div className="particle particle-1" />
             <div className="particle particle-2" />
@@ -84,7 +109,7 @@ function ExpertiseSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <img src="/images/ex1.png" alt="Exhibition Booth Detail" className="collage-img" />
+              <img src="/images/ex1.png" alt="Exhibition Booth Detail" className="collage-img" loading="lazy" />
               <div className="collage-glass-overlay" />
             </motion.div>
 
@@ -94,9 +119,9 @@ function ExpertiseSection() {
               initial={{ opacity: 0, y: 40, rotate: 1 }}
               whileInView={{ opacity: 1, y: 0, rotate: -1.5 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
-              <img src="/images/expertise_main.png" alt="Corporate Event Stage Design" className="collage-img" />
+              <img src="/images/expertise_main.png" alt="Corporate Event Stage Design" className="collage-img" loading="lazy" />
               <div className="collage-glass-overlay" />
             </motion.div>
 
@@ -108,15 +133,22 @@ function ExpertiseSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <img src="/images/ex3.png" alt="Corporate Gala setup" className="collage-img" />
+              <img src="/images/ex3.png" alt="Corporate Gala setup" className="collage-img" loading="lazy" />
               <div className="collage-glass-overlay" />
             </motion.div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        {/* ── RIGHT SIDE — Vertically Centered List ── */}
-        <div className="expertise-right">
+        {/* ── RIGHT SIDE — Vertically Centered List with Slide Entrance ── */}
+        <motion.div 
+          className="expertise-right"
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="expertise-header">
+            <span className="section-mini-label">SERVICES</span>
             <h2 className="expertise-headline">
               Our <span className="expertise-gold">Expertise</span>
             </h2>
@@ -146,7 +178,7 @@ function ExpertiseSection() {
               </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Subtle bottom divider line */}

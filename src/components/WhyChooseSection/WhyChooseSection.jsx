@@ -91,17 +91,24 @@ function GoogleIcon() {
 }
 
 function ProjectCard({ project, index }) {
+  const [loaded, setLoaded] = useState(false)
   return (
     <motion.div
       className="project-card"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-      whileHover={{ y: -5, scale: 1.02 }}
+      transition={{ duration: 0.6, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={{ y: -6, scale: 1.02 }}
     >
       <div className="project-card-img-wrap">
-        <img src={project.img} alt={project.brand} className="project-card-img" loading="lazy" />
+        <img 
+          src={project.img} 
+          alt={project.brand} 
+          className={`project-card-img ${loaded ? 'loaded' : 'loading'}`} 
+          onLoad={() => setLoaded(true)}
+          loading="lazy" 
+        />
         <div className="project-card-img-overlay" />
         <span className="project-tag">{project.tag}</span>
       </div>
@@ -144,8 +151,8 @@ function WhyChooseSection() {
       <div className="why-bg-glow" />
 
       {/* ── HEADING ── */}
-      <div className="why-header">
-        
+      <div className="why-header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+        <span className="section-mini-label">WHY CHOOSE US</span>
         <motion.h2
           className="why-headline"
           initial={{ opacity: 0, y: 20 }}
@@ -174,8 +181,14 @@ function WhyChooseSection() {
         ))}
       </div>
 
-      {/* ── REVIEWS ── */}
-      <div className="reviews-block">
+      {/* ── REVIEWS WITH BLUR + FADE ── */}
+      <motion.div 
+        className="reviews-block"
+        initial={{ opacity: 0, filter: 'blur(8px)' }}
+        whileInView={{ opacity: 1, filter: 'blur(0px)' }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+      >
 
         {/* Review carousel */}
         <div className="reviews-carousel">
@@ -191,7 +204,7 @@ function WhyChooseSection() {
               animate={{
                 x: `calc(-${activeReview * (100 / itemsPerView)}% - ${activeReview * (24 / itemsPerView)}px)`,
               }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               style={{
                 display: 'flex',
                 gap: '24px',
@@ -204,14 +217,17 @@ function WhyChooseSection() {
                   className="review-card"
                   style={{
                     flex: `0 0 calc((100% - ${(itemsPerView - 1) * 24}px) / ${itemsPerView})`,
+                    position: 'relative',
+                    overflow: 'hidden'
                   }}
                 >
-                  <div className="review-card-top">
+                  <span className="review-quote-bg">"</span>
+                  <div className="review-card-top" style={{ position: 'relative', zIndex: 1 }}>
                     <GoogleIcon />
                     <StarRating count={r.rating} />
                   </div>
-                  <p className="review-text">"{r.text}"</p>
-                  <div className="review-author">
+                  <p className="review-text" style={{ position: 'relative', zIndex: 1 }}>"{r.text}"</p>
+                  <div className="review-author" style={{ position: 'relative', zIndex: 1 }}>
                     <div className="review-avatar">{r.name[0]}</div>
                     <div>
                       <p className="review-name">{r.name}</p>
@@ -245,7 +261,7 @@ function WhyChooseSection() {
             <polyline points="12 5 19 12 12 19" />
           </svg>
         </motion.a>
-      </div>
+      </motion.div>
     </section>
   )
 }

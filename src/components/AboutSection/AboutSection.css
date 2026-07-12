@@ -3,7 +3,7 @@
 .about-section {
   position: relative;
   background-color: #070708;
-  padding: 3.5rem 60px 3.15rem 60px;
+  padding: 80px 60px;
   width: 100%;
   overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -50,7 +50,7 @@
 
 .about-headline {
   font-family: var(--font-heading);
-  font-size: 3.6rem;
+  font-size: 52px;
   font-weight: 700;
   line-height: 1.1;
   color: var(--text-primary);
@@ -65,9 +65,9 @@
 }
 
 .about-paragraph {
-  font-size: 1.05rem;
+  font-size: 18px;
   font-weight: 300;
-  line-height: 1.85;
+  line-height: 1.8;
   color: rgba(255, 255, 255, 0.55);
   margin-bottom: 2.5rem;
   max-width: 720px;
@@ -86,12 +86,12 @@
 .about-stat-card {
   background-color: rgba(255, 255, 255, 0.015);
   border: 1px solid rgba(255, 255, 255, 0.04);
-  border-radius: 24px;
+  border-radius: var(--radius-card);
   padding: 1.8rem 2.2rem;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: var(--transition-premium);
 }
 
 .about-stat-card:hover {
@@ -165,12 +165,12 @@
 
 .collage-img-wrapper {
   position: absolute;
-  border-radius: 30px;
+  border-radius: var(--radius-image);
   overflow: hidden;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
   background-color: #070708;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), z-index 0.5s ease;
+  transition: var(--transition-premium), z-index 0.35s ease;
 }
 
 .collage-img {
@@ -182,13 +182,13 @@
 }
 
 .collage-img-wrapper:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.65);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.12);
   z-index: 4;
 }
 
 .collage-img-wrapper:hover .collage-img {
-  transform: scale(1.06);
+  transform: scale(1.04);
 }
 
 /* Image Positioning Details matching Mockup */

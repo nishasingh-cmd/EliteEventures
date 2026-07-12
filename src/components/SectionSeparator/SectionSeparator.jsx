@@ -15,8 +15,16 @@ function SectionSeparator() {
       <div className="separator-glow-bg" />
 
       {/* Gold fade gradient line & central diamond element */}
-      <div className="separator-line-wrap">
-        <div className="separator-diamond-node" />
+      <div className="separator-line-outer">
+        <motion.div 
+          className="separator-line-wrap"
+          initial={{ width: '0%', opacity: 0 }}
+          whileInView={{ width: '100%', opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <div className="separator-diamond-node" />
+        </motion.div>
       </div>
     </motion.div>
   )

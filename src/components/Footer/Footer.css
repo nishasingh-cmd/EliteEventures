@@ -3,7 +3,7 @@
 .footer-minimal-wrapper {
   position: relative;
   background-color: #070707;
-  padding: 4.5rem 60px;
+  padding: 2.2rem 60px 4.5rem 60px;
   width: 100%;
   overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, 0.03);
@@ -139,9 +139,10 @@
 }
 
 .footer-minimal-social-btn:hover {
-  background-color: #eab308;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(234, 179, 8, 0.3);
+  background-color: #D4AF37;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(212, 175, 55, 0.35);
 }
 
 .footer-minimal-social-btn svg {
@@ -185,12 +186,31 @@
   font-weight: 500;
   color: #ffffff;
   text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 350ms cubic-bezier(.22,1,.36,1);
+}
+
+.footer-minimal-nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #D4AF37;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 350ms cubic-bezier(.22,1,.36,1);
 }
 
 .footer-minimal-nav-item:hover {
   color: #D4AF37;
-  transform: translateY(-1px);
+}
+
+.footer-minimal-nav-item:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 

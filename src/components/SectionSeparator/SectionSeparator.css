@@ -26,10 +26,20 @@
   z-index: 1;
 }
 
-/* Thin horizontal divider with a subtle gold gradient fading towards both ends */
+/* Outer layout to control responsive bounds */
+.separator-line-outer {
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Thin horizontal divider expanding dynamically */
 .separator-line-wrap {
   position: relative;
-  width: 65%;
+  width: 100%;
   height: 1px;
   background: linear-gradient(
     to right,
@@ -40,7 +50,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
 }
 
 /* Small centered gold diamond dot decorative element */
@@ -50,13 +59,14 @@
   background-color: #D4AF37;
   transform: rotate(45deg);
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+  flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
   .section-separator-container {
     padding: 50px 0;
   }
-  .separator-line-wrap {
+  .separator-line-outer {
     width: 80%;
   }
 }

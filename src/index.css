@@ -6,7 +6,7 @@
   --font-heading: 'Poppins', sans-serif;
 
   /* Color Palette - Premium Dark Theme */
-  --bg-primary: #070709;
+  --bg-primary: #070707;
   --bg-secondary: #0f0f14;
   --bg-tertiary: #171721;
   --text-primary: #ffffff;
@@ -20,6 +20,15 @@
   --border-color: rgba(255, 255, 255, 0.08);
   --border-glow: rgba(255, 255, 255, 0.15);
   
+  /* Premium Design Tokens */
+  --radius-image: 18px;
+  --radius-card: 18px;
+  --radius-input: 16px;
+  --radius-button: 14px;
+  --transition-premium: all 350ms cubic-bezier(.22,1,.36,1);
+  --color-gold-brand: #eab308;
+  --color-gold-secondary: #D4AF37;
+
   /* Layout */
   --max-width: 1400px;
   --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -35,7 +44,7 @@
 }
 
 html, body {
-  background-color: var(--bg-primary);
+  background-color: #070707;
   color: var(--text-primary);
   font-family: var(--font-sans);
   overflow-x: hidden;
@@ -45,6 +54,8 @@ html, body {
 
 body {
   min-height: 100vh;
+  /* Subtle premium radial background spotlight */
+  background-image: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.015) 0%, rgba(7, 7, 7, 0) 80%);
 }
 
 #root {
@@ -109,4 +120,28 @@ button {
 ::selection {
   background-color: rgba(255, 77, 28, 0.3);
   color: #fff;
+}
+
+/* Premium Scroll Progress Line Indicator */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--color-gold-secondary);
+  transform-origin: 0%;
+  z-index: 100000;
+}
+
+/* Apple-style Premium Section Sub-label */
+.section-mini-label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: var(--color-gold-secondary);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
 }

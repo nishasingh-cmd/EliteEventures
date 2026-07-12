@@ -149,9 +149,12 @@ function Gallery() {
         animate={controls}
       >
         {/* Left — single-line headline */}
-        <motion.h2 className="gallery-headline" variants={itemVariants}>
-          Moments We've <span className="gallery-headline-gold">Crafted</span>
-        </motion.h2>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+          <span className="section-mini-label">PORTFOLIO</span>
+          <motion.h2 className="gallery-headline" variants={itemVariants}>
+            Moments We've <span className="gallery-headline-gold">Crafted</span>
+          </motion.h2>
+        </div>
 
         {/* Right — paragraph */}
         <motion.p className="gallery-subtext" variants={itemVariants}>
@@ -163,9 +166,9 @@ function Gallery() {
       {/* Rows */}
       <motion.div
         className="gallery-rows"
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 1, delay: 0.4 }}
+        initial={{ opacity: 0, scale: 0.98 }}
+        animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.98 }}
+        transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
       >
         <GalleryRow images={row1Images} direction="left" speed={38} />
         <GalleryRow images={row2Images} direction="right" speed={32} />
