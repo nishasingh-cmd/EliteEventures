@@ -7,42 +7,42 @@ const brands = [
   {
     id: 1,
     name: 'Dr. Rashel',
-    logo: <img src="/images/logo1.png" alt="Dr. Rashel" loading="lazy" />,
+    logo: <img src="/images/logo1.png" alt="Dr. Rashel" className="brand-logo-img" loading="lazy" />,
   },
   {
     id: 2,
     name: 'Walkaroo',
-    logo: <img src="/images/logo2.png" alt="Walkaroo" loading="lazy" />,
+    logo: <img src="/images/logo2.png" alt="Walkaroo" className="brand-logo-img" loading="lazy" />,
   },
   {
     id: 3,
     name: 'Baker Hughes',
-    logo: <img src="/images/logo3.png" alt="Baker Hughes" loading="lazy" />,
+    logo: <img src="/images/logo3.png" alt="Baker Hughes" className="brand-logo-img dark-logo" loading="lazy" />,
   },
   {
     id: 4,
     name: 'Mufti',
-    logo: <img src="/images/logo4.png" alt="Mufti" loading="lazy" />,
+    logo: <img src="/images/logo4.png" alt="Mufti" className="brand-logo-img dark-logo" loading="lazy" />,
   },
   {
     id: 5,
     name: 'ATC Chains India',
-    logo: <img src="/images/logo5.png" alt="ATC Chains India" loading="lazy" />,
+    logo: <img src="/images/logo5.png" alt="ATC Chains India" className="brand-logo-img dark-logo" loading="lazy" />,
   },
   {
     id: 6,
     name: 'Hello EDC',
-    logo: <img src="/images/logo6.png" alt="Hello EDC" loading="lazy" />,
+    logo: <img src="/images/logo6.png" alt="Hello EDC" className="brand-logo-img" loading="lazy" />,
   },
   {
     id: 7,
     name: 'Flexiworld',
-    logo: <img src="/images/logo7.png" alt="Flexiworld" loading="lazy" />,
+    logo: <img src="/images/logo7.png" alt="Flexiworld" className="brand-logo-img dark-logo" loading="lazy" />,
   },
   {
     id: 8,
     name: 'Vijay Mallya',
-    logo: <img src="/images/logo8.png" alt="Vijay Mallya" loading="lazy" />,
+    logo: <img src="/images/logo8.png" alt="Vijay Mallya" className="brand-logo-img" loading="lazy" />,
   },
 ]
 
