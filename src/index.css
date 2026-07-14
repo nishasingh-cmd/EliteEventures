@@ -2,8 +2,8 @@
 
 :root {
   /* Typography */
-  --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-heading: 'Poppins', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Space Grotesk', sans-serif;
 
   /* Color Palette - Premium Dark Theme */
   --bg-primary: #070707;
@@ -19,13 +19,13 @@
   --color-accent-glow: rgba(255, 77, 28, 0.3);
   --border-color: rgba(255, 255, 255, 0.08);
   --border-glow: rgba(255, 255, 255, 0.15);
-  
+
   /* Premium Design Tokens */
   --radius-image: 18px;
   --radius-card: 18px;
   --radius-input: 16px;
   --radius-button: 14px;
-  --transition-premium: all 350ms cubic-bezier(.22,1,.36,1);
+  --transition-premium: all 350ms cubic-bezier(.22, 1, .36, 1);
   --color-gold-brand: #eab308;
   --color-gold-secondary: #D4AF37;
 
@@ -43,7 +43,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
+html,
+body {
   background-color: #070707;
   color: var(--text-primary);
   font-family: var(--font-sans);
@@ -65,7 +66,12 @@ body {
 }
 
 /* Typography Base */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   color: var(--text-primary);
