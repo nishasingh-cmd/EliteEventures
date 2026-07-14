@@ -36,15 +36,17 @@ function App() {
 
       <motion.div className="scroll-progress-bar" style={{ scaleX }} />
 
-      <Hero />
-      <Marquee />
-      <AboutSection />
-      <Gallery />
-      <ExpertiseSection />
-      <BrandsSection />
-      <WhyChooseSection />
-      <SectionSeparator />
-      <ContactSection />
+      <main id="main-content">
+        <Hero />
+        <Marquee />
+        <AboutSection />
+        <Gallery />
+        <ExpertiseSection />
+        <BrandsSection />
+        <WhyChooseSection />
+        <SectionSeparator />
+        <ContactSection />
+      </main>
       <Footer />
     </>
   )

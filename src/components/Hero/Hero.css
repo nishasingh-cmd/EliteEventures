@@ -441,7 +441,7 @@
   transform: translateY(30px);
   animation: heroEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
 }
-h6.hero-split-headline {
+h1.hero-split-headline {
   font-size: 4.0rem;
   font-weight: 300;
   line-height: 1.05;

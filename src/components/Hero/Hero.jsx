@@ -114,13 +114,13 @@ const Hero = () => {
       </div>
 
       {/* Split Bottom Hero Layout */}
-      <main className="hero-content split-layout">
+      <div className="hero-content split-layout">
         {/* Left Column: Headline and CTA */}
         <div className="hero-left-col">
-          <h6 className="hero-split-headline">
+          <h1 className="hero-split-headline">
             Your Brand.<br />
             Our Stage.
-          </h6>
+          </h1>
         </div>
 
         {/* Right Column: Paragraph and Statistics */}
@@ -136,7 +136,7 @@ const Hero = () => {
           </div>
   
         </div>
-      </main>
+      </div>
     </div>
   );
 };

@@ -151,8 +151,9 @@ function ContactSection() {
 
                   {/* Full Name */}
                   <motion.div className="form-field-group" variants={fieldVariants}>
-                    <label className="form-field-label">Full Name</label>
+                    <label htmlFor="contact-fullName" className="form-field-label">Full Name</label>
                     <input
+                      id="contact-fullName"
                       type="text"
                       className={`form-input-text ${errors.fullName && touched.fullName ? 'has-error' : ''}`}
                       placeholder="Jane Doe"
@@ -177,8 +178,9 @@ function ContactSection() {
 
                   {/* Email Address */}
                   <motion.div className="form-field-group" variants={fieldVariants}>
-                    <label className="form-field-label">Email Address *</label>
+                    <label htmlFor="contact-email" className="form-field-label">Email Address *</label>
                     <input
+                      id="contact-email"
                       type="email"
                       className={`form-input-text ${errors.email && touched.email ? 'has-error' : ''}`}
                       placeholder="you@company.com"
@@ -203,8 +205,9 @@ function ContactSection() {
 
                   {/* Phone Number */}
                   <motion.div className="form-field-group" variants={fieldVariants}>
-                    <label className="form-field-label">Phone Number *</label>
+                    <label htmlFor="contact-phone" className="form-field-label">Phone Number *</label>
                     <input
+                      id="contact-phone"
                       type="tel"
                       className={`form-input-text ${errors.phone && touched.phone ? 'has-error' : ''}`}
                       placeholder="+91 99999 99999"
@@ -229,8 +232,9 @@ function ContactSection() {
 
                   {/* Subject */}
                   <motion.div className="form-field-group" variants={fieldVariants}>
-                    <label className="form-field-label">Subject</label>
+                    <label htmlFor="contact-subject" className="form-field-label">Subject</label>
                     <input
+                      id="contact-subject"
                       type="text"
                       className={`form-input-text ${errors.subject && touched.subject ? 'has-error' : ''}`}
                       placeholder="Exhibition Stall Design Enquiry"
@@ -255,8 +259,9 @@ function ContactSection() {
 
                   {/* Message */}
                   <motion.div className="form-field-group" variants={fieldVariants}>
-                    <label className="form-field-label">Message</label>
+                    <label htmlFor="contact-message" className="form-field-label">Message</label>
                     <textarea
+                      id="contact-message"
                       className={`form-textarea ${errors.message && touched.message ? 'has-error' : ''}`}
                       placeholder="Tell us about your upcoming project details..."
                       rows="6"
@@ -281,6 +286,7 @@ function ContactSection() {
 
                   {/* Send Message Pill CTA */}
                   <motion.button
+                    id="contact-submit"
                     type="submit"
                     className="contact-submit-btn"
                     disabled={isSubmitting}
