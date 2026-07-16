@@ -4,6 +4,7 @@ import Hero from './components/Hero/Hero'
 import Marquee from './components/Marquee/Marquee'
 import AboutSection from './components/AboutSection/AboutSection'
 import Gallery from './components/Gallery/Gallery'
+import GalleryShowcase from './components/GalleryShowcase/GalleryShowcase'
 import ExpertiseSection from './components/ExpertiseSection/ExpertiseSection'
 import BrandsSection from './components/BrandsSection/BrandsSection'
 import WhyChooseSection from './components/WhyChooseSection/WhyChooseSection'
@@ -41,6 +42,7 @@ function App() {
         <Marquee />
         <AboutSection />
         <Gallery />
+        <GalleryShowcase />
         <ExpertiseSection />
         <BrandsSection />
         <WhyChooseSection />

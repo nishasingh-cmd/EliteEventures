@@ -1,0 +1,400 @@
+﻿/* ============================================================
+   GalleryShowcase — Premium Interactive Portfolio Viewer
+   ============================================================ */
+
+/* ── Section shell ───────────────────────── */
+.gsc-section {
+  position: relative;
+  background: #070707;
+  padding: 80px 0 90px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ── Separator line ──────────────────────── */
+.gsc-separator {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 193, 7, 0.2) 30%,
+    rgba(255, 193, 7, 0.5) 50%,
+    rgba(255, 193, 7, 0.2) 70%,
+    transparent 100%
+  );
+  box-shadow: 0 0 14px 2px rgba(255, 193, 7, 0.08);
+}
+
+/* ── Ambient glow blob ───────────────────── */
+.gsc-bg-glow {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 600px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 193, 7, 0.055) 0%,
+    rgba(7, 7, 7, 0) 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Header ──────────────────────────────── */
+.gsc-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 60px;
+  margin-bottom: 3rem;
+}
+
+.gsc-headline {
+  font-family: var(--font-heading);
+  font-size: 3.6rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0.4rem 0 1rem;
+}
+
+.gsc-headline-gold {
+  color: #FFC107;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.gsc-subtext {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.42);
+  line-height: 1.75;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* ── Stage (full-width carousel container) ── */
+.gsc-stage {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  user-select: none;
+  margin-bottom: 2rem;
+}
+
+/* ── Side peek panels ────────────────────── */
+.gsc-side-peek {
+  flex: 0 0 14%;
+  max-width: 14%;
+  position: relative;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.gsc-side-peek--left  { border-radius: 0 0 0 0; }
+.gsc-side-peek--right { border-radius: 0 0 0 0; }
+
+.gsc-side-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.22;
+  filter: blur(3px) brightness(0.6);
+  transition: none;
+  display: block;
+}
+
+/* ── Main frame ──────────────────────────── */
+.gsc-main-frame {
+  flex: 1 1 auto;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1.5px solid rgba(255, 193, 7, 0.3);
+  box-shadow: 0 0 0 0 rgba(255, 193, 7, 0);
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+  cursor: grab;
+  background: #0a0a0a;
+}
+
+.gsc-main-frame:active {
+  cursor: grabbing;
+}
+
+.gsc-section:hover .gsc-main-frame {
+  box-shadow: 0 0 40px rgba(255, 193, 7, 0.1), 0 0 0 1.5px rgba(255, 193, 7, 0.45);
+  border-color: rgba(255, 193, 7, 0.55);
+}
+
+/* ── Main image inner (Framer Motion wrapper) ── */
+.gsc-main-inner {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gsc-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+/* ── Label overlay ───────────────────────── */
+.gsc-main-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.5rem 2rem 1.5rem;
+  background: linear-gradient(
+    to top,
+    rgba(7, 7, 7, 0.88) 0%,
+    rgba(7, 7, 7, 0.3) 60%,
+    transparent 100%
+  );
+  z-index: 4;
+}
+
+.gsc-main-category {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #FFC107;
+  margin-bottom: 0.35rem;
+}
+
+.gsc-main-label {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* ── Progress dots ───────────────────────── */
+.gsc-dots {
+  position: absolute;
+  bottom: 14px;
+  right: 18px;
+  display: flex;
+  gap: 6px;
+  z-index: 5;
+}
+
+.gsc-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease, transform 0.3s ease, width 0.3s ease;
+}
+
+.gsc-dot--active {
+  background: #FFC107;
+  width: 18px;
+  border-radius: 3px;
+  transform: scaleY(1.1);
+}
+
+/* ── Hover zones (arrow reveal) ──────────── */
+.gsc-hover-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 22%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.gsc-hover-zone--left  { left: 14%;  justify-content: flex-start; padding-left: 1rem; }
+.gsc-hover-zone--right { right: 14%; justify-content: flex-end;   padding-right: 1rem; }
+
+/* ── Arrow buttons ───────────────────────── */
+.gsc-arrow {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(7, 7, 7, 0.72);
+  backdrop-filter: blur(12px) saturate(1.4);
+  -webkit-backdrop-filter: blur(12px) saturate(1.4);
+  border: 1.5px solid rgba(255, 193, 7, 0.45);
+  color: #FFC107;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  pointer-events: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  z-index: 12;
+}
+
+.gsc-arrow:hover {
+  background: rgba(255, 193, 7, 0.15);
+  border-color: #FFC107;
+  box-shadow: 0 0 22px rgba(255, 193, 7, 0.28), 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.gsc-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ── Thumbnail wrapper ───────────────────── */
+.gsc-thumbs-wrapper {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+/* ── Thumbnail scroll strip ──────────────── */
+.gsc-thumbs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px 4px 14px;
+  scroll-behavior: smooth;
+  cursor: grab;
+  /* Hide scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.gsc-thumbs::-webkit-scrollbar {
+  display: none;
+}
+
+.gsc-thumbs:active {
+  cursor: grabbing;
+}
+
+/* ── Thumbnail item ──────────────────────── */
+.gsc-thumb-item {
+  flex-shrink: 0;
+  width: 110px;
+  height: 72px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: #111;
+  outline: none;
+  position: relative;
+  transition: filter 0.3s ease;
+}
+
+.gsc-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+/* Active thumbnail golden ring handled by Framer Motion animate prop */
+
+/* ── Responsive ──────────────────────────── */
+@media (max-width: 1024px) {
+  .gsc-headline {
+    font-size: 3rem;
+  }
+
+  .gsc-side-peek {
+    flex: 0 0 10%;
+    max-width: 10%;
+  }
+
+  .gsc-thumb-item {
+    width: 90px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gsc-section {
+    padding: 60px 0 70px;
+  }
+
+  .gsc-header {
+    padding: 0 24px;
+    margin-bottom: 2rem;
+  }
+
+  .gsc-headline {
+    font-size: 2.4rem;
+  }
+
+  /* Hide side peeks on mobile */
+  .gsc-side-peek {
+    display: none;
+  }
+
+  .gsc-hover-zone--left  { left: 0;  width: 18%; }
+  .gsc-hover-zone--right { right: 0; width: 18%; }
+
+  .gsc-arrow {
+    width: 42px;
+    height: 42px;
+  }
+
+  .gsc-main-frame {
+    border-radius: 14px;
+  }
+
+  .gsc-main-label {
+    font-size: 1.2rem;
+  }
+
+  .gsc-thumb-item {
+    width: 80px;
+    height: 54px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gsc-headline {
+    font-size: 2rem;
+  }
+
+  .gsc-arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .gsc-arrow svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .gsc-main-label {
+    font-size: 1rem;
+  }
+
+  .gsc-thumb-item {
+    width: 68px;
+    height: 46px;
+  }
+}
