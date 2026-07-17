@@ -53,7 +53,7 @@ const Navbar = () => {
             <a href="/" className="nav-link">Home</a>
             <Link to="/gallery" className="nav-link active">Gallery</Link>
             <a href="/#services" className="nav-link">Services</a>
-            <a href="/#about" className="nav-link">About Us</a>
+            <Link to="/about" className="nav-link">About Us</Link>
             <a href="/#contact" className="nav-link">Contact</a>
           </nav>
 
@@ -90,7 +90,7 @@ const Navbar = () => {
           <a href="/" className="mobile-link" onClick={closeMobileMenu}>Home</a>
           <Link to="/gallery" className="mobile-link active" onClick={closeMobileMenu}>Gallery</Link>
           <a href="/#services" className="mobile-link" onClick={closeMobileMenu}>Services</a>
-          <a href="/#about" className="mobile-link" onClick={closeMobileMenu}>About Us</a>
+          <Link to="/about" className="mobile-link" onClick={closeMobileMenu}>About Us</Link>
           <a href="/#contact" className="mobile-link" onClick={closeMobileMenu}>Contact</a>
           <a href="/#contact" className="btn btn-mobile-talk" onClick={closeMobileMenu}>
             Let's Talk ↗

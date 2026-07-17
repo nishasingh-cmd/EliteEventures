@@ -69,7 +69,7 @@ const Hero = () => {
             <a href="/" className="nav-link active">Home</a>
             <Link to="/gallery" className="nav-link">Gallery</Link>
             <a href="#services" className="nav-link">Services</a>
-            <a href="#about" className="nav-link">About Us</a>
+            <Link to="/about" className="nav-link">About Us</Link>
             <a href="#contact" className="nav-link">Contact</a>
           </nav>
 
@@ -106,7 +106,7 @@ const Hero = () => {
           <a href="/" className="mobile-link" onClick={toggleMobileMenu}>Home</a>
           <Link to="/gallery" className="mobile-link" onClick={toggleMobileMenu}>Gallery</Link>
           <a href="#services" className="mobile-link" onClick={toggleMobileMenu}>Services</a>
-          <a href="#about" className="mobile-link" onClick={toggleMobileMenu}>About Us</a>
+          <Link to="/about" className="mobile-link" onClick={toggleMobileMenu}>About Us</Link>
           <a href="#contact" className="mobile-link" onClick={toggleMobileMenu}>Contact</a>
           <a href="#contact" className="btn btn-mobile-talk" onClick={toggleMobileMenu}>
             Let's Talk ↗

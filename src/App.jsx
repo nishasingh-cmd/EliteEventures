@@ -14,6 +14,7 @@ import ContactSection from './components/ContactSection/ContactSection'
 import Footer from './components/Footer/Footer'
 import Loader from './components/Loader/Loader'
 import GalleryPage from './pages/GalleryPage'
+import AboutPage from './pages/AboutPage'
 
 // Scroll-to-top on every route change
 function ScrollToTop() {
@@ -72,6 +73,7 @@ function AppInner() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </>
   )

@@ -63,7 +63,7 @@ function Footer() {
             <a href="/" className="footer-minimal-nav-item">Home</a>
             <Link to="/gallery" className="footer-minimal-nav-item">Gallery</Link>
             <a href="#services" className="footer-minimal-nav-item">Services</a>
-            <a href="#about" className="footer-minimal-nav-item">About Us</a>
+            <Link to="/about" className="footer-minimal-nav-item">About Us</Link>
             <a href="#contact" className="footer-minimal-nav-item">Contact Us</a>
           </div>
 

@@ -31,7 +31,7 @@ function AnimatedCounter({ endValue, suffix = '', duration = 2.2, delay = 0 }) {
 function AboutSection() {
   return (
     <section className="about-section" id="about">
-      <motion.div 
+      <motion.div
         className="about-container"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -45,7 +45,7 @@ function AboutSection() {
             About <br />
             <span className="gold-italic">Elite Eventure</span>
           </h2>
-          
+
           <p className="about-paragraph">
             Welcome to Elite Eventure, your trusted partner for innovative exhibition stall designs and event solutions. With years of expertise, we transform brand visions into engaging experiences through creative design, strategic planning, and flawless execution. Every stall is thoughtfully crafted to reflect your brand identity and leave a lasting impression.
           </p>
@@ -87,12 +87,12 @@ function AboutSection() {
             <div className="collage-img-wrapper img-pos-1">
               <img src="/images/collage1.png" alt="Automotive Event Launch" className="collage-img" loading="lazy" />
             </div>
-            
+
             {/* Image 2: Top Right (Immersive pavilion) */}
             <div className="collage-img-wrapper img-pos-2">
               <img src="/images/collage2.png" alt="Interactive Experience Zone" className="collage-img" loading="lazy" />
             </div>
-            
+
             {/* Image 3: Bottom Center (Exhibition stall) */}
             <div className="collage-img-wrapper img-pos-3">
               <img src="/images/collage3.png" alt="High-End Exhibition Stall Showcase" className="collage-img" loading="lazy" />
