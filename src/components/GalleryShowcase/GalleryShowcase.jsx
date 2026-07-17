@@ -1,4 +1,4 @@
-﻿import React, {
+import React, {
   useState,
   useEffect,
   useRef,
@@ -102,10 +102,16 @@ export default function GalleryShowcase() {
     }
   }, [])
 
+  // Scroll the thumbnail strip to center the active thumb —
+  // uses manual scrollLeft so the PAGE scroll is never touched.
   useEffect(() => {
-    if (!thumbRef.current) return
-    const el = thumbRef.current.children[current]
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" })
+    const strip = thumbRef.current
+    if (!strip) return
+    const el = strip.children[current]
+    if (!el) return
+    const stripCenter  = strip.offsetWidth  / 2
+    const thumbCenter  = el.offsetLeft + el.offsetWidth / 2
+    strip.scrollTo({ left: thumbCenter - stripCenter, behavior: "smooth" })
   }, [current])
 
   const mainVariants = {
@@ -140,13 +146,13 @@ export default function GalleryShowcase() {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       >
-        <span className="section-mini-label">Portfolio</span>
         <h2 className="gsc-headline">
           Our <span className="gsc-headline-gold">Showcase</span>
         </h2>
         <p className="gsc-subtext">
-          Browse landmark projects — from world-class exhibition stalls
-          and corporate galas to immersive brand activations.
+          Explore our portfolio of exhibition stalls, brand activations,
+          corporate events, and immersive experiences—crafted with creativity,
+          precision, and flawless execution.
         </p>
       </motion.div>
 

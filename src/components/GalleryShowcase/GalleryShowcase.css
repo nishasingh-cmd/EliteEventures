@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    GalleryShowcase — Premium Interactive Portfolio Viewer
    ============================================================ */
 
@@ -6,7 +6,7 @@
 .gsc-section {
   position: relative;
   background: #070707;
-  padding: 80px 0 90px;
+  padding: 40px 0 80px;   /* top reduced by ~43% from 70px */
   width: 100%;
   overflow: hidden;
 }
@@ -35,11 +35,11 @@
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 900px;
-  height: 600px;
+  width: 800px;
+  height: 500px;
   background: radial-gradient(
     ellipse at center,
-    rgba(255, 193, 7, 0.055) 0%,
+    rgba(255, 193, 7, 0.045) 0%,
     rgba(7, 7, 7, 0) 70%
   );
   pointer-events: none;
@@ -47,26 +47,35 @@
 }
 
 /* ── Header ──────────────────────────────── */
+/* ── Header — horizontal split matching "Moments We've Crafted" ── */
 .gsc-header {
   position: relative;
   z-index: 2;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
   padding: 0 60px;
-  margin-bottom: 3rem;
+  margin-bottom: 2.4rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .gsc-headline {
   font-family: var(--font-heading);
-  font-size: 3.6rem;
+  font-size: 3.8rem;
   font-weight: 700;
-  letter-spacing: -0.03em;
   line-height: 1.1;
-  color: #ffffff;
-  margin: 0.4rem 0 1rem;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin: 0;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .gsc-headline-gold {
-  color: #FFC107;
+  color: var(--color-gold-brand);
   font-style: italic;
   font-weight: 300;
 }
@@ -74,55 +83,59 @@
 .gsc-subtext {
   font-size: 1rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.42);
-  line-height: 1.75;
-  max-width: 540px;
-  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 55%;
+  text-align: left;
 }
 
-/* ── Stage (full-width carousel container) ── */
+/* ── Stage (carousel container) — slightly wider than before ── */
 .gsc-stage {
   position: relative;
   z-index: 2;
   display: flex;
   align-items: stretch;
-  width: 100%;
+  width: 96%;               /* was 88% — ~9% wider for more presence */
+  max-width: 1200px;
+  margin: 0 auto 14px;      /* 14px gap to thumbnails */
   user-select: none;
-  margin-bottom: 2rem;
 }
 
 /* ── Side peek panels ────────────────────── */
 .gsc-side-peek {
-  flex: 0 0 14%;
-  max-width: 14%;
+  flex: 0 0 12%;
+  max-width: 12%;
   position: relative;
   overflow: hidden;
   pointer-events: none;
 }
 
-.gsc-side-peek--left  { border-radius: 0 0 0 0; }
-.gsc-side-peek--right { border-radius: 0 0 0 0; }
+.gsc-side-peek--left  { border-radius: 0; }
+.gsc-side-peek--right { border-radius: 0; }
 
 .gsc-side-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.22;
-  filter: blur(3px) brightness(0.6);
+  opacity: 0.18;
+  filter: blur(3px) brightness(0.55);
   transition: none;
   display: block;
 }
 
-/* ── Main frame ──────────────────────────── */
+/* ── Main frame — no border, soft shadow ── */
 .gsc-main-frame {
   flex: 1 1 auto;
   position: relative;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  border-radius: 18px;
-  border: 1.5px solid rgba(255, 193, 7, 0.3);
-  box-shadow: 0 0 0 0 rgba(255, 193, 7, 0);
-  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+  border-radius: 16px;
+  /* No visible border */
+  border: none;
+  /* Soft depth shadow only */
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.55), 0 2px 12px rgba(0, 0, 0, 0.35);
+  transition: box-shadow 0.4s ease;
   cursor: grab;
   background: #0a0a0a;
 }
@@ -131,9 +144,9 @@
   cursor: grabbing;
 }
 
+/* Subtle lift on section hover — no gold border, just deeper shadow */
 .gsc-section:hover .gsc-main-frame {
-  box-shadow: 0 0 40px rgba(255, 193, 7, 0.1), 0 0 0 1.5px rgba(255, 193, 7, 0.45);
-  border-color: rgba(255, 193, 7, 0.55);
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.65), 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* ── Main image inner (Framer Motion wrapper) ── */
@@ -158,7 +171,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 2.5rem 2rem 1.5rem;
+  padding: 2.2rem 1.8rem 1.3rem;
   background: linear-gradient(
     to top,
     rgba(7, 7, 7, 0.88) 0%,
@@ -176,12 +189,12 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #FFC107;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
 }
 
 .gsc-main-label {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: #ffffff;
@@ -191,16 +204,16 @@
 /* ── Progress dots ───────────────────────── */
 .gsc-dots {
   position: absolute;
-  bottom: 14px;
-  right: 18px;
+  bottom: 12px;
+  right: 16px;
   display: flex;
-  gap: 6px;
+  gap: 5px;
   z-index: 5;
 }
 
 .gsc-dot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.25);
   border: none;
@@ -211,7 +224,7 @@
 
 .gsc-dot--active {
   background: #FFC107;
-  width: 18px;
+  width: 16px;
   border-radius: 3px;
   transform: scaleY(1.1);
 }
@@ -228,13 +241,13 @@
   cursor: pointer;
 }
 
-.gsc-hover-zone--left  { left: 14%;  justify-content: flex-start; padding-left: 1rem; }
-.gsc-hover-zone--right { right: 14%; justify-content: flex-end;   padding-right: 1rem; }
+.gsc-hover-zone--left  { left: 12%;  justify-content: flex-start; padding-left: 0.8rem; }
+.gsc-hover-zone--right { right: 12%; justify-content: flex-end;   padding-right: 0.8rem; }
 
 /* ── Arrow buttons ───────────────────────── */
 .gsc-arrow {
-  width: 50px;
-  height: 50px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: rgba(7, 7, 7, 0.72);
   backdrop-filter: blur(12px) saturate(1.4);
@@ -258,26 +271,28 @@
 }
 
 .gsc-arrow svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
-/* ── Thumbnail wrapper ───────────────────── */
+/* ── Thumbnail wrapper — matches stage width ── */
 .gsc-thumbs-wrapper {
   position: relative;
   z-index: 2;
-  padding: 0 20px;
+  width: 96%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 12px;
 }
 
 /* ── Thumbnail scroll strip ──────────────── */
 .gsc-thumbs {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   overflow-x: auto;
-  padding: 10px 4px 14px;
+  padding: 6px 4px 10px;
   scroll-behavior: smooth;
   cursor: grab;
-  /* Hide scrollbar */
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -290,12 +305,12 @@
   cursor: grabbing;
 }
 
-/* ── Thumbnail item ──────────────────────── */
+/* ── Thumbnail item — ~27% smaller (110→80px, 72→52px) ── */
 .gsc-thumb-item {
   flex-shrink: 0;
-  width: 110px;
-  height: 72px;
-  border-radius: 10px;
+  width: 80px;
+  height: 52px;
+  border-radius: 8px;
   overflow: hidden;
   border: none;
   padding: 0;
@@ -317,34 +332,64 @@
 /* Active thumbnail golden ring handled by Framer Motion animate prop */
 
 /* ── Responsive ──────────────────────────── */
+@media (max-width: 1200px) {
+  .gsc-stage,
+  .gsc-thumbs-wrapper {
+    width: 98%;
+  }
+}
+
 @media (max-width: 1024px) {
+  .gsc-header {
+    gap: 2.5rem;
+  }
+
   .gsc-headline {
-    font-size: 3rem;
+    font-size: 2.8rem;
+  }
+
+  .gsc-stage,
+  .gsc-thumbs-wrapper {
+    width: 96%;
+    max-width: none;
   }
 
   .gsc-side-peek {
-    flex: 0 0 10%;
-    max-width: 10%;
+    flex: 0 0 9%;
+    max-width: 9%;
   }
 
   .gsc-thumb-item {
-    width: 90px;
-    height: 60px;
+    width: 68px;
+    height: 44px;
   }
 }
 
 @media (max-width: 768px) {
   .gsc-section {
-    padding: 60px 0 70px;
+    padding: 30px 0 60px;   /* further reduced top on mobile */
   }
 
   .gsc-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
     padding: 0 24px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.8rem;
   }
 
   .gsc-headline {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
+    white-space: normal;
+  }
+
+  .gsc-subtext {
+    max-width: 100%;
+  }
+
+  .gsc-stage,
+  .gsc-thumbs-wrapper {
+    width: 100%;
   }
 
   /* Hide side peeks on mobile */
@@ -356,45 +401,45 @@
   .gsc-hover-zone--right { right: 0; width: 18%; }
 
   .gsc-arrow {
-    width: 42px;
-    height: 42px;
+    width: 38px;
+    height: 38px;
   }
 
   .gsc-main-frame {
-    border-radius: 14px;
+    border-radius: 12px;
   }
 
   .gsc-main-label {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .gsc-thumb-item {
-    width: 80px;
-    height: 54px;
+    width: 62px;
+    height: 42px;
   }
 }
 
 @media (max-width: 480px) {
   .gsc-headline {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 
   .gsc-arrow {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
   }
 
   .gsc-arrow svg {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
   }
 
   .gsc-main-label {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .gsc-thumb-item {
-    width: 68px;
-    height: 46px;
+    width: 54px;
+    height: 36px;
   }
 }

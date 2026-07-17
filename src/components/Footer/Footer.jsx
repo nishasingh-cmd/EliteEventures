@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Footer.css'
 
 function Footer() {
@@ -59,8 +60,8 @@ function Footer() {
 
           {/* Navigation Menu */}
           <div className="footer-minimal-nav-links">
-            <a href="#" className="footer-minimal-nav-item">Home</a>
-            <a href="#gallery" className="footer-minimal-nav-item">Gallery</a>
+            <a href="/" className="footer-minimal-nav-item">Home</a>
+            <Link to="/gallery" className="footer-minimal-nav-item">Gallery</Link>
             <a href="#services" className="footer-minimal-nav-item">Services</a>
             <a href="#about" className="footer-minimal-nav-item">About Us</a>
             <a href="#contact" className="footer-minimal-nav-item">Contact Us</a>

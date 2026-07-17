@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Hero.css';
 
 const Hero = () => {
@@ -65,8 +66,8 @@ const Hero = () => {
 
           {/* Desktop Navigation Links */}
           <nav className="desktop-nav">
-            <a href="#" className="nav-link active">Home</a>
-            <a href="#gallery" className="nav-link">Gallery</a>
+            <a href="/" className="nav-link active">Home</a>
+            <Link to="/gallery" className="nav-link">Gallery</Link>
             <a href="#services" className="nav-link">Services</a>
             <a href="#about" className="nav-link">About Us</a>
             <a href="#contact" className="nav-link">Contact</a>
@@ -102,8 +103,8 @@ const Hero = () => {
       {/* Mobile Navigation Dropdown */}
       <div className={`mobile-nav-menu ${mobileMenuOpen ? 'open' : ''}`}>
         <nav className="mobile-nav-links">
-          <a href="#home" className="mobile-link" onClick={toggleMobileMenu}>Home</a>
-          <a href="#gallery" className="mobile-link" onClick={toggleMobileMenu}>Gallery</a>
+          <a href="/" className="mobile-link" onClick={toggleMobileMenu}>Home</a>
+          <Link to="/gallery" className="mobile-link" onClick={toggleMobileMenu}>Gallery</Link>
           <a href="#services" className="mobile-link" onClick={toggleMobileMenu}>Services</a>
           <a href="#about" className="mobile-link" onClick={toggleMobileMenu}>About Us</a>
           <a href="#contact" className="mobile-link" onClick={toggleMobileMenu}>Contact</a>
