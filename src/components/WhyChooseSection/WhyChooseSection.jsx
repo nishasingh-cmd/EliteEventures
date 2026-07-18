@@ -8,7 +8,7 @@ const projects = [
     id: 1,
     brand: 'Dr. Rashel',
     img: '/images/stall4.png',
-    caption: 'Designed a premium beauty exhibition stall that showcased luxury skincare products through elegant branding and an immersive customer experience.',
+    caption: 'Designed a premium beauty exhibition stall that showcased luxury skincare products through immersive customer experience.',
     tag: 'Beauty & Skincare',
   },
   {
@@ -120,7 +120,7 @@ function ProjectCard({ project, index }) {
   )
 }
 
-function WhyChooseSection() {
+function WhyChooseSection({ hideReviews = false }) {
   const [activeReview, setActiveReview] = useState(0)
   const [itemsPerView, setItemsPerView] = useState(2)
 
@@ -147,7 +147,7 @@ function WhyChooseSection() {
   }
 
   return (
-    <section className="why-section" id="why-us">
+    <section className="why-section" id="why-us" style={hideReviews ? { paddingBottom: '20px' } : {}}>
       <div className="why-bg-glow" />
 
       <div className="why-header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
@@ -173,15 +173,16 @@ function WhyChooseSection() {
       </div>
 
       {/* ── PROJECT CARDS ── */}
-      <div className="project-grid">
+      <div className="project-grid" style={hideReviews ? { marginBottom: 0 } : {}}>
         {projects.map((p, i) => (
           <ProjectCard key={p.id} project={p} index={i} />
         ))}
       </div>
 
       {/* ── REVIEWS WITH BLUR + FADE ── */}
-      <motion.div 
-        className="reviews-block"
+      {!hideReviews && (
+        <motion.div 
+          className="reviews-block"
         initial={{ opacity: 0, filter: 'blur(8px)' }}
         whileInView={{ opacity: 1, filter: 'blur(0px)' }}
         viewport={{ once: true }}
@@ -259,7 +260,8 @@ function WhyChooseSection() {
             <polyline points="12 5 19 12 12 19" />
           </svg>
         </motion.a>
-      </motion.div>
+        </motion.div>
+      )}
     </section>
   )
 }

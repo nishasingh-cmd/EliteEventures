@@ -1,0 +1,226 @@
+/* ── GOOGLE REVIEWS ── */
+.sp-reviews-section {
+  width: 90%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 40px 0 80px;
+}
+
+.sp-reviews-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.sp-reviews-title {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.sp-reviews-subtitle {
+  color: rgba(255,255,255,0.6);
+  font-size: 1rem;
+}
+
+.sp-reviews-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sp-carousel-btn {
+  background: #fff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  color: #555;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+.sp-carousel-btn:hover {
+  background: #f0f0f0;
+  color: #000;
+}
+.sp-carousel-btn-left {
+  left: -20px;
+}
+.sp-carousel-btn-right {
+  right: -20px;
+}
+
+.sp-reviews-track {
+  overflow: hidden;
+  flex: 1;
+  padding: 10px 0;
+}
+
+.sp-reviews-slider {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.sp-review-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  color: #333;
+}
+
+.sp-review-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.sp-review-author-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sp-review-avatar-wrap {
+  position: relative;
+  width: 44px;
+  height: 44px;
+}
+
+.sp-review-avatar, .sp-review-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  object-fit: cover;
+  background: #9c27b0; /* fallback color */
+  color: #fff;
+}
+
+/* Add some random colors for initials */
+.sp-review-card:nth-child(2n) .sp-review-avatar { background: #e91e63; }
+.sp-review-card:nth-child(3n) .sp-review-avatar { background: #f44336; }
+.sp-review-card:nth-child(4n) .sp-review-avatar { background: #3f51b5; }
+.sp-review-card:nth-child(5n) .sp-review-avatar { background: #009688; }
+
+
+.sp-local-guide-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.sp-review-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.sp-review-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #222;
+}
+
+.sp-review-time {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.sp-google-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.sp-review-stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 8px;
+}
+.sp-star-icon {
+  width: 16px;
+  height: 16px;
+}
+.sp-verified-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 6px;
+}
+
+.sp-review-text {
+  font-size: 0.85rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+.sp-read-more {
+  display: block;
+  margin-top: 5px;
+  color: #777;
+  cursor: pointer;
+  font-weight: 500;
+}
+.sp-read-more:hover {
+  text-decoration: underline;
+}
+
+.sp-reviews-footer {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.sp-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 34px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  color: #ffffff;
+  background: transparent;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.sp-btn-outline:hover {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+@media (max-width: 992px) {
+  .sp-reviews-section {
+    padding: 40px 5% 60px;
+  }
+}
+@media (max-width: 768px) {
+  .sp-reviews-carousel-wrapper {
+    padding: 0 10px;
+  }
+  .sp-carousel-btn-left {
+    left: 0px;
+  }
+  .sp-carousel-btn-right {
+    right: 0px;
+  }
+}

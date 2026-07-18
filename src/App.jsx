@@ -9,6 +9,7 @@ import GalleryShowcase from './components/GalleryShowcase/GalleryShowcase'
 import ExpertiseSection from './components/ExpertiseSection/ExpertiseSection'
 import BrandsSection from './components/BrandsSection/BrandsSection'
 import WhyChooseSection from './components/WhyChooseSection/WhyChooseSection'
+import GoogleReviews from './components/GoogleReviews/GoogleReviews'
 import SectionSeparator from './components/SectionSeparator/SectionSeparator'
 import ContactSection from './components/ContactSection/ContactSection'
 import Footer from './components/Footer/Footer'
@@ -35,7 +36,8 @@ function HomePage() {
         <Marquee />
         <AboutSection />
         <GalleryShowcase />
-        <WhyChooseSection />
+        <WhyChooseSection hideReviews={true} />
+        <GoogleReviews />
         <ExpertiseSection />
         <BrandsSection />
         <SectionSeparator />
