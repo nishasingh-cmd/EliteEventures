@@ -12,16 +12,17 @@ const marqueeItems = [
   'Visual Events'
 ]
 
-function Marquee() {
+function Marquee({ items }) {
+  const displayItems = items || marqueeItems;
   // We duplicate the list to ensure a seamless infinite scroll loop
-  const doubleItems = [...marqueeItems, ...marqueeItems]
+  const doubleItems = [...displayItems, ...displayItems]
 
   return (
     <div className="marquee-container">
       <div className="marquee-track">
         {/* First content block */}
         <div className="marquee-content">
-          {marqueeItems.map((item, idx) => (
+          {displayItems.map((item, idx) => (
             <span key={`block1-${idx}`} className="marquee-item">
               <span className="marquee-text">{item}</span>
               <svg 
@@ -44,7 +45,7 @@ function Marquee() {
         
         {/* Second identical content block for seamless looping */}
         <div className="marquee-content" aria-hidden="true">
-          {marqueeItems.map((item, idx) => (
+          {displayItems.map((item, idx) => (
             <span key={`block2-${idx}`} className="marquee-item">
               <span className="marquee-text">{item}</span>
               <svg 

@@ -63,9 +63,9 @@ const Navbar = () => {
           <nav className="desktop-nav">
             <NavLink to="/" end className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Home</NavLink>
             <NavLink to="/gallery" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Gallery</NavLink>
-            <a href="/#services" className={navClass('/')}>Services</a>
+            <NavLink to="/services" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Services</NavLink>
             <NavLink to="/about" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>About Us</NavLink>
-            <a href="/#contact" className={navClass('/')}>Contact</a>
+            <NavLink to="/contact" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Contact</NavLink>
           </nav>
 
           {/* Right Action Menu */}
@@ -77,9 +77,9 @@ const Navbar = () => {
               </svg>
             </button>
 
-            <a href="/#contact" className="btn btn-talk">
+            <NavLink to="/contact" className="btn btn-talk">
               Let's Talk ↗
-            </a>
+            </NavLink>
 
             {/* Hamburger Button for Mobile */}
             <button
@@ -100,12 +100,12 @@ const Navbar = () => {
         <nav className="mobile-nav-links">
           <NavLink to="/" end className={({ isActive }) => isActive ? 'mobile-link active' : 'mobile-link'} onClick={closeMobileMenu}>Home</NavLink>
           <NavLink to="/gallery" className={({ isActive }) => isActive ? 'mobile-link active' : 'mobile-link'} onClick={closeMobileMenu}>Gallery</NavLink>
-          <a href="/#services" className={mobileClass('/')} onClick={closeMobileMenu}>Services</a>
+          <NavLink to="/services" className={({ isActive }) => isActive ? 'mobile-link active' : 'mobile-link'} onClick={closeMobileMenu}>Services</NavLink>
           <NavLink to="/about" className={({ isActive }) => isActive ? 'mobile-link active' : 'mobile-link'} onClick={closeMobileMenu}>About Us</NavLink>
-          <a href="/#contact" className={mobileClass('/')} onClick={closeMobileMenu}>Contact</a>
-          <a href="/#contact" className="btn btn-mobile-talk" onClick={closeMobileMenu}>
+          <NavLink to="/contact" className={({ isActive }) => isActive ? 'mobile-link active' : 'mobile-link'} onClick={closeMobileMenu}>Contact</NavLink>
+          <NavLink to="/contact" className="btn btn-mobile-talk" onClick={closeMobileMenu}>
             Let's Talk ↗
-          </a>
+          </NavLink>
         </nav>
       </div>
     </>

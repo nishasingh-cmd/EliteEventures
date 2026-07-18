@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { motion, useInView, animate, useScroll, useTransform } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Footer/Footer'
 import AboutStorySection from '../components/AboutStorySection/AboutStorySection'
@@ -210,9 +211,9 @@ export default function AboutPage() {
             immersive brand activation, our team is ready to bring your vision to life.
           </p>
           <div className="ap-cta-btns">
-            <a href="/#contact" className="btn-ap-primary">
+            <Link to="/contact" className="btn-ap-primary">
               Let's Talk <span className="btn-ap-arrow">→</span>
-            </a>
+            </Link>
             <a href="/gallery" className="btn-ap-secondary">
               Explore Our Portfolio
             </a>

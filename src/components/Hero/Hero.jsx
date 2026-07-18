@@ -68,9 +68,9 @@ const Hero = () => {
           <nav className="desktop-nav">
             <a href="/" className="nav-link active">Home</a>
             <Link to="/gallery" className="nav-link">Gallery</Link>
-            <a href="#services" className="nav-link">Services</a>
+            <Link to="/services" className="nav-link">Services</Link>
             <Link to="/about" className="nav-link">About Us</Link>
-            <a href="#contact" className="nav-link">Contact</a>
+            <Link to="/contact" className="nav-link">Contact</Link>
           </nav>
 
           {/* Right Action Menu */}
@@ -82,9 +82,9 @@ const Hero = () => {
               </svg>
             </button>
 
-            <a href="#contact" className="btn btn-talk">
+            <Link to="/contact" className="btn btn-talk">
               Let's Talk ↗
-            </a>
+            </Link>
 
             {/* Hamburger Button for Mobile */}
             <button
@@ -105,12 +105,12 @@ const Hero = () => {
         <nav className="mobile-nav-links">
           <a href="/" className="mobile-link" onClick={toggleMobileMenu}>Home</a>
           <Link to="/gallery" className="mobile-link" onClick={toggleMobileMenu}>Gallery</Link>
-          <a href="#services" className="mobile-link" onClick={toggleMobileMenu}>Services</a>
+          <Link to="/services" className="mobile-link" onClick={toggleMobileMenu}>Services</Link>
           <Link to="/about" className="mobile-link" onClick={toggleMobileMenu}>About Us</Link>
-          <a href="#contact" className="mobile-link" onClick={toggleMobileMenu}>Contact</a>
-          <a href="#contact" className="btn btn-mobile-talk" onClick={toggleMobileMenu}>
+          <Link to="/contact" className="mobile-link" onClick={toggleMobileMenu}>Contact</Link>
+          <Link to="/contact" className="btn btn-mobile-talk" onClick={toggleMobileMenu}>
             Let's Talk ↗
-          </a>
+          </Link>
         </nav>
       </div>
 
