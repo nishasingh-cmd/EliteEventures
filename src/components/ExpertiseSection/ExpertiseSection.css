@@ -136,7 +136,7 @@
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
   transition: var(--transition-premium), border-color 0.35s ease, box-shadow 0.35s ease;
   background: rgba(7, 7, 7, 0.4);
-  backdrop-filter: blur(10px);
+/*   backdrop-filter: blur(10px); */
 }
 
 .collage-img {

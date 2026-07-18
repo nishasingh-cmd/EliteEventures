@@ -148,8 +148,8 @@
   width: 200px;
   height: 96px;
   background: rgba(234, 179, 8, 0.08);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+/*   backdrop-filter: blur(10px); */
+/*   -webkit-backdrop-filter: blur(10px); */
   border-radius: var(--radius-card);
   border: 1.5px solid var(--color-gold-brand);
   display: flex;

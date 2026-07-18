@@ -24,7 +24,7 @@
   gap: 4rem;
   padding-right: 4rem; /* Match the gap to prevent spacing jumps */
   animation: marquee-scroll 24s linear infinite;
-  will-change: transform;
+  transform: translateZ(0);
 }
 
 .marquee-item {

@@ -157,7 +157,7 @@
   font-weight: 700;
   letter-spacing: 0.2em;
   text-decoration: none;
-  backdrop-filter: blur(10px);
+/*   backdrop-filter: blur(10px); */
   transition: all 0.3s ease;
   transform: translateZ(40px);
 }

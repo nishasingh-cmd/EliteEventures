@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
-import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 import Hero from './components/Hero/Hero'
 import Marquee from './components/Marquee/Marquee'
@@ -50,12 +50,7 @@ function HomePage() {
 
 function AppInner() {
   const [loading, setLoading] = useState(true)
-  const { scrollYProgress } = useScroll()
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  })
+
 
   useEffect(() => {
     // Always start at the very top on initial load
@@ -70,7 +65,7 @@ function AppInner() {
         {loading && <Loader />}
       </AnimatePresence>
 
-      <motion.div className="scroll-progress-bar" style={{ scaleX }} />
+
 
       <ScrollToTop />
 

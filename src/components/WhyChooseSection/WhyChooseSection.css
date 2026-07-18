@@ -161,12 +161,12 @@
 }
 
 .project-card-img.loading {
-  filter: blur(10px);
+/*   filter: blur(10px); */
   transform: scale(0.96);
 }
 
 .project-card-img.loaded {
-  filter: blur(0px);
+/*   filter: blur(0px); */
   transform: scale(1);
 }
 
@@ -276,8 +276,8 @@
 
 .review-card {
   background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+/*   backdrop-filter: blur(14px); */
+/*   -webkit-backdrop-filter: blur(14px); */
   border: 1.5px solid rgba(234, 179, 8, 0.25);
   border-radius: var(--radius-card);
   padding: 2rem 2.2rem;
