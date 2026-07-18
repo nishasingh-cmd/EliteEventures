@@ -6,10 +6,10 @@ function Footer() {
   return (
     <footer className="footer-minimal-wrapper">
       <div className="footer-minimal-container">
-        
+
         {/* LEFT COLUMN - Brand Logo & Solid White Social Circles */}
         <div className="footer-minimal-left">
-          
+
           {/* Transparent brand logo */}
           <a href="#" className="footer-logo-brand-container">
             <div className="footer-logo-main">
@@ -54,7 +54,7 @@ function Footer() {
 
         {/* RIGHT COLUMN - Gold Divider & Navigation Links */}
         <div className="footer-minimal-right">
-          
+
           {/* Gold divider line */}
           <div className="footer-minimal-divider-line" />
 

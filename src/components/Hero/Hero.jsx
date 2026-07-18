@@ -28,10 +28,10 @@ const Hero = () => {
       {/* Background Video with Dark Overlay */}
       <div className="video-background">
         <div className="video-overlay"></div>
-        <video 
-          autoPlay 
-          muted 
-          loop 
+        <video
+          autoPlay
+          muted
+          loop
           playsInline
           className="bg-video"
         >
@@ -81,14 +81,14 @@ const Hero = () => {
                 <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
               </svg>
             </button>
-            
+
             <a href="#contact" className="btn btn-talk">
               Let's Talk ↗
             </a>
 
             {/* Hamburger Button for Mobile */}
-            <button 
-              className={`hamburger ${mobileMenuOpen ? 'open' : ''}`} 
+            <button
+              className={`hamburger ${mobileMenuOpen ? 'open' : ''}`}
               onClick={toggleMobileMenu}
               aria-label="Toggle Mobile Menu"
             >
@@ -129,13 +129,13 @@ const Hero = () => {
           <p className="hero-split-paragraph text-small">
             We design exhibition stalls and immersive event experiences that bring brands to life and create meaningful connections.
           </p>
-          
-            <div className="hero-left-actions">
+
+          <div className="hero-left-actions">
             <a href="#projects" className="btn btn-gold-pill">
               Explore Projects ↗
             </a>
           </div>
-  
+
         </div>
       </div>
     </div>

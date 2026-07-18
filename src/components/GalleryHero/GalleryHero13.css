@@ -1,0 +1,148 @@
+/* ──────────────────────────────────────────
+   GalleryHero Option 13 — Draggable Canvas
+────────────────────────────────────────── */
+
+.gh13-section {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  background: #020202;
+  overflow: hidden; /* Hide overflow outside the viewport */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gh13-canvas {
+  position: absolute;
+  /* Make canvas massive so it can be dragged around */
+  width: 3000px;
+  height: 2500px;
+  cursor: grab;
+}
+
+/* A dot grid to emphasize the "canvas" feel that moves with the drag */
+.gh13-bg-grid {
+  position: absolute;
+  inset: -1000px; /* even bigger than canvas to prevent edges showing */
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.gh13-card {
+  position: absolute;
+  /* Center transform point for easier x/y positioning */
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gh13-card:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 0 2px rgba(234, 179, 8, 0.5);
+  z-index: 100;
+}
+
+.gh13-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none; /* Crucial so drag doesn't trigger native image drag */
+  filter: grayscale(40%) contrast(1.1);
+  transition: filter 0.3s ease;
+}
+
+.gh13-card:hover img {
+  filter: grayscale(0%) contrast(1.1);
+}
+
+.gh13-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+/* ── UI Overlay ── */
+.gh13-ui {
+  position: absolute;
+  top: 120px;
+  left: 60px;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.gh13-title {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px 0;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.gh13-gold {
+  color: #eab308;
+}
+
+.gh13-ui .italic {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.gh13-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.1em;
+  font-family: monospace;
+}
+
+.gh13-pill {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px 24px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  pointer-events: none;
+  z-index: 50;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.gh13-pill svg {
+  color: #eab308;
+}
+
+.gh13-fade-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, #000);
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gh13-ui {
+    top: 100px;
+    left: 20px;
+  }
+}

@@ -1,7 +1,8 @@
 /* Hero Section Stylesheet - High Fidelity Re-creation */
 
 :root {
-  --color-gold-brand: #eab308; /* Bright golden yellow from screenshot */
+  --color-gold-brand: #eab308;
+  /* Bright golden yellow from screenshot */
   --color-gold-hover: #ca8a04;
 }
 
@@ -31,7 +32,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.45; /* Dark overlay effect */
+  opacity: 0.45;
+  /* Dark overlay effect */
 }
 
 .video-overlay {
@@ -40,19 +42,15 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(0, 0, 0, 0.25) 0%,
-    rgba(0, 0, 0, 0.75) 80%,
-    #070708 100%
-  ),
-  linear-gradient(
-    to bottom,
-    rgba(7, 7, 8, 0.8) 0%,
-    rgba(7, 7, 8, 0.1) 25%,
-    rgba(7, 7, 8, 0.2) 75%,
-    #070708 100%
-  );
+  background: radial-gradient(circle at 50% 50%,
+      rgba(0, 0, 0, 0.25) 0%,
+      rgba(0, 0, 0, 0.75) 80%,
+      #070708 100%),
+    linear-gradient(to bottom,
+      rgba(7, 7, 8, 0.8) 0%,
+      rgba(7, 7, 8, 0.1) 25%,
+      rgba(7, 7, 8, 0.2) 75%,
+      #070708 100%);
   z-index: 2;
 }
 
@@ -441,6 +439,7 @@
   transform: translateY(30px);
   animation: heroEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
 }
+
 h1.hero-split-headline {
   font-size: 4.0rem;
   font-weight: 300;
@@ -450,6 +449,7 @@ h1.hero-split-headline {
   margin: 0;
   padding: 0;
 }
+
 .hero-left-actions {
   display: flex;
   gap: 1rem;

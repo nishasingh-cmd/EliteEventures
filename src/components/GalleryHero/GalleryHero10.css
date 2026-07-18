@@ -1,0 +1,162 @@
+/* ──────────────────────────────────────────
+   GalleryHero Option 10 — Simple & Subtle
+────────────────────────────────────────── */
+
+.gh10-section {
+  position: relative;
+  height: 85svh; /* Elegant, slightly less than full screen */
+  min-height: 600px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ── Background ── */
+.gh10-bg-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.gh10-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0;
+  /* Combining a slow fade in with an ultra-slow subtle zoom */
+  animation: gh10FadeInBg 2s ease-out forwards, gh10SubtleZoom 35s linear infinite alternate;
+}
+
+.gh10-overlay {
+  position: absolute;
+  inset: 0;
+  /* Elegant dark overlay that vignettes the edges to focus on text */
+  background: radial-gradient(circle at center, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.85) 100%),
+              linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, #000 95%);
+}
+
+/* ── Content ── */
+.gh10-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+  margin-top: 40px; /* Nav clearance */
+}
+
+.gh10-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: gh10FadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;
+}
+
+.gh10-title {
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0 0 1.5rem 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: gh10FadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s forwards;
+}
+
+.gh10-gold {
+  color: #eab308;
+}
+
+.gh10-content .italic {
+  font-style: italic;
+  font-weight: 800; /* slightly lighter weight for the italic contrast */
+}
+
+.gh10-subtitle {
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 500px;
+  line-height: 1.7;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: gh10FadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.7s forwards;
+}
+
+/* ── Scroll Indicator ── */
+.gh10-scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  animation: gh10FadeIn 1s ease 1.5s forwards;
+}
+
+.gh10-scroll-indicator span {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.gh10-mouse {
+  width: 22px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.gh10-wheel {
+  width: 4px;
+  height: 6px;
+  background: #eab308;
+  border-radius: 2px;
+  animation: gh10ScrollWheel 1.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite;
+}
+
+/* ── Keyframes ── */
+@keyframes gh10SubtleZoom {
+  0% { transform: scale(1.02); }
+  100% { transform: scale(1.12); }
+}
+
+@keyframes gh10FadeInBg {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes gh10FadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gh10FadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes gh10ScrollWheel {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(14px); opacity: 0; }
+}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 // Reuses the same navbar styles defined in Hero.css (already globally loaded via Hero)
 import '../Hero/Hero.css';
 
@@ -7,10 +7,12 @@ import '../Hero/Hero.css';
  * Shared Navbar — extracted from Hero so it can be used on
  * pages that don't render a full Hero section (e.g. GalleryPage).
  * Styling is identical to the Hero embedded navbar.
+ * Active tab is driven entirely by the current URL via useLocation.
  */
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     // Start as scrolled so the pill style appears immediately on gallery page
@@ -21,7 +23,16 @@ const Navbar = () => {
   }, []);
 
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
-  const closeMobileMenu  = () => setMobileMenuOpen(false);
+  const closeMobileMenu = () => setMobileMenuOpen(false);
+
+  // Returns 'nav-link active' when the given path matches the current URL,
+  // otherwise returns 'nav-link'. Hash-based routes (Services, Contact)
+  // are considered active when the pathname is '/'.
+  const navClass = (path) =>
+    location.pathname === path ? 'nav-link active' : 'nav-link';
+
+  const mobileClass = (path) =>
+    location.pathname === path ? 'mobile-link active' : 'mobile-link';
 
   return (
     <>
@@ -50,11 +61,11 @@ const Navbar = () => {
 
           {/* Desktop Navigation Links */}
           <nav className="desktop-nav">
-            <a href="/" className="nav-link">Home</a>
-            <Link to="/gallery" className="nav-link active">Gallery</Link>
-            <a href="/#services" className="nav-link">Services</a>
-            <Link to="/about" className="nav-link">About Us</Link>
-            <a href="/#contact" className="nav-link">Contact</a>
+            <NavLink to="/" end className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Home</NavLink>
+            <NavLink to="/gallery" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Gallery</NavLink>
+            <a href="/#services" className={navClass('/')}>Services</a>
+            <NavLink to="/about" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>About Us</NavLink>
+            <a href="/#contact" className={navClass('/')}>Contact</a>
           </nav>
 
           {/* Right Action Menu */}
@@ -87,11 +98,11 @@ const Navbar = () => {
       {/* Mobile Navigation Dropdown */}
       <div className={`mobile-nav-menu ${mobileMenuOpen ? 'open' : ''}`}>
         <nav className="mobile-nav-links">
-          <a href="/" className="mobile-link" onClick={closeMobileMenu}>Home</a>
-          <Link to="/gallery" className="mobile-link active" onClick={closeMobileMenu}>Gallery</Link>
-          <a href="/#services" className="mobile-link" onClick={closeMobileMenu}>Services</a>
-          <Link to="/about" className="mobile-link" onClick={closeMobileMenu}>About Us</Link>
-          <a href="/#contact" className="mobile-link" onClick={closeMobileMenu}>Contact</a>
+          <NavLink to="/" end className={({ isActive }) => isActive ? 'mobile-link active' : 'mobile-link'} onClick={closeMobileMenu}>Home</NavLink>
+          <NavLink to="/gallery" className={({ isActive }) => isActive ? 'mobile-link active' : 'mobile-link'} onClick={closeMobileMenu}>Gallery</NavLink>
+          <a href="/#services" className={mobileClass('/')} onClick={closeMobileMenu}>Services</a>
+          <NavLink to="/about" className={({ isActive }) => isActive ? 'mobile-link active' : 'mobile-link'} onClick={closeMobileMenu}>About Us</NavLink>
+          <a href="/#contact" className={mobileClass('/')} onClick={closeMobileMenu}>Contact</a>
           <a href="/#contact" className="btn btn-mobile-talk" onClick={closeMobileMenu}>
             Let's Talk ↗
           </a>

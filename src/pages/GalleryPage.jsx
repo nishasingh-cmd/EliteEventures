@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import Navbar from '../components/Navbar/Navbar'
+import GalleryHero from '../components/GalleryHero/GalleryHero13'
 import Gallery from '../components/Gallery/Gallery'
 import Footer from '../components/Footer/Footer'
 
@@ -12,6 +13,7 @@ export default function GalleryPage() {
   return (
     <>
       <Navbar />
+      <GalleryHero />
       <main id="gallery-page-main">
         <Gallery />
       </main>
