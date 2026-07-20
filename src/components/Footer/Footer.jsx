@@ -12,24 +12,7 @@ function Footer() {
 
           {/* Transparent brand logo */}
           <a href="#" className="footer-logo-brand-container">
-            <div className="footer-logo-main">
-              <span className="footer-logo-big-e">E</span>
-              <div className="footer-logo-rows">
-                <div className="footer-logo-row-top">LITE</div>
-                <div className="footer-logo-row-bottom">
-                  <svg className="footer-logo-v-arrow" viewBox="0 0 24 30" fill="none" stroke="#eab308" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M 2 6 L 10 24 L 20 6" />
-                    <path d="M 13 6 L 20 6 L 20 13" />
-                  </svg>
-                  ENTURE
-                </div>
-              </div>
-            </div>
-            <div className="footer-logo-divider" />
-            <div className="footer-logo-tagline">
-              <span className="f-tagline-left">Exhibition</span>
-              <span className="f-tagline-right">Events | Visual events | Activation | Mice</span>
-            </div>
+            <img src="/images/EliteEventureLogo2.png" alt="Elite Eventure Logo" className="footer-logo-image" style={{ height: '60px', width: 'auto' }} />
           </a>
 
           {/* Socials - Instagram & LinkedIn solid white circles */}

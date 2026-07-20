@@ -47,11 +47,10 @@ export default function AboutPage() {
       ════════════════════════════════════ */}
       <section className="about-hero">
         <img
-          src="/images/collage3.png"
+          src="/images/image.png"
           alt="Elite Eventure Exhibition"
           className="about-hero-img"
         />
-        <div className="about-hero-overlay" />
         <div className="about-hero-line" />
 
         <motion.div

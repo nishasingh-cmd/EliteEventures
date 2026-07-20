@@ -44,24 +44,7 @@ const Hero = () => {
       <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="navbar-container">
           <a href="#" className="logo-brand-container">
-            <div className="logo-main">
-              <span className="logo-big-e">E</span>
-              <div className="logo-rows">
-                <div className="logo-row-top">LITE</div>
-                <div className="logo-row-bottom">
-                  <svg className="logo-v-arrow" viewBox="0 0 24 30" fill="none" stroke="var(--color-gold-brand)" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M 2 6 L 10 24 L 20 6" />
-                    <path d="M 13 6 L 20 6 L 20 13" />
-                  </svg>
-                  ENTURE
-                </div>
-              </div>
-            </div>
-            <div className="logo-divider"></div>
-            <div className="logo-tagline">
-              <span className="tagline-left">Exhibition</span>
-              <span className="tagline-right">Events | Visual events | Activation | Mice</span>
-            </div>
+            <img src="/images/EliteEventureLogo2.png" alt="Elite Eventure Logo" className="logo-image" style={{ height: '40px', width: 'auto' }} />
           </a>
 
           {/* Desktop Navigation Links */}
