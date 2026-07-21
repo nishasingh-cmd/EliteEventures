@@ -114,7 +114,7 @@ const Hero = () => {
           </p>
 
           <div className="hero-left-actions">
-            <a href="#projects" className="btn btn-gold-pill">
+            <a href="gallery" className="btn btn-gold-pill">
               Explore Projects ↗
             </a>
           </div>

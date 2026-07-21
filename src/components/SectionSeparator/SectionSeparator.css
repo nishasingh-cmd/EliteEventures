@@ -3,7 +3,7 @@
 .section-separator-container {
   position: relative;
   width: 100%;
-  padding: 60px 0;
+  padding: 30px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,7 +64,7 @@
 
 @media (max-width: 768px) {
   .section-separator-container {
-    padding: 50px 0;
+    padding: 15px 0;
   }
   .separator-line-outer {
     width: 80%;
