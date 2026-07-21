@@ -95,11 +95,11 @@ function ProjectCard({ project, index }) {
   return (
     <motion.div
       className="project-card"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 40, scale: 0.94 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.6, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={{ y: -6, scale: 1.02 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 20, delay: index * 0.12 }}
+      whileHover={{ y: -8, scale: 1.03, boxShadow: '0 20px 40px rgba(234, 179, 8, 0.15)' }}
     >
       <div className="project-card-img-wrap">
         <img 

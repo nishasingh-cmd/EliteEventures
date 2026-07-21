@@ -135,9 +135,10 @@ function ContactSection() {
           <div className="contact-form-panel">
             <motion.div 
               className="contact-glass-card"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -40, scale: 0.95 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
               viewport={{ once: true }}
+              whileHover={{ boxShadow: '0 20px 50px rgba(234, 179, 8, 0.12)' }}
               transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
             >
               <form onSubmit={handleSubmit} noValidate>

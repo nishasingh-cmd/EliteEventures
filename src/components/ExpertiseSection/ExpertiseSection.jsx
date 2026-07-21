@@ -161,6 +161,7 @@ function ExpertiseSection() {
                 custom={index}
                 initial="hidden"
                 whileInView="visible"
+                whileHover={{ scale: 1.02, x: 8, transition: { type: 'spring', stiffness: 400, damping: 18 } }}
                 viewport={{ once: true, margin: '-40px' }}
                 variants={itemVariants}
               >

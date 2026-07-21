@@ -52,30 +52,27 @@ function AboutSection() {
 
           {/* 2x2 Grid of Stats Cards */}
           <div className="about-stats-grid">
-            <div className="about-stat-card">
-              <span className="stat-number">
-                <AnimatedCounter endValue={500} suffix="+" duration={2.2} delay={0} />
-              </span>
-              <span className="stat-label">Projects Delivered</span>
-            </div>
-            <div className="about-stat-card">
-              <span className="stat-number">
-                <AnimatedCounter endValue={120} suffix="+" duration={2.2} delay={0.15} />
-              </span>
-              <span className="stat-label">Global Brands</span>
-            </div>
-            <div className="about-stat-card">
-              <span className="stat-number">
-                <AnimatedCounter endValue={15} suffix="+" duration={2.2} delay={0.3} />
-              </span>
-              <span className="stat-label">Years of Craft</span>
-            </div>
-            <div className="about-stat-card">
-              <span className="stat-number">
-                <AnimatedCounter endValue={98} suffix="%" duration={2.2} delay={0.45} />
-              </span>
-              <span className="stat-label">Client Satisfaction</span>
-            </div>
+            {[
+              { value: 500, suffix: '+', label: 'Projects Delivered', delay: 0 },
+              { value: 120, suffix: '+', label: 'Global Brands', delay: 0.15 },
+              { value: 15, suffix: '+', label: 'Years of Craft', delay: 0.3 },
+              { value: 98, suffix: '%', label: 'Client Satisfaction', delay: 0.45 },
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                className="about-stat-card"
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05, y: -4, borderColor: 'rgba(234, 179, 8, 0.4)' }}
+                transition={{ type: 'spring', stiffness: 350, damping: 20, delay: stat.delay }}
+              >
+                <span className="stat-number">
+                  <AnimatedCounter endValue={stat.value} suffix={stat.suffix} duration={2.2} delay={stat.delay} />
+                </span>
+                <span className="stat-label">{stat.label}</span>
+              </motion.div>
+            ))}
           </div>
 
         </div>
@@ -83,20 +80,41 @@ function AboutSection() {
         {/* Right Column: Layered Overlapping Collage */}
         <div className="about-right-col">
           <div className="about-collage">
-            {/* Image 1: Top Left (Car launch) */}
-            <div className="collage-img-wrapper img-pos-1">
+            {/* Image 1: Top Left */}
+            <motion.div
+              className="collage-img-wrapper img-pos-1"
+              initial={{ opacity: 0, scale: 0.85, rotate: -4 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.06, rotate: -2, zIndex: 10 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 18, delay: 0.2 }}
+            >
               <img src="/images/collage1.png" alt="Automotive Event Launch" className="collage-img" loading="lazy" />
-            </div>
+            </motion.div>
 
-            {/* Image 2: Top Right (Immersive pavilion) */}
-            <div className="collage-img-wrapper img-pos-2">
+            {/* Image 2: Top Right */}
+            <motion.div
+              className="collage-img-wrapper img-pos-2"
+              initial={{ opacity: 0, scale: 0.85, rotate: 4 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.06, rotate: 2, zIndex: 10 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 18, delay: 0.35 }}
+            >
               <img src="/images/collage2.png" alt="Interactive Experience Zone" className="collage-img" loading="lazy" />
-            </div>
+            </motion.div>
 
-            {/* Image 3: Bottom Center (Exhibition stall) */}
-            <div className="collage-img-wrapper img-pos-3">
+            {/* Image 3: Bottom Center */}
+            <motion.div
+              className="collage-img-wrapper img-pos-3"
+              initial={{ opacity: 0, y: 40, scale: 0.85 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.06, y: -5, zIndex: 10 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 18, delay: 0.5 }}
+            >
               <img src="/images/collage3.png" alt="High-End Exhibition Stall Showcase" className="collage-img" loading="lazy" />
-            </div>
+            </motion.div>
           </div>
         </div>
       </motion.div>

@@ -86,10 +86,12 @@ export default function GoogleReviews() {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
             {googleReviews.map((r, i) => (
-              <div 
+              <motion.div 
                 className="sp-review-card" 
                 key={i} 
                 style={{ flex: `0 0 calc((100% - ${(itemsPerView - 1) * 20}px) / ${itemsPerView})` }}
+                whileHover={{ scale: 1.03, y: -4, borderColor: 'rgba(234, 179, 8, 0.4)', boxShadow: '0 12px 30px rgba(234, 179, 8, 0.12)' }}
+                transition={{ type: 'spring', stiffness: 350, damping: 20 }}
               >
                 <div className="sp-review-top">
                   <div className="sp-review-author-wrap">
@@ -113,7 +115,7 @@ export default function GoogleReviews() {
                   {r.text}
                   {r.text.length >= 80 && <span className="sp-read-more">Read more</span>}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
         </div>
