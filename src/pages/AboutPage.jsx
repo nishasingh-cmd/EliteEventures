@@ -3,27 +3,35 @@ import { motion, useInView, animate, useScroll, useTransform } from 'framer-moti
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Footer/Footer'
-import AboutStorySection from '../components/AboutStorySection/AboutStorySection'
+import Marquee from '../components/Marquee/Marquee'
+import WhyChooseSection from '../components/WhyChooseSection/WhyChooseSection'
+import GoogleReviews from '../components/GoogleReviews/GoogleReviews'
+import BrandsSection from '../components/BrandsSection/BrandsSection'
+import FAQ from '../components/FAQ/FAQ'
 import './AboutPage.css'
 
-/* ── Scroll-to-top on mount ─────────────────────────────── */
+/* ── Count-up number ─────────────────────────────────────── */
+function CountUp({ to, suffix = '' }) {
+  const ref = useRef(null)
+  const inViewRef = useRef(null)
+  const isInView = useInView(inViewRef, { once: true, margin: '-80px' })
 
-/* ── Feature row ─────────────────────────────────────────── */
-function FeatureRow({ icon, title, desc, delay }) {
+  useEffect(() => {
+    if (!isInView) return
+    const controls = animate(0, to, {
+      duration: 2,
+      ease: 'easeOut',
+      onUpdate(value) {
+        if (ref.current) ref.current.textContent = Math.round(value) + suffix
+      },
+    })
+    return () => controls.stop()
+  }, [isInView, to, suffix])
+
   return (
-    <motion.div
-      className="ap-feature-row"
-      initial={{ opacity: 0, x: 28 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
-    >
-      <div className="ap-feat-icon">{icon}</div>
-      <div className="ap-feat-body">
-        <span className="ap-feat-title">{title}</span>
-        <span className="ap-feat-desc">{desc}</span>
-      </div>
-    </motion.div>
+    <span ref={inViewRef} style={{ position: 'relative' }}>
+      <span ref={ref}>0{suffix}</span>
+    </span>
   )
 }
 
@@ -47,7 +55,7 @@ export default function AboutPage() {
       ════════════════════════════════════ */}
       <section className="about-hero">
         <img
-          src="/images/image.png"
+          src="/images/about-hero-bg.png"
           alt="Elite Eventure Exhibition"
           className="about-hero-img"
         />
@@ -71,155 +79,136 @@ export default function AboutPage() {
       </section>
 
       {/* ════════════════════════════════════
-          STORY / JOURNEY SECTION
+          NEW LAYOUT STRUCTURE
       ════════════════════════════════════ */}
-      <AboutStorySection />
+      <section className="ap-new-layout-section" ref={mainRef} style={{ padding: '100px 5%', background: '#070707', display: 'flex', flexDirection: 'column', gap: '80px', alignItems: 'center' }}>
 
-      {/* ════════════════════════════════════
-          MAIN ABOUT — two-column
-      ════════════════════════════════════ */}
-      <section className="about-main-section" ref={mainRef}>
-        <div className="ap-separator" />
-        {/* Ambient blobs */}
-        <div className="ap-blob" style={{ width: 560, height: 560, top: '-10%', left: '-8%', background: 'radial-gradient(circle, rgba(244,194,13,0.06) 0%, transparent 70%)' }} />
-        <div className="ap-blob" style={{ width: 400, height: 400, bottom: '0', right: '5%', background: 'radial-gradient(circle, rgba(100,80,220,0.04) 0%, transparent 70%)' }} />
+        {/* TOP ROW: Quote & About Us Card */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', width: '100%', maxWidth: '1200px' }}>
 
-        <div className="about-main-grid">
-
-          {/* ── Left: Collage ── */}
+          {/* Left Column: Quote and Image */}
           <motion.div
-            className="about-collage-col"
-            style={{ y: parallaxY }}
-            initial={{ opacity: 0, x: -45 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
+            style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}
           >
-            <div className="about-collage-canvas">
-
-              <motion.div
-                className="ac-card ac-card--portrait"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <img src="/images/collage1.png" alt="Corporate Event" loading="lazy" />
-              </motion.div>
-
-              <motion.div
-                className="ac-card ac-card--landscape"
-                initial={{ opacity: 0, scale: 0.88 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.75, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <img src="/images/stall3.png" alt="Exhibition Stall" loading="lazy" />
-              </motion.div>
-
-              <motion.div
-                className="ac-card ac-card--small"
-                initial={{ opacity: 0, y: 35 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.46, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <img src="/images/g4.png" alt="Brand Activation" loading="lazy" />
-              </motion.div>
-
-              {/* Floating glass badge */}
-              <div className="ac-badge">
-                <span className="ac-badge-icon">🏆</span>
-                <div>
-                  <span className="ac-badge-num">500+</span>
-                  <span className="ac-badge-lbl">Successful Projects</span>
-                </div>
-              </div>
-
+            <div>
+              <span style={{ fontSize: '4rem', color: 'rgba(255,255,255,0.2)', lineHeight: 1, fontFamily: 'serif' }}>“</span>
+              <p style={{ fontSize: '1.4rem', fontWeight: 300, color: '#fff', lineHeight: 1.6, marginTop: '-1rem' }}>
+                We are architects of extraordinary experiences, transforming concepts into immersive realities that leave lasting impressions.
+              </p>
+            </div>
+            <div style={{ width: '100%', height: '220px', borderRadius: '24px', overflow: 'hidden', background: '#222' }}>
+              <img src="/images/stall2.png" alt="Architecture" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </motion.div>
 
-          {/* ── Right: Content ── */}
+          {/* Right Column: About Us Yellow Card */}
           <motion.div
-            className="about-content-col"
-            initial={{ opacity: 0, x: 45 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.95, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}
+            style={{ background: 'var(--color-gold-brand)', border: '1px solid var(--color-gold-brand)', borderRadius: '24px', padding: '3.5rem', display: 'flex', flexDirection: 'column', gap: '1.5rem', position: 'relative' }}
           >
-            <span className="ap-section-badge-text">✦ THE ELITE STANDARD ✦</span>
+            <div style={{ position: 'absolute', top: '2rem', right: '2rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#000' }}>
+              <span style={{ fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.05em' }}>ABOUT US</span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+            </div>
 
-            <h2 className="ap-heading">
-              Crafting Premium<br />
-              <span className="ap-heading-gold">Exhibition Experiences</span>
-            </h2>
-
-            <p className="ap-para">
-              Elite Eventure specializes in creating premium exhibition stalls, immersive
-              brand activations, corporate events, MICE experiences, and product launches
-              that elevate brands and leave lasting impressions. From concept and design to
-              flawless execution, we transform ideas into exceptional experiences that
-              connect businesses with their audiences.
+            <p style={{ fontSize: '0.95rem', color: 'rgba(0,0,0,0.85)', fontWeight: 500, lineHeight: 1.7, marginTop: '2rem' }}>
+              Elite Eventure was founded with a singular vision: to redefine excellence in event management and exhibition solutions. What began as a passion for creating memorable experiences has evolved into a premier event production house serving the world's leading brands.
             </p>
-
-            <div className="ap-features">
-              <FeatureRow
-                icon="✦"
-                title="Exhibition Excellence"
-                desc="Custom-built exhibition stalls designed to maximize brand visibility and visitor engagement."
-                delay={0.18}
-              />
-              <FeatureRow
-                icon="✦"
-                title="Brand Activations"
-                desc="Interactive experiences that strengthen customer connections and create memorable brand moments."
-                delay={0.30}
-              />
-              <FeatureRow
-                icon="✦"
-                title="End-to-End Execution"
-                desc="Complete planning, production, logistics, installation, and on-site management under one expert team."
-                delay={0.42}
-              />
-            </div>
-
+            <p style={{ fontSize: '0.95rem', color: 'rgba(0,0,0,0.85)', fontWeight: 500, lineHeight: 1.7 }}>
+              Over the years, we've built a reputation for delivering flawless execution combined with creative brilliance. From intimate corporate gatherings to large-scale international exhibitions, we approach every project with the same commitment to perfection.
+            </p>
+            <p style={{ fontSize: '0.95rem', color: 'rgba(0,0,0,0.85)', fontWeight: 500, lineHeight: 1.7 }}>
+              Our philosophy is simple yet profound — every event is an opportunity to create something extraordinary. We don't just manage events; we craft experiences that resonate, inspire, and endure.
+            </p>
           </motion.div>
+        </div>
+
+        {/* MIDDLE ROW: Stats Pill */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
+          style={{ width: '100%', maxWidth: '1200px', padding: '2rem', border: '2px solid rgba(244,194,13,0.45)', borderRadius: '100px', display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', background: 'rgba(244,194,13,0.03)' }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <span style={{ fontSize: '2.5rem', fontWeight: 500, color: 'var(--color-gold-brand)' }}>
+              <CountUp to={200} suffix="+" />
+            </span>
+            <span style={{ fontSize: '0.85rem', color: '#fff', lineHeight: 1.2, opacity: 0.7 }}>Projects<br />Completed</span>
+          </div>
+          <div style={{ width: '1px', height: '40px', background: 'rgba(255,255,255,0.15)' }}></div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <span style={{ fontSize: '2.5rem', fontWeight: 500, color: 'var(--color-gold-brand)' }}>
+              <CountUp to={150} suffix="+" />
+            </span>
+            <span style={{ fontSize: '0.85rem', color: '#fff', lineHeight: 1.2, opacity: 0.7 }}>Satisfied<br />Clients</span>
+          </div>
+          <div style={{ width: '1px', height: '40px', background: 'rgba(255,255,255,0.15)' }}></div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <span style={{ fontSize: '2.5rem', fontWeight: 500, color: 'var(--color-gold-brand)' }}>
+              <CountUp to={50} suffix="+" />
+            </span>
+            <span style={{ fontSize: '0.85rem', color: '#fff', lineHeight: 1.2, opacity: 0.7 }}>Industry<br />Awards</span>
+          </div>
+        </motion.div>
+
+        {/* BOTTOM ROW: Vision, Mission, Image Cards */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem', width: '100%', maxWidth: '1200px' }}>
+
+          {/* Vision Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
+            style={{ border: '1px solid rgba(244,194,13,0.2)', borderRadius: '24px', padding: '2.5rem', position: 'relative', background: 'rgba(255,255,255,0.02)' }}
+          >
+            <div style={{ position: 'absolute', top: '-12px', right: '-12px', background: '#070707', borderRadius: '50%', padding: '4px' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-gold-brand)" stroke="none">
+                <path d="M12 2l2.4 7.6H22l-6 4.8 2.4 7.6-6-4.8-6 4.8 2.4-7.6-6-4.8h7.6z" />
+              </svg>
+            </div>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: 400, color: '#fff', marginBottom: '1.5rem', letterSpacing: '0.05em' }}>VISION</h3>
+            <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7 }}>
+              To be the global benchmark for premium event management and exhibition solutions, recognized for our unwavering commitment to excellence, innovation, and the art of creating truly extraordinary experiences.
+            </p>
+          </motion.div>
+
+          {/* Image Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.15 }}
+            style={{ borderRadius: '24px', overflow: 'hidden', height: '100%', minHeight: '200px' }}
+          >
+            <img src="/images/stall3.png" alt="Office" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          </motion.div>
+
+          {/* Mission Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.3 }}
+            style={{ border: '1px solid rgba(244,194,13,0.2)', borderRadius: '24px', padding: '2.5rem', position: 'relative', background: 'rgba(255,255,255,0.02)' }}
+          >
+            <div style={{ position: 'absolute', top: '-12px', right: '-12px', background: '#070707', borderRadius: '50%', padding: '4px' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-gold-brand)" stroke="none">
+                <path d="M12 2l2.4 7.6H22l-6 4.8 2.4 7.6-6-4.8-6 4.8 2.4-7.6-6-4.8h7.6z" />
+              </svg>
+            </div>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: 400, color: '#fff', marginBottom: '1.5rem', letterSpacing: '0.05em' }}>MISSION</h3>
+            <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7 }}>
+              To transform visions into unforgettable experiences through innovative design, meticulous planning, and flawless execution — creating moments that inspire, engage, and leave a lasting impact.
+            </p>
+          </motion.div>
+
         </div>
       </section>
 
+      {/* Brands We Have Worked With */}
+      <BrandsSection />
 
 
-      {/* ════════════════════════════════════
-          CTA
-      ════════════════════════════════════ */}
-      <section className="ap-cta-section" id="ap-cta">
-        <div className="ap-separator" />
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <span className="ap-cta-label">Ready to Begin?</span>
-          <h2 className="ap-cta-heading">
-            Let's Build Your Next<br />
-            <span>Extraordinary Experience</span>
-          </h2>
-          <p className="ap-cta-sub">
-            Whether it's an exhibition stall, product launch, corporate event, or
-            immersive brand activation, our team is ready to bring your vision to life.
-          </p>
-          <div className="ap-cta-btns">
-            <Link to="/contact" className="btn-ap-primary">
-              Let's Talk <span className="btn-ap-arrow">→</span>
-            </Link>
-            <a href="/gallery" className="btn-ap-secondary">
-              Explore Our Portfolio
-            </a>
-          </div>
-        </motion.div>
-      </section>
 
+
+      <WhyChooseSection hideReviews={true} />
+      <GoogleReviews />
+      <FAQ />
       <Footer />
     </div>
   )

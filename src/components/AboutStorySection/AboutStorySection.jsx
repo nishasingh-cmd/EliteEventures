@@ -65,17 +65,17 @@ export default function AboutStorySection() {
               </div>
 
               <h3 className="aso-card-heading">
-                Creating Experiences That<br />Connect Brands &amp; People
+                Premier Destination For<br />Innovative Solutions
               </h3>
 
               <p className="aso-card-para">
-                From concept development and creative design to fabrication, logistics,
-                and flawless execution, Elite Eventure delivers end-to-end exhibition and
-                event solutions that combine innovation, precision, and craftsmanship.
+                Welcome to Elite Eventure, your premier destination for innovative exhibition stall design solutions. With decades of expertise in event management and exhibition stand design, we bring your brand vision to life with exceptional creativity and craftsmanship.
+              </p>
+              <p className="aso-card-para">
+                Our team of seasoned professionals at Elite Eventure combines artistic flair with strategic insight to deliver exhibition stall designs that exceed expectations.
               </p>
               <p className="aso-card-para" style={{ marginBottom: 0 }}>
-                By staying ahead of industry trends and embracing bold creative thinking,
-                we ensure our clients' brands make a lasting impact—every single time.
+                Whether you're aiming to make a bold statement at your next event or create a captivating experience for your audience, we customize our solutions to align with your unique brand identity and event objectives.
               </p>
 
               <div className="aso-card-divider" />
