@@ -196,7 +196,7 @@ a.contact-detail-row:hover .contact-detail-icon {
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.45);
+  color: #ffffff;
   font-weight: 600;
   transition: color 0.3s ease;
 }
@@ -208,7 +208,7 @@ a.contact-detail-row:hover .contact-detail-icon {
 .form-input-text,
 .form-textarea {
   background: rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-input);
   padding: 0.65rem 0.95rem;
   font-family: var(--font-sans);
@@ -227,7 +227,7 @@ a.contact-detail-row:hover .contact-detail-icon {
 
 .form-input-text::placeholder,
 .form-textarea::placeholder {
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.45);
 }
 
 /* Focus outline border gold highlight */
