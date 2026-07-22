@@ -55,10 +55,11 @@ export default function AboutPage() {
       ════════════════════════════════════ */}
       <section className="about-hero">
         <img
-          src="/images/about-hero-bg.png"
+          src="/images/g7.png"
           alt="Elite Eventure Exhibition"
           className="about-hero-img"
         />
+        <div className="about-hero-overlay" />
         <div className="about-hero-line" />
 
         <motion.div
@@ -68,8 +69,7 @@ export default function AboutPage() {
           transition={{ duration: 1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
         >
           <h1 className="about-hero-heading">
-            About{' '}
-            <span className="about-hero-gold">Elite Eventure</span>
+            About <span className="about-hero-gold">Elite Eventure</span>
           </h1>
           <p className="about-hero-sub">
             Designing extraordinary exhibitions, immersive brand activations,
