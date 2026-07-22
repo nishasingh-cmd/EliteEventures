@@ -51,13 +51,9 @@ const duplicatedBrands = [...brands, ...brands]
 
 function BrandCard({ brand }) {
   return (
-    <motion.div
-      className="brand-card"
-      whileHover={{ scale: 1.08, y: -4, borderColor: 'rgba(234, 179, 8, 0.8)', boxShadow: '0 12px 30px rgba(234, 179, 8, 0.2)' }}
-      transition={{ type: 'spring', stiffness: 400, damping: 15 }}
-    >
+    <div className="brand-card">
       <div className="brand-logo">{brand.logo}</div>
-    </motion.div>
+    </div>
   )
 }
 

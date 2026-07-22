@@ -74,21 +74,21 @@ function ExpertiseSection() {
     <section className="expertise-section" id="services">
       {/* Subtle top divider line */}
       <div className="expertise-top-divider" />
-      
+
       {/* Background spotlights & radial glow */}
       <div className="expertise-bg-glow" />
       <div className="expertise-title-spotlight" />
 
       <div className="expertise-container">
         {/* ── LEFT SIDE — Layered Image Collage with Slide & Parallax ── */}
-        <motion.div 
+        <motion.div
           className="expertise-left"
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <motion.div 
+          <motion.div
             className="collage-container"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
@@ -140,7 +140,7 @@ function ExpertiseSection() {
         </motion.div>
 
         {/* ── RIGHT SIDE — Vertically Centered List with Slide Entrance ── */}
-        <motion.div 
+        <motion.div
           className="expertise-right"
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -161,7 +161,6 @@ function ExpertiseSection() {
                 custom={index}
                 initial="hidden"
                 whileInView="visible"
-                whileHover={{ scale: 1.02, x: 8, transition: { type: 'spring', stiffness: 400, damping: 18 } }}
                 viewport={{ once: true, margin: '-40px' }}
                 variants={itemVariants}
               >

@@ -48,10 +48,10 @@ function ServiceGallery({ images }) {
     <div className="sp-service-gallery">
       <div className="sp-sg-main">
         <AnimatePresence mode="wait">
-          <motion.img 
+          <motion.img
             key={active}
-            src={images[active]} 
-            alt="Main display" 
+            src={images[active]}
+            alt="Main display"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -61,8 +61,8 @@ function ServiceGallery({ images }) {
       </div>
       <div className="sp-sg-thumbs">
         {images.map((img, i) => (
-          <div 
-            key={i} 
+          <div
+            key={i}
             className={`sp-sg-thumb ${i === active ? 'active' : ''}`}
             onClick={() => setActive(i)}
           >
@@ -98,7 +98,7 @@ export default function ServicesPage() {
     target: introRef,
     offset: ["start end", "end start"]
   })
-  
+
   // Smooth the scroll to prevent jitter/lag
   const smoothScroll = useSpring(scrollYProgress, { damping: 20, stiffness: 100, mass: 0.2 })
 
@@ -165,7 +165,7 @@ export default function ServicesPage() {
           return (
             <div className="sp-service-block" key={idx}>
               <div className={`sp-service-inner ${isReverse ? 'reverse' : ''}`}>
-                <motion.div 
+                <motion.div
                   className="sp-service-image-col"
                   initial={{ opacity: 0, x: isReverse ? 40 : -40 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -174,8 +174,8 @@ export default function ServicesPage() {
                 >
                   <ServiceGallery images={srv.images} />
                 </motion.div>
-                
-                <motion.div 
+
+                <motion.div
                   className="sp-service-text-col"
                   initial={{ opacity: 0, x: isReverse ? -40 : 40 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -190,7 +190,7 @@ export default function ServicesPage() {
                         <span className="bullet-icon-wrapper">
                           <svg viewBox="0 0 24 24" fill="var(--color-gold-brand)" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="10" />
-                            <path d="M10 8L15 12L10 16" stroke="#000" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M10 8L15 12L10 16" stroke="#000" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </span>
                         {b}
@@ -198,7 +198,7 @@ export default function ServicesPage() {
                     ))}
                   </ul>
                   <Link to="/contact" className="sp-service-btn">
-                    Get Started 
+                    Get Started
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                   </Link>
                 </motion.div>

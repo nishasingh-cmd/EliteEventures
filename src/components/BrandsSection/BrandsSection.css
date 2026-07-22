@@ -18,14 +18,12 @@
   left: 10%;
   width: 80%;
   height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(234, 179, 8, 0.2) 30%,
-    rgba(234, 179, 8, 0.45) 50%,
-    rgba(234, 179, 8, 0.2) 70%,
-    transparent 100%
-  );
+  background: linear-gradient(to right,
+      transparent 0%,
+      rgba(234, 179, 8, 0.2) 30%,
+      rgba(234, 179, 8, 0.45) 50%,
+      rgba(234, 179, 8, 0.2) 70%,
+      transparent 100%);
   box-shadow: 0 0 10px 2px rgba(234, 179, 8, 0.1);
 }
 
@@ -37,11 +35,9 @@
   transform: translate(-50%, -50%);
   width: 800px;
   height: 400px;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(234, 179, 8, 0.05) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(ellipse at center,
+      rgba(234, 179, 8, 0.05) 0%,
+      transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -148,8 +144,8 @@
   width: 200px;
   height: 96px;
   background: rgba(234, 179, 8, 0.08);
-/*   backdrop-filter: blur(10px); */
-/*   -webkit-backdrop-filter: blur(10px); */
+  /*   backdrop-filter: blur(10px); */
+  /*   -webkit-backdrop-filter: blur(10px); */
   border-radius: var(--radius-card);
   border: 1.5px solid var(--color-gold-brand);
   display: flex;
@@ -158,7 +154,8 @@
   padding: 1rem 1.4rem;
   box-sizing: border-box;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  opacity: 1; /* Fully visible by default */
+  opacity: 1;
+  /* Fully visible by default */
 }
 
 .brand-logo {

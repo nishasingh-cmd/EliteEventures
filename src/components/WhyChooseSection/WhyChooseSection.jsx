@@ -82,10 +82,10 @@ function StarRating({ count = 5 }) {
 function GoogleIcon() {
   return (
     <svg className="google-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 7.9 2.9l5.7-5.7C34.1 6.7 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.6-.4-3.9z"/>
-      <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.1 7.9 2.9l5.7-5.7C34.1 6.7 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/>
-      <path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.4 26.7 36 24 36c-5.3 0-9.7-3.3-11.3-8H6.3C9.7 35.6 16.3 44 24 44z"/>
-      <path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.3 4.1-4.2 5.5l6.2 5.2C41.1 35.3 44 30 44 24c0-1.3-.1-2.6-.4-3.9z"/>
+      <path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 7.9 2.9l5.7-5.7C34.1 6.7 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.6-.4-3.9z" />
+      <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.1 7.9 2.9l5.7-5.7C34.1 6.7 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z" />
+      <path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.4 26.7 36 24 36c-5.3 0-9.7-3.3-11.3-8H6.3C9.7 35.6 16.3 44 24 44z" />
+      <path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.3 4.1-4.2 5.5l6.2 5.2C41.1 35.3 44 30 44 24c0-1.3-.1-2.6-.4-3.9z" />
     </svg>
   )
 }
@@ -95,19 +95,19 @@ function ProjectCard({ project, index }) {
   return (
     <motion.div
       className="project-card"
-      initial={{ opacity: 0, y: 40, scale: 0.94 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
-      transition={{ type: 'spring', stiffness: 300, damping: 20, delay: index * 0.12 }}
-      whileHover={{ y: -8, scale: 1.03, boxShadow: '0 20px 40px rgba(234, 179, 8, 0.15)' }}
+      transition={{ duration: 0.6, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={{ y: -6, scale: 1.02 }}
     >
       <div className="project-card-img-wrap">
-        <img 
-          src={project.img} 
-          alt={project.brand} 
-          className={`project-card-img ${loaded ? 'loaded' : 'loading'}`} 
+        <img
+          src={project.img}
+          alt={project.brand}
+          className={`project-card-img ${loaded ? 'loaded' : 'loading'}`}
           onLoad={() => setLoaded(true)}
-          loading="lazy" 
+          loading="lazy"
         />
         <div className="project-card-img-overlay" />
         <span className="project-tag">{project.tag}</span>
@@ -181,85 +181,85 @@ function WhyChooseSection({ hideReviews = false }) {
 
       {/* ── REVIEWS WITH FADE ── */}
       {!hideReviews && (
-        <motion.div 
+        <motion.div
           className="reviews-block"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-      >
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+        >
 
-        {/* Review carousel */}
-        <div className="reviews-carousel">
-          <button className="carousel-btn carousel-btn--prev" onClick={prevReview} aria-label="Previous review">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-          </button>
+          {/* Review carousel */}
+          <div className="reviews-carousel">
+            <button className="carousel-btn carousel-btn--prev" onClick={prevReview} aria-label="Previous review">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
 
-          <div className="reviews-track">
-            <motion.div
-              className="reviews-slider"
-              animate={{
-                x: `calc(-${activeReview * (100 / itemsPerView)}% - ${activeReview * (24 / itemsPerView)}px)`,
-              }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              style={{
-                display: 'flex',
-                gap: '24px',
-                width: '100%',
-              }}
-            >
-              {reviews.map((r) => (
-                <div
-                  key={r.id}
-                  className="review-card"
-                  style={{
-                    flex: `0 0 calc((100% - ${(itemsPerView - 1) * 24}px) / ${itemsPerView})`,
-                    position: 'relative',
-                    overflow: 'hidden'
-                  }}
-                >
-                  <span className="review-quote-bg">"</span>
-                  <div className="review-card-top" style={{ position: 'relative', zIndex: 1 }}>
-                    <GoogleIcon />
-                    <StarRating count={r.rating} />
-                  </div>
-                  <p className="review-text" style={{ position: 'relative', zIndex: 1 }}>"{r.text}"</p>
-                  <div className="review-author" style={{ position: 'relative', zIndex: 1 }}>
-                    <div className="review-avatar">{r.name[0]}</div>
-                    <div>
-                      <p className="review-name">{r.name}</p>
-                      <p className="review-role">{r.role}</p>
+            <div className="reviews-track">
+              <motion.div
+                className="reviews-slider"
+                animate={{
+                  x: `calc(-${activeReview * (100 / itemsPerView)}% - ${activeReview * (24 / itemsPerView)}px)`,
+                }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                style={{
+                  display: 'flex',
+                  gap: '24px',
+                  width: '100%',
+                }}
+              >
+                {reviews.map((r) => (
+                  <div
+                    key={r.id}
+                    className="review-card"
+                    style={{
+                      flex: `0 0 calc((100% - ${(itemsPerView - 1) * 24}px) / ${itemsPerView})`,
+                      position: 'relative',
+                      overflow: 'hidden'
+                    }}
+                  >
+                    <span className="review-quote-bg">"</span>
+                    <div className="review-card-top" style={{ position: 'relative', zIndex: 1 }}>
+                      <GoogleIcon />
+                      <StarRating count={r.rating} />
+                    </div>
+                    <p className="review-text" style={{ position: 'relative', zIndex: 1 }}>"{r.text}"</p>
+                    <div className="review-author" style={{ position: 'relative', zIndex: 1 }}>
+                      <div className="review-avatar">{r.name[0]}</div>
+                      <div>
+                        <p className="review-name">{r.name}</p>
+                        <p className="review-role">{r.role}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </motion.div>
+                ))}
+              </motion.div>
+            </div>
+
+            <button className="carousel-btn carousel-btn--next" onClick={nextReview} aria-label="Next review">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
           </div>
 
-          <button className="carousel-btn carousel-btn--next" onClick={nextReview} aria-label="Next review">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="9 18 15 12 9 6" />
+          {/* View More Reviews */}
+          <motion.a
+            href="https://www.google.com/maps/search/Elite+Eventure"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="reviews-cta"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+          >
+            View More Reviews
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="cta-arrow">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
             </svg>
-          </button>
-        </div>
-
-        {/* View More Reviews */}
-        <motion.a
-          href="https://www.google.com/maps/search/Elite+Eventure"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="reviews-cta"
-          whileHover={{ scale: 1.04 }}
-          whileTap={{ scale: 0.97 }}
-        >
-          View More Reviews
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="cta-arrow">
-            <line x1="5" y1="12" x2="19" y2="12" />
-            <polyline points="12 5 19 12 12 19" />
-          </svg>
-        </motion.a>
+          </motion.a>
         </motion.div>
       )}
     </section>

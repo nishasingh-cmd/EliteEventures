@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { motion, useInView, animate } from 'framer-motion'
+import { NavLink } from 'react-router-dom'
 import './AboutSection.css'
 
 // Reusable AnimatedCounter component
@@ -33,90 +34,103 @@ function AboutSection() {
     <section className="about-section" id="about">
       <motion.div
         className="about-container"
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 35 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-80px' }}
+        viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       >
-        {/* Left Column: Copy, Grid & Button */}
-        <div className="about-left-col">
+        {/* Left Side: Large Rounded Exhibition Showcase Image */}
+        <motion.div 
+          className="about-img-frame-col"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <div className="about-single-card">
+            <img 
+              src="/images/stall1.png" 
+              alt="Elite Eventure 3D Exhibition Stand Showcase" 
+              className="about-card-img" 
+              loading="lazy" 
+            />
+            {/* Subtle luxury glass accent badge on image */}
+            <div className="about-card-badge">
+              <span className="badge-pulse-dot" />
+              <span>3D Spatial Design</span>
+            </div>
+          </div>
+        </motion.div>
 
-          <h2 className="about-headline">
-            About <br />
-            <span className="gold-italic">Elite Eventure</span>
+        {/* Right Side: Copy, Geometric Accent & Action Buttons */}
+        <motion.div 
+          className="about-content-col"
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {/* Top Geometric Logo Accent (Matching Reference) */}
+          <div className="about-geo-accent">
+            <svg width="50" height="50" viewBox="0 0 60 60" fill="none">
+              <polygon points="30,5 55,20 55,50 30,35" fill="url(#goldGrad1)" opacity="0.85" />
+              <polygon points="5,20 30,5 30,35 5,50" fill="url(#redGrad1)" opacity="0.9" />
+              <defs>
+                <linearGradient id="goldGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#f59e0b" />
+                  <stop offset="100%" stopColor="#eab308" />
+                </linearGradient>
+                <linearGradient id="redGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#ef4444" />
+                  <stop offset="100%" stopColor="#dc2626" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          {/* Main Headline */}
+          <h2 className="about-ref-headline">
+            India's Most Trusted <br />
+            <span className="gold-text">Exhibition Stand Design</span> Company
           </h2>
 
-          <p className="about-paragraph">
-            Welcome to Elite Eventure, your trusted partner for innovative exhibition stall designs and event solutions. With years of expertise, we transform brand visions into engaging experiences through creative design, strategic planning, and flawless execution. Every stall is thoughtfully crafted to reflect your brand identity and leave a lasting impression.
+          {/* Body Paragraph */}
+          <p className="about-ref-paragraph">
+            Elite Eventure is a top-notch exhibition stand design company in India. Over the last 15+ years, as industry experts, we have created and built massive exhibit spaces as per the brands' needs and companies' preferences. We oversee concept development, 3D design, construction, installation, and dismantling, and work on projects in major exhibition venues across the country, Europe, the USA, and the Middle East.
           </p>
 
-          {/* 2x2 Grid of Stats Cards */}
-          <div className="about-stats-grid">
-            {[
-              { value: 500, suffix: '+', label: 'Projects Delivered', delay: 0 },
-              { value: 120, suffix: '+', label: 'Global Brands', delay: 0.15 },
-              { value: 15, suffix: '+', label: 'Years of Craft', delay: 0.3 },
-              { value: 98, suffix: '%', label: 'Client Satisfaction', delay: 0.45 },
-            ].map((stat, i) => (
-              <motion.div
-                key={i}
-                className="about-stat-card"
-                initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05, y: -4, borderColor: 'rgba(234, 179, 8, 0.4)' }}
-                transition={{ type: 'spring', stiffness: 350, damping: 20, delay: stat.delay }}
-              >
-                <span className="stat-number">
-                  <AnimatedCounter endValue={stat.value} suffix={stat.suffix} duration={2.2} delay={stat.delay} />
-                </span>
-                <span className="stat-label">{stat.label}</span>
-              </motion.div>
-            ))}
+          {/* Quick Counter Pills */}
+          <div className="about-stats-row">
+            <div className="stat-pill">
+              <span className="stat-pill-num">
+                <AnimatedCounter endValue={500} suffix="+" duration={2} />
+              </span>
+              <span className="stat-pill-lbl">Projects Delivered</span>
+            </div>
+            <div className="stat-pill">
+              <span className="stat-pill-num">
+                <AnimatedCounter endValue={120} suffix="+" duration={2} delay={0.1} />
+              </span>
+              <span className="stat-pill-lbl">Global Brands</span>
+            </div>
+            <div className="stat-pill">
+              <span className="stat-pill-num">
+                <AnimatedCounter endValue={15} suffix="+" duration={2} delay={0.2} />
+              </span>
+              <span className="stat-pill-lbl">Years Experience</span>
+            </div>
           </div>
 
-        </div>
-
-        {/* Right Column: Layered Overlapping Collage */}
-        <div className="about-right-col">
-          <div className="about-collage">
-            {/* Image 1: Top Left */}
-            <motion.div
-              className="collage-img-wrapper img-pos-1"
-              initial={{ opacity: 0, scale: 0.85, rotate: -4 }}
-              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.06, rotate: -2, zIndex: 10 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 18, delay: 0.2 }}
-            >
-              <img src="/images/collage1.png" alt="Automotive Event Launch" className="collage-img" loading="lazy" />
-            </motion.div>
-
-            {/* Image 2: Top Right */}
-            <motion.div
-              className="collage-img-wrapper img-pos-2"
-              initial={{ opacity: 0, scale: 0.85, rotate: 4 }}
-              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.06, rotate: 2, zIndex: 10 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 18, delay: 0.35 }}
-            >
-              <img src="/images/collage2.png" alt="Interactive Experience Zone" className="collage-img" loading="lazy" />
-            </motion.div>
-
-            {/* Image 3: Bottom Center */}
-            <motion.div
-              className="collage-img-wrapper img-pos-3"
-              initial={{ opacity: 0, y: 40, scale: 0.85 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.06, y: -5, zIndex: 10 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 18, delay: 0.5 }}
-            >
-              <img src="/images/collage3.png" alt="High-End Exhibition Stall Showcase" className="collage-img" loading="lazy" />
-            </motion.div>
+          {/* Action Buttons Row */}
+          <div className="about-btn-group">
+            <NavLink to="/contact" className="ref-pill-btn btn-red">
+              <span className="btn-icon"></span> LOCATION
+            </NavLink>
+            <NavLink to="/about" className="ref-pill-btn btn-yellow">
+              <span className="btn-icon"></span> READ MORE
+            </NavLink>
           </div>
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   )

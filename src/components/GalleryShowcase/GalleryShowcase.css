@@ -5,8 +5,9 @@
 /* ── Section shell ───────────────────────── */
 .gsc-section {
   position: relative;
-  background: #070707;
-  padding: 40px 0 80px;   /* top reduced by ~43% from 70px */
+  background: #0f0f12;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 70px 0 95px;
   width: 100%;
   overflow: hidden;
 }
@@ -15,39 +16,53 @@
 .gsc-separator {
   position: absolute;
   top: 0;
-  left: 10%;
-  width: 80%;
+  left: 5%;
+  width: 90%;
   height: 1px;
   background: linear-gradient(
     to right,
     transparent 0%,
-    rgba(255, 193, 7, 0.2) 30%,
-    rgba(255, 193, 7, 0.5) 50%,
-    rgba(255, 193, 7, 0.2) 70%,
+    rgba(255, 255, 255, 0.08) 25%,
+    rgba(234, 179, 8, 0.25) 50%,
+    rgba(255, 255, 255, 0.08) 75%,
     transparent 100%
   );
-  box-shadow: 0 0 14px 2px rgba(255, 193, 7, 0.08);
+  box-shadow: 0 0 16px rgba(234, 179, 8, 0.06);
 }
 
 /* ── Ambient glow blob ───────────────────── */
 .gsc-bg-glow {
   position: absolute;
-  top: 40%;
-  left: 50%;
+  top: 25%;
+  left: 20%;
   transform: translate(-50%, -50%);
-  width: 800px;
-  height: 500px;
+  width: 650px;
+  height: 450px;
   background: radial-gradient(
     ellipse at center,
-    rgba(255, 193, 7, 0.045) 0%,
-    rgba(7, 7, 7, 0) 70%
+    rgba(234, 179, 8, 0.06) 0%,
+    rgba(15, 15, 18, 0) 70%
   );
   pointer-events: none;
   z-index: 0;
 }
 
-/* ── Header ──────────────────────────────── */
-/* ── Header — horizontal split matching "Moments We've Crafted" ── */
+.gsc-bg-glow::after {
+  content: '';
+  position: absolute;
+  bottom: -40%;
+  right: -30%;
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(15, 15, 18, 0) 70%
+  );
+  pointer-events: none;
+}
+
+/* ── Header — horizontal split matching luxury brand standards ── */
 .gsc-header {
   position: relative;
   z-index: 2;
@@ -55,9 +70,10 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 4rem;
+  gap: 3.5rem;
   padding: 0 60px;
-  margin-bottom: 2.4rem;
+  max-width: 1280px;
+  margin: 0 auto 3rem;
   width: 100%;
   box-sizing: border-box;
 }
@@ -68,25 +84,25 @@
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.03em;
-  color: var(--text-primary);
+  color: #ffffff;
   margin: 0;
   white-space: nowrap;
   flex-shrink: 0;
 }
 
 .gsc-headline-gold {
-  color: var(--color-gold-brand);
+  color: var(--color-gold-brand, #FFC107);
   font-style: italic;
   font-weight: 300;
 }
 
 .gsc-subtext {
-  font-size: 1rem;
+  font-size: 1.02rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.45);
-  line-height: 1.7;
+  color: #B5B5B5;
+  line-height: 1.8;
   margin: 0;
-  max-width: 55%;
+  max-width: 520px;
   text-align: left;
 }
 
