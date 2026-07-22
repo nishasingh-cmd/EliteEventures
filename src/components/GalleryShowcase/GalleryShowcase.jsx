@@ -27,58 +27,76 @@ const SHOWCASE_IMAGES = [
   { id: 17, src: "/images/collage3.png", label: "Grand Exhibition", category: "Exhibition Stall" },
 ]
 
-const TOTAL      = SHOWCASE_IMAGES.length
-const AUTOPLAY_MS = 4000
+export default function GalleryShowcase({
+  images = SHOWCASE_IMAGES,
+  titlePrefix = "Our",
+  titleHighlight = "Showcase",
+  badge = null,
+  subtext = "Explore our portfolio of exhibition stalls, brand activations, corporate events, and immersive experiences—crafted with creativity, precision, and flawless execution.",
+  id = "gallery-showcase"
+}) {
+  const showcaseList = images && images.length > 0 ? images : SHOWCASE_IMAGES
+  const total = showcaseList.length
 
-function wrap(idx) {
-  return ((idx % TOTAL) + TOTAL) % TOTAL
-}
+  const wrap = useCallback((idx) => {
+    return ((idx % total) + total) % total
+  }, [total])
 
-export default function GalleryShowcase() {
-  const [current,   setCurrent]   = useState(0)
+  const [current, setCurrent] = useState(0)
   const [direction, setDirection] = useState(1)
-  const [showLeft,  setShowLeft]  = useState(false)
+  const [showLeft, setShowLeft] = useState(false)
   const [showRight, setShowRight] = useState(false)
+  const [isPlaying, setIsPlaying] = useState(true)
+  const [isHovered, setIsHovered] = useState(false)
+  const [progress, setProgress] = useState(0)
+  const [isFullscreen, setIsFullscreen] = useState(false)
 
-  const sectionRef        = useRef(null)
-  const thumbRef          = useRef(null)
-  const autoRef           = useRef(null)
-  const touchStartX       = useRef(0)
-  const dragStartX        = useRef(0)
-  const thumbDragStartX   = useRef(0)
-  const thumbScrollStart  = useRef(0)
-  const isThumbDragging   = useRef(false)
+  const sectionRef = useRef(null)
+  const thumbRef = useRef(null)
+  const touchStartX = useRef(0)
+  const dragStartX = useRef(0)
+  const thumbDragStartX = useRef(0)
+  const thumbScrollStart = useRef(0)
+  const isThumbDragging = useRef(false)
 
   const isInView = useInView(sectionRef, { once: true, margin: "-80px" })
 
   const goTo = useCallback((idx, dir) => {
     setDirection(dir)
     setCurrent(wrap(idx))
-  }, [])
+    setProgress(0)
+  }, [wrap])
 
-  const goNext = useCallback(() => goTo(current + 1,  1), [current, goTo])
+  const goNext = useCallback(() => goTo(current + 1, 1), [current, goTo])
   const goPrev = useCallback(() => goTo(current - 1, -1), [current, goTo])
 
-  const startAuto = useCallback(() => {
-    clearInterval(autoRef.current)
-    autoRef.current = setInterval(() => {
-      setCurrent(prev => wrap(prev + 1))
-      setDirection(1)
-    }, AUTOPLAY_MS)
-  }, [])
+  // Circular Auto Progress timer interval (3 seconds total = 3000ms, tick every 50ms = +1.667% progress)
+  useEffect(() => {
+    if (!isPlaying || isFullscreen) return
 
-  const stopAuto = useCallback(() => clearInterval(autoRef.current), [])
+    const timer = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          goNext()
+          return 0
+        }
+        return prev + (100 / 60)
+      })
+    }, 50)
 
-  useEffect(() => { startAuto(); return stopAuto }, [startAuto, stopAuto])
+    return () => clearInterval(timer)
+  }, [isPlaying, isFullscreen, goNext])
 
+  // Keyboard navigation & ESC handler for Fullscreen Lightbox
   useEffect(() => {
     const handler = (e) => {
-      if (e.key === "ArrowLeft")  goPrev()
+      if (e.key === "ArrowLeft") goPrev()
       if (e.key === "ArrowRight") goNext()
+      if (e.key === "Escape" && isFullscreen) setIsFullscreen(false)
     }
     window.addEventListener("keydown", handler)
     return () => window.removeEventListener("keydown", handler)
-  }, [goNext, goPrev])
+  }, [goNext, goPrev, isFullscreen])
 
   useEffect(() => {
     const el = thumbRef.current
@@ -95,34 +113,32 @@ export default function GalleryShowcase() {
     }
     const onUp = () => { isThumbDragging.current = false }
     window.addEventListener("mousemove", onMove)
-    window.addEventListener("mouseup",  onUp)
+    window.addEventListener("mouseup", onUp)
     return () => {
       window.removeEventListener("mousemove", onMove)
-      window.removeEventListener("mouseup",  onUp)
+      window.removeEventListener("mouseup", onUp)
     }
   }, [])
 
-  // Scroll the thumbnail strip to center the active thumb —
-  // uses manual scrollLeft so the PAGE scroll is never touched.
   useEffect(() => {
     const strip = thumbRef.current
     if (!strip) return
     const el = strip.children[current]
     if (!el) return
-    const stripCenter  = strip.offsetWidth  / 2
-    const thumbCenter  = el.offsetLeft + el.offsetWidth / 2
+    const stripCenter = strip.offsetWidth / 2
+    const thumbCenter = el.offsetLeft + el.offsetWidth / 2
     strip.scrollTo({ left: thumbCenter - stripCenter, behavior: "smooth" })
   }, [current])
 
   const mainVariants = {
-    enter:  (dir) => ({ opacity: 0, x: dir * 70, scale: 0.95 }),
+    enter: (dir) => ({ opacity: 0, x: dir * 70, scale: 0.95 }),
     center: {
       opacity: 1, x: 0, scale: 1,
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+      transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
     },
     exit: (dir) => ({
       opacity: 0, x: dir * -70, scale: 0.95,
-      transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
+      transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
     }),
   }
 
@@ -132,10 +148,10 @@ export default function GalleryShowcase() {
   return (
     <section
       className="gsc-section"
-      id="gallery-showcase"
+      id={id}
       ref={sectionRef}
-      onMouseEnter={stopAuto}
-      onMouseLeave={() => { startAuto(); setShowLeft(false); setShowRight(false) }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => { setIsHovered(false); setShowLeft(false); setShowRight(false) }}
     >
       <div className="gsc-separator" />
       <div className="gsc-bg-glow" />
@@ -146,13 +162,14 @@ export default function GalleryShowcase() {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       >
-        <h2 className="gsc-headline">
-          Our <span className="gsc-headline-gold">Showcase</span>
-        </h2>
+        <div className="gsc-header-titles">
+          {badge && <div className="gsc-badge">{badge}</div>}
+          <h2 className="gsc-headline">
+            {titlePrefix && `${titlePrefix} `}<span className="gsc-headline-gold">{titleHighlight}</span>
+          </h2>
+        </div>
         <p className="gsc-subtext">
-          Explore our portfolio of exhibition stalls, brand activations,
-          corporate events, and immersive experiences—crafted with creativity,
-          precision, and flawless execution.
+          {subtext}
         </p>
       </motion.div>
 
@@ -209,10 +226,69 @@ export default function GalleryShowcase() {
         </div>
 
         <div className="gsc-side-peek gsc-side-peek--left">
-          <img src={SHOWCASE_IMAGES[prevIdx].src} alt={SHOWCASE_IMAGES[prevIdx].label} className="gsc-side-img" draggable={false} />
+          <img src={showcaseList[prevIdx].src} alt={showcaseList[prevIdx].label} className="gsc-side-img" draggable={false} />
         </div>
 
         <div className="gsc-main-frame">
+          {/* Top Left Interactive Controls Bar */}
+          <div className="gsc-top-left-controls">
+            {/* Circular Progress & Play/Pause Button */}
+            <button
+              className={`gsc-ctrl-btn gsc-ring-btn ${!isPlaying ? 'paused' : ''}`}
+              onClick={(e) => {
+                e.stopPropagation()
+                setIsPlaying(prev => !prev)
+              }}
+              title={isPlaying ? "Pause slideshow" : "Resume slideshow"}
+              aria-label={isPlaying ? "Pause slideshow" : "Resume slideshow"}
+            >
+              <svg className="gsc-progress-svg" viewBox="0 0 36 36">
+                <path
+                  className="gsc-progress-bg"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <path
+                  className="gsc-progress-bar"
+                  strokeDasharray="100, 100"
+                  strokeDashoffset={100 - progress}
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+              </svg>
+              <span className="gsc-ring-icon">
+                {isPlaying ? (
+                  <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+                    <rect x="6" y="4" width="4" height="16" rx="1" />
+                    <rect x="14" y="4" width="4" height="16" rx="1" />
+                  </svg>
+                ) : (
+                  <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+                    <polygon points="5,3 19,12 5,21" />
+                  </svg>
+                )}
+              </span>
+            </button>
+
+            {/* Fullscreen Lightbox Button */}
+            <button
+              className="gsc-ctrl-btn"
+              onClick={(e) => {
+                e.stopPropagation()
+                setIsFullscreen(true)
+              }}
+              title="Expand to Fullscreen"
+              aria-label="Expand to Fullscreen"
+            >
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Counter Badge Pill Top Right */}
+          <div className="gsc-counter-badge">
+            <span>{String(current + 1).padStart(2, '0')}</span> / {String(total).padStart(2, '0')}
+          </div>
+
           <AnimatePresence mode="popLayout" custom={direction}>
             <motion.div
               key={current}
@@ -224,20 +300,20 @@ export default function GalleryShowcase() {
               exit="exit"
             >
               <img
-                src={SHOWCASE_IMAGES[current].src}
-                alt={SHOWCASE_IMAGES[current].label}
+                src={showcaseList[current].src}
+                alt={showcaseList[current].label}
                 className="gsc-main-img"
                 draggable={false}
               />
               <div className="gsc-main-overlay">
-                <span className="gsc-main-category">{SHOWCASE_IMAGES[current].category}</span>
-                <h3 className="gsc-main-label">{SHOWCASE_IMAGES[current].label}</h3>
+                <span className="gsc-main-category">{showcaseList[current].category}</span>
+                <h3 className="gsc-main-label">{showcaseList[current].label}</h3>
               </div>
             </motion.div>
           </AnimatePresence>
 
           <div className="gsc-dots">
-            {SHOWCASE_IMAGES.map((_, i) => (
+            {showcaseList.map((_, i) => (
               <button
                 key={i}
                 className={"gsc-dot" + (i === current ? " gsc-dot--active" : "")}
@@ -249,7 +325,7 @@ export default function GalleryShowcase() {
         </div>
 
         <div className="gsc-side-peek gsc-side-peek--right">
-          <img src={SHOWCASE_IMAGES[nextIdx].src} alt={SHOWCASE_IMAGES[nextIdx].label} className="gsc-side-img" draggable={false} />
+          <img src={showcaseList[nextIdx].src} alt={showcaseList[nextIdx].label} className="gsc-side-img" draggable={false} />
         </div>
       </motion.div>
 
@@ -263,21 +339,21 @@ export default function GalleryShowcase() {
           className="gsc-thumbs"
           ref={thumbRef}
           onMouseDown={(e) => {
-            isThumbDragging.current  = true
-            thumbDragStartX.current  = e.clientX
+            isThumbDragging.current = true
+            thumbDragStartX.current = e.clientX
             thumbScrollStart.current = thumbRef.current.scrollLeft
             e.preventDefault()
           }}
         >
-          {SHOWCASE_IMAGES.map((img, i) => (
+          {showcaseList.map((img, i) => (
             <motion.button
-              key={img.id}
+              key={img.id || i}
               className={"gsc-thumb-item" + (i === current ? " gsc-thumb-active" : "")}
               onClick={() => goTo(i, i > current ? 1 : -1)}
               whileHover={{ scale: 1.07, filter: "brightness(1.18)" }}
               animate={
                 i === current
-                  ? { scale: 1.1,  boxShadow: "0 0 0 2.5px #FFC107, 0 0 18px rgba(255,193,7,0.38)" }
+                  ? { scale: 1.1, boxShadow: "0 0 0 2.5px #FFC107, 0 0 18px rgba(255,193,7,0.38)" }
                   : { scale: 1.0, boxShadow: "0 0 0 1.5px rgba(255,193,7,0.22)" }
               }
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
@@ -289,6 +365,97 @@ export default function GalleryShowcase() {
           ))}
         </div>
       </motion.div>
+
+      {/* Fullscreen Lightbox Modal (Professional Portfolio Viewer) */}
+      <AnimatePresence>
+        {isFullscreen && (
+          <motion.div
+            className="gsc-lb-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            onClick={() => setIsFullscreen(false)}
+          >
+            {/* Top Bar Controls */}
+            <div className="gsc-lb-topbar" onClick={(e) => e.stopPropagation()}>
+              <div className="gsc-lb-meta">
+                <span className="gsc-lb-category">{showcaseList[current].category}</span>
+                <span className="gsc-lb-dot">•</span>
+                <span className="gsc-lb-title">{showcaseList[current].label}</span>
+              </div>
+              <div className="gsc-lb-top-right">
+                <div className="gsc-lb-counter">
+                  <span>{String(current + 1).padStart(2, '0')}</span> / {String(total).padStart(2, '0')}
+                </div>
+                <button
+                  className="gsc-lb-close"
+                  onClick={() => setIsFullscreen(false)}
+                  aria-label="Close Lightbox"
+                >
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            {/* Left & Right Screen-Edge Navigation Arrows */}
+            <button
+              className="gsc-lb-arrow gsc-lb-arrow--left"
+              onClick={(e) => { e.stopPropagation(); goPrev() }}
+              aria-label="Previous image"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+
+            <button
+              className="gsc-lb-arrow gsc-lb-arrow--right"
+              onClick={(e) => { e.stopPropagation(); goNext() }}
+              aria-label="Next image"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+
+            {/* Center Main Viewport Image */}
+            <motion.div
+              className="gsc-lb-stage"
+              initial={{ scale: 0.94, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.94, opacity: 0 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={showcaseList[current].src}
+                alt={showcaseList[current].label}
+                className="gsc-lb-main-img"
+              />
+            </motion.div>
+
+            {/* Bottom Scrollable Thumbnail Strip */}
+            <div className="gsc-lb-thumbs-container" onClick={(e) => e.stopPropagation()}>
+              <div className="gsc-lb-thumbs">
+                {showcaseList.map((img, i) => (
+                  <button
+                    key={img.id || i}
+                    className={"gsc-lb-thumb-item" + (i === current ? " active" : "")}
+                    onClick={() => goTo(i, i > current ? 1 : -1)}
+                    aria-label={"Select " + img.label}
+                  >
+                    <img src={img.src} alt={img.label} className="gsc-lb-thumb-img" />
+                  </button>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }
