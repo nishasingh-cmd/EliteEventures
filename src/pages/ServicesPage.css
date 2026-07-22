@@ -151,13 +151,17 @@
 
 /* ── SERVICES LIST ── */
 .sp-services-list {
-  padding: 80px 5%;
+  padding: 80px 5% 30px;
   max-width: 1400px; /* Increased to allow larger images */
   margin: 0 auto;
 }
 
 .sp-service-block {
   margin-bottom: 60px;
+}
+
+.sp-service-block:last-child {
+  margin-bottom: 0;
 }
 
 .sp-service-inner {

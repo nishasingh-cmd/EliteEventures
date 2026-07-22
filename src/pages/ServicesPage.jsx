@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Footer/Footer'
 import Marquee from '../components/Marquee/Marquee'
-import WhyChooseSection from '../components/WhyChooseSection/WhyChooseSection'
 import GoogleReviews from '../components/GoogleReviews/GoogleReviews'
 import './ServicesPage.css'
 
@@ -208,11 +207,6 @@ export default function ServicesPage() {
           )
         })}
       </section>
-
-      {/* ════════════════════════════════════
-          WHY CHOOSE US
-      ════════════════════════════════════ */}
-      <WhyChooseSection hideReviews={true} />
 
       {/* ════════════════════════════════════
           GOOGLE REVIEWS

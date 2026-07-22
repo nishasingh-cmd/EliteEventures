@@ -1,8 +1,8 @@
 /* Premium Event Marketing & Exhibition Design System */
 
 :root {
-  /* Typography */
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Typography — Locked Option 5: Space Grotesk (Headings) & Satoshi (Body) */
+  --font-sans: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-heading: 'Space Grotesk', sans-serif;
 
   /* Color Palette - Premium Dark Theme */
