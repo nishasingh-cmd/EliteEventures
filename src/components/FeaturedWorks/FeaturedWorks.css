@@ -89,10 +89,17 @@
   break-inside: avoid;
   margin-bottom: 22px;
   border-radius: 18px;
+  border: 1px solid rgba(234, 179, 8, 0.45);
   overflow: hidden;
   cursor: pointer;
   will-change: transform;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.35), 0 0 12px rgba(234, 179, 8, 0.1);
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.fw-item:hover {
+  border-color: #eab308;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 22px rgba(234, 179, 8, 0.3);
 }
 
 /* Three height variants to create masonry rhythm */

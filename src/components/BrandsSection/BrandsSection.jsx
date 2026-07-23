@@ -44,21 +44,21 @@ const brands = [
     name: 'Lacoste',
     logo: <img src="/images/logo3.png" alt="Lacoste" className="brand-logo-img" loading="lazy" />,
   },
-  {
-    id: 9,
-    name: 'Brand 5',
-    logo: <img src="/images/logo5.png" alt="Brand 5" className="brand-logo-img dark-logo" loading="lazy" />,
-  },
+  // {
+  //   id: 9,
+  //   name: 'Brand 5',
+  //   logo: <img src="/images/logo5.png" alt="Brand 5" className="brand-logo-img dark-logo" loading="lazy" />,
+  // },
   {
     id: 10,
     name: 'Deal Jeans',
     logo: <img src="/images/logo9.png" alt="Deal Jeans" className="brand-logo-img" loading="lazy" />,
   },
-  {
-    id: 11,
-    name: 'Brand 10',
-    logo: <img src="/images/logo10.png" alt="Brand 10" className="brand-logo-img dark-logo" loading="lazy" />,
-  },
+  // {
+  //   id: 11,
+  //   name: 'Brand 10',
+  //   logo: <img src="/images/logo10.png" alt="Brand 10" className="brand-logo-img dark-logo" loading="lazy" />,
+  // },
 ]
 
 // Duplicate list for seamless loop
