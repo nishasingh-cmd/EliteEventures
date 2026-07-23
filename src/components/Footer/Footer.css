@@ -214,6 +214,64 @@
 }
 
 
+/* Footer Contact Row Styling */
+.footer-contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+}
+
+.footer-contact-label {
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 500;
+}
+
+.footer-contact-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.25s ease;
+}
+
+.footer-contact-link:hover {
+  color: #D4AF37;
+  transform: translateY(-1px);
+}
+
+.footer-wa-link:hover {
+  color: #25D366 !important;
+}
+
+.footer-wa-icon {
+  width: 14px;
+  height: 14px;
+  color: #25D366;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.footer-wa-link:hover .footer-wa-icon {
+  transform: scale(1.2);
+}
+
+.footer-link-dot {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.75rem;
+}
+
 /* RESPONSIVE LAYOUT BREAKPOINTS */
 
 @media (max-width: 768px) {
@@ -226,6 +284,12 @@
     align-items: center;
     text-align: center;
     gap: 2.5rem;
+  }
+
+  .footer-contact-row {
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.8rem;
   }
 
   .footer-minimal-left {

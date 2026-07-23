@@ -1,0 +1,192 @@
+/* ═══════════════════════════════════════════════════════════════
+   FeaturedWorks — Premium Masonry Gallery Section
+═══════════════════════════════════════════════════════════════ */
+
+.fw-section {
+  position: relative;
+  padding: 40px 24px 120px;
+  background: #0a0a0e;
+  overflow: hidden;
+}
+
+/* ── Ambient glow ─────────────────────────────────────────────── */
+.fw-bg-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 10%, rgba(234,179,8,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 35% at 80% 85%, rgba(220,38,38,0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* ── Header ───────────────────────────────────────────────────── */
+.fw-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.fw-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border: 1px solid rgba(234,179,8,0.35);
+  border-radius: 100px;
+  background: rgba(234,179,8,0.06);
+  color: #eab308;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.fw-headline {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+}
+
+.fw-gold {
+  background: linear-gradient(90deg, #f59e0b, #eab308, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.fw-subtext {
+  max-width: 580px;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.52);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Masonry Grid — CSS columns approach (Pinterest style)
+   3 columns on desktop, each image card has a variable height
+   driven by aspect-ratio classes (.fw-item--1/2/3)
+═══════════════════════════════════════════════════════════════ */
+.fw-grid {
+  column-count: 3;
+  column-gap: 22px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Each item breaks the column flow */
+.fw-item {
+  break-inside: avoid;
+  margin-bottom: 22px;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  will-change: transform;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+}
+
+/* Three height variants to create masonry rhythm */
+.fw-item--1 { aspect-ratio: 4 / 5; }   /* tall portrait */
+.fw-item--2 { aspect-ratio: 16 / 10; } /* wide landscape */
+.fw-item--3 { aspect-ratio: 1 / 1; }   /* square */
+
+.fw-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.fw-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 0.55s ease;
+}
+
+.fw-item:hover .fw-img {
+  transform: scale(1.08);
+  filter: brightness(1.08);
+}
+
+/* ── Hover overlay ────────────────────────────────────────────── */
+.fw-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(5,5,8,0.88) 0%,
+    rgba(5,5,8,0.35) 45%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 22px 20px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  border-radius: inherit;
+}
+
+.fw-item:hover .fw-overlay {
+  opacity: 1;
+}
+
+.fw-overlay-cat {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #eab308;
+  margin-bottom: 6px;
+}
+
+.fw-overlay-label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Responsive
+═══════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .fw-grid {
+    column-count: 2;
+  }
+  .fw-section {
+    padding: 80px 20px 90px;
+  }
+}
+
+@media (max-width: 640px) {
+  .fw-grid {
+    column-count: 1;
+  }
+  .fw-item--1,
+  .fw-item--2,
+  .fw-item--3 {
+    aspect-ratio: 4 / 3;
+  }
+  .fw-section {
+    padding: 64px 16px 72px;
+  }
+  .fw-header {
+    margin-bottom: 40px;
+  }
+}

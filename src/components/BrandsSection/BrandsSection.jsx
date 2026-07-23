@@ -11,38 +11,53 @@ const brands = [
   },
   {
     id: 2,
-    name: 'Walkaroo',
-    logo: <img src="/images/logo2.png" alt="Walkaroo" className="brand-logo-img" loading="lazy" />,
-  },
-  {
-    id: 3,
-    name: 'Baker Hughes',
-    logo: <img src="/images/logo3.png" alt="Baker Hughes" className="brand-logo-img dark-logo" loading="lazy" />,
-  },
-  {
-    id: 4,
     name: 'Mufti',
     logo: <img src="/images/logo4.png" alt="Mufti" className="brand-logo-img dark-logo" loading="lazy" />,
   },
   {
-    id: 5,
-    name: 'ATC Chains India',
-    logo: <img src="/images/logo5.png" alt="ATC Chains India" className="brand-logo-img dark-logo" loading="lazy" />,
-  },
-  {
-    id: 6,
+    id: 3,
     name: 'Hello EDC',
     logo: <img src="/images/logo6.png" alt="Hello EDC" className="brand-logo-img" loading="lazy" />,
   },
   {
-    id: 7,
+    id: 4,
     name: 'Flexiworld',
     logo: <img src="/images/logo7.png" alt="Flexiworld" className="brand-logo-img dark-logo" loading="lazy" />,
   },
   {
-    id: 8,
+    id: 5,
     name: 'Vijay Mallya',
     logo: <img src="/images/logo8.png" alt="Vijay Mallya" className="brand-logo-img" loading="lazy" />,
+  },
+  {
+    id: 6,
+    name: 'Pepe Jeans London',
+    logo: <img src="/images/logo-pepe-jeans.png" alt="Pepe Jeans London" className="brand-logo-img dark-logo" loading="lazy" />,
+  },
+  {
+    id: 7,
+    name: 'House of Cavalli / Smarr',
+    logo: <img src="/images/logo2.png" alt="House of Cavalli / Smarr" className="brand-logo-img" loading="lazy" />,
+  },
+  {
+    id: 8,
+    name: 'Lacoste',
+    logo: <img src="/images/logo3.png" alt="Lacoste" className="brand-logo-img" loading="lazy" />,
+  },
+  {
+    id: 9,
+    name: 'Brand 5',
+    logo: <img src="/images/logo5.png" alt="Brand 5" className="brand-logo-img dark-logo" loading="lazy" />,
+  },
+  {
+    id: 10,
+    name: 'Deal Jeans',
+    logo: <img src="/images/logo9.png" alt="Deal Jeans" className="brand-logo-img" loading="lazy" />,
+  },
+  {
+    id: 11,
+    name: 'Brand 10',
+    logo: <img src="/images/logo10.png" alt="Brand 10" className="brand-logo-img dark-logo" loading="lazy" />,
   },
 ]
 

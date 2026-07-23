@@ -14,6 +14,7 @@ import SectionSeparator from './components/SectionSeparator/SectionSeparator'
 import ContactSection from './components/ContactSection/ContactSection'
 import Footer from './components/Footer/Footer'
 import Loader from './components/Loader/Loader'
+import FeaturedWorks from './components/FeaturedWorks/FeaturedWorks'
 import GalleryPage from './pages/GalleryPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
@@ -36,6 +37,7 @@ function HomePage() {
         <Marquee />
         <AboutSection />
         <GalleryShowcase />
+        <FeaturedWorks />
         <WhyChooseSection hideReviews={true} />
         <GoogleReviews />
         <ExpertiseSection />

@@ -453,3 +453,51 @@ a.contact-detail-row:hover .contact-detail-icon {
   width: 18px;
   height: 18px;
 }
+
+/* Contact Links & WhatsApp Hover Effects */
+.contact-detail-links {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.contact-interactive-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-interactive-link:hover {
+  color: #eab308;
+  transform: translateY(-1px);
+}
+
+.whatsapp-num-link:hover {
+  color: #25D366 !important;
+}
+
+.whatsapp-num-link:hover .wa-inline-icon {
+  color: #25D366;
+  transform: scale(1.2);
+}
+
+.wa-inline-icon {
+  width: 16px;
+  height: 16px;
+  color: #25D366;
+  transition: transform 0.25s ease, color 0.25s ease;
+  flex-shrink: 0;
+}
+
+.link-separator {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.8rem;
+}

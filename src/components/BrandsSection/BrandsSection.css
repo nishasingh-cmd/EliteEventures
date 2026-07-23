@@ -177,6 +177,28 @@
   filter: brightness(0) invert(1) opacity(0.85);
 }
 
+/* For white-background black-logo PNGs (like Deal Jeans, Smarr Realty):
+   invert(1) turns white BG to black & black logo to white.
+   mix-blend-mode: screen makes the black BG 100% transparent over dark cards! */
+.brand-logo-img.invert-screen-logo,
+.brand-logo img.invert-screen-logo {
+  filter: invert(1) contrast(200%);
+  mix-blend-mode: screen;
+}
+
+.brand-logo-img.lacoste-logo,
+.brand-logo img.lacoste-logo {
+  filter: invert(1) contrast(150%);
+  mix-blend-mode: screen;
+}
+
+.brand-logo-img.light-bg-logo,
+.brand-logo img.light-bg-logo {
+  mix-blend-mode: screen;
+  filter: brightness(1.1) contrast(1.1);
+  opacity: 0.92;
+}
+
 /* ============================================================
    Responsive
    ============================================================ */
