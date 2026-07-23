@@ -42,8 +42,8 @@ function AboutSection() {
         {/* Left Column: Image Card with Cinematic Blur, Scale, Rotation & Ambient Floating */}
         <motion.div 
           className="about-img-frame-col"
-          initial={{ opacity: 0, x: -100, y: 20, scale: 0.94, rotate: -2, filter: "blur(8px)" }}
-          animate={isInView ? { opacity: 1, x: 0, y: 0, scale: 1, rotate: 0, filter: "blur(0px)" } : {}}
+          initial={{ opacity: 0, x: -100, y: 20, scale: 0.94, rotate: -2 }}
+          animate={isInView ? { opacity: 1, x: 0, y: 0, scale: 1, rotate: 0 } : {}}
           transition={{ duration: 1.2, ease: customEase }}
         >
           <motion.div 
@@ -70,8 +70,8 @@ function AboutSection() {
           {/* 1. Top Geometric Logo Accent */}
           <motion.div 
             className="about-geo-accent"
-            initial={{ opacity: 0, y: 15, filter: "blur(4px)" }}
-            animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            initial={{ opacity: 0, y: 15 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.15, ease: customEase }}
           >
             <svg width="50" height="50" viewBox="0 0 60 60" fill="none">
@@ -93,8 +93,8 @@ function AboutSection() {
           {/* 2. Main Headline */}
           <motion.h2 
             className="about-ref-headline"
-            initial={{ opacity: 0, x: 80, y: 20, scale: 0.96, filter: "blur(6px)" }}
-            animate={isInView ? { opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" } : {}}
+            initial={{ opacity: 0, x: 80, y: 20, scale: 0.96 }}
+            animate={isInView ? { opacity: 1, x: 0, y: 0, scale: 1 } : {}}
             transition={{ duration: 0.9, delay: 0.25, ease: customEase }}
           >
             India's Most Trusted <br />
@@ -104,8 +104,8 @@ function AboutSection() {
           {/* 3. Body Paragraph */}
           <motion.p 
             className="about-ref-paragraph"
-            initial={{ opacity: 0, x: 80, y: 20, scale: 0.96, filter: "blur(6px)" }}
-            animate={isInView ? { opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" } : {}}
+            initial={{ opacity: 0, x: 80, y: 20, scale: 0.96 }}
+            animate={isInView ? { opacity: 1, x: 0, y: 0, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.38, ease: customEase }}
           >
             Elite Eventure is a top-notch exhibition stand design company in India. Over the last 15+ years, as industry experts, we have created and built massive exhibit spaces as per the brands' needs and companies' preferences. We oversee concept development, 3D design, construction, installation, and dismantling, and work on projects in major exhibition venues across the country, Europe, the USA, and the Middle East.
@@ -114,8 +114,8 @@ function AboutSection() {
           {/* 4. Statistics Cards Row */}
           <motion.div 
             className="about-stats-row"
-            initial={{ opacity: 0, y: 24, filter: "blur(4px)" }}
-            animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            initial={{ opacity: 0, y: 24 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.50, ease: customEase }}
           >
             <div className="stat-pill">
@@ -141,8 +141,8 @@ function AboutSection() {
           {/* 5. Action Buttons Row */}
           <motion.div 
             className="about-btn-group"
-            initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-            animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.62, ease: customEase }}
           >
             <NavLink to="/contact" className="ref-pill-btn btn-red">

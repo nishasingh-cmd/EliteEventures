@@ -166,20 +166,20 @@ export default function ServicesPage() {
               <div className={`sp-service-inner ${isReverse ? 'reverse' : ''}`}>
                 <motion.div
                   className="sp-service-image-col"
-                  initial={{ opacity: 0, x: isReverse ? 40 : -40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: '-50px' }}
-                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                  initial={{ opacity: 0, x: isReverse ? 80 : -80, scale: 0.96 }}
+                  whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <ServiceGallery images={srv.images} />
                 </motion.div>
 
                 <motion.div
                   className="sp-service-text-col"
-                  initial={{ opacity: 0, x: isReverse ? -40 : 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: '-50px' }}
-                  transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  initial={{ opacity: 0, x: isReverse ? -80 : 80, scale: 0.96 }}
+                  whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 1.3, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <h3 className="sp-service-title">{srv.title}</h3>
                   <p className="sp-service-desc">{srv.desc}</p>

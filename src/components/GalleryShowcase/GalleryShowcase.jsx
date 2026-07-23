@@ -156,22 +156,27 @@ export default function GalleryShowcase({
       <div className="gsc-separator" />
       <div className="gsc-bg-glow" />
 
-      <motion.div
-        className="gsc-header"
-        initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      >
+      <div className="gsc-header">
         <div className="gsc-header-titles">
           {badge && <div className="gsc-badge">{badge}</div>}
-          <h2 className="gsc-headline">
+          <motion.h2
+            className="gsc-headline"
+            initial={{ opacity: 0, x: -80 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
+          >
             {titlePrefix && `${titlePrefix} `}<span className="gsc-headline-gold">{titleHighlight}</span>
-          </h2>
+          </motion.h2>
         </div>
-        <p className="gsc-subtext">
+        <motion.p
+          className="gsc-subtext"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+        >
           {subtext}
-        </p>
-      </motion.div>
+        </motion.p>
+      </div>
 
       <motion.div
         className="gsc-stage"

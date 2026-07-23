@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import './GoogleReviews.css'
 
@@ -53,6 +53,45 @@ export default function GoogleReviews() {
   const [activeReview, setActiveReview] = useState(0)
   const [itemsPerView, setItemsPerView] = useState(4)
 
+  // ── Auto-scroll refs ──────────────────────────────────────────
+  const autoIntervalRef = useRef(null)
+  const resumeTimeoutRef = useRef(null)
+  const itemsPerViewRef = useRef(4)
+
+  // Keep ref in sync so interval closure always sees latest value
+  useEffect(() => { itemsPerViewRef.current = itemsPerView }, [itemsPerView])
+
+  // Start the 2.5 s auto-scroll interval
+  const startAutoScroll = useCallback(() => {
+    if (autoIntervalRef.current) clearInterval(autoIntervalRef.current)
+    autoIntervalRef.current = setInterval(() => {
+      setActiveReview((prev) =>
+        prev >= googleReviews.length - itemsPerViewRef.current ? 0 : prev + 1
+      )
+    }, 4000)
+  }, [])
+
+  // Clear both timers
+  const stopAutoScroll = useCallback(() => {
+    if (autoIntervalRef.current) { clearInterval(autoIntervalRef.current); autoIntervalRef.current = null }
+  }, [])
+
+  // Pause immediately; resume after 5 s of inactivity
+  const pauseAndScheduleResume = useCallback(() => {
+    stopAutoScroll()
+    if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current)
+    resumeTimeoutRef.current = setTimeout(() => { startAutoScroll() }, 8000)
+  }, [stopAutoScroll, startAutoScroll])
+
+  // Boot auto-scroll on mount, clean up on unmount
+  useEffect(() => {
+    startAutoScroll()
+    return () => {
+      stopAutoScroll()
+      if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current)
+    }
+  }, [startAutoScroll, stopAutoScroll])
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) setItemsPerView(1)
@@ -64,12 +103,15 @@ export default function GoogleReviews() {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  const nextReview = () => {
-    setActiveReview((prev) => (prev >= googleReviews.length - itemsPerView ? 0 : prev + 1))
-  }
-  const prevReview = () => {
-    setActiveReview((prev) => (prev === 0 ? googleReviews.length - itemsPerView : prev - 1))
-  }
+  const nextReview = useCallback(() => {
+    pauseAndScheduleResume()
+    setActiveReview((prev) => (prev >= googleReviews.length - itemsPerViewRef.current ? 0 : prev + 1))
+  }, [pauseAndScheduleResume])
+
+  const prevReview = useCallback(() => {
+    pauseAndScheduleResume()
+    setActiveReview((prev) => (prev === 0 ? googleReviews.length - itemsPerViewRef.current : prev - 1))
+  }, [pauseAndScheduleResume])
 
   return (
     <section className="sp-reviews-section">
@@ -83,7 +125,7 @@ export default function GoogleReviews() {
           <motion.div
             className="sp-reviews-slider"
             animate={{ x: `calc(-${activeReview * (100 / itemsPerView)}% - ${activeReview * (20 / itemsPerView)}px)` }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 1.1, ease: [0.4, 0, 0.2, 1] }}
           >
             {googleReviews.map((r, i) => (
               <div

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import './WhyChooseSection.css'
 
@@ -124,27 +124,65 @@ function WhyChooseSection({ hideReviews = false }) {
   const [activeReview, setActiveReview] = useState(0)
   const [itemsPerView, setItemsPerView] = useState(2)
 
+  // ── Auto-scroll refs ──────────────────────────────────────────
+  const autoIntervalRef = useRef(null)
+  const resumeTimeoutRef = useRef(null)
+  const itemsPerViewRef = useRef(2)
+
+  // Keep ref in sync so interval closure always sees latest value
+  useEffect(() => { itemsPerViewRef.current = itemsPerView }, [itemsPerView])
+
+  // Start the 2.5 s auto-scroll interval
+  const startAutoScroll = useCallback(() => {
+    if (autoIntervalRef.current) clearInterval(autoIntervalRef.current)
+    autoIntervalRef.current = setInterval(() => {
+      setActiveReview((prev) =>
+        prev >= reviews.length - itemsPerViewRef.current ? 0 : prev + 1
+      )
+    }, 4000)
+  }, [])
+
+  // Clear interval
+  const stopAutoScroll = useCallback(() => {
+    if (autoIntervalRef.current) { clearInterval(autoIntervalRef.current); autoIntervalRef.current = null }
+  }, [])
+
+  // Pause immediately; resume after 5 s of inactivity
+  const pauseAndScheduleResume = useCallback(() => {
+    stopAutoScroll()
+    if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current)
+    resumeTimeoutRef.current = setTimeout(() => { startAutoScroll() }, 8000)
+  }, [stopAutoScroll, startAutoScroll])
+
+  // Responsive items-per-view
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 768) {
-        setItemsPerView(1)
-      } else if (window.innerWidth <= 1024) {
-        setItemsPerView(2)
-      } else {
-        setItemsPerView(2)
-      }
+      if (window.innerWidth <= 768) setItemsPerView(1)
+      else setItemsPerView(2)
     }
     handleResize()
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  const prevReview = () => {
-    setActiveReview((prev) => (prev === 0 ? reviews.length - itemsPerView : prev - 1))
-  }
-  const nextReview = () => {
-    setActiveReview((prev) => (prev >= reviews.length - itemsPerView ? 0 : prev + 1))
-  }
+  // Boot auto-scroll on mount, clean up on unmount
+  useEffect(() => {
+    if (!hideReviews) startAutoScroll()
+    return () => {
+      stopAutoScroll()
+      if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current)
+    }
+  }, [hideReviews, startAutoScroll, stopAutoScroll])
+
+  const prevReview = useCallback(() => {
+    pauseAndScheduleResume()
+    setActiveReview((prev) => (prev === 0 ? reviews.length - itemsPerViewRef.current : prev - 1))
+  }, [pauseAndScheduleResume])
+
+  const nextReview = useCallback(() => {
+    pauseAndScheduleResume()
+    setActiveReview((prev) => (prev >= reviews.length - itemsPerViewRef.current ? 0 : prev + 1))
+  }, [pauseAndScheduleResume])
 
   return (
     <section className="why-section" id="why-us" style={hideReviews ? { paddingBottom: '20px' } : {}}>
@@ -203,7 +241,7 @@ function WhyChooseSection({ hideReviews = false }) {
                 animate={{
                   x: `calc(-${activeReview * (100 / itemsPerView)}% - ${activeReview * (24 / itemsPerView)}px)`,
                 }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 1.1, ease: [0.4, 0, 0.2, 1] }}
                 style={{
                   display: 'flex',
                   gap: '24px',

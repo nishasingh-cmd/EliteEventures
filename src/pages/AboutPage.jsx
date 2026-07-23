@@ -159,7 +159,10 @@ export default function AboutPage() {
 
           {/* Vision Card */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, x: -100, scale: 0.96 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
             style={{ border: '1px solid rgba(244,194,13,0.2)', borderRadius: '24px', padding: '2.5rem', position: 'relative', background: 'rgba(255,255,255,0.02)' }}
           >
             <div style={{ position: 'absolute', top: '-12px', right: '-12px', background: '#070707', borderRadius: '50%', padding: '4px' }}>
@@ -175,7 +178,16 @@ export default function AboutPage() {
 
           {/* Image Card */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.15 }}
+            initial={{ opacity: 0, y: -100, scale: 0.92, rotate: -2 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{
+              duration: 1.5,
+              delay: 0.15,
+              ease: [0.22, 1, 0.36, 1],
+              rotate: { type: 'spring', stiffness: 80, damping: 18, delay: 0.15 },
+              scale:  { type: 'spring', stiffness: 80, damping: 18, delay: 0.15 },
+            }}
             style={{ borderRadius: '24px', overflow: 'hidden', height: '100%', minHeight: '200px' }}
           >
             <img src="/images/stall3.png" alt="Office" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -183,7 +195,10 @@ export default function AboutPage() {
 
           {/* Mission Card */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.3 }}
+            initial={{ opacity: 0, x: 100, scale: 0.96 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             style={{ border: '1px solid rgba(244,194,13,0.2)', borderRadius: '24px', padding: '2.5rem', position: 'relative', background: 'rgba(255,255,255,0.02)' }}
           >
             <div style={{ position: 'absolute', top: '-12px', right: '-12px', background: '#070707', borderRadius: '50%', padding: '4px' }}>
