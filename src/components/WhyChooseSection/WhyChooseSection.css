@@ -89,7 +89,7 @@
 
 .why-gold {
   color: var(--color-gold-brand);
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
 }
 
@@ -331,7 +331,7 @@
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.7;
   margin: 0 0 1.5rem 0;
-  font-style: italic;
+  font-style: normal;
   flex-grow: 1;
 }
 

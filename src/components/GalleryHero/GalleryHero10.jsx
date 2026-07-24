@@ -18,7 +18,7 @@ export default function GalleryHero10() {
       <div className="gh10-content">
         <p className="gh10-eyebrow">Visual Archives</p>
         <h1 className="gh10-title">
-          Our <span className="gh10-gold italic">Portfolio</span>
+          Our <span className="gh10-gold">Portfolio</span>
         </h1>
         <p className="gh10-subtitle">
           A curated collection of unforgettable spaces and experiences.

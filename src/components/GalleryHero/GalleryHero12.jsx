@@ -57,7 +57,7 @@ export default function GalleryHero12() {
       {/* Center Glass Plaque */}
       <div className="gh12-glass-plaque">
         <h1 className="gh12-title">
-          Elite <span className="gh12-gold italic">Gallery</span>
+          Elite <span className="gh12-gold">Gallery</span>
         </h1>
         <p className="gh12-subtitle">
           Explore our extensive portfolio of world-class events, exhibitions, and brand activations.

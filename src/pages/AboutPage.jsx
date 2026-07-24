@@ -141,7 +141,7 @@ export default function AboutPage() {
           <div style={{ width: '1px', height: '40px', background: 'rgba(255,255,255,0.15)' }}></div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
             <span style={{ fontSize: '2.5rem', fontWeight: 500, color: 'var(--color-gold-brand)' }}>
-              <CountUp to={150} suffix="+" />
+              <CountUp to={98} suffix="%" />
             </span>
             <span style={{ fontSize: '0.85rem', color: '#fff', lineHeight: 1.2, opacity: 0.7 }}>Satisfied<br />Clients</span>
           </div>

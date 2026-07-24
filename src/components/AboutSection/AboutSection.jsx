@@ -52,16 +52,11 @@ function AboutSection() {
             transition={{ duration: 4, repeat: Infinity, repeatType: "mirror", ease: "easeInOut", delay: 1.2 }}
           >
             <img 
-              src="/images/portrait_6.jpeg" 
+              src="/images/dr_rashel.jpeg" 
               alt="Elite Eventure 3D Exhibition Stand Showcase" 
               className="about-card-img" 
               loading="lazy" 
             />
-            {/* Subtle luxury glass accent badge on image */}
-            <div className="about-card-badge">
-              <span className="badge-pulse-dot" />
-              <span>3D Spatial Design</span>
-            </div>
           </motion.div>
         </motion.div>
 
