@@ -55,7 +55,7 @@ export default function AboutPage() {
       ════════════════════════════════════ */}
       <section className="about-hero">
         <img
-          src="/images/g7.png"
+          src="/images/contact-hero-bg.png"
           alt="Elite Eventure Exhibition"
           className="about-hero-img"
         />

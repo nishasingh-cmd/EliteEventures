@@ -113,7 +113,7 @@ export default function ServicesPage() {
           HERO (Same layout as Contact/About)
       ════════════════════════════════════ */}
       <section className="services-hero">
-        <img src="/images/ex3.png" alt="Services Hero" className="services-hero-img" />
+        <img src="/images/contact-hero-bg.png" alt="Services Hero" className="services-hero-img" />
         <div className="services-hero-overlay" />
         <div className="services-hero-line" />
 

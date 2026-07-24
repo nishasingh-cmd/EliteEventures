@@ -6,7 +6,7 @@ export default function GalleryHero() {
   return (
     <section className="gallery-hero">
       <img
-        src="/images/g6.png"
+        src="/images/contact-hero-bg.png"
         alt="Elite Eventure Gallery"
         className="gallery-hero-img"
       />
