@@ -143,7 +143,7 @@ export default function ContactPage() {
     <div className="contact-page">
       <Navbar />
 
-      {/* Hero with exact text matching the screenshot but original layout */}
+      {/* Hero Banner */}
       <section className="contact-hero">
         <img
           src="/images/contact-hero-bg.png"
@@ -162,26 +162,14 @@ export default function ContactPage() {
           <h1 className="contact-hero-heading">
             Contact <span className="contact-hero-gold">Us</span>
           </h1>
+          <p className="contact-hero-sub">
+            Tell us about the event, the brand, and the moment you want to create.
+          </p>
         </motion.div>
       </section>
 
       {/* Content Form & Cards Section below Hero */}
       <main className="contact-main">
-        <motion.div
-          className="contact-main-header"
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <h2 className="contact-main-heading">
-            Let's make something <span className="contact-main-gold">unforgettable.</span>
-          </h2>
-          <p className="contact-main-sub">
-            Tell us about the event, the brand, and the moment you want to create.
-          </p>
-        </motion.div>
-
         <div className="contact-layout-container">
           
           {/* Left Column - Send us a brief Form */}
