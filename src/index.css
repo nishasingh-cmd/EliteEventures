@@ -54,6 +54,96 @@ body {
   line-height: 1.6;
 }
 
+/* Light Theme Override Variables & Brightness Modes */
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-glow: rgba(234, 179, 8, 0.35);
+}
+
+[data-theme="light"] body {
+  background-color: #f8fafc;
+  color: var(--text-primary);
+  background-image: radial-gradient(circle at 50% 50%, rgba(234, 179, 8, 0.05) 0%, rgba(248, 250, 252, 0) 80%);
+}
+
+[data-theme="light"] main,
+[data-theme="light"] section,
+[data-theme="light"] .about-section,
+[data-theme="light"] .why-choose-section,
+[data-theme="light"] .expertise-section,
+[data-theme="light"] .brands-section,
+[data-theme="light"] .contact-section,
+[data-theme="light"] .gallery-showcase-section,
+[data-theme="light"] .footer-container,
+[data-theme="light"] .ap-why-section,
+[data-theme="light"] .ap-cta-section,
+[data-theme="light"] .aso-stats-section,
+[data-theme="light"] .aso-mv-section,
+[data-theme="light"] .aso-values-section {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6,
+[data-theme="light"] .hero-split-headline,
+[data-theme="light"] .about-ref-headline,
+[data-theme="light"] .why-headline,
+[data-theme="light"] .expertise-headline,
+[data-theme="light"] .brands-headline,
+[data-theme="light"] .contact-headline {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] p,
+[data-theme="light"] .hero-split-paragraph,
+[data-theme="light"] .about-ref-paragraph,
+[data-theme="light"] .why-subtext,
+[data-theme="light"] .expertise-subtext,
+[data-theme="light"] .brands-subtext {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .about-single-card,
+[data-theme="light"] .expertise-card,
+[data-theme="light"] .why-card,
+[data-theme="light"] .ap-mv-card,
+[data-theme="light"] .ap-why-card,
+[data-theme="light"] .aso-mv-card,
+[data-theme="light"] .aso-value-card,
+[data-theme="light"] .review-card {
+  background-color: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-theme="light"] .navbar.scrolled .navbar-container {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(234, 179, 8, 0.35) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .nav-link,
+[data-theme="light"] .mobile-link {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .theme-toggle {
+  color: #0f172a !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  background: rgba(0, 0, 0, 0.04) !important;
+}
+
 body {
   min-height: 100vh;
   /* Subtle premium radial background spotlight */

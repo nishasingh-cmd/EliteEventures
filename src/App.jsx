@@ -80,11 +80,15 @@ function AppInner() {
   )
 }
 
+import { ThemeProvider } from './context/ThemeContext'
+
 function App() {
   return (
-    <BrowserRouter>
-      <AppInner />
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <AppInner />
+      </BrowserRouter>
+    </ThemeProvider>
   )
 }
 
