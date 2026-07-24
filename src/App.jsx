@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 
 import Hero from './components/Hero/Hero'
 import Marquee from './components/Marquee/Marquee'
@@ -64,8 +64,6 @@ function AppInner() {
       <AnimatePresence mode="wait">
         {loading && <Loader />}
       </AnimatePresence>
-
-
 
       <ScrollToTop />
 
