@@ -4,30 +4,30 @@ import './Gallery.css'
 
 // Gallery items — 9 images split across 3 rows
 const row1Images = [
-  { id: 1, src: '/images/g1.png', label: 'Exhibition Stall' },
-  { id: 2, src: '/images/g2.png', label: 'Brand Activation' },
-  { id: 3, src: '/images/g3.png', label: 'Corporate Gala' },
-  { id: 4, src: '/images/g1.png', label: 'Exhibition Stall' },  // duplicated for seamless loop
-  { id: 5, src: '/images/g2.png', label: 'Brand Activation' },
-  { id: 6, src: '/images/g3.png', label: 'Corporate Gala' },
+  { id: 1, src: '/images/landscape_1.jpeg', label: 'Exhibition Stall' },
+  { id: 2, src: '/images/portrait_1.jpeg', label: 'Brand Activation' },
+  { id: 3, src: '/images/landscape_2.jpeg', label: 'Corporate Gala' },
+  { id: 4, src: '/images/landscape_1.jpeg', label: 'Exhibition Stall' },
+  { id: 5, src: '/images/portrait_1.jpeg', label: 'Brand Activation' },
+  { id: 6, src: '/images/landscape_2.jpeg', label: 'Corporate Gala' },
 ]
 
 const row2Images = [
-  { id: 7, src: '/images/g4.png', label: 'Product Launch' },
-  { id: 8, src: '/images/g5.png', label: 'Experience Zone' },
-  { id: 9, src: '/images/g6.png', label: 'Festival Install' },
-  { id: 10, src: '/images/g4.png', label: 'Product Launch' },  // duplicated for seamless loop
-  { id: 11, src: '/images/g5.png', label: 'Experience Zone' },
-  { id: 12, src: '/images/g6.png', label: 'Festival Install' },
+  { id: 7, src: '/images/portrait_2.jpeg', label: 'Product Launch' },
+  { id: 8, src: '/images/landscape_3.jpeg', label: 'Experience Zone' },
+  { id: 9, src: '/images/portrait_3.jpeg', label: 'Festival Install' },
+  { id: 10, src: '/images/portrait_2.jpeg', label: 'Product Launch' },
+  { id: 11, src: '/images/landscape_3.jpeg', label: 'Experience Zone' },
+  { id: 12, src: '/images/portrait_3.jpeg', label: 'Festival Install' },
 ]
 
 const row3Images = [
-  { id: 13, src: '/images/g7.png', label: 'Trade Show' },
-  { id: 14, src: '/images/g8.png', label: 'Promo Booth' },
-  { id: 15, src: '/images/g9.png', label: 'Conference' },
-  { id: 16, src: '/images/g7.png', label: 'Trade Show' },  // duplicated for seamless loop
-  { id: 17, src: '/images/g8.png', label: 'Promo Booth' },
-  { id: 18, src: '/images/g9.png', label: 'Conference' },
+  { id: 13, src: '/images/landscape_4.jpeg', label: 'Trade Show' },
+  { id: 14, src: '/images/portrait_4.jpeg', label: 'Promo Booth' },
+  { id: 15, src: '/images/dr_rashel.jpeg', label: 'Conference' },
+  { id: 16, src: '/images/landscape_4.jpeg', label: 'Trade Show' },
+  { id: 17, src: '/images/portrait_4.jpeg', label: 'Promo Booth' },
+  { id: 18, src: '/images/dr_rashel.jpeg', label: 'Conference' },
 ]
 
 function GalleryCard({ image }) {

@@ -4,15 +4,15 @@ import './FeaturedWorks.css'
 
 /* ── 9 curated project images ─────────────────────────────────── */
 const works = [
-  { id: 1,  src: '/images/stall1.png',   label: 'Architectural Exhibition Stall',    cat: 'Exhibition'       },
-  { id: 2,  src: '/images/ex1.png',      label: 'Corporate Summit Stage',            cat: 'Corporate Event'  },
-  { id: 3,  src: '/images/g1.png',       label: 'Dr. Rashel Brand Activation',       cat: 'Brand Activation' },
-  { id: 4,  src: '/images/stall3.png',   label: 'Modular Pavilion Setup',            cat: 'Exhibition'       },
-  { id: 5,  src: '/images/g4.png',       label: 'Walkaroo Experience Zone',          cat: 'Product Launch'   },
-  { id: 6,  src: '/images/collage1.png', label: 'Automotive Launch Event',           cat: 'Live Event'       },
-  { id: 7,  src: '/images/g7.png',       label: 'Hello EDC Brand Experience',        cat: 'Activation'       },
-  { id: 8,  src: '/images/stall5.png',   label: 'Premium Promo Booth',               cat: 'Trade Show'       },
-  { id: 9,  src: '/images/ex4.png',      label: 'Corporate Award Ceremony',          cat: 'Corporate Event'  },
+  { id: 1,  src: '/images/vijay_mamra_stall.png',     label: 'Vijay Mamra Food Expo Stall',     cat: 'Exhibition'       },
+  { id: 2,  src: '/images/pepe_jeans_stall.png',      label: 'Pepe Jeans London Fashion Booth', cat: 'Brand Activation' },
+  { id: 3,  src: '/images/dr_rashel.jpeg',             label: 'Dr. Rashel Skincare Pavilion',    cat: 'Brand Activation' },
+  { id: 4,  src: '/images/house_of_cavalli_stall.png',label: 'House of Cavalli Luxury Exhibit', cat: 'Experience Zone'  },
+  { id: 5,  src: '/images/flexiworld_stall.png',      label: 'Flexiworld Tech Pavilion',        cat: 'Corporate Event'  },
+  { id: 6,  src: '/images/deal_jeans_stall.png',      label: 'Deal Jeans Trade Show Stand',     cat: 'Trade Show'       },
+  { id: 7,  src: '/images/smarr_realty_stall.png',    label: 'Smarr Realty Architectural Expo', cat: 'Exhibition'       },
+  { id: 8,  src: '/images/lacoste_stall.png',         label: 'Lacoste Sportswear Booth',        cat: 'Trade Show'       },
+  { id: 9,  src: '/images/landscape_1.jpeg',          label: 'Executive Corporate Summit Stage',cat: 'Corporate Event'  },
 ]
 
 /* Alternate: even indices slide from top, odd from bottom */

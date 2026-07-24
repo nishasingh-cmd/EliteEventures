@@ -189,6 +189,18 @@
   transform: rotate(3deg);
 }
 
+/* Overlapping Image 3 (Top Right Accent) */
+.collage-frame-secondary-3 {
+  right: 5%;
+  top: 4%;
+  width: 34%;
+  height: 42%;
+  z-index: 1;
+  border-radius: var(--radius-image);
+  border: 1.5px solid rgba(212, 175, 53, 0.3);
+  transform: rotate(5deg);
+}
+
 .collage-container:hover .collage-frame-primary {
   transform: scale(1.02);
   border-color: rgba(212, 175, 53, 0.7);
@@ -205,6 +217,12 @@
 
 .collage-container:hover .collage-frame-secondary-2 {
   transform: rotate(0.5deg) scale(1.02);
+  border-color: #D4AF37;
+  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.12);
+}
+
+.collage-container:hover .collage-frame-secondary-3 {
+  transform: translateY(-6px) rotate(5deg) scale(1.02);
   border-color: #D4AF37;
   box-shadow: 0 20px 60px rgba(212, 175, 55, 0.12);
 }

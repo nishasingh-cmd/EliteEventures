@@ -3,16 +3,16 @@ import './GalleryHero12.css';
 
 // 3 rows of images for the river
 const row1 = [
-  '/images/g1.png', '/images/stall1.png', '/images/g2.png', '/images/stall2.png', 
-  '/images/g3.png', '/images/g1.png', '/images/stall1.png', '/images/g2.png'
+  '/images/landscape_1.jpeg', '/images/portrait_1.jpeg', '/images/landscape_2.jpeg', '/images/portrait_2.jpeg', 
+  '/images/landscape_3.jpeg', '/images/landscape_1.jpeg', '/images/portrait_1.jpeg', '/images/landscape_2.jpeg'
 ];
 const row2 = [
-  '/images/g4.png', '/images/stall3.png', '/images/g5.png', '/images/stall4.png', 
-  '/images/g6.png', '/images/g4.png', '/images/stall3.png', '/images/g5.png'
+  '/images/portrait_3.jpeg', '/images/landscape_4.jpeg', '/images/portrait_4.jpeg', '/images/landscape_5.jpeg', 
+  '/images/portrait_5.jpeg', '/images/portrait_3.jpeg', '/images/landscape_4.jpeg', '/images/portrait_4.jpeg'
 ];
 const row3 = [
-  '/images/g7.png', '/images/stall5.png', '/images/g8.png', '/images/g9.png', 
-  '/images/stall2.png', '/images/g7.png', '/images/stall5.png', '/images/g8.png'
+  '/images/landscape_6.jpeg', '/images/portrait_6.jpeg', '/images/landscape_7.jpeg', '/images/dr_rashel.jpeg', 
+  '/images/portrait_7.jpeg', '/images/landscape_6.jpeg', '/images/portrait_6.jpeg', '/images/landscape_7.jpeg'
 ];
 
 export default function GalleryHero12() {

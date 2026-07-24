@@ -101,7 +101,7 @@ function ExpertiseSection() {
             <div className="particle particle-3" />
             <div className="particle particle-4" />
 
-            {/* Overlapping Image 1 (Top Left) */}
+            {/* Overlapping Image 1 (Top Left - Pepe Jeans London) */}
             <motion.div
               className="collage-frame collage-frame-secondary-1"
               initial={{ opacity: 0, scale: 0.85, rotate: -8 }}
@@ -109,11 +109,23 @@ function ExpertiseSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <img src="/images/ex1.png" alt="Exhibition Booth Detail" className="collage-img" loading="lazy" />
+              <img src="/images/pepe_jeans_stall.png" alt="Pepe Jeans London Stall" className="collage-img" loading="lazy" />
               <div className="collage-glass-overlay" />
             </motion.div>
 
-            {/* Large Primary Image (Center) */}
+            {/* Overlapping Image 3 (Top Right - Flexiworld) */}
+            <motion.div
+              className="collage-frame collage-frame-secondary-3"
+              initial={{ opacity: 0, scale: 0.85, rotate: 6 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 5 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <img src="/images/flexiworld_stall.png" alt="Flexiworld Corporate Tech Pavilion" className="collage-img" loading="lazy" />
+              <div className="collage-glass-overlay" />
+            </motion.div>
+
+            {/* Large Primary Center Image (Dr. Rashel) */}
             <motion.div
               className="collage-frame collage-frame-primary"
               initial={{ opacity: 0, y: 40, rotate: 1 }}
@@ -121,11 +133,11 @@ function ExpertiseSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
-              <img src="/images/expertise_main.png" alt="Corporate Event Stage Design" className="collage-img" loading="lazy" />
+              <img src="/images/dr_rashel.jpeg" alt="Dr. Rashel Skincare Exhibition Stand" className="collage-img" loading="lazy" />
               <div className="collage-glass-overlay" />
             </motion.div>
 
-            {/* Overlapping Image 2 (Bottom Right) */}
+            {/* Overlapping Image 2 (Bottom Right - Vijay Mamra) */}
             <motion.div
               className="collage-frame collage-frame-secondary-2"
               initial={{ opacity: 0, scale: 0.85, rotate: 6 }}
@@ -133,7 +145,7 @@ function ExpertiseSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <img src="/images/ex3.png" alt="Corporate Gala setup" className="collage-img" loading="lazy" />
+              <img src="/images/vijay_mamra_stall.png" alt="Vijay Mamra Food Expo Stall" className="collage-img" loading="lazy" />
               <div className="collage-glass-overlay" />
             </motion.div>
           </motion.div>

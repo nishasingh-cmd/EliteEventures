@@ -7,23 +7,23 @@ const projects = [
   {
     id: 1,
     brand: 'Dr. Rashel',
-    img: '/images/stall4.png',
+    img: '/images/dr_rashel.jpeg',
     caption: 'Designed a premium beauty exhibition stall that showcased luxury skincare products through immersive customer experience.',
     tag: 'Beauty & Skincare',
   },
   {
     id: 2,
     brand: 'Vijay Mamra',
-    img: '/images/stall5.png',
-    caption: 'Executed a sophisticated corporate event setup with seamless planning, premium stage design, and flawless event management.',
-    tag: 'Corporate Event',
+    img: '/images/vijay_mamra_stall.png',
+    caption: 'Executed a high-impact food trade show stall with interactive tasting zones and custom wooden architectural design.',
+    tag: 'Food & FMCG',
   },
   {
     id: 3,
-    brand: 'Baker Hughes',
-    img: '/images/stall1.png',
-    caption: 'Delivered a world-class exhibition experience that reflected innovation, engineering excellence, and strong global brand identity.',
-    tag: 'Energy & Tech',
+    brand: 'Flexiworld',
+    img: '/images/flexiworld_stall.png',
+    caption: 'Delivered a futuristic corporate pavilion featuring LED backdrops and interactive digital kiosks for global branding.',
+    tag: 'Corporate & Tech',
   },
 ]
 
@@ -32,7 +32,7 @@ const reviews = [
   {
     id: 1,
     name: 'Rohan Mehta',
-    role: 'Marketing Head, Baker Hughes India',
+    role: 'Marketing Head, Dr. Rashel India',
     text: 'Elite Eventure delivered an exceptional exhibition stall that perfectly embodied our brand values. The attention to detail and flawless execution truly set them apart.',
     rating: 5,
   },
