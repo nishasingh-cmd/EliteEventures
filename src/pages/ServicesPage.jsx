@@ -12,31 +12,31 @@ const servicesList = [
     title: 'Events',
     desc: 'Professional planning and execution of corporate and live events tailored to your brand objectives.',
     bullets: ['Venue sourcing & logistics', 'Conference & event production', 'Guest & attendee management'],
-    images: ['/images/ex1.png', '/images/stall1.png', '/images/stall2.png', '/images/ex4.png', '/images/stall3.png'],
+    images: ['/images/pepe_jeans_stall.png', '/images/smarr_realty_stall.png', '/images/deal_jeans_stall.png', '/images/lacoste_stall.png', '/images/flexiworld_stall.png'],
   },
   {
     title: 'Exhibitions',
     desc: 'Creative exhibition solutions designed to maximize brand visibility and audience engagement.',
     bullets: ['Stall design & fabrication', 'Exhibition management', 'Visitor engagement solutions'],
-    images: ['/images/stall3.png', '/images/stall4.png', '/images/stall5.png', '/images/g1.png', '/images/g2.png'],
+    images: ['/images/dr_rashel.jpeg', '/images/landscape_1.jpeg', '/images/landscape_4.jpeg', '/images/landscape_6.jpeg', '/images/portrait_1.jpeg'],
   },
   {
     title: 'MICE',
     desc: 'Customized meetings, incentives, conferences, and exhibitions with seamless coordination.',
     bullets: ['Conference planning', 'Travel & accommodation management', 'Delegate coordination'],
-    images: ['/images/ex2.png', '/images/g3.png', '/images/g4.png', '/images/g5.png', '/images/g6.png'],
+    images: ['/images/house_of_cavalli_stall.png', '/images/lacoste_stall.png', '/images/smarr_realty_stall.png', '/images/vijay_mamra_stall.png', '/images/pepe_jeans_stall.png'],
   },
   {
     title: 'Activation',
     desc: 'Innovative brand activation experiences that create meaningful audience connections.',
     bullets: ['Mall activations', 'Product promotions', 'Experiential marketing campaigns'],
-    images: ['/images/g4.png', '/images/g7.png', '/images/g8.png', '/images/g9.png', '/images/ex3.png'],
+    images: ['/images/flexiworld_stall.png', '/images/deal_jeans_stall.png', '/images/pepe_jeans_stall.png', '/images/vijay_mamra_stall.png', '/images/smarr_realty_stall.png'],
   },
   {
     title: 'Virtual Events',
     desc: 'Engaging virtual and hybrid event experiences that connect audiences across the globe.',
     bullets: ['Virtual conference management', 'Live streaming solutions', 'Interactive audience engagement'],
-    images: ['/images/ex3.png', '/images/collage1.png', '/images/collage2.png', '/images/collage3.png', '/images/ex1.png'],
+    images: ['/images/smarr_realty_stall.png', '/images/lacoste_stall.png', '/images/flexiworld_stall.png', '/images/house_of_cavalli_stall.png', '/images/deal_jeans_stall.png'],
   },
 ]
 
@@ -137,14 +137,14 @@ export default function ServicesPage() {
       ════════════════════════════════════ */}
       <section className="sp-intro" ref={introRef}>
         <motion.div className="sp-intro-gallery" style={{ x: galleryX }}>
-          <div className="sp-gallery-card"><img src="/images/ex1.png" alt="Gallery 1" /></div>
-          <div className="sp-gallery-card"><img src="/images/stall1.png" alt="Gallery 2" /></div>
-          <div className="sp-gallery-card"><img src="/images/stall2.png" alt="Gallery 3" /></div>
-          <div className="sp-gallery-card"><img src="/images/ex4.png" alt="Gallery 4" /></div>
-          <div className="sp-gallery-card"><img src="/images/stall3.png" alt="Gallery 5" /></div>
-          <div className="sp-gallery-card"><img src="/images/g1.png" alt="Gallery 6" /></div>
-          <div className="sp-gallery-card"><img src="/images/stall4.png" alt="Gallery 7" /></div>
-          <div className="sp-gallery-card"><img src="/images/g2.png" alt="Gallery 8" /></div>
+          <div className="sp-gallery-card"><img src="/images/landscape_1.jpeg" alt="Gallery 1" /></div>
+          <div className="sp-gallery-card"><img src="/images/portrait_1.jpeg" alt="Gallery 2" /></div>
+          <div className="sp-gallery-card"><img src="/images/landscape_2.jpeg" alt="Gallery 3" /></div>
+          <div className="sp-gallery-card"><img src="/images/portrait_2.jpeg" alt="Gallery 4" /></div>
+          <div className="sp-gallery-card"><img src="/images/landscape_3.jpeg" alt="Gallery 5" /></div>
+          <div className="sp-gallery-card"><img src="/images/dr_rashel.jpeg" alt="Gallery 6" /></div>
+          <div className="sp-gallery-card"><img src="/images/portrait_3.jpeg" alt="Gallery 7" /></div>
+          <div className="sp-gallery-card"><img src="/images/landscape_4.jpeg" alt="Gallery 8" /></div>
         </motion.div>
       </section>
 

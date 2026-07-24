@@ -7,7 +7,7 @@ export default function GalleryHero10() {
       {/* Subtle Background Image with slow pan */}
       <div className="gh10-bg-wrapper">
         <img 
-          src="/images/g5.png" 
+          src="/images/landscape_1.jpeg" 
           alt="Gallery Background" 
           className="gh10-bg-image" 
         />

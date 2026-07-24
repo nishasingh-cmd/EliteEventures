@@ -3,20 +3,20 @@ import { motion } from 'framer-motion';
 import './GalleryHero13.css';
 
 const IMAGES = [
-  { id: 1, src: '/images/g1.png', w: 350, h: 450, x: 100, y: -200 },
-  { id: 2, src: '/images/stall1.png', w: 450, h: 300, x: -400, y: -400 },
-  { id: 3, src: '/images/g3.png', w: 300, h: 400, x: -600, y: 100 },
-  { id: 4, src: '/images/g5.png', w: 500, h: 350, x: 200, y: 300 },
-  { id: 5, src: '/images/stall2.png', w: 350, h: 350, x: 600, y: -100 },
-  { id: 6, src: '/images/stall3.png', w: 400, h: 500, x: -200, y: 150 },
-  { id: 7, src: '/images/g7.png', w: 300, h: 400, x: -800, y: -200 },
-  { id: 8, src: '/images/g9.png', w: 450, h: 300, x: 750, y: 200 },
-  { id: 9, src: '/images/g2.png', w: 350, h: 450, x: -100, y: 550 },
-  { id: 10, src: '/images/g4.png', w: 400, h: 300, x: 500, y: -500 },
-  { id: 11, src: '/images/g6.png', w: 300, h: 400, x: 900, y: -300 },
-  { id: 12, src: '/images/g8.png', w: 500, h: 350, x: -900, y: 300 },
-  { id: 13, src: '/images/stall4.png', w: 350, h: 350, x: 300, y: 650 },
-  { id: 14, src: '/images/stall5.png', w: 400, h: 500, x: -500, y: 600 },
+  { id: 1, src: '/images/portrait_1.jpeg', w: 350, h: 450, x: 100, y: -200 },
+  { id: 2, src: '/images/landscape_1.jpeg', w: 450, h: 300, x: -400, y: -400 },
+  { id: 3, src: '/images/portrait_2.jpeg', w: 300, h: 400, x: -600, y: 100 },
+  { id: 4, src: '/images/landscape_2.jpeg', w: 500, h: 350, x: 200, y: 300 },
+  { id: 5, src: '/images/dr_rashel.jpeg', w: 350, h: 350, x: 600, y: -100 },
+  { id: 6, src: '/images/portrait_3.jpeg', w: 400, h: 500, x: -200, y: 150 },
+  { id: 7, src: '/images/portrait_4.jpeg', w: 300, h: 400, x: -800, y: -200 },
+  { id: 8, src: '/images/landscape_3.jpeg', w: 450, h: 300, x: 750, y: 200 },
+  { id: 9, src: '/images/portrait_5.jpeg', w: 350, h: 450, x: -100, y: 550 },
+  { id: 10, src: '/images/landscape_4.jpeg', w: 400, h: 300, x: 500, y: -500 },
+  { id: 11, src: '/images/portrait_6.jpeg', w: 300, h: 400, x: 900, y: -300 },
+  { id: 12, src: '/images/landscape_5.jpeg', w: 500, h: 350, x: -900, y: 300 },
+  { id: 13, src: '/images/portrait_7.jpeg', w: 350, h: 350, x: 300, y: 650 },
+  { id: 14, src: '/images/portrait_8.jpeg', w: 400, h: 500, x: -500, y: 600 },
 ];
 
 export default function GalleryHero13() {

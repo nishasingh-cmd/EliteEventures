@@ -6,41 +6,41 @@ import Footer from '../components/Footer/Footer'
 
 // Dedicated image sets per service category
 const EVENTS_IMAGES = [
-  { id: 1, src: "/images/ex1.png", label: "Corporate Summit & Stage", category: "Events" },
-  { id: 2, src: "/images/ex2.png", label: "Global Leadership Gala", category: "Events" },
-  { id: 3, src: "/images/g2.png", label: "Baker Hughes Corporate Event", category: "Events" },
-  { id: 4, src: "/images/ex4.png", label: "Corporate Award Ceremony", category: "Events" },
-  { id: 5, src: "/images/collage1.png", label: "Automotive Launch Event", category: "Events" },
-  { id: 6, src: "/images/stall1.png", label: "Executive Conference Pavilion", category: "Events" },
+  { id: 1, src: "/images/flexiworld_stall.png", label: "Flexiworld Corporate Summit", category: "Events" },
+  { id: 2, src: "/images/smarr_realty_stall.png", label: "Smarr Realty Leadership Gala", category: "Events" },
+  { id: 3, src: "/images/pepe_jeans_stall.png", label: "Pepe Jeans London Gala", category: "Events" },
+  { id: 4, src: "/images/house_of_cavalli_stall.png", label: "House of Cavalli Award Ceremony", category: "Events" },
+  { id: 5, src: "/images/deal_jeans_stall.png", label: "Deal Jeans Fashion Event", category: "Events" },
+  { id: 6, src: "/images/lacoste_stall.png", label: "Lacoste Executive Pavilion", category: "Events" },
 ]
 
 const EXHIBITIONS_IMAGES = [
-  { id: 1, src: "/images/stall1.png", label: "Architectural 3D Exhibition Stall", category: "Exhibitions" },
-  { id: 2, src: "/images/stall2.png", label: "Custom Trade Show Stand", category: "Exhibitions" },
-  { id: 3, src: "/images/stall3.png", label: "Exhibition Pavilion Setup", category: "Exhibitions" },
-  { id: 4, src: "/images/stall4.png", label: "Modular Exhibition Booth", category: "Exhibitions" },
-  { id: 5, src: "/images/stall5.png", label: "Promo Exhibition Stand", category: "Exhibitions" },
-  { id: 6, src: "/images/g1.png", label: "Dr. Rashel Exhibition Stand", category: "Exhibitions" },
-  { id: 7, src: "/images/g3.png", label: "Vijay Mamra Exhibition Stall", category: "Exhibitions" },
-  { id: 8, src: "/images/g6.png", label: "ATC Chains Trade Show Stall", category: "Exhibitions" },
+  { id: 1, src: "/images/dr_rashel.jpeg", label: "Dr. Rashel Skincare Exhibition Stand", category: "Exhibitions" },
+  { id: 2, src: "/images/landscape_1.jpeg", label: "Dr. Rashel 3D Spatial Pavilion", category: "Exhibitions" },
+  { id: 3, src: "/images/landscape_4.jpeg", label: "Dr. Rashel Expo Main Stage", category: "Exhibitions" },
+  { id: 4, src: "/images/landscape_6.jpeg", label: "Dr. Rashel Brand Activation Stand", category: "Exhibitions" },
+  { id: 5, src: "/images/portrait_1.jpeg", label: "Dr. Rashel Beauty Display Counter", category: "Exhibitions" },
+  { id: 6, src: "/images/portrait_2.jpeg", label: "Dr. Rashel Interactive Lounge", category: "Exhibitions" },
+  { id: 7, src: "/images/portrait_3.jpeg", label: "Dr. Rashel Luxury Expo Booth", category: "Exhibitions" },
+  { id: 8, src: "/images/portrait_6.jpeg", label: "Dr. Rashel VIP Delegate Showcase", category: "Exhibitions" },
 ]
 
 const MICE_IMAGES = [
-  { id: 1, src: "/images/g3.png", label: "MICE Conference Pavilion", category: "MICE" },
-  { id: 2, src: "/images/g4.png", label: "Walkaroo Executive Zone", category: "MICE" },
-  { id: 3, src: "/images/g5.png", label: "Mufti Corporate Lounge", category: "MICE" },
-  { id: 4, src: "/images/ex2.png", label: "International Delegate Conference", category: "MICE" },
-  { id: 5, src: "/images/g6.png", label: "Delegate Meeting Stage", category: "MICE" },
-  { id: 6, src: "/images/collage2.png", label: "Corporate MICE Showcase", category: "MICE" },
+  { id: 1, src: "/images/flexiworld_stall.png", label: "Flexiworld MICE Conference", category: "MICE" },
+  { id: 2, src: "/images/smarr_realty_stall.png", label: "Smarr Realty Executive Lounge", category: "MICE" },
+  { id: 3, src: "/images/vijay_mamra_stall.png", label: "Vijay Mamra Corporate Zone", category: "MICE" },
+  { id: 4, src: "/images/house_of_cavalli_stall.png", label: "House of Cavalli Delegate Pavilion", category: "MICE" },
+  { id: 5, src: "/images/pepe_jeans_stall.png", label: "Pepe Jeans Meeting Lounge", category: "MICE" },
+  { id: 6, src: "/images/lacoste_stall.png", label: "Lacoste Corporate Showcase", category: "MICE" },
 ]
 
 const ACTIVATIONS_IMAGES = [
-  { id: 1, src: "/images/g7.png", label: "Hello EDC Brand Activation", category: "Activations" },
-  { id: 2, src: "/images/g8.png", label: "Experiential Promo Booth", category: "Activations" },
-  { id: 3, src: "/images/g9.png", label: "Interactive Mall Activation", category: "Activations" },
-  { id: 4, src: "/images/ex3.png", label: "Product Launch Activation", category: "Activations" },
-  { id: 5, src: "/images/collage3.png", label: "Experiential Brand Activation", category: "Activations" },
-  { id: 6, src: "/images/stall4.png", label: "Promo Booth Activation", category: "Activations" },
+  { id: 1, src: "/images/pepe_jeans_stall.png", label: "Pepe Jeans Brand Activation", category: "Activations" },
+  { id: 2, src: "/images/portrait_10.jpeg", label: "Experiential Promo Booth", category: "Activations" },
+  { id: 3, src: "/images/vijay_mamra_stall.png", label: "Vijay Mamra Interactive Sampling", category: "Activations" },
+  { id: 4, src: "/images/deal_jeans_stall.png", label: "Deal Jeans Product Launch", category: "Activations" },
+  { id: 5, src: "/images/house_of_cavalli_stall.png", label: "House of Cavalli Experiential Pavilion", category: "Activations" },
+  { id: 6, src: "/images/flexiworld_stall.png", label: "Flexiworld Tech Activation", category: "Activations" },
 ]
 
 export default function GalleryPage() {

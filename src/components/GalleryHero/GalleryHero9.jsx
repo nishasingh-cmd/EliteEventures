@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import './GalleryHero9.css';
 
 const PANELS = [
-  { id: 1, title: 'Exhibition Stalls', img: '/images/stall1.png', num: '01' },
-  { id: 2, title: 'Brand Activations', img: '/images/g2.png', num: '02' },
-  { id: 3, title: 'Corporate Events',  img: '/images/stall3.png', num: '03' },
-  { id: 4, title: 'Experience Zones',  img: '/images/g5.png', num: '04' },
-  { id: 5, title: 'Product Launches',  img: '/images/stall5.png', num: '05' }
+  { id: 1, title: 'Exhibition Stalls', img: '/images/landscape_1.jpeg', num: '01' },
+  { id: 2, title: 'Brand Activations', img: '/images/portrait_1.jpeg', num: '02' },
+  { id: 3, title: 'Corporate Events',  img: '/images/landscape_2.jpeg', num: '03' },
+  { id: 4, title: 'Experience Zones',  img: '/images/portrait_2.jpeg', num: '04' },
+  { id: 5, title: 'Product Launches',  img: '/images/landscape_3.jpeg', num: '05' }
 ];
 
 export default function GalleryHero9() {

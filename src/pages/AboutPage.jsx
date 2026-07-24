@@ -98,7 +98,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div style={{ width: '100%', height: '220px', borderRadius: '24px', overflow: 'hidden', background: '#222' }}>
-              <img src="/images/stall2.png" alt="Architecture" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src="/images/portrait_7.jpeg" alt="Architecture" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </motion.div>
 
@@ -190,7 +190,7 @@ export default function AboutPage() {
             }}
             style={{ borderRadius: '24px', overflow: 'hidden', height: '100%', minHeight: '200px' }}
           >
-            <img src="/images/stall3.png" alt="Office" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src="/images/landscape_12.jpeg" alt="Office" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </motion.div>
 
           {/* Mission Card */}

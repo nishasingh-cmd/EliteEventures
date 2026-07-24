@@ -52,7 +52,7 @@ function AboutSection() {
             transition={{ duration: 4, repeat: Infinity, repeatType: "mirror", ease: "easeInOut", delay: 1.2 }}
           >
             <img 
-              src="/images/stall1.png" 
+              src="/images/portrait_6.jpeg" 
               alt="Elite Eventure 3D Exhibition Stand Showcase" 
               className="about-card-img" 
               loading="lazy" 

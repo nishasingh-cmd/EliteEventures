@@ -2,16 +2,16 @@ import React, { useRef, useEffect } from 'react';
 import './GalleryHero11.css';
 
 const IMAGES = [
-  { src: '/images/g1.png', x: -450, y: -200, z: -800, s: 1.2 },
-  { src: '/images/stall1.png', x: 450, y: -250, z: -600, s: 1 },
-  { src: '/images/g3.png', x: -550, y: 150, z: -400, s: 0.8 },
-  { src: '/images/g5.png', x: 550, y: 250, z: -300, s: 1.1 },
-  { src: '/images/stall2.png', x: -350, y: -100, z: 150, s: 0.9 },
-  { src: '/images/stall3.png', x: 350, y: 100, z: 250, s: 1 },
-  { src: '/images/g7.png', x: -650, y: -50, z: -100, s: 1.3 },
-  { src: '/images/g9.png', x: 650, y: -100, z: -200, s: 0.9 },
-  { src: '/images/g2.png', x: -250, y: 300, z: -500, s: 1 },
-  { src: '/images/g4.png', x: 250, y: -350, z: -700, s: 1.2 },
+  { src: '/images/landscape_1.jpeg', x: -450, y: -200, z: -800, s: 1.2 },
+  { src: '/images/portrait_1.jpeg', x: 450, y: -250, z: -600, s: 1 },
+  { src: '/images/landscape_2.jpeg', x: -550, y: 150, z: -400, s: 0.8 },
+  { src: '/images/portrait_2.jpeg', x: 550, y: 250, z: -300, s: 1.1 },
+  { src: '/images/landscape_3.jpeg', x: -350, y: -100, z: 150, s: 0.9 },
+  { src: '/images/portrait_3.jpeg', x: 350, y: 100, z: 250, s: 1 },
+  { src: '/images/landscape_4.jpeg', x: -650, y: -50, z: -100, s: 1.3 },
+  { src: '/images/portrait_4.jpeg', x: 650, y: -100, z: -200, s: 0.9 },
+  { src: '/images/dr_rashel.jpeg', x: -250, y: 300, z: -500, s: 1 },
+  { src: '/images/landscape_5.jpeg', x: 250, y: -350, z: -700, s: 1.2 },
 ];
 
 const RINGS = [
