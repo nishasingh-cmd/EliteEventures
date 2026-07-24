@@ -26,7 +26,8 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
+  object-position: center;
   filter: brightness(0.9) contrast(1.05);
 }
 
@@ -34,7 +35,7 @@
   position: absolute;
   inset: 0;
   background: 
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.5) 60%, #070707 100%);
+    linear-gradient(to bottom, transparent 0%, rgba(7, 7, 7, 0.2) 50%, #070707 100%);
   z-index: 1;
 }
 
@@ -344,6 +345,59 @@ a.reach-row-item:hover {
   height: 16px;
   color: #070707;
   flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.reach-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #070707;
+  letter-spacing: 0.03em;
+  margin-bottom: 4px;
+}
+
+.reach-phone-row,
+.reach-email-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.reach-wa-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #070707;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+  transition: opacity 0.2s ease;
+}
+
+.reach-wa-link:hover { opacity: 0.8; }
+
+.reach-wa-icon {
+  width: 14px;
+  height: 14px;
+  color: #25d366;
+  flex-shrink: 0;
+}
+
+.reach-email-link {
+  color: #070707;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+  transition: opacity 0.2s ease;
+}
+
+.reach-email-link:hover { opacity: 0.7; }
+
+.reach-dot {
+  color: rgba(7,7,7,0.4);
+  font-size: 12px;
 }
 
 /* Card 2: Follow Us (Dark Box) */

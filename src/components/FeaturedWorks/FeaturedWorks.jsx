@@ -38,18 +38,6 @@ export default function FeaturedWorks() {
       {/* Background accent glow */}
       <div className="fw-bg-glow" aria-hidden="true" />
 
-      {/* ── Header ── */}
-      <div className="fw-header">
-        <motion.h2
-          className="fw-headline"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-        >
-          Featured <span className="fw-gold">Projects</span>
-        </motion.h2>
-      </div>
 
       {/* ── Masonry Grid ── */}
       <div className="fw-grid">
