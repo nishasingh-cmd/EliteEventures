@@ -17,7 +17,7 @@ function Footer() {
           <div className="corp-footer-col corp-left-col">
             <Link to="/" className="corp-footer-logo-link">
               <img
-                src="/images/EliteEventureLogo2.png"
+                src="/images/EliteEventureLogoNew.png"
                 alt="Elite Eventure Logo"
                 className="corp-footer-logo"
               />

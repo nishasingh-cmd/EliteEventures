@@ -5,8 +5,9 @@
 .gallery-hero {
   position: relative;
   width: 100%;
-  height: 72vh;
-  min-height: 500px;
+  aspect-ratio: 16 / 9;
+  max-height: 75vh;
+  min-height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,15 +19,14 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
-  filter: brightness(0.6);
+  object-fit: fill;
+  filter: brightness(0.9) contrast(1.05);
 }
 
 .gallery-hero-overlay {
   position: absolute;
   inset: 0;
-  background:
+  background: 
     linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.5) 60%, #070707 100%);
   z-index: 1;
 }
@@ -37,7 +37,7 @@
   left: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(to right, transparent 0%, rgba(244, 194, 13, 0.18) 20%, rgba(244, 194, 13, 0.55) 50%, rgba(244, 194, 13, 0.18) 80%, transparent 100%);
+  background: linear-gradient(to right, transparent, rgba(255, 199, 44, 0.3), transparent);
   z-index: 2;
 }
 
@@ -45,31 +45,35 @@
   position: relative;
   z-index: 3;
   text-align: center;
+  max-width: 880px;
   padding: 0 24px;
-  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .gallery-hero-heading {
-  font-family: var(--font-heading, "Space Grotesk", sans-serif);
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: -0.03em;
-  line-height: 1.08;
-  margin: 0 0 1.4rem;
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+  font-weight: 800;
+  color: #FFC72C;
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 2px 5px rgba(0, 0, 0, 0.9);
 }
 
 .gallery-hero-gold {
-  color: var(--color-gold-brand, #f4c20d);
-  font-style: italic;
-  font-weight: 300;
+  color: #FFC72C;
+  display: inline-block;
 }
 
 .gallery-hero-sub {
-  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.62);
-  line-height: 1.75;
-  max-width: 620px;
-  margin: 0 auto;
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  line-height: 1.6;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9), 0 1px 4px rgba(0, 0, 0, 0.9);
 }

@@ -39,7 +39,7 @@ const Navbar = () => {
       <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="navbar-container">
           <a href="/" className="logo-brand-container">
-            <img src="/images/EliteEventureLogo2.png" alt="Elite Eventure Logo" className="logo-image" style={{ height: '40px', width: 'auto' }} />
+            <img src="/images/EliteEventureLogoNew.png" alt="Elite Eventure Logo" className="logo-image" style={{ height: '40px', width: 'auto' }} />
           </a>
 
           {/* Desktop Navigation Links */}
