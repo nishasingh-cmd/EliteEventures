@@ -23,7 +23,7 @@ function Footer() {
               />
             </Link>
             <p className="corp-footer-desc">
-              We design and build brand experiences that get noticed — from exhibition stalls to full-scale brand activations, pan-India.
+              We design and build brand experiences that get noticed from exhibition stalls to full-scale brand activations, pan-India.
             </p>
             <div className="corp-footer-socials">
               <a
