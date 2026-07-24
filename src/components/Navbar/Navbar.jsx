@@ -1,42 +1,45 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-// Reuses the same navbar styles defined in Hero.css (already globally loaded via Hero)
 import '../Hero/Hero.css';
 
 /**
- * Shared Navbar — extracted from Hero so it can be used on
- * pages that don't render a full Hero section (e.g. GalleryPage).
- * Styling is identical to the Hero embedded navbar.
- * Active tab is driven entirely by the current URL via useLocation.
+ * Shared Navbar:
+ * - Home (/): transparent over hero, shrinks + glassmorphism on scroll.
+ * - All other pages: solid sticky black navbar from page load, no shrink.
  */
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
+  const isHome = location.pathname === '/';
+
   useEffect(() => {
-    // Start as scrolled so the pill style appears immediately on gallery page
-    setScrolled(window.scrollY > 40);
-    const handleScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    if (isHome) {
+      // On home: start transparent, go scrolled after 40px
+      setScrolled(window.scrollY > 40);
+      const handleScroll = () => setScrolled(window.scrollY > 40);
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    } else {
+      // On other pages: always in "scrolled" (solid) state
+      setScrolled(true);
+    }
+  }, [isHome]);
 
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
-  // Returns 'nav-link active' when the given path matches the current URL,
-  // otherwise returns 'nav-link'. Hash-based routes (Services, Contact)
-  // are considered active when the pathname is '/'.
-  const navClass = (path) =>
-    location.pathname === path ? 'nav-link active' : 'nav-link';
-
-  const mobileClass = (path) =>
-    location.pathname === path ? 'mobile-link active' : 'mobile-link';
+  // On non-home pages, add 'navbar--solid' class for constant solid styling
+  const navbarClass = [
+    'navbar',
+    scrolled ? 'scrolled' : '',
+    !isHome ? 'navbar--solid' : '',
+  ].filter(Boolean).join(' ');
 
   return (
     <>
-      <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+      <header className={navbarClass}>
         <div className="navbar-container">
           <a href="/" className="logo-brand-container">
             <img src="/images/EliteEventureLogoNew.png" alt="Elite Eventure Logo" className="logo-image" style={{ height: '40px', width: 'auto' }} />
@@ -61,7 +64,7 @@ const Navbar = () => {
             </button>
 
             <NavLink to="/contact" className="btn btn-talk">
-              Let's Talk ↗
+              ContactUs
             </NavLink>
 
             {/* Hamburger Button for Mobile */}
@@ -96,4 +99,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

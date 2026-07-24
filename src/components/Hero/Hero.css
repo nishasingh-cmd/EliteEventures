@@ -87,13 +87,50 @@
 
 .navbar.scrolled .navbar-container {
   background: rgba(7, 7, 7, 0.75);
-  /*   backdrop-filter: blur(20px); */
-  /*   -webkit-backdrop-filter: blur(20px); */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(212, 175, 55, 0.25);
   border-radius: 100px;
   padding: 10px 30px;
   max-width: 960px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Solid Navbar — inner pages (About, Gallery, Services, Contact) ── */
+.navbar--solid {
+  position: fixed;
+  padding: 0;
+  background: #070707;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: none;
+}
+
+/* Override pill/scrolled style — keep full-width bar on inner pages */
+.navbar--solid .navbar-container,
+.navbar--solid.scrolled .navbar-container {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 2px 60px;
+  max-width: 1400px;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.navbar--solid .logo-image {
+  height: 42px !important;
+}
+
+.navbar--solid .btn-talk {
+  padding: 0.45rem 1.25rem;
+  font-size: 0.85rem;
+}
+
+.navbar--solid .nav-link {
+  font-size: 0.88rem;
 }
 
 /* Logo styling */
@@ -529,6 +566,11 @@ h1.hero-split-headline {
 @media (max-width: 1024px) {
   .navbar-container {
     padding: 15px 30px;
+  }
+
+  .navbar--solid .navbar-container,
+  .navbar--solid.scrolled .navbar-container {
+    padding: 2px 20px;
   }
 
   .navbar.scrolled .navbar-container {

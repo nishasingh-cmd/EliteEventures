@@ -10,6 +10,7 @@ const projects = [
     img: '/images/dr_rashel.jpeg',
     caption: 'Designed a premium beauty exhibition stall that showcased luxury skincare products through immersive customer experience.',
     tag: 'Beauty & Skincare',
+    objectPosition: 'center center',
   },
   {
     id: 2,
@@ -17,6 +18,7 @@ const projects = [
     img: '/images/vijay_mamra_stall.png',
     caption: 'Executed a high-impact food trade show stall with interactive tasting zones and custom wooden architectural design.',
     tag: 'Food & FMCG',
+    objectPosition: 'center 20%',
   },
   {
     id: 3,
@@ -24,6 +26,7 @@ const projects = [
     img: '/images/flexiworld_stall.png',
     caption: 'Delivered a futuristic corporate pavilion featuring LED backdrops and interactive digital kiosks for global branding.',
     tag: 'Corporate & Tech',
+    objectPosition: 'center center',
   },
 ]
 
@@ -108,6 +111,7 @@ function ProjectCard({ project, index }) {
           className={`project-card-img ${loaded ? 'loaded' : 'loading'}`}
           onLoad={() => setLoaded(true)}
           loading="lazy"
+          style={{ objectPosition: project.objectPosition || 'center center' }}
         />
         <div className="project-card-img-overlay" />
         <span className="project-tag">{project.tag}</span>
