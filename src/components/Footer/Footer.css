@@ -3,7 +3,7 @@
 .corporate-footer {
   position: relative;
   background-color: #070707;
-  padding: 60px 24px 30px 24px;
+  padding: 28px 24px 14px 24px;
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
@@ -68,7 +68,7 @@
 .corp-footer-col {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* 16-20px vertical gap reduced to 10px */
+  gap: 6px;
 }
 
 /* Left Column Styling */
@@ -134,7 +134,7 @@
   font-size: 18px; /* 18-20px heading size */
   font-weight: 700;
   color: #FFC72C; /* Luxury Gold */
-  margin: 0;
+  margin: 0 0 2px 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -145,7 +145,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 6px; /* vertical item spacing reduced to 6px */
+  gap: 3px;
 }
 
 .corp-nav-link {
@@ -185,7 +185,7 @@
 .corp-footer-contact {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* equal spacing reduced to 10px */
+  gap: 4px;
 }
 
 .corp-contact-row {
@@ -223,7 +223,7 @@ a.corp-contact-row:hover {
   width: 100%;
   height: 1px;
   background-color: rgba(255, 255, 255, 0.08); /* correct border */
-  margin: 35px 0 20px 0;
+  margin: 16px 0 10px 0;
 }
 
 .corp-footer-bottom {
