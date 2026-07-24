@@ -100,7 +100,7 @@
 
 .aso-main-heading-gold {
   color: var(--color-gold-brand);
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
 }
 
@@ -407,7 +407,7 @@
   font-size: 0.82rem;
   font-weight: 400;
   color: rgba(255,255,255,0.42);
-  font-style: italic;
+  font-style: normal;
 }
 
 /* ============================================================
@@ -641,7 +641,7 @@
 
 .aso-sec-title span {
   color: var(--color-gold-brand);
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
 }
 

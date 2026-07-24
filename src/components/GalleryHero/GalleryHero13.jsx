@@ -56,7 +56,7 @@ export default function GalleryHero13() {
       {/* Fixed UI Overlay */}
       <div className="gh13-ui pointer-events-none">
         <h1 className="gh13-title">
-          Interactive <span className="gh13-gold italic">Canvas</span>
+          Interactive <span className="gh13-gold">Canvas</span>
         </h1>
         <p className="gh13-subtitle">Click and drag anywhere to explore the archives.</p>
       </div>

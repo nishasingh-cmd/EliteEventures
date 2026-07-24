@@ -81,7 +81,7 @@
 }
 
 .gh10-content .italic {
-  font-style: italic;
+  font-style: normal;
   font-weight: 800; /* slightly lighter weight for the italic contrast */
 }
 

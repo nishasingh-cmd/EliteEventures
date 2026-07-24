@@ -322,7 +322,7 @@
 
 .ap-heading-gold {
   color: var(--color-gold-brand);
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
 }
 
@@ -551,7 +551,7 @@
 
 .ap-section-title span {
   color: var(--color-gold-brand);
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
 }
 
@@ -755,7 +755,7 @@
 
 .ap-cta-heading span {
   color: var(--color-gold-brand);
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
 }
 

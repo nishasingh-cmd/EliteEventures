@@ -7,7 +7,7 @@ const projects = [
   {
     id: 1,
     brand: 'Dr. Rashel',
-    img: '/images/dr_rashel.jpeg',
+    img: '/images/portrait_6.jpeg',
     caption: 'Designed a premium beauty exhibition stall that showcased luxury skincare products through immersive customer experience.',
     tag: 'Beauty & Skincare',
     objectPosition: 'center center',

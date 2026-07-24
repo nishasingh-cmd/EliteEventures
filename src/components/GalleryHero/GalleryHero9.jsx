@@ -18,7 +18,7 @@ export default function GalleryHero9() {
       {/* Absolute Header Overlay */}
       <div className="gh9-header-overlay pointer-events-none">
         <h1 className="gh9-main-title">
-          Elite <span className="gh9-gold italic">Gallery</span>
+          Elite <span className="gh9-gold">Gallery</span>
         </h1>
         <p className="gh9-subtitle">Our Finest Works</p>
       </div>
