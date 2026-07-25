@@ -177,7 +177,6 @@ export default function GoogleReviews() {
                 <StarRating count={r.rating} />
                 <p className="sp-review-text">
                   {r.text}
-                  {r.text.length >= 80 && <span className="sp-read-more">Read more</span>}
                 </p>
               </div>
             ))}
