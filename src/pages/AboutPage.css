@@ -907,3 +907,145 @@
     justify-content: center;
   }
 }
+
+/* New Layout Grid & Cards Responsive Styling */
+.ap-top-grid,
+.ap-vm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.ap-vm-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.ap-yellow-card {
+  background: var(--color-gold-brand);
+  border: 1px solid var(--color-gold-brand);
+  border-radius: 24px;
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.ap-stats-pill {
+  width: 100%;
+  max-width: 1200px;
+  padding: 1.8rem 2.5rem;
+  border: 2px solid rgba(244, 194, 13, 0.45);
+  border-radius: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: rgba(244, 194, 13, 0.03);
+  box-sizing: border-box;
+}
+
+.ap-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ap-stat-number {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--color-gold-brand);
+  line-height: 1;
+}
+
+.ap-stat-label {
+  font-size: 0.85rem;
+  color: #fff;
+  line-height: 1.2;
+  opacity: 0.7;
+}
+
+.ap-stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 991px) {
+  .ap-top-grid,
+  .ap-vm-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .ap-yellow-card {
+    padding: 2.5rem 2rem;
+  }
+
+  .ap-stats-pill {
+    padding: 1.5rem 1rem;
+    border-radius: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ap-stats-pill {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 0.6rem;
+    border-radius: 20px;
+    gap: 0.2rem;
+  }
+
+  .ap-stat-item {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 0.3rem;
+    flex: 1;
+  }
+
+  .ap-stat-number {
+    font-size: 1.55rem;
+    font-weight: 700;
+  }
+
+  .ap-stat-label {
+    font-size: 0.68rem;
+    text-align: center;
+    opacity: 0.85;
+  }
+
+  .ap-stat-divider {
+    height: 32px;
+    opacity: 0.4;
+  }
+}
+
+@media (max-width: 576px) {
+  .ap-top-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .ap-yellow-card {
+    padding: 2rem 1.25rem;
+    border-radius: 18px;
+  }
+
+  .ap-stats-pill {
+    border-radius: 16px;
+    padding: 1rem 0.4rem;
+  }
+
+  .ap-stat-number {
+    font-size: 1.45rem;
+  }
+
+  .ap-stat-label {
+    font-size: 0.65rem;
+  }
+}

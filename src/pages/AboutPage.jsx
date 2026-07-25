@@ -84,7 +84,7 @@ export default function AboutPage() {
       <section className="ap-new-layout-section" ref={mainRef} style={{ padding: '100px 5%', background: '#070707', display: 'flex', flexDirection: 'column', gap: '80px', alignItems: 'center' }}>
 
         {/* TOP ROW: Quote & About Us Card */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', width: '100%', maxWidth: '1200px' }}>
+        <div className="ap-top-grid">
 
           {/* Left Column: Quote and Image */}
           <motion.div
@@ -104,8 +104,8 @@ export default function AboutPage() {
 
           {/* Right Column: About Us Yellow Card */}
           <motion.div
+            className="ap-yellow-card"
             initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}
-            style={{ background: 'var(--color-gold-brand)', border: '1px solid var(--color-gold-brand)', borderRadius: '24px', padding: '3.5rem', display: 'flex', flexDirection: 'column', gap: '1.5rem', position: 'relative' }}
           >
             <div style={{ position: 'absolute', top: '2rem', right: '2rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#000' }}>
               <span style={{ fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.05em' }}>ABOUT US</span>
@@ -129,33 +129,33 @@ export default function AboutPage() {
 
         {/* MIDDLE ROW: Stats Pill */}
         <motion.div
+          className="ap-stats-pill"
           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
-          style={{ width: '100%', maxWidth: '1200px', padding: '2rem', border: '2px solid rgba(244,194,13,0.45)', borderRadius: '100px', display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', background: 'rgba(244,194,13,0.03)' }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <span style={{ fontSize: '2.5rem', fontWeight: 500, color: 'var(--color-gold-brand)' }}>
+          <div className="ap-stat-item">
+            <span className="ap-stat-number">
               <CountUp to={200} suffix="+" />
             </span>
-            <span style={{ fontSize: '0.85rem', color: '#fff', lineHeight: 1.2, opacity: 0.7 }}>Projects<br />Completed</span>
+            <span className="ap-stat-label">Projects<br />Completed</span>
           </div>
-          <div style={{ width: '1px', height: '40px', background: 'rgba(255,255,255,0.15)' }}></div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <span style={{ fontSize: '2.5rem', fontWeight: 500, color: 'var(--color-gold-brand)' }}>
+          <div className="ap-stat-divider"></div>
+          <div className="ap-stat-item">
+            <span className="ap-stat-number">
               <CountUp to={98} suffix="%" />
             </span>
-            <span style={{ fontSize: '0.85rem', color: '#fff', lineHeight: 1.2, opacity: 0.7 }}>Satisfied<br />Clients</span>
+            <span className="ap-stat-label">Satisfied<br />Clients</span>
           </div>
-          <div style={{ width: '1px', height: '40px', background: 'rgba(255,255,255,0.15)' }}></div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <span style={{ fontSize: '2.5rem', fontWeight: 500, color: 'var(--color-gold-brand)' }}>
+          <div className="ap-stat-divider"></div>
+          <div className="ap-stat-item">
+            <span className="ap-stat-number">
               <CountUp to={50} suffix="+" />
             </span>
-            <span style={{ fontSize: '0.85rem', color: '#fff', lineHeight: 1.2, opacity: 0.7 }}>Industry<br />Awards</span>
+            <span className="ap-stat-label">Industry<br />Awards</span>
           </div>
         </motion.div>
 
         {/* BOTTOM ROW: Vision, Mission, Image Cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem', width: '100%', maxWidth: '1200px' }}>
+        <div className="ap-vm-grid">
 
           {/* Vision Card */}
           <motion.div

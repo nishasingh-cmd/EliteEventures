@@ -35,11 +35,11 @@ function HomePage() {
         <Hero />
         <Marquee />
         <AboutSection />
+        <BrandsSection />
         <GalleryShowcase />
         <WhyChooseSection hideReviews={true} />
         <GoogleReviews />
         <ExpertiseSection />
-        <BrandsSection />
         <SectionSeparator />
         <ContactSection />
       </main>

@@ -59,7 +59,7 @@ const Hero = () => {
           {/* Right Action Menu */}
           <div className="nav-actions">
             <Link to="/contact" className="btn btn-talk">
-              ContactUs
+              Contact Us
             </Link>
 
             {/* Hamburger Button for Mobile */}
@@ -85,7 +85,7 @@ const Hero = () => {
           <Link to="/about" className="mobile-link" onClick={toggleMobileMenu}>About Us</Link>
           <Link to="/contact" className="mobile-link" onClick={toggleMobileMenu}>Contact</Link>
           <Link to="/contact" className="btn btn-mobile-talk" onClick={toggleMobileMenu}>
-            Let's Talk ↗
+            Contact Us ↗
           </Link>
         </nav>
       </div>
