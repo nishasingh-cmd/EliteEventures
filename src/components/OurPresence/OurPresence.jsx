@@ -8,7 +8,7 @@ const mainHubs = [
     name: 'Mumbai',
     tag: 'Primary Hub',
     role: 'Western Headquarters & Commercial Center',
-    pos: { top: '56%', left: '30%' },
+    pos: { top: '56%', left: '22%' },
     mobileOrder: 1
   },
   {
@@ -16,30 +16,30 @@ const mainHubs = [
     name: 'Delhi',
     tag: 'Major Hub',
     role: 'Northern Division & Capital Operations',
-    pos: { top: '22%', left: '46%' },
+    pos: { top: '20%', left: '46%' },
     mobileOrder: 2
   }
 ]
 
 const operationalCities = [
-  { id: 'bengaluru', name: 'Bengaluru', pos: { top: '80%', left: '36%' } },
-  { id: 'ahmedabad', name: 'Ahmedabad', pos: { top: '38%', left: '18%' } },
-  { id: 'hyderabad', name: 'Hyderabad', pos: { top: '64%', left: '60%' } },
-  { id: 'kolkata', name: 'Kolkata', pos: { top: '42%', left: '80%' } },
-  { id: 'chennai', name: 'Chennai', pos: { top: '82%', left: '64%' } }
+  { id: 'bengaluru', name: 'Bengaluru', pos: { top: '82%', left: '30%' } },
+  { id: 'ahmedabad', name: 'Ahmedabad', pos: { top: '36%', left: '14%' } },
+  { id: 'hyderabad', name: 'Hyderabad', pos: { top: '65%', left: '68%' } },
+  { id: 'kolkata', name: 'Kolkata', pos: { top: '38%', left: '84%' } },
+  { id: 'chennai', name: 'Chennai', pos: { top: '84%', left: '64%' } }
 ]
 
 // SVG Network lines connecting cities in 100x100 coordinate space
 const networkLines = [
-  { from: [46, 22], to: [30, 56] }, // Delhi -> Mumbai
-  { from: [46, 22], to: [18, 38] }, // Delhi -> Ahmedabad
-  { from: [46, 22], to: [80, 42] }, // Delhi -> Kolkata
-  { from: [30, 56], to: [18, 38] }, // Mumbai -> Ahmedabad
-  { from: [30, 56], to: [36, 80] }, // Mumbai -> Bengaluru
-  { from: [30, 56], to: [60, 64] }, // Mumbai -> Hyderabad
-  { from: [60, 64], to: [64, 82] }, // Hyderabad -> Chennai
-  { from: [36, 80], to: [64, 82] }, // Bengaluru -> Chennai
-  { from: [60, 64], to: [80, 42] }  // Hyderabad -> Kolkata
+  { from: [46, 20], to: [22, 56] }, // Delhi -> Mumbai
+  { from: [46, 20], to: [14, 36] }, // Delhi -> Ahmedabad
+  { from: [46, 20], to: [84, 38] }, // Delhi -> Kolkata
+  { from: [22, 56], to: [14, 36] }, // Mumbai -> Ahmedabad
+  { from: [22, 56], to: [30, 82] }, // Mumbai -> Bengaluru
+  { from: [22, 56], to: [68, 65] }, // Mumbai -> Hyderabad
+  { from: [68, 65], to: [64, 84] }, // Hyderabad -> Chennai
+  { from: [30, 82], to: [64, 84] }, // Bengaluru -> Chennai
+  { from: [68, 65], to: [84, 38] }  // Hyderabad -> Kolkata
 ]
 
 export default function OurPresence() {
