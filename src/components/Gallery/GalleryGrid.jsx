@@ -19,7 +19,7 @@ const ENTRANCE_DIRECTIONS = [
 const GALLERY_ITEMS = [
   {
     id: 1,
-    title: 'Dr. Rachel',
+    title: 'Dr. Rashel',
     subtitle: 'FLIPKART GLAMOUR FEST',
     category: 'Exhibition',
     image: '/images/dr_rashel.jpeg',
@@ -27,6 +27,14 @@ const GALLERY_ITEMS = [
   },
   {
     id: 2,
+    title: 'Dr. Rashel Stage',
+    subtitle: 'BEAUTY ELIXIRS LAUNCH',
+    category: 'Activation',
+    image: '/images/dr_rashel_stage.jpeg',
+    aspectRatio: '16 / 10',
+  },
+  {
+    id: 3,
     title: 'Sunburn',
     subtitle: 'GOA MUSIC FEST',
     category: 'Activation',
@@ -34,7 +42,15 @@ const GALLERY_ITEMS = [
     aspectRatio: '1 / 1.1',
   },
   {
-    id: 3,
+    id: 4,
+    title: 'Mufti 3D Experience',
+    subtitle: 'LUXURY LED INSTALLATION',
+    category: 'Activation',
+    image: '/images/mufti_led_cube_1.jpeg',
+    aspectRatio: '16 / 10',
+  },
+  {
+    id: 5,
     title: 'Nykaa',
     subtitle: 'BEAUTY BASH',
     category: 'Exhibition',
@@ -42,7 +58,7 @@ const GALLERY_ITEMS = [
     aspectRatio: '16 / 10',
   },
   {
-    id: 4,
+    id: 6,
     title: 'Vega',
     subtitle: 'LAKMÉ FASHION WEEK',
     category: 'Exhibition',
@@ -50,7 +66,15 @@ const GALLERY_ITEMS = [
     aspectRatio: '16 / 10',
   },
   {
-    id: 5,
+    id: 7,
+    title: 'Hello EDC',
+    subtitle: 'LUXURY WATCH BOOTH',
+    category: 'Exhibition',
+    image: '/images/hello_watch_stall.jpeg',
+    aspectRatio: '4 / 5',
+  },
+  {
+    id: 8,
     title: 'Boiler Room',
     subtitle: 'BANGALORE SESSIONS',
     category: 'Activation',
@@ -58,7 +82,7 @@ const GALLERY_ITEMS = [
     aspectRatio: '16 / 10',
   },
   {
-    id: 6,
+    id: 9,
     title: 'TechExpo',
     subtitle: 'DELHI 2025',
     category: 'MICE',
@@ -66,7 +90,23 @@ const GALLERY_ITEMS = [
     aspectRatio: '1 / 1',
   },
   {
-    id: 7,
+    id: 10,
+    title: 'Flexiworld Logistics',
+    subtitle: 'TRADE EXPO 2025',
+    category: 'Exhibition',
+    image: '/images/flexiworld_stall_2.jpeg',
+    aspectRatio: '16 / 10',
+  },
+  {
+    id: 11,
+    title: 'Mufti Digital Zone',
+    subtitle: 'IMMERSIVE CUBE DISPLAY',
+    category: 'Activation',
+    image: '/images/mufti_led_cube_2.jpeg',
+    aspectRatio: '4 / 5',
+  },
+  {
+    id: 12,
     title: 'Lolla India',
     subtitle: 'MUMBAI 2025',
     category: 'Activation',
@@ -74,7 +114,7 @@ const GALLERY_ITEMS = [
     aspectRatio: '16 / 10',
   },
   {
-    id: 8,
+    id: 13,
     title: 'Nova Tech',
     subtitle: 'INDIAJOY EXPO',
     category: 'MICE',
@@ -82,7 +122,7 @@ const GALLERY_ITEMS = [
     aspectRatio: '4 / 5',
   },
   {
-    id: 9,
+    id: 14,
     title: 'Puma',
     subtitle: 'STREETWEAR POPUP',
     category: 'Activation',
@@ -90,7 +130,7 @@ const GALLERY_ITEMS = [
     aspectRatio: '1 / 1',
   },
   {
-    id: 10,
+    id: 15,
     title: 'House of Cavalli',
     subtitle: 'LUXURY EXHIBIT',
     category: 'Exhibition',
@@ -98,7 +138,7 @@ const GALLERY_ITEMS = [
     aspectRatio: '4 / 5',
   },
   {
-    id: 11,
+    id: 16,
     title: 'Lacoste',
     subtitle: 'SPORTSWEAR BOOTH',
     category: 'MICE',
@@ -106,11 +146,19 @@ const GALLERY_ITEMS = [
     aspectRatio: '16 / 10',
   },
   {
-    id: 12,
+    id: 17,
     title: 'Vijay Mamra',
     subtitle: 'FOOD EXPO 2025',
     category: 'Exhibition',
     image: '/images/vijay_mamra_stall.png',
+    aspectRatio: '1 / 1',
+  },
+  {
+    id: 18,
+    title: 'Vijay Mamra Pavilion',
+    subtitle: 'PREMIUM TRADE BOOTH',
+    category: 'Exhibition',
+    image: '/images/vijay_mamra_stall_2.jpeg',
     aspectRatio: '1 / 1',
   },
 ]
