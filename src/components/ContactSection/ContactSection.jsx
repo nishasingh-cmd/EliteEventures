@@ -94,39 +94,48 @@ function ContactSection() {
     setIsSubmitting(true)
 
     try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          from_name: formData.fullName,
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: 'efc9eecf-d38f-40b4-8283-3b95b9a3ea6d',
           name: formData.fullName,
           email: formData.email,
-          reply_to: formData.email,
           phone: formData.phone || 'N/A',
-          title: formData.subject || 'New Website Inquiry',
-          subject: formData.subject || 'New Website Inquiry',
-          message: `Phone: ${formData.phone || 'N/A'}\nSubject: ${formData.subject || 'N/A'}\n\nMessage:\n${formData.message}`,
-          to_email: 'info@eliteeventure.com',
-        },
-        EMAILJS_PUBLIC_KEY
-      )
+          subject: formData.subject || 'New Website Inquiry from Elite Eventure',
+          message: `Name: ${formData.fullName}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'N/A'}\nSubject: ${formData.subject || 'N/A'}\n\nMessage:\n${formData.message}`,
+          from_name: 'Elite Eventure Website Form',
+        }),
+      })
 
+      const data = await response.json()
       setIsSubmitting(false)
-      setToast({
-        show: true,
-        message: "Thank you for contacting Elite Eventure. We've received your message and will get back to you shortly.",
-      })
-      setFormData({
-        fullName: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: '',
-      })
-      setErrors({})
-      setTouched({})
+
+      if (data.success || response.ok) {
+        setToast({
+          show: true,
+          message: "Thank you for contacting Elite Eventure. We've received your message and will get back to you shortly.",
+        })
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+        })
+        setErrors({})
+        setTouched({})
+      } else {
+        setToast({
+          show: true,
+          message: 'Something went wrong. Please try again or reach us directly at info@eliteeventure.com.',
+        })
+      }
     } catch (error) {
-      console.error('EmailJS error:', error)
+      console.error('Web3Forms submit error:', error)
       setIsSubmitting(false)
       setToast({
         show: true,
