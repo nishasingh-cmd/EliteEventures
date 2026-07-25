@@ -8,7 +8,7 @@ const mainHubs = [
     name: 'Mumbai',
     tag: 'Primary Hub',
     role: 'Western Headquarters & Commercial Center',
-    pos: { top: '54%', left: '26%' },
+    pos: { top: '56%', left: '30%' },
     mobileOrder: 1
   },
   {
@@ -16,30 +16,30 @@ const mainHubs = [
     name: 'Delhi',
     tag: 'Major Hub',
     role: 'Northern Division & Capital Operations',
-    pos: { top: '22%', left: '44%' },
+    pos: { top: '22%', left: '46%' },
     mobileOrder: 2
   }
 ]
 
 const operationalCities = [
-  { id: 'bengaluru', name: 'Bengaluru', pos: { top: '77%', left: '40%' } },
-  { id: 'ahmedabad', name: 'Ahmedabad', pos: { top: '42%', left: '20%' } },
-  { id: 'hyderabad', name: 'Hyderabad', pos: { top: '63%', left: '50%' } },
-  { id: 'kolkata', name: 'Kolkata', pos: { top: '44%', left: '78%' } },
-  { id: 'chennai', name: 'Chennai', pos: { top: '80%', left: '60%' } }
+  { id: 'bengaluru', name: 'Bengaluru', pos: { top: '80%', left: '36%' } },
+  { id: 'ahmedabad', name: 'Ahmedabad', pos: { top: '38%', left: '18%' } },
+  { id: 'hyderabad', name: 'Hyderabad', pos: { top: '64%', left: '60%' } },
+  { id: 'kolkata', name: 'Kolkata', pos: { top: '42%', left: '80%' } },
+  { id: 'chennai', name: 'Chennai', pos: { top: '82%', left: '64%' } }
 ]
 
 // SVG Network lines connecting cities in 100x100 coordinate space
 const networkLines = [
-  { from: [44, 22], to: [26, 54] }, // Delhi -> Mumbai
-  { from: [44, 22], to: [20, 42] }, // Delhi -> Ahmedabad
-  { from: [44, 22], to: [78, 44] }, // Delhi -> Kolkata
-  { from: [26, 54], to: [20, 42] }, // Mumbai -> Ahmedabad
-  { from: [26, 54], to: [40, 77] }, // Mumbai -> Bengaluru
-  { from: [26, 54], to: [50, 63] }, // Mumbai -> Hyderabad
-  { from: [50, 63], to: [60, 80] }, // Hyderabad -> Chennai
-  { from: [40, 77], to: [60, 80] }, // Bengaluru -> Chennai
-  { from: [50, 63], to: [78, 44] }  // Hyderabad -> Kolkata
+  { from: [46, 22], to: [30, 56] }, // Delhi -> Mumbai
+  { from: [46, 22], to: [18, 38] }, // Delhi -> Ahmedabad
+  { from: [46, 22], to: [80, 42] }, // Delhi -> Kolkata
+  { from: [30, 56], to: [18, 38] }, // Mumbai -> Ahmedabad
+  { from: [30, 56], to: [36, 80] }, // Mumbai -> Bengaluru
+  { from: [30, 56], to: [60, 64] }, // Mumbai -> Hyderabad
+  { from: [60, 64], to: [64, 82] }, // Hyderabad -> Chennai
+  { from: [36, 80], to: [64, 82] }, // Bengaluru -> Chennai
+  { from: [60, 64], to: [80, 42] }  // Hyderabad -> Kolkata
 ]
 
 export default function OurPresence() {
@@ -61,10 +61,6 @@ export default function OurPresence() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="presence-badge">
-            <span className="presence-badge-dot" />
-            OUR PRESENCE
-          </div>
 
           <h2 className="presence-headline">
             Delivering Experiences <span className="presence-gold">Across India</span>
