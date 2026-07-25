@@ -296,6 +296,59 @@
   }
 }
 
+@media (max-width: 768px) {
+  .about-stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .stat-pill {
+    padding: 12px 6px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .stat-pill-num {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .stat-pill-lbl {
+    font-size: 0.62rem;
+    line-height: 1.25;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+
+  .about-btn-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .ref-pill-btn {
+    flex: 1;
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+    padding: 12px 8px;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
+}
+
 @media (max-width: 576px) {
   .about-section {
     padding: 50px 20px;
@@ -314,18 +367,20 @@
     font-size: 0.95rem;
   }
 
-  .about-stats-row {
-    flex-direction: column;
-    gap: 0.8rem;
+  .stat-pill {
+    padding: 10px 4px;
   }
 
-  .about-btn-group {
-    flex-direction: column;
-    width: 100%;
+  .stat-pill-num {
+    font-size: 1.1rem;
+  }
+
+  .stat-pill-lbl {
+    font-size: 0.58rem;
   }
 
   .ref-pill-btn {
-    width: 100%;
-    justify-content: center;
+    padding: 12px 4px;
+    font-size: 0.76rem;
   }
 }
