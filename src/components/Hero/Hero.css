@@ -344,14 +344,13 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(7, 7, 8, 0.98);
-  /*   backdrop-filter: blur(24px); */
-  z-index: 95;
+  background-color: #070707;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
   transform: translateY(-100%);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .mobile-nav-menu.open {
@@ -363,14 +362,17 @@
   flex-direction: column;
   align-items: center;
   gap: 1.8rem;
-  width: 80%;
+  width: 85%;
+  max-width: 320px;
 }
 
 .mobile-link {
   font-family: var(--font-heading);
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--text-secondary);
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .mobile-link:hover,
@@ -379,10 +381,20 @@
 }
 
 .btn-mobile-talk {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  margin-top: 1rem;
+  max-width: 260px;
+  margin-top: 1.2rem;
+  padding: 0.85rem 1.8rem;
   background-color: var(--color-gold-brand);
   color: #070708;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(234, 179, 8, 0.25);
 }
 
 /* Hero Content Area */

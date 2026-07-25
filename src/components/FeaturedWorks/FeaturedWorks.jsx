@@ -21,17 +21,16 @@ const works = [
   { id: 15, src: '/images/landscape_1.jpeg',          label: 'Executive Corporate Summit Stage',cat: 'Corporate Event'  },
 ]
 
-/* Alternate: even indices slide from top, odd from bottom */
+/* Staggered quick pop-in for responsive fast loading */
 function getVariants(index) {
-  const fromTop = index % 2 === 0
   return {
-    hidden: { opacity: 0, y: fromTop ? -80 : 80 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 1.0,
-        delay: index * 0.13,
+        duration: 0.45,
+        delay: Math.min(index * 0.04, 0.3),
         ease: [0.22, 1, 0.36, 1],
       },
     },
@@ -54,15 +53,15 @@ export default function FeaturedWorks() {
             variants={getVariants(i)}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            whileHover={{ scale: 1.04, transition: { duration: 0.35, ease: 'easeOut' } }}
+            viewport={{ once: true, amount: 0.1 }}
+            whileHover={{ scale: 1.03, transition: { duration: 0.25, ease: 'easeOut' } }}
           >
             <div className="fw-img-wrap">
               <img
                 src={work.src}
                 alt={work.label}
                 className="fw-img"
-                loading="lazy"
+                loading="eager"
               />
               {/* Hover overlay */}
               <div className="fw-overlay">

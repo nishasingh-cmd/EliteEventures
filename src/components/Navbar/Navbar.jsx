@@ -57,7 +57,7 @@ const Navbar = () => {
           {/* Right Action Menu */}
           <div className="nav-actions">
             <NavLink to="/contact" className="btn btn-talk">
-              ContactUs
+              Contact Us
             </NavLink>
 
             {/* Hamburger Button for Mobile */}
@@ -83,7 +83,7 @@ const Navbar = () => {
           <NavLink to="/about" className={({ isActive }) => isActive ? 'mobile-link active' : 'mobile-link'} onClick={closeMobileMenu}>About Us</NavLink>
           <NavLink to="/contact" className={({ isActive }) => isActive ? 'mobile-link active' : 'mobile-link'} onClick={closeMobileMenu}>Contact</NavLink>
           <NavLink to="/contact" className="btn btn-mobile-talk" onClick={closeMobileMenu}>
-            Let's Talk ↗
+            Contact Us ↗
           </NavLink>
         </nav>
       </div>
