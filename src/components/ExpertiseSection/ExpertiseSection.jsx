@@ -80,10 +80,50 @@ function ExpertiseSection() {
       <div className="expertise-title-spotlight" />
 
       <div className="expertise-container">
-        {/* ── LEFT SIDE — Layered Image Collage with Slide & Parallax ── */}
+        {/* ── LEFT SIDE — Vertically Centered List with Slide Entrance ── */}
+        <motion.div
+          className="expertise-right"
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <div className="expertise-header">
+            <h2 className="expertise-headline">
+              Our <span className="expertise-gold">Expertise</span>
+            </h2>
+          </div>
+
+          <div className="expertise-list">
+            {expertiseItems.map((item, index) => (
+              <motion.div
+                key={item.id}
+                className={`expertise-row-item ${item.offset ? 'offset-right' : ''}`}
+                custom={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-40px' }}
+                variants={itemVariants}
+              >
+                <div className="expertise-item-content">
+                  <CheckIcon />
+                  <div className="expertise-item-text">
+                    <h3 className="expertise-item-title">{item.title}</h3>
+                    <p className="expertise-item-desc">{item.description}</p>
+                  </div>
+                </div>
+                <div className="expertise-item-divider">
+                  <div className="expertise-item-divider-fill" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* ── RIGHT SIDE — Layered Image Collage with Slide & Parallax ── */}
         <motion.div
           className="expertise-left"
-          initial={{ opacity: 0, x: -60 }}
+          initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -149,46 +189,6 @@ function ExpertiseSection() {
               <div className="collage-glass-overlay" />
             </motion.div>
           </motion.div>
-        </motion.div>
-
-        {/* ── RIGHT SIDE — Vertically Centered List with Slide Entrance ── */}
-        <motion.div
-          className="expertise-right"
-          initial={{ opacity: 0, x: 60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <div className="expertise-header">
-            <h2 className="expertise-headline">
-              Our <span className="expertise-gold">Expertise</span>
-            </h2>
-          </div>
-
-          <div className="expertise-list">
-            {expertiseItems.map((item, index) => (
-              <motion.div
-                key={item.id}
-                className={`expertise-row-item ${item.offset ? 'offset-right' : ''}`}
-                custom={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: '-40px' }}
-                variants={itemVariants}
-              >
-                <div className="expertise-item-content">
-                  <CheckIcon />
-                  <div className="expertise-item-text">
-                    <h3 className="expertise-item-title">{item.title}</h3>
-                    <p className="expertise-item-desc">{item.description}</p>
-                  </div>
-                </div>
-                <div className="expertise-item-divider">
-                  <div className="expertise-item-divider-fill" />
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </motion.div>
       </div>
 
