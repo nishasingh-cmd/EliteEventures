@@ -100,18 +100,17 @@ const Hero = () => {
           </h1>
         </div>
 
-        {/* Right Column: Paragraph and Statistics */}
+        {/* Right Column: Paragraph and CTA */}
         <div className="hero-right-col">
           <p className="hero-split-paragraph text-small">
             We design exhibition stalls and immersive event experiences that bring brands to life and create meaningful connections.
           </p>
 
           <div className="hero-left-actions">
-            <a href="gallery" className="btn btn-gold-pill">
+            <Link to="/gallery" className="btn btn-gold-pill">
               Explore Projects ↗
-            </a>
+            </Link>
           </div>
-
         </div>
       </div>
     </div>
