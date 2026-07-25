@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import emailjs from '@emailjs/browser'
 import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Footer/Footer'
 import './ContactPage.css'
+
+const EMAILJS_SERVICE_ID = 'service_h21vg5l'
+const EMAILJS_TEMPLATE_ID = 'template_q14bb2o'
+const EMAILJS_PUBLIC_KEY = 'wjD_E-t8WgHm3lzbu'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -37,16 +42,19 @@ export default function ContactPage() {
     switch (name) {
       case 'fullName':
         if (!val.trim()) error = 'Name is required'
+        else if (val.trim().length < 2) error = 'Minimum 2 characters'
         break
       case 'email':
         if (!val.trim()) error = 'Email is required'
-        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) error = 'Invalid email address'
+        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) error = 'Invalid email syntax'
         break
       case 'phone':
-        if (!val.trim()) error = 'Phone number is required'
+        if (!val.trim()) error = 'Phone is required'
+        else if (!/^\+?[0-9\s\-()]{7,15}$/.test(val)) error = 'Invalid phone format'
         break
       case 'eventDetails':
-        if (!val.trim()) error = 'Event details are required'
+        if (!val.trim()) error = 'Event Details are required'
+        else if (val.trim().length < 10) error = 'Minimum 10 characters'
         break
       default:
         break
@@ -71,12 +79,14 @@ export default function ContactPage() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    // Validate all fields
+    // Validate all required fields
+    const requiredKeys = ['fullName', 'email', 'phone', 'eventDetails']
     const newErrors = {}
     const newTouched = {}
-    Object.keys(formData).forEach((key) => {
+
+    requiredKeys.forEach((key) => {
       newTouched[key] = true
-      const err = validateField(key, formData[key])
+      const err = validateField(key, formData[key] || '')
       if (err) newErrors[key] = err
     })
 
@@ -88,53 +98,43 @@ export default function ContactPage() {
     setIsSubmitting(true)
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: '2d6657bb-8ff5-408c-bfd3-0d3319be55d6',
-          to_email: 'info@eliteeventure.com',
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.fullName,
           name: formData.fullName,
           email: formData.email,
+          reply_to: formData.email,
           phone: formData.phone || 'N/A',
+          title: formData.brand ? `Brief from ${formData.brand}` : 'New Contact Page Brief',
           subject: formData.brand ? `Brief from ${formData.brand}` : 'New Contact Page Brief',
-          message: `Brand/Company: ${formData.brand || 'N/A'}\n\nEvent Details:\n${formData.eventDetails}`,
-          submission_date_time: new Date().toLocaleString(),
-          from_name: 'Elite Eventure Contact Page Brief Form',
-        }),
-      })
+          message: `Brand/Company: ${formData.brand || 'N/A'}\nPhone: ${formData.phone || 'N/A'}\n\nEvent Details:\n${formData.eventDetails}`,
+          to_email: 'info@eliteeventure.com',
+        },
+        EMAILJS_PUBLIC_KEY
+      )
 
-      const data = await response.json()
-      setIsSubmitting(false)
-
-      if (data.success || response.ok) {
-        setToast({
-          show: true,
-          message: "Thank you! Your brief has been submitted successfully. We'll contact you shortly.",
-        })
-        setFormData({
-          fullName: '',
-          email: '',
-          phone: '',
-          brand: '',
-          eventDetails: '',
-        })
-        setErrors({})
-        setTouched({})
-      } else {
-        setToast({
-          show: true,
-          message: 'Submission failed. Please try again or reach us directly.',
-        })
-      }
-    } catch (error) {
       setIsSubmitting(false)
       setToast({
         show: true,
-        message: 'Something went wrong. Please check your network or contact us directly.',
+        message: "Thank you! Your brief has been submitted successfully. We'll contact you shortly.",
+      })
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        brand: '',
+        eventDetails: '',
+      })
+      setErrors({})
+      setTouched({})
+    } catch (error) {
+      console.error('EmailJS submit error:', error)
+      setIsSubmitting(false)
+      setToast({
+        show: true,
+        message: 'Something went wrong. Please try again or reach us directly at info@eliteeventure.com.',
       })
     }
   }
@@ -303,7 +303,7 @@ export default function ContactPage() {
                   </svg>
                   <div>
                     <div className="reach-label">Office Address</div>
-                    <span>Elite Eventure Studio, Goregaon East, Mumbai, Maharashtra 400063</span>
+                    <span>S 14, A Wing Express Zone Mall, Western Express Highway, Near Dindoshi Metro Station, Goregaon East, Mumbai - 400063</span>
                   </div>
                 </div>
 
@@ -341,6 +341,19 @@ export default function ContactPage() {
                       <span className="reach-dot">•</span>
                       <a href="mailto:sales@eliteeventure.com" className="reach-email-link">sales@eliteeventure.com</a>
                     </div>
+                  </div>
+                </div>
+
+                {/* Exhibition Stall Locations */}
+                <div className="reach-row-item static">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="reach-icon">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                    <polyline points="2 17 12 22 22 17" />
+                    <polyline points="2 12 12 17 22 12" />
+                  </svg>
+                  <div>
+                    <div className="reach-label">Exhibition Stall Locations</div>
+                    <span><strong>Mumbai, Delhi</strong>, Bengaluru, Ahmedabad, Kolkata, Chennai &amp; Hyderabad</span>
                   </div>
                 </div>
 
