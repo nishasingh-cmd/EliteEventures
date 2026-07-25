@@ -6,6 +6,7 @@ import Hero from './components/Hero/Hero'
 import Marquee from './components/Marquee/Marquee'
 import AboutSection from './components/AboutSection/AboutSection'
 import GalleryShowcase from './components/GalleryShowcase/GalleryShowcase'
+import OurPresence from './components/OurPresence/OurPresence'
 import ExpertiseSection from './components/ExpertiseSection/ExpertiseSection'
 import BrandsSection from './components/BrandsSection/BrandsSection'
 import WhyChooseSection from './components/WhyChooseSection/WhyChooseSection'
@@ -38,6 +39,7 @@ function HomePage() {
         <BrandsSection />
         <ExpertiseSection />
         <GalleryShowcase />
+        <OurPresence />
         <WhyChooseSection hideReviews={true} />
         <GoogleReviews />
         <SectionSeparator />
