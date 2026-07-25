@@ -98,39 +98,48 @@ export default function ContactPage() {
     setIsSubmitting(true)
 
     try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          from_name: formData.fullName,
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: 'efc9eecf-d38f-40b4-8283-3b95b9a3ea6d',
           name: formData.fullName,
           email: formData.email,
-          reply_to: formData.email,
           phone: formData.phone || 'N/A',
-          title: formData.brand ? `Brief from ${formData.brand}` : 'New Contact Page Brief',
-          subject: formData.brand ? `Brief from ${formData.brand}` : 'New Contact Page Brief',
-          message: `Brand/Company: ${formData.brand || 'N/A'}\nPhone: ${formData.phone || 'N/A'}\n\nEvent Details:\n${formData.eventDetails}`,
-          to_email: 'info@eliteeventure.com',
-        },
-        EMAILJS_PUBLIC_KEY
-      )
+          subject: formData.brand ? `Brief from ${formData.brand}` : 'New Contact Page Brief from Elite Eventure',
+          message: `Name: ${formData.fullName}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'N/A'}\nBrand/Company: ${formData.brand || 'N/A'}\n\nEvent Details:\n${formData.eventDetails}`,
+          from_name: 'Elite Eventure Brief Form',
+        }),
+      })
 
+      const data = await response.json()
       setIsSubmitting(false)
-      setToast({
-        show: true,
-        message: "Thank you! Your brief has been submitted successfully. We'll contact you shortly.",
-      })
-      setFormData({
-        fullName: '',
-        email: '',
-        phone: '',
-        brand: '',
-        eventDetails: '',
-      })
-      setErrors({})
-      setTouched({})
+
+      if (data.success || response.ok) {
+        setToast({
+          show: true,
+          message: "Thank you! Your brief has been submitted successfully. We'll contact you shortly.",
+        })
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          brand: '',
+          eventDetails: '',
+        })
+        setErrors({})
+        setTouched({})
+      } else {
+        setToast({
+          show: true,
+          message: 'Something went wrong. Please try again or reach us directly at info@eliteeventure.com.',
+        })
+      }
     } catch (error) {
-      console.error('EmailJS submit error:', error)
+      console.error('Web3Forms submit error:', error)
       setIsSubmitting(false)
       setToast({
         show: true,
