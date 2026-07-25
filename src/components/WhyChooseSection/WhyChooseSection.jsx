@@ -262,19 +262,24 @@ function WhyChooseSection({ hideReviews = false }) {
                       overflow: 'hidden'
                     }}
                   >
-                    <span className="review-quote-bg">"</span>
-                    <div className="review-card-top" style={{ position: 'relative', zIndex: 1 }}>
-                      <GoogleIcon />
-                      <StarRating count={r.rating} />
-                    </div>
-                    <p className="review-text" style={{ position: 'relative', zIndex: 1 }}>"{r.text}"</p>
-                    <div className="review-author" style={{ position: 'relative', zIndex: 1 }}>
-                      <div className="review-avatar">{r.name[0]}</div>
-                      <div>
-                        <p className="review-name">{r.name}</p>
-                        <p className="review-role">{r.role}</p>
+                    {/* Top row: avatar+name left, Google icon right */}
+                    <div className="review-card-header">
+                      <div className="review-author">
+                        <div className="review-avatar">{r.name[0]}</div>
+                        <div>
+                          <p className="review-name">{r.name}</p>
+                          <p className="review-time">1 year ago</p>
+                        </div>
                       </div>
+                      <GoogleIcon />
                     </div>
+                    {/* Stars row */}
+                    <div className="review-stars-row">
+                      <StarRating count={r.rating} />
+                      <span className="review-verified">✔</span>
+                    </div>
+                    {/* Review text */}
+                    <p className="review-text">{r.text}</p>
                   </div>
                 ))}
               </motion.div>
@@ -293,14 +298,10 @@ function WhyChooseSection({ hideReviews = false }) {
             target="_blank"
             rel="noopener noreferrer"
             className="reviews-cta"
-            whileHover={{ scale: 1.04 }}
+            whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
           >
             View More Reviews
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="cta-arrow">
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
           </motion.a>
         </motion.div>
       )}

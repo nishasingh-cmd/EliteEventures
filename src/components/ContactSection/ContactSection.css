@@ -400,15 +400,45 @@ a.contact-detail-row:hover .contact-detail-icon {
 
 @media (max-width: 576px) {
   .contact-section-wrapper {
-    padding: 3.5rem 20px 0 20px;
+    padding: 3.5rem 0 2.5rem 0;
+  }
+
+  .contact-container {
+    padding: 0;
+  }
+
+  .contact-info-panel {
+    padding: 0 20px;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .contact-pretitle {
+    text-align: left;
   }
 
   .contact-title {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
+    text-align: left;
+  }
+
+  .contact-paragraph-desc {
+    text-align: left;
+  }
+
+  .contact-details-list {
+    align-items: flex-start;
+  }
+
+  .contact-detail-row {
+    align-items: flex-start;
   }
 
   .contact-glass-card {
-    padding: 1.5rem 1.2rem;
+    padding: 1.8rem 20px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
 
   .contact-toast-container {

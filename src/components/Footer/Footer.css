@@ -286,6 +286,10 @@ a.corp-contact-row:hover {
     grid-column: span 1;
   }
 
+  .corp-footer-logo {
+    height: 64px; /* bigger logo on phone */
+  }
+
   .corp-footer-desc {
     font-size: 14px;
   }

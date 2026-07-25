@@ -185,17 +185,27 @@
 
 @media (max-width: 640px) {
   .fw-grid {
-    column-count: 1;
+    column-count: 2;
+    column-gap: 10px;
+    padding: 0 16px;
+  }
+  .fw-item {
+    margin-bottom: 10px;
+    border-radius: 12px;
+  }
+  .fw-item:last-child {
+    display: none;
   }
   .fw-item--1,
   .fw-item--2,
   .fw-item--3 {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1 / 1;
   }
   .fw-section {
-    padding: 64px 16px 72px;
+    padding: 64px 0 72px;
   }
   .fw-header {
     margin-bottom: 40px;
+    padding: 0 16px;
   }
 }
