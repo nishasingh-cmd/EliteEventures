@@ -113,6 +113,23 @@ export default function GoogleReviews() {
     setActiveReview((prev) => (prev === 0 ? googleReviews.length - itemsPerViewRef.current : prev - 1))
   }, [pauseAndScheduleResume])
 
+  // Touch swipe
+  const touchStartX = useRef(null)
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current === null) return
+    const diff = touchStartX.current - e.changedTouches[0].clientX
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) nextReview()
+      else prevReview()
+    }
+    touchStartX.current = null
+  }
+
   return (
     <section className="sp-reviews-section">
 
@@ -121,7 +138,11 @@ export default function GoogleReviews() {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6" /></svg>
         </button>
 
-        <div className="sp-reviews-track">
+        <div
+          className="sp-reviews-track"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           <motion.div
             className="sp-reviews-slider"
             animate={{ x: `calc(-${activeReview * (100 / itemsPerView)}% - ${activeReview * (20 / itemsPerView)}px)` }}

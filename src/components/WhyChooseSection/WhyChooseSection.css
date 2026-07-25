@@ -455,16 +455,43 @@
 
 @media (max-width: 768px) {
   .why-section {
-    padding: 5rem 24px 6rem 24px;
+    padding: 5rem 16px 6rem 16px;
   }
 
   .why-headline {
-    font-size: 2.3rem;
+    font-size: 2.1rem;
   }
 
   .project-grid {
     grid-template-columns: 1fr;
-    gap: 1.4rem;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .project-card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .project-card-img-wrap {
+    aspect-ratio: 4 / 3;
+    border-radius: 14px;
+  }
+
+  .project-card-body {
+    padding: 1rem 0.2rem 0;
+    text-align: center;
+  }
+
+  .project-brand {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+
+  .project-caption {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.55);
   }
 
   .reviews-carousel {
@@ -477,7 +504,7 @@
   }
 
   .why-header {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 
   .review-card {
