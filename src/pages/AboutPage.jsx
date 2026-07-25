@@ -190,7 +190,7 @@ export default function AboutPage() {
             }}
             style={{ borderRadius: '24px', overflow: 'hidden', height: '100%', minHeight: '200px' }}
           >
-            <img src="/images/landscape_12.jpeg" alt="Office" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src="/images/pepe_jeans_stall.png" alt="Pepe Jeans London Exhibition Stall" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </motion.div>
 
           {/* Mission Card */}
