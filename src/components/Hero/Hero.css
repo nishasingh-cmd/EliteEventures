@@ -656,37 +656,68 @@ h1.hero-split-headline {
 }
 
 @media (max-width: 768px) {
+  .hero-container {
+    height: auto;
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .video-background {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin-top: 68px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .video-overlay {
+    display: none;
+  }
+
+  .bg-video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-content.split-layout {
+    position: relative;
+    height: auto;
+    min-height: auto;
+    padding: 24px 20px 40px;
+    gap: 18px;
+    box-sizing: border-box;
+  }
+
+  .hero-left-col {
+    max-width: 100%;
+    width: 100%;
+    flex-grow: 0;
+  }
+
   .hero-split-headline {
-    font-size: 3.2rem;
+    font-size: 2.2rem;
+    line-height: 1.2;
     margin-bottom: 0;
+  }
+
+  .hero-right-col {
+    max-width: 100%;
+    width: 100%;
+    gap: 16px;
   }
 
   .hero-split-paragraph {
-    font-size: 0.98rem;
+    font-size: 0.92rem;
     line-height: 1.6;
-  }
-
-  .split-stat-val {
-    font-size: 1.8rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .hero-content.split-layout {
-    padding-top: 6.5rem;
-    padding-bottom: 32px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .hero-split-headline {
-    font-size: 2.4rem;
-    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.7);
   }
 
   .hero-left-actions {
     width: 100%;
-    margin-top: 0;
+    margin-top: 4px;
   }
 
   .btn-gold-pill {
@@ -694,5 +725,8 @@ h1.hero-split-headline {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
   }
 }

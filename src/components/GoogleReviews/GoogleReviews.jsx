@@ -3,6 +3,8 @@ import { motion } from 'framer-motion'
 import './GoogleReviews.css'
 
 const googleReviews = [
+  { name: 'Shivani Joshi', time: '1 month ago', rating: 5, text: 'Thank you for bringing our Glam Up booth to life so beautifully! The stall looked absolutely amazing, and the response we received from everyone was incredible. The final execution and every detail came together perfectly to make our brand stand out.', avatar: 'https://ui-avatars.com/api/?name=Shivani+Joshi&background=random' },
+  { name: 'Riya Tiwari', time: '1 month ago', rating: 5, text: 'Thank you Elite Eventure for making our Glam Up booth such a success. We appreciate all the hard work, creativity, and effort that went into making it happen. Looking forward to creating many more exciting concepts and memorable experiences together!', avatar: 'https://ui-avatars.com/api/?name=Riya+Tiwari&background=random' },
   { name: 'Sahil Jobanputra', time: '7 months ago', rating: 5, text: 'Had a wonderful experience with the team at Elite Eventure for our recent company event. Navin & team helped a lot' },
   { name: 'Tejal Salian', time: '1 year ago', rating: 5, text: 'It has been a great experience working with Navin and his team. Looking forward to more of these' },
   { name: 'Sameer | Mehta-Mehta |', time: '1 year ago', rating: 5, text: 'Team of Great Organizers professionally executing events without any chances of complaints. Great work, Keep it up' },
