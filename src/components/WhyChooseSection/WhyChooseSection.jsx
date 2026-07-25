@@ -34,6 +34,20 @@ const projects = [
 const reviews = [
   {
     id: 1,
+    name: 'Shivani Joshi',
+    role: 'Brand Lead, Glam Up',
+    text: 'Thank you for bringing our Glam Up booth to life so beautifully! The stall looked absolutely amazing, and the response we received from everyone was incredible. The final execution and every detail came together perfectly to make our brand stand out.',
+    rating: 5,
+  },
+  {
+    id: 2,
+    name: 'Riya Tiwari',
+    role: 'Marketing Manager, Glam Up',
+    text: 'Thank you Elite Eventure for making our Glam Up booth such a success. We appreciate all the hard work, creativity, and effort that went into making it happen. Looking forward to creating many more exciting concepts together!',
+    rating: 5,
+  },
+  {
+    id: 3,
     name: 'Rohan Mehta',
     role: 'Marketing Head, Dr. Rashel India',
     text: 'Elite Eventure delivered an exceptional exhibition stall that perfectly embodied our brand values. The attention to detail and flawless execution truly set them apart.',
