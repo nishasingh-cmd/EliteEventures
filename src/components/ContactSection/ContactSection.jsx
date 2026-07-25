@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import emailjs from '@emailjs/browser'
 import './ContactSection.css'
+
+const EMAILJS_SERVICE_ID = 'service_h21vg5l'
+const EMAILJS_TEMPLATE_ID = 'template_q14bb2o'
+const EMAILJS_PUBLIC_KEY = 'wjD_E-t8WgHm3lzbu'
 
 function ContactSection() {
   const [formData, setFormData] = useState({
@@ -89,59 +94,23 @@ function ContactSection() {
     setIsSubmitting(true)
 
     try {
-      // Direct Web3Forms submit API (sends message directly to info@eliteeventure.com)
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: '2d6657bb-8ff5-408c-bfd3-0d3319be55d6', // Web3Forms client endpoint
-          to_email: 'info@eliteeventure.com',
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.fullName,
           name: formData.fullName,
           email: formData.email,
+          reply_to: formData.email,
           phone: formData.phone || 'N/A',
+          title: formData.subject || 'New Website Inquiry',
           subject: formData.subject || 'New Website Inquiry',
-          message: formData.message,
-          submission_date_time: new Date().toLocaleString(),
-          from_name: 'Elite Eventure Contact Form',
-        }),
-      })
+          message: `Phone: ${formData.phone || 'N/A'}\nSubject: ${formData.subject || 'N/A'}\n\nMessage:\n${formData.message}`,
+          to_email: 'info@eliteeventure.com',
+        },
+        EMAILJS_PUBLIC_KEY
+      )
 
-      const data = await response.json()
-      setIsSubmitting(false)
-
-      if (data.success || response.ok) {
-        setToast({
-          show: true,
-          message: "Thank you for contacting Elite Eventure. We've received your message and will get back to you shortly.",
-        })
-        setFormData({
-          fullName: '',
-          email: '',
-          phone: '',
-          subject: '',
-          message: '',
-        })
-        setErrors({})
-        setTouched({})
-      } else {
-        setToast({
-          show: true,
-          message: "Thank you for contacting Elite Eventure. We've received your message and will get back to you shortly.",
-        })
-        setFormData({
-          fullName: '',
-          email: '',
-          phone: '',
-          subject: '',
-          message: '',
-        })
-        setErrors({})
-        setTouched({})
-      }
-    } catch (error) {
       setIsSubmitting(false)
       setToast({
         show: true,
@@ -156,6 +125,13 @@ function ContactSection() {
       })
       setErrors({})
       setTouched({})
+    } catch (error) {
+      console.error('EmailJS error:', error)
+      setIsSubmitting(false)
+      setToast({
+        show: true,
+        message: 'Something went wrong. Please try again or reach us directly at info@eliteeventure.com.',
+      })
     }
   }
 
@@ -387,7 +363,7 @@ function ContactSection() {
                 </div>
                 <span className="contact-detail-text">
                   <span className="contact-detail-text-bold">Office Address</span>
-                  <span className="contact-detail-text-sub">Elite Eventure Studio, Goregaon East, Mumbai, Maharashtra 400063, India</span>
+                  <span className="contact-detail-text-sub">S 14, A Wing Express Zone Mall, Western Express Highway, Near Dindoshi Metro Station, Goregaon East, Mumbai - 400063</span>
                 </span>
               </div>
 
@@ -461,6 +437,21 @@ function ContactSection() {
                 <span className="contact-detail-text">
                   <span className="contact-detail-text-bold">Working Hours</span>
                   <span className="contact-detail-text-sub">Mon - Sat: 9:30 AM - 6:30 PM (Sun Closed)</span>
+                </span>
+              </div>
+
+              {/* Pan-India Exhibition Stall Locations */}
+              <div className="contact-detail-row">
+                <div className="contact-detail-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                    <polyline points="2 17 12 22 22 17" />
+                    <polyline points="2 12 12 17 22 12" />
+                  </svg>
+                </div>
+                <span className="contact-detail-text">
+                  <span className="contact-detail-text-bold">Exhibition Stall Locations</span>
+                  <span className="contact-detail-text-sub"><strong>Mumbai, Delhi</strong>, Bengaluru, Ahmedabad, Kolkata, Chennai &amp; Hyderabad</span>
                 </span>
               </div>
 
