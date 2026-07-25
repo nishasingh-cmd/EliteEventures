@@ -214,6 +214,12 @@ a.corp-contact-row:hover {
   flex-shrink: 0;
 }
 
+.corp-contact-icon.inline-icon {
+  display: inline-block;
+  vertical-align: -2.5px;
+  margin-right: 6px;
+}
+
 .corp-contact-text {
   line-height: 1.4;
 }
@@ -271,7 +277,7 @@ a.corp-contact-row:hover {
   }
 }
 
-/* Mobile View: Single Column + centered content */
+/* Mobile View: Single Column + centered content strictly for phone view */
 @media (max-width: 600px) {
   .corporate-footer {
     padding: 45px 16px 25px 16px; /* tighter spacing on mobile */
@@ -292,6 +298,26 @@ a.corp-contact-row:hover {
 
   .corp-footer-desc {
     font-size: 14px;
+    text-align: center;
+  }
+
+  .corp-footer-contact {
+    align-items: center;
+    width: 100%;
+  }
+
+  .corp-contact-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .corp-contact-text {
+    text-align: center;
   }
 
   .corp-footer-divider {

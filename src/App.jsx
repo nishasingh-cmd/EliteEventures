@@ -36,10 +36,10 @@ function HomePage() {
         <Marquee />
         <AboutSection />
         <BrandsSection />
+        <ExpertiseSection />
         <GalleryShowcase />
         <WhyChooseSection hideReviews={true} />
         <GoogleReviews />
-        <ExpertiseSection />
         <SectionSeparator />
         <ContactSection />
       </main>

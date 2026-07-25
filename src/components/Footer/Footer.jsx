@@ -120,11 +120,13 @@ function Footer() {
               </a>
 
               <div className="corp-contact-row static">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="corp-contact-icon">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span className="corp-contact-text"><strong>Mumbai, Delhi</strong>, Bengaluru, Ahmedabad, Kolkata, Chennai &amp; Hyderabad</span>
+                <span className="corp-contact-text">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="corp-contact-icon inline-icon">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <strong>Mumbai, Delhi</strong>, Bengaluru, Ahmedabad, Kolkata, Chennai &amp; Hyderabad
+                </span>
               </div>
             </div>
           </div>

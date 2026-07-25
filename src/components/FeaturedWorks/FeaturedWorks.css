@@ -77,8 +77,8 @@
 ═══════════════════════════════════════════════════════════════ */
 .fw-grid {
   column-count: 3;
-  column-gap: 22px;
-  max-width: 1200px;
+  column-gap: 18px;
+  max-width: 980px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -87,8 +87,8 @@
 /* Each item breaks the column flow */
 .fw-item {
   break-inside: avoid;
-  margin-bottom: 22px;
-  border-radius: 18px;
+  margin-bottom: 18px;
+  border-radius: 14px;
   border: 1px solid rgba(234, 179, 8, 0.45);
   overflow: hidden;
   cursor: pointer;
@@ -103,9 +103,9 @@
   box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 22px rgba(234, 179, 8, 0.3);
 }
 
-/* Three height variants to create masonry rhythm */
-.fw-item--1 { aspect-ratio: 4 / 5; }   /* tall portrait */
-.fw-item--2 { aspect-ratio: 16 / 10; } /* wide landscape */
+/* Three height variants to create clean masonry rhythm */
+.fw-item--1 { aspect-ratio: 1 / 1.1; }  /* portrait */
+.fw-item--2 { aspect-ratio: 16 / 11.5; } /* wide landscape */
 .fw-item--3 { aspect-ratio: 1 / 1; }   /* square */
 
 .fw-img-wrap {
