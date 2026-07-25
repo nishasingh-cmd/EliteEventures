@@ -52,8 +52,8 @@ function AboutSection() {
             transition={{ duration: 4, repeat: Infinity, repeatType: "mirror", ease: "easeInOut", delay: 1.2 }}
           >
             <img 
-              src="/images/dr_rashel.jpeg" 
-              alt="Elite Eventure 3D Exhibition Stand Showcase" 
+              src="/images/dr_rashel_glow_up.jpg" 
+              alt="Elite Eventure Dr. Rashel Glow Up Juice Bar Stall" 
               className="about-card-img" 
               loading="lazy" 
             />
