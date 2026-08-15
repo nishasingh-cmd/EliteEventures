@@ -8,33 +8,29 @@ const columnsData = [
   // Column 1
   [
     { id: 'c1-1', src: '/images/pepe_jeans_stall.png',        label: 'Pepe Jeans London Fashion Booth',        cat: 'Brand Activation', ratioClass: 'fw-item--1' },
-   { id: 'c3-2', src: '/images/dr_rashel.jpeg',               label: 'Dr. Rashel Skincare Pavilion',           cat: 'Brand Activation', ratioClass: 'fw-item--1' },
-    { id: 'c1-3', src: '/images/vijay_mamra_stall.png',       label: 'Vijay Mamra Food Expo Stall',            cat: 'Exhibition',       ratioClass: 'fw-item--3' },
+    { id: 'c1-2', src: '/images/dr_rashel.jpeg',               label: 'Dr. Rashel Skincare Pavilion',           cat: 'Brand Activation', ratioClass: 'fw-item--2' },
+    { id: 'c2-1', src: '/images/deal_jeans_stall.png',        label: 'Deal Jeans Trade Show Stand',            cat: 'Trade Show',       ratioClass: 'fw-item--1' },
     { id: 'c1-4', src: '/images/smarr_realty_stall.png',      label: 'Smarr Realty Architectural Expo',        cat: 'Exhibition',       ratioClass: 'fw-item--1' },
     { id: 'c1-5', src: '/images/dr_rashel_charcoal_zone.png', label: 'Dr. Rashel Charcoal Gaming & Skincare',  cat: 'Brand Activation', ratioClass: 'fw-item--2' },
-    { id: 'c1-7', src: '/images/dr_rashel_3d_concept.png',    label: 'Dr. Rashel Multi-Zone 3D Concept Model', cat: '3D Render',        ratioClass: 'fw-item--1' },
-    
+    { id: 'c1-6', src: '/images/dr_rashel_3d_concept.png',    label: 'Dr. Rashel Multi-Zone 3D Concept Model', cat: '3D Render',        ratioClass: 'fw-item--3' },
   ],
   // Column 2
   [
-    { id: 'c2-2', src: '/images/dr_rashel_detan_booth.png',   label: 'Dr. Rashel De-Tan Scrub Beach Pavilion', cat: 'Brand Activation', ratioClass: 'fw-item--1' },
-     { id: 'c1-6', src: '/images/mufti_led_cube_1.jpeg',        label: 'Mufti 3D LED Experience Zone',           cat: 'Brand Activation', ratioClass: 'fw-item--3' }, 
+    { id: 'c1-3', src: '/images/vijay_mamra_stall.png',       label: 'Vijay Mamra Food Expo Stall',            cat: 'Exhibition',       ratioClass: 'fw-item--3' },
+    { id: 'c2-2', src: '/images/dr_rashel_detan_booth.png',   label: 'Dr. Rashel De-Tan Scrub Beach Pavilion', cat: 'Brand Activation', ratioClass: 'fw-item--2' },
     { id: 'c2-3', src: '/images/hello_watch_stall.jpeg',      label: 'Hello EDC Luxury Watch Booth',           cat: 'Exhibition',       ratioClass: 'fw-item--3' },
-    { id: 'c2-4', src: '/images/dr_rashel_glow_up_arcade.png',label: 'Dr. Rashel Glow Up Arcade Grand Arch',   cat: 'Brand Activation', ratioClass: 'fw-item--2' },
-     { id: 'c3-1', src: '/images/lacoste_stall.png',           label: 'Lacoste Sportswear Booth',               cat: 'Trade Show',       ratioClass: 'fw-item--3' },
-    { id: 'c2-6', src: '/images/mufti_led_cube_2.jpeg',        label: 'Mufti Immersive Cube Display',          cat: 'Brand Activation', ratioClass: 'fw-item--2' },
-     { id: 'c2-1', src: '/images/deal_jeans_stall.png',        label: 'Deal Jeans Trade Show Stand',            cat: 'Trade Show',       ratioClass: 'fw-item--2' },
+    { id: 'c2-4', src: '/images/dr_rashel_glow_up_arcade.png',label: 'Dr. Rashel Glow Up Arcade Grand Arch',   cat: 'Brand Activation', ratioClass: 'fw-item--1' },
+    { id: 'c2-5', src: '/images/lacoste_stall.png',           label: 'Lacoste Sportswear Booth',               cat: 'Trade Show',       ratioClass: 'fw-item--2' },
+    { id: 'c2-6', src: '/images/dr_rashel_pavilion_interior.png', label: 'Dr. Rashel Pavilion Walkthrough',   cat: 'Stage & Events',   ratioClass: 'fw-item--3' },
   ],
   // Column 3
   [
-   { id: 'c2-5', src: '/images/dr_rashel_rumi_glow.png',     label: 'Dr. Rashel Rumi’s Glow Club Display',    cat: 'Brand Activation', ratioClass: 'fw-item--1' },
-    { id: 'c3-3', src: '/images/flexiworld_stall.png',        label: 'Flexiworld Tech Pavilion',               cat: 'Corporate Event',  ratioClass: 'fw-item--2' },
-    { id: 'c3-4', src: '/images/dr_rashel_stage.jpeg',         label: 'Dr. Rashel Beauty Elixirs Stage',        cat: 'Stage & Events',   ratioClass: 'fw-item--3' },
-    { id: 'c3-5', src: '/images/dr_rashel_kderma_glow.png',   label: 'Dr. Rashel K-Derma Flawless Glow Zone',  cat: 'Experience Zone',  ratioClass: 'fw-item--1' },
-    { id: 'c3-6', src: '/images/dr_rashel_detan_beach_zone.png',label: 'Dr. Rashel Sun & Beach Beauty Exhibit',cat: 'Experience Zone',  ratioClass: 'fw-item--2' },
-     { id: 'c1-2', src: '/images/house_of_cavalli_stall.png',  label: 'House of Cavalli Luxury Exhibit',         cat: 'Experience Zone',  ratioClass: 'fw-item--2' },
-    
-   
+    { id: 'c3-1', src: '/images/dr_rashel_rumi_glow.png',     label: 'Dr. Rashel Rumi’s Glow Club Display',    cat: 'Brand Activation', ratioClass: 'fw-item--1' },
+    { id: 'c3-2', src: '/images/flexiworld_stall.png',        label: 'Flexiworld Tech Pavilion',               cat: 'Corporate Event',  ratioClass: 'fw-item--2' },
+    { id: 'c3-3', src: '/images/dr_rashel_stage.jpeg',         label: 'Dr. Rashel Beauty Elixirs Stage',        cat: 'Stage & Events',   ratioClass: 'fw-item--3' },
+    { id: 'c3-4', src: '/images/dr_rashel_kderma_glow.png',   label: 'Dr. Rashel K-Derma Flawless Glow Zone',  cat: 'Experience Zone',  ratioClass: 'fw-item--1' },
+    { id: 'c3-5', src: '/images/dr_rashel_detan_beach_zone.png',label: 'Dr. Rashel Sun & Beach Beauty Exhibit',cat: 'Experience Zone',  ratioClass: 'fw-item--2' },
+    { id: 'c3-6', src: '/images/house_of_cavalli_stall.png',  label: 'House of Cavalli Luxury Exhibit',         cat: 'Experience Zone',  ratioClass: 'fw-item--3' },
   ]
 ]
 
