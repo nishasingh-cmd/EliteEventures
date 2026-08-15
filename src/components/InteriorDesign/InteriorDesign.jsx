@@ -136,14 +136,14 @@ function InteriorDesign() {
                 onError={(e) => {
                   e.currentTarget.src = '/images/interior-design-1.jpg'
                 }}
-                alt="Interior designer creating 3D render at workstation"
+                alt="Modern corporate office interior design"
                 className="interior-img"
                 loading="lazy"
               />
               <div className="interior-img-overlay" />
               <div className="interior-floating-tag tag-primary">
                 <span className="tag-indicator" />
-                <span>3D Spatial Modeling</span>
+                <span>Corporate Workspaces</span>
               </div>
             </motion.div>
 
@@ -162,14 +162,14 @@ function InteriorDesign() {
                 onError={(e) => {
                   e.currentTarget.src = '/images/interior-design-2.jpg'
                 }}
-                alt="Interior designer sketching layout on whiteboard"
+                alt="Elegant modern interior with warm lighting and wood paneling"
                 className="interior-img"
                 loading="lazy"
               />
               <div className="interior-img-overlay" />
               <div className="interior-floating-tag tag-secondary">
                 <span className="tag-indicator" />
-                <span>Concept Development</span>
+                <span>Architectural Detailing</span>
               </div>
             </motion.div>
           </div>

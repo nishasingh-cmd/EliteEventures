@@ -33,6 +33,12 @@ const expertiseItems = [
     description: 'Innovative virtual event experiences that connect and engage participants globally.',
     offset: false,
   },
+  {
+    id: 6,
+    title: 'Interior Design',
+    description: 'Creating premium, visually impressive interior spaces that reflect your brand, vision, and identity.',
+    offset: false,
+  },
 ]
 
 const CheckIcon = () => (
