@@ -63,11 +63,11 @@ function InteriorDesign() {
           >
             <div className="interior-feature-pill">
               <span className="feature-dot" />
-              <span>Corporate & Executive Lounges</span>
+              <span>Commercial & Corporate Spaces</span>
             </div>
             <div className="interior-feature-pill">
               <span className="feature-dot" />
-              <span>Luxury Hospitality & Brand Pavilions</span>
+              <span>Luxury Residential Interiors</span>
             </div>
           </motion.div>
 
