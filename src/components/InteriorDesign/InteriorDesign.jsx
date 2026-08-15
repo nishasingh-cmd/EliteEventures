@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import './InteriorDesign.css'
 
 function InteriorDesign() {
@@ -32,26 +33,14 @@ function InteriorDesign() {
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.9, ease: customEase }}
         >
-          {/* Top Gold Label */}
-          <motion.div
-            className="interior-label-wrap"
-            initial={{ opacity: 0, y: 15 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1, ease: customEase }}
-          >
-            <span className="interior-gold-label">INTERIOR DESIGN</span>
-            <div className="interior-label-line" />
-          </motion.div>
-
-          {/* Large Architectural Headline */}
+          {/* Main Headline (Matched with Expertise Section) */}
           <motion.h2
             className="interior-headline"
             initial={{ opacity: 0, y: 25 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2, ease: customEase }}
           >
-            We Design Spaces <br />
-            <span className="interior-gold-text">That Make an Impression</span>
+            Interior <span className="interior-gold">Design</span>
           </motion.h2>
 
           {/* Supporting Copy */}
@@ -89,9 +78,8 @@ function InteriorDesign() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.55, ease: customEase }}
           >
-            <a
-              href="#gallery-showcase"
-              onClick={handleExploreClick}
+            <Link
+              to="/gallery"
               className="interior-cta-btn"
               aria-label="Explore our interior design works"
             >
@@ -111,7 +99,7 @@ function InteriorDesign() {
                   <polyline points="7 7 17 7 17 17" />
                 </svg>
               </span>
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
 

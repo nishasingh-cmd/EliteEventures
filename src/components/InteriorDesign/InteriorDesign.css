@@ -92,21 +92,18 @@
 /* Main Headline */
 .interior-headline {
   font-family: var(--font-heading, 'Space Grotesk', sans-serif);
-  font-size: 3.2rem;
-  font-weight: 700;
-  line-height: 1.14;
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1.1;
   letter-spacing: -0.03em;
   color: #ffffff;
   margin: 0 0 1.6rem 0;
 }
 
-.interior-gold-text {
-  color: var(--color-gold-secondary, #D4AF37);
-  background: linear-gradient(135deg, #f5d77f 0%, #D4AF37 50%, #aa820a 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: inline-block;
+.interior-gold {
+  color: #D4AF37;
+  font-style: normal;
+  font-weight: 600;
 }
 
 /* Supporting Description */

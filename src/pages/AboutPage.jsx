@@ -134,7 +134,7 @@ export default function AboutPage() {
         >
           <div className="ap-stat-item">
             <span className="ap-stat-number">
-              <CountUp to={200} suffix="+" />
+              <CountUp to={800} suffix="+" />
             </span>
             <span className="ap-stat-label">Projects<br />Completed</span>
           </div>
