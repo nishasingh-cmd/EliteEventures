@@ -73,8 +73,8 @@
 
 .interior-gold-label {
   font-family: var(--font-sans, 'Satoshi', sans-serif);
-  font-size: 0.76rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 900;
   letter-spacing: 4.5px;
   color: var(--color-gold-secondary, #D4AF37);
   text-transform: uppercase;
@@ -509,7 +509,7 @@
   }
 
   .interior-gold-label {
-    font-size: 0.7rem;
+    font-size: 0.85rem;
     letter-spacing: 3px;
   }
 
