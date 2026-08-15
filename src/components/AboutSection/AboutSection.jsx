@@ -103,7 +103,7 @@ function AboutSection() {
             animate={isInView ? { opacity: 1, x: 0, y: 0, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.38, ease: customEase }}
           >
-            Elite Eventure is a top-notch exhibition stand design company in India. Over the last 15+ years, as industry experts, we have created and built massive exhibit spaces as per the brands' needs and companies' preferences. We oversee concept development, 3D design, construction, installation, and dismantling, and work on projects in major exhibition venues across the country, Europe, the USA, and the Middle East.
+            Elite Eventure is a top-notch exhibition stand design company in India. Over the last 15+ years, as industry experts, we have created and built massive exhibit spaces as per the brands' needs and companies' preferences. We oversee concept development, 3D design, construction, installation, and dismantling, and work on projects in major exhibition venues across the country.
           </motion.p>
 
           {/* 4. Statistics Cards Row */}
