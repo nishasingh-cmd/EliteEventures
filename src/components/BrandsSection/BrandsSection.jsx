@@ -10,11 +10,6 @@ const brands = [
     logo: <img src="/images/logo1.png" alt="Dr. Rashel" className="brand-logo-img" loading="lazy" />,
   },
   {
-    id: 2,
-    name: 'Mufti',
-    logo: <img src="/images/logo4.png" alt="Mufti" className="brand-logo-img dark-logo" loading="lazy" />,
-  },
-  {
     id: 3,
     name: 'Hello EDC',
     logo: <img src="/images/logo6.png" alt="Hello EDC" className="brand-logo-img" loading="lazy" />,
