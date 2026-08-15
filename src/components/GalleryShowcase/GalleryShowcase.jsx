@@ -3,36 +3,43 @@ import { motion, useInView } from "framer-motion"
 import "./GalleryShowcase.css"
 import "../FeaturedWorks/FeaturedWorks.css"
 
-/* ── Real user project photos at top, 3D & AI renders at bottom ──── */
-const works = [
-  { id: 1,  src: '/images/dr_rashel_glow_up_arcade.png',label: 'Dr. Rashel Glow Up Arcade Grand Arch',   cat: 'Brand Activation' },
-  { id: 2,  src: '/images/dr_rashel_detan_booth.png',   label: 'Dr. Rashel De-Tan Scrub Beach Pavilion', cat: 'Brand Activation' },
-  { id: 3,  src: '/images/dr_rashel_kderma_glow.png',   label: 'Dr. Rashel K-Derma Flawless Glow Zone',  cat: 'Experience Zone'  },
-  { id: 4,  src: '/images/dr_rashel_charcoal_zone.png', label: 'Dr. Rashel Charcoal Gaming & Skincare',  cat: 'Brand Activation' },
-  { id: 5,  src: '/images/dr_rashel_rumi_glow.png',     label: 'Dr. Rashel Rumi’s Glow Club Display',    cat: 'Brand Activation' },
-  { id: 6,  src: '/images/dr_rashel_detan_beach_zone.png',label: 'Dr. Rashel Sun & Beach Beauty Exhibit',cat: 'Experience Zone'  },
-  { id: 7,  src: '/images/dr_rashel_pavilion_interior.png',label: 'Dr. Rashel Pavilion Walkthrough',     cat: 'Stage & Events'   },
-  { id: 8,  src: '/images/dr_rashel.jpeg',               label: 'Dr. Rashel Skincare Pavilion',           cat: 'Brand Activation' },
-  { id: 9,  src: '/images/dr_rashel_stage.jpeg',         label: 'Dr. Rashel Beauty Elixirs Stage',        cat: 'Stage & Events'   },
-  { id: 10, src: '/images/pepe_jeans_stall.png',        label: 'Pepe Jeans London Fashion Booth',        cat: 'Brand Activation' },
-  { id: 11, src: '/images/vijay_mamra_stall.png',       label: 'Vijay Mamra Food Expo Stall',            cat: 'Exhibition'       },
-  { id: 12, src: '/images/mufti_led_cube_1.jpeg',        label: 'Mufti 3D LED Experience Zone',           cat: 'Brand Activation' },
-  { id: 13, src: '/images/house_of_cavalli_stall.png',  label: 'House of Cavalli Luxury Exhibit',         cat: 'Experience Zone'  },
-  { id: 14, src: '/images/flexiworld_stall.png',        label: 'Flexiworld Tech Pavilion',               cat: 'Corporate Event'  },
-  { id: 15, src: '/images/deal_jeans_stall.png',        label: 'Deal Jeans Trade Show Stand',            cat: 'Trade Show'       },
-  { id: 16, src: '/images/hello_watch_stall.jpeg',      label: 'Hello EDC Luxury Watch Booth',           cat: 'Exhibition'       },
-  { id: 17, src: '/images/smarr_realty_stall.png',      label: 'Smarr Realty Architectural Expo',        cat: 'Exhibition'       },
-  { id: 18, src: '/images/lacoste_stall.png',           label: 'Lacoste Sportswear Booth',               cat: 'Trade Show'       },
-  { id: 19, src: '/images/flexiworld_stall_2.jpeg',      label: 'Flexiworld Logistics Stand',             cat: 'Exhibition'       },
-  { id: 20, src: '/images/vijay_mamra_stall_2.jpeg',     label: 'Vijay Mamra Premium Exhibition Booth',   cat: 'Exhibition'       },
-  { id: 21, src: '/images/mufti_led_cube_2.jpeg',        label: 'Mufti Immersive Cube Display',          cat: 'Brand Activation' },
-  /* ── 3D Renders & AI Concepts at bottom ── */
-  { id: 22, src: '/images/dr_rashel_3d_concept.png',    label: 'Dr. Rashel Multi-Zone 3D Concept Model', cat: '3D Render'        },
-  { id: 23, src: '/images/landscape_1.jpeg',            label: 'Executive Corporate Summit Stage',       cat: 'Corporate Event'  },
+/* ── 3 Column Distribution: Real brand installations strictly on TOP, Renders at BOTTOM (Zero repeats) ──── */
+const columnsData = [
+  // Column 1
+  [
+    { id: 'c1-1', src: '/images/pepe_jeans_stall.png',        label: 'Pepe Jeans London Fashion Booth',        cat: 'Brand Activation', ratioClass: 'fw-item--1' },
+   { id: 'c3-2', src: '/images/dr_rashel.jpeg',               label: 'Dr. Rashel Skincare Pavilion',           cat: 'Brand Activation', ratioClass: 'fw-item--1' },
+    { id: 'c1-3', src: '/images/vijay_mamra_stall.png',       label: 'Vijay Mamra Food Expo Stall',            cat: 'Exhibition',       ratioClass: 'fw-item--3' },
+    { id: 'c1-4', src: '/images/smarr_realty_stall.png',      label: 'Smarr Realty Architectural Expo',        cat: 'Exhibition',       ratioClass: 'fw-item--1' },
+    { id: 'c1-5', src: '/images/dr_rashel_charcoal_zone.png', label: 'Dr. Rashel Charcoal Gaming & Skincare',  cat: 'Brand Activation', ratioClass: 'fw-item--2' },
+    { id: 'c1-7', src: '/images/dr_rashel_3d_concept.png',    label: 'Dr. Rashel Multi-Zone 3D Concept Model', cat: '3D Render',        ratioClass: 'fw-item--1' },
+    
+  ],
+  // Column 2
+  [
+    { id: 'c2-2', src: '/images/dr_rashel_detan_booth.png',   label: 'Dr. Rashel De-Tan Scrub Beach Pavilion', cat: 'Brand Activation', ratioClass: 'fw-item--1' },
+     { id: 'c1-6', src: '/images/mufti_led_cube_1.jpeg',        label: 'Mufti 3D LED Experience Zone',           cat: 'Brand Activation', ratioClass: 'fw-item--3' }, 
+    { id: 'c2-3', src: '/images/hello_watch_stall.jpeg',      label: 'Hello EDC Luxury Watch Booth',           cat: 'Exhibition',       ratioClass: 'fw-item--3' },
+    { id: 'c2-4', src: '/images/dr_rashel_glow_up_arcade.png',label: 'Dr. Rashel Glow Up Arcade Grand Arch',   cat: 'Brand Activation', ratioClass: 'fw-item--2' },
+     { id: 'c3-1', src: '/images/lacoste_stall.png',           label: 'Lacoste Sportswear Booth',               cat: 'Trade Show',       ratioClass: 'fw-item--3' },
+    { id: 'c2-6', src: '/images/mufti_led_cube_2.jpeg',        label: 'Mufti Immersive Cube Display',          cat: 'Brand Activation', ratioClass: 'fw-item--2' },
+     { id: 'c2-1', src: '/images/deal_jeans_stall.png',        label: 'Deal Jeans Trade Show Stand',            cat: 'Trade Show',       ratioClass: 'fw-item--2' },
+  ],
+  // Column 3
+  [
+   { id: 'c2-5', src: '/images/dr_rashel_rumi_glow.png',     label: 'Dr. Rashel Rumi’s Glow Club Display',    cat: 'Brand Activation', ratioClass: 'fw-item--1' },
+    { id: 'c3-3', src: '/images/flexiworld_stall.png',        label: 'Flexiworld Tech Pavilion',               cat: 'Corporate Event',  ratioClass: 'fw-item--2' },
+    { id: 'c3-4', src: '/images/dr_rashel_stage.jpeg',         label: 'Dr. Rashel Beauty Elixirs Stage',        cat: 'Stage & Events',   ratioClass: 'fw-item--3' },
+    { id: 'c3-5', src: '/images/dr_rashel_kderma_glow.png',   label: 'Dr. Rashel K-Derma Flawless Glow Zone',  cat: 'Experience Zone',  ratioClass: 'fw-item--1' },
+    { id: 'c3-6', src: '/images/dr_rashel_detan_beach_zone.png',label: 'Dr. Rashel Sun & Beach Beauty Exhibit',cat: 'Experience Zone',  ratioClass: 'fw-item--2' },
+     { id: 'c1-2', src: '/images/house_of_cavalli_stall.png',  label: 'House of Cavalli Luxury Exhibit',         cat: 'Experience Zone',  ratioClass: 'fw-item--2' },
+    
+   
+  ]
 ]
 
-function getVariants(index) {
-  const fromTop = index % 2 === 0
+function getVariants(colIndex, itemIndex) {
+  const fromTop = (colIndex + itemIndex) % 2 === 0
   return {
     hidden: { opacity: 0, y: fromTop ? -20 : 20 },
     visible: {
@@ -40,7 +47,7 @@ function getVariants(index) {
       y: 0,
       transition: {
         duration: 0.4,
-        delay: Math.min((index % 6) * 0.04, 0.2),
+        delay: Math.min((colIndex * 2 + itemIndex) * 0.04, 0.25),
         ease: [0.22, 1, 0.36, 1],
       },
     },
@@ -89,31 +96,35 @@ export default function GalleryShowcase({
         </motion.p>
       </div>
 
-      {/* ── Masonry Gallery Grid ── */}
-      <div className="fw-grid">
-        {works.map((work, i) => (
-          <motion.div
-            key={work.id}
-            className={`fw-item fw-item--${(i % 3) + 1}`}
-            variants={getVariants(i)}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.05 }}
-            whileHover={{ scale: 1.04, transition: { duration: 0.25, ease: 'easeOut' } }}
-          >
-            <div className="fw-img-wrap">
-              <img
-                src={work.src}
-                alt={work.label}
-                className="fw-img"
-                loading="lazy"
-              />
-              <div className="fw-overlay">
-                <span className="fw-overlay-cat">{work.cat}</span>
-                <p className="fw-overlay-label">{work.label}</p>
-              </div>
-            </div>
-          </motion.div>
+      {/* ── Masonry Columns Container ── */}
+      <div className="fw-grid-columns">
+        {columnsData.map((column, colIdx) => (
+          <div key={`col-${colIdx}`} className="fw-column">
+            {column.map((work, itemIdx) => (
+              <motion.div
+                key={work.id}
+                className={`fw-item ${work.ratioClass}`}
+                variants={getVariants(colIdx, itemIdx)}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.05 }}
+                whileHover={{ scale: 1.04, transition: { duration: 0.25, ease: 'easeOut' } }}
+              >
+                <div className="fw-img-wrap">
+                  <img
+                    src={work.src}
+                    alt={work.label}
+                    className="fw-img"
+                    loading="lazy"
+                  />
+                  <div className="fw-overlay">
+                    <span className="fw-overlay-cat">{work.cat}</span>
+                    <p className="fw-overlay-label">{work.label}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         ))}
       </div>
     </section>
