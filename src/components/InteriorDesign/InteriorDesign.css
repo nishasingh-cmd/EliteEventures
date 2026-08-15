@@ -1,0 +1,520 @@
+/* ============================================================
+   InteriorDesign — Premium Architectural & Interior Showcase
+   ============================================================ */
+
+.interior-section {
+  position: relative;
+  background-color: #070708;
+  padding: 100px 0 90px;
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ── Ambient Spotlights & Radial Glows ────────────────────────── */
+.interior-bg-glow {
+  position: absolute;
+  top: 30%;
+  right: 15%;
+  transform: translate(50%, -50%);
+  width: 650px;
+  height: 500px;
+  background: radial-gradient(ellipse at center,
+      rgba(212, 175, 55, 0.05) 0%,
+      rgba(7, 7, 8, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.interior-ambient-spotlight {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  width: 500px;
+  height: 400px;
+  background: radial-gradient(ellipse at center,
+      rgba(255, 255, 255, 0.02) 0%,
+      rgba(7, 7, 8, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Container Layout ────────────────────────────────────────── */
+.interior-container {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 5rem;
+  align-items: center;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 40px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Left Column: Typography & Content ────────────────────────── */
+.interior-content-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  position: relative;
+}
+
+/* Top Label */
+.interior-label-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.25rem;
+}
+
+.interior-gold-label {
+  font-family: var(--font-sans, 'Satoshi', sans-serif);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 4.5px;
+  color: var(--color-gold-secondary, #D4AF37);
+  text-transform: uppercase;
+}
+
+.interior-label-line {
+  width: 32px;
+  height: 1px;
+  background: linear-gradient(to right,
+      var(--color-gold-secondary, #D4AF37),
+      transparent);
+}
+
+/* Main Headline */
+.interior-headline {
+  font-family: var(--font-heading, 'Space Grotesk', sans-serif);
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin: 0 0 1.6rem 0;
+}
+
+.interior-gold-text {
+  color: var(--color-gold-secondary, #D4AF37);
+  background: linear-gradient(135deg, #f5d77f 0%, #D4AF37 50%, #aa820a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* Supporting Description */
+.interior-description {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #b5b5c3;
+  margin: 0 0 2rem 0;
+  max-width: 520px;
+}
+
+/* Feature Badges */
+.interior-features-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+.interior-feature-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-left: 2px solid rgba(212, 175, 55, 0.5);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #d1d1e0;
+  letter-spacing: 0.02em;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.interior-feature-pill:hover {
+  background: rgba(212, 175, 55, 0.05);
+  border-color: rgba(212, 175, 55, 0.3);
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.feature-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-gold-secondary, #D4AF37);
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.8);
+}
+
+/* Primary Call to Action Button */
+.interior-cta-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.interior-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 34px;
+  border-radius: 100px;
+  border: 1.5px solid rgba(212, 175, 55, 0.7);
+  background: rgba(15, 15, 18, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 12px rgba(212, 175, 55, 0.08);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.interior-cta-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.25) 0%, rgba(212, 175, 55, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.cta-btn-text {
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.cta-btn-icon {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold-secondary, #D4AF37);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+.interior-cta-btn:hover {
+  border-color: #f5d77f;
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.6), 0 0 25px rgba(212, 175, 55, 0.3);
+  transform: translateY(-3px);
+}
+
+.interior-cta-btn:hover::before {
+  opacity: 1;
+}
+
+.interior-cta-btn:hover .cta-btn-icon {
+  transform: translate(3px, -3px);
+  color: #ffffff;
+}
+
+/* ── Right Column: Editorial Visual Composition ──────────────── */
+.interior-visual-col {
+  width: 100%;
+  position: relative;
+}
+
+.interior-composition-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 70px;
+  /* Space for overlapping secondary image */
+}
+
+/* Primary Frame (Large Dominant Image) */
+.interior-frame-primary {
+  position: relative;
+  width: 90%;
+  aspect-ratio: 16 / 9.5;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  background-color: #0b0b0e;
+  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.85), 0 0 40px rgba(212, 175, 55, 0.05);
+  cursor: pointer;
+}
+
+/* Secondary Frame (Overlapping Image) */
+.interior-frame-secondary {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 58%;
+  aspect-ratio: 16 / 10;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1.5px solid rgba(212, 175, 55, 0.4);
+  background-color: #0d0d12;
+  box-shadow: 0 20px 50px -5px rgba(0, 0, 0, 0.92), 0 0 30px rgba(212, 175, 55, 0.12);
+  z-index: 5;
+  cursor: pointer;
+}
+
+/* Image styling */
+.interior-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.interior-frame-primary:hover .interior-img,
+.interior-frame-secondary:hover .interior-img {
+  transform: scale(1.05);
+}
+
+/* Soft Vignette Overlay */
+.interior-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(7, 7, 8, 0.75) 0%,
+      rgba(7, 7, 8, 0.1) 50%,
+      transparent 100%);
+  pointer-events: none;
+}
+
+/* Architectural Corner Accents */
+.interior-corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.corner-tl {
+  top: 10px;
+  left: 10px;
+  border-top: 2px solid var(--color-gold-secondary, #D4AF37);
+  border-left: 2px solid var(--color-gold-secondary, #D4AF37);
+}
+
+.corner-br {
+  bottom: 10px;
+  right: 10px;
+  border-bottom: 2px solid var(--color-gold-secondary, #D4AF37);
+  border-right: 2px solid var(--color-gold-secondary, #D4AF37);
+}
+
+.corner-tr {
+  top: 10px;
+  right: 10px;
+  border-top: 2px solid var(--color-gold-secondary, #D4AF37);
+  border-right: 2px solid var(--color-gold-secondary, #D4AF37);
+}
+
+.corner-bl {
+  bottom: 10px;
+  left: 10px;
+  border-bottom: 2px solid var(--color-gold-secondary, #D4AF37);
+  border-left: 2px solid var(--color-gold-secondary, #D4AF37);
+}
+
+/* Floating Architectural Tag */
+.interior-floating-tag {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  z-index: 8;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(10, 10, 14, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 100px;
+  padding: 5px 12px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #f0f0f5;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+}
+
+.tag-secondary {
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.tag-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-gold-secondary, #D4AF37);
+  box-shadow: 0 0 8px #D4AF37;
+}
+
+/* ── Smooth Bottom Transition Line ────────────────────────────── */
+.interior-bottom-transition {
+  position: absolute;
+  bottom: 0;
+  left: 8%;
+  width: 84%;
+  height: 1px;
+  background: linear-gradient(to right,
+      transparent 0%,
+      rgba(212, 175, 55, 0.08) 25%,
+      rgba(212, 175, 55, 0.25) 50%,
+      rgba(212, 175, 55, 0.08) 75%,
+      transparent 100%);
+  z-index: 10;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+
+@media (max-width: 1200px) {
+  .interior-headline {
+    font-size: 2.8rem;
+  }
+
+  .interior-container {
+    gap: 3.5rem;
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .interior-section {
+    padding: 30px 0 70px;
+  }
+
+  .interior-container {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 2.8rem;
+  }
+
+  .interior-headline {
+    font-size: 2.4rem;
+  }
+
+  .interior-description {
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .interior-section {
+    padding: 25px 0 60px;
+  }
+
+  .interior-container {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .interior-content-col {
+    max-width: 650px;
+  }
+
+  .interior-composition-wrapper {
+    max-width: 650px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+  }
+
+  .interior-frame-primary {
+    width: 92%;
+  }
+
+  .interior-frame-secondary {
+    width: 56%;
+  }
+}
+
+@media (max-width: 640px) {
+  .interior-section {
+    padding: 20px 0 50px;
+  }
+
+  .interior-container {
+    padding: 0 20px;
+    gap: 2.5rem;
+  }
+
+  .interior-headline {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .interior-description {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+
+  .interior-features-row {
+    margin-bottom: 1.8rem;
+    gap: 0.6rem;
+  }
+
+  .interior-feature-pill {
+    font-size: 0.78rem;
+    padding: 6px 12px;
+  }
+
+  .interior-cta-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+    font-size: 0.78rem;
+  }
+
+  .interior-composition-wrapper {
+    padding-bottom: 45px;
+  }
+
+  .interior-frame-primary {
+    width: 100%;
+    border-radius: 14px;
+  }
+
+  .interior-frame-secondary {
+    width: 62%;
+    border-radius: 10px;
+  }
+
+  .interior-floating-tag {
+    font-size: 0.65rem;
+    padding: 4px 9px;
+  }
+}
+
+@media (max-width: 420px) {
+  .interior-headline {
+    font-size: 1.75rem;
+  }
+
+  .interior-gold-label {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+  }
+
+  .interior-floating-tag {
+    display: none;
+    /* Keep clean on ultra small mobile */
+  }
+}

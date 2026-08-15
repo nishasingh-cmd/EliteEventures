@@ -8,6 +8,7 @@ import AboutSection from './components/AboutSection/AboutSection'
 import GalleryShowcase from './components/GalleryShowcase/GalleryShowcase'
 import OurPresence from './components/OurPresence/OurPresence'
 import ExpertiseSection from './components/ExpertiseSection/ExpertiseSection'
+import InteriorDesign from './components/InteriorDesign/InteriorDesign'
 import BrandsSection from './components/BrandsSection/BrandsSection'
 import WhyChooseSection from './components/WhyChooseSection/WhyChooseSection'
 import GoogleReviews from './components/GoogleReviews/GoogleReviews'
@@ -38,6 +39,7 @@ function HomePage() {
         <AboutSection />
         <BrandsSection />
         <ExpertiseSection />
+        <InteriorDesign />
         <GalleryShowcase />
         <OurPresence />
         <WhyChooseSection hideReviews={true} />
