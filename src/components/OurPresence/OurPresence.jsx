@@ -1,146 +1,201 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useState, useEffect, useRef } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import './OurPresence.css'
 
-const locations = [
+const hubList = [
   {
-    num: 'HUB 01',
+    id: 'mumbai',
+    num: '01',
     name: 'Mumbai',
-    desc: 'Western Headquarters & flagship warehouse for large-scale brand activations.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="10" r="3" />
-        <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z" />
-      </svg>
-    )
+    img: '/images/dr_rashel.jpeg',
   },
   {
-    num: 'HUB 02',
+    id: 'delhi',
+    num: '02',
     name: 'Delhi NCR',
-    desc: 'Capital operations powering government expos & premium corporate events.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 21h18M5 21V7l8-4v18M13 21V11l6 3v7" />
-      </svg>
-    )
+    img: '/images/deal_jeans_stall.png',
   },
   {
-    num: 'HUB 03',
+    id: 'bengaluru',
+    num: '03',
     name: 'Bengaluru',
-    desc: "Serving India's tech & startup ecosystem with digital brand experiences.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2v8M12 18v4M4.93 4.93l5.66 5.66M13.41 13.41l5.66 5.66M2 12h8M14 12h8M4.93 19.07l5.66-5.66M13.41 10.59l5.66-5.66" />
-      </svg>
-    )
+    img: '/images/flexiworld_stall.png',
   },
   {
-    num: 'HUB 04',
+    id: 'ahmedabad',
+    num: '04',
     name: 'Ahmedabad',
-    desc: 'Driving industrial expos & trade fairs across Gujarat.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7-5-7 5v12z" />
-      </svg>
-    )
+    img: '/images/vijay_mamra_stall.png',
   },
   {
-    num: 'HUB 05',
+    id: 'hyderabad',
+    num: '05',
     name: 'Hyderabad',
-    desc: 'Managing pharma expos & tech summits across the Deccan corridor.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-      </svg>
-    )
+    img: '/images/dr_rashel_detan_booth.png',
   },
   {
-    num: 'HUB 06',
+    id: 'kolkata',
+    num: '06',
     name: 'Kolkata',
-    desc: "Covering Eastern India's vibrant cultural expos & trade events.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-      </svg>
-    )
+    img: '/images/house_of_cavalli_stall.png',
   },
   {
-    num: 'HUB 07',
+    id: 'chennai',
+    num: '07',
     name: 'Chennai',
-    desc: "Serving South India's automotive & manufacturing expo circuit.",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <line x1="2" y1="12" x2="22" y2="12" />
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-      </svg>
-    )
-  }
+    img: '/images/lacoste_stall.png',
+  },
 ]
 
 export default function OurPresence() {
-  return (
-    <section className="presence-section" id="our-presence" aria-label="Our Warehouses & Presence Across India">
-      {/* Top Hairline Separator */}
-      <div className="presence-top-hairline" />
+  // Default opened location is Mumbai (index 0)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
+  const timerRef = useRef(null)
 
-      <div className="presence-container">
+  // Smooth auto-slide every 4 seconds, pauses on hover
+  useEffect(() => {
+    if (isPaused) return
+    timerRef.current = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % hubList.length)
+    }, 4000)
+
+    return () => clearInterval(timerRef.current)
+  }, [isPaused])
+
+  return (
+    <section className="hub-presence-section" id="our-presence">
+      {/* Ambient background glows */}
+      <div className="hub-glow-orb hub-glow-top" />
+      <div className="hub-glow-orb hub-glow-bottom" />
+      
+      {/* Background Starry Mesh */}
+      <div className="hub-mesh-grid" />
+
+      <div className="hub-presence-container">
         
         {/* ── HEADER ── */}
-        <motion.div
-          className="presence-header"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <h2 className="presence-headline">
-            <span className="presence-yellow">Warehouses Across India.</span><br />
-            Execution Without Limits.
-          </h2>
-          <p className="presence-sub">
-            Our state-of-the-art warehouses and local teams ensure seamless on-ground support across major industrial and business hubs.
-          </p>
-        </motion.div>
+        <div className="hub-header">
+          <motion.h2 
+            className="hub-title"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            Warehouses Across India. <span className="hub-title-gold">Execution Without Limits.</span>
+          </motion.h2>
 
-        {/* ── HORIZONTAL TIMELINE FLOW ── */}
-        <div className="timeline-horizontal-container">
-          
-          {/* Central Horizontal Glowing Line */}
-          <div className="timeline-main-line">
-            <div className="timeline-line-glow" />
+          <motion.p 
+            className="hub-subtitle"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            7 strategic warehouse depots & fabrication workshops powering rapid 24/7 on-ground deployment.
+          </motion.p>
+        </div>
+
+        {/* ── CINEMATIC EXPANDING INTERACTIVE SHOWCASE ── */}
+        <div 
+          className="hub-showcase-wrapper"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          {/* ── NAVIGATION CONTROLS & CITY SELECTOR (ON TOP) ── */}
+          <div className="hub-nav-strip">
+            <div className="hub-dots-wrap">
+              {hubList.map((hub, idx) => (
+                <button
+                  key={hub.id}
+                  onClick={() => setActiveIndex(idx)}
+                  className={`hub-dot-btn ${activeIndex === idx ? 'active' : ''}`}
+                  aria-label={`Select ${hub.name}`}
+                >
+                  <span className="dot-text">{hub.name}</span>
+                </button>
+              ))}
+            </div>
+
+            <div className="hub-arrows-wrap">
+              <button 
+                className="hub-arrow-btn"
+                onClick={() => setActiveIndex((prev) => (prev === 0 ? hubList.length - 1 : prev - 1))}
+                aria-label="Previous Hub"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+              <button 
+                className="hub-arrow-btn"
+                onClick={() => setActiveIndex((prev) => (prev + 1) % hubList.length)}
+                aria-label="Next Hub"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+            </div>
           </div>
 
-          <div className="timeline-track">
-            {locations.map((loc, idx) => {
-              const isEven = idx % 2 === 1 // alternate top and bottom
+          <div className="hub-cards-deck">
+            {hubList.map((hub, idx) => {
+              const isActive = activeIndex === idx
+
               return (
                 <motion.div
-                  key={loc.num}
-                  className={`timeline-item ${isEven ? 'timeline-item--bottom' : 'timeline-item--top'}`}
-                  initial={{ opacity: 0, y: isEven ? 40 : -40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-30px' }}
-                  transition={{ duration: 0.6, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                  key={hub.id}
+                  className={`hub-exp-card ${isActive ? 'active' : ''}`}
+                  onClick={() => setActiveIndex(idx)}
+                  layout
+                  transition={{ type: 'spring', stiffness: 350, damping: 30 }}
                 >
-                  {/* Card Content */}
-                  <div className="timeline-card">
-                    <div className="timeline-card-header">
-                      <span className="timeline-icon-circle">
-                        {loc.icon}
-                      </span>
-                      <span className="timeline-step-tag">{loc.num}</span>
-                    </div>
-                    <h3 className="timeline-card-title">{loc.name}</h3>
-                    <p className="timeline-card-desc">{loc.desc}</p>
-                  </div>
+                  {/* Background Stall Imagery */}
+                  <div 
+                    className="hub-card-bg"
+                    style={{ backgroundImage: `url(${hub.img})` }}
+                  />
+                  <div className="hub-card-overlay" />
+                  <div className="hub-card-border-glow" />
 
-                  {/* Vertical Connector Line & Node */}
-                  <div className="timeline-connector">
-                    <div className="timeline-node">
-                      <span className="timeline-node-pulse" />
+                  {/* Collapsed State (Vertical City Label) */}
+                  {!isActive && (
+                    <div className="hub-collapsed-content">
+                      <div className="hub-collapsed-num">{hub.num}</div>
+                      <div className="hub-collapsed-name">{hub.name}</div>
+                      <div className="hub-collapsed-dot" />
                     </div>
-                  </div>
+                  )}
+
+                  {/* Expanded Active State: ONLY the clean prominent City Name */}
+                  <AnimatePresence>
+                    {isActive && (
+                      <motion.div 
+                        className="hub-expanded-content"
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.35, delay: 0.1 }}
+                      >
+                        <div className="hub-active-city-wrap">
+                          <h3 className="hub-city-heading">{hub.name}</h3>
+                        </div>
+
+                        {/* Subtle bottom progress bar */}
+                        <div className="hub-progress-line">
+                          <motion.div 
+                            className="hub-progress-bar-fill"
+                            initial={{ width: '0%' }}
+                            animate={{ width: isPaused ? '100%' : '100%' }}
+                            transition={{ duration: 4.0, ease: 'linear' }}
+                            key={activeIndex}
+                          />
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </motion.div>
               )
             })}
