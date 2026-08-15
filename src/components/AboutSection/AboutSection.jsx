@@ -115,7 +115,7 @@ function AboutSection() {
           >
             <div className="stat-pill">
               <span className="stat-pill-num">
-                <AnimatedCounter endValue={1500} suffix="+" duration={2} />
+                <AnimatedCounter endValue={800} suffix="+" duration={2} />
               </span>
               <span className="stat-pill-lbl">Projects Delivered</span>
             </div>
@@ -127,7 +127,7 @@ function AboutSection() {
             </div>
             <div className="stat-pill">
               <span className="stat-pill-num">
-                <AnimatedCounter endValue={15} suffix="+" duration={2} delay={0.2} />
+                <AnimatedCounter endValue={10} suffix="+" duration={2} delay={0.2} />
               </span>
               <span className="stat-pill-lbl">Years Experience</span>
             </div>
