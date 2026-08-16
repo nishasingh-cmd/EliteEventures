@@ -8,6 +8,7 @@ import WhyChooseSection from '../components/WhyChooseSection/WhyChooseSection'
 import GoogleReviews from '../components/GoogleReviews/GoogleReviews'
 import BrandsSection from '../components/BrandsSection/BrandsSection'
 import FAQ from '../components/FAQ/FAQ'
+import SEO from '../components/SEO/SEO'
 import './AboutPage.css'
 
 /* ── Count-up number ─────────────────────────────────────── */
@@ -48,6 +49,7 @@ export default function AboutPage() {
 
   return (
     <div className="about-page">
+      <SEO title="About Us" description="Learn about Elite Eventure's vision to redefine excellence in event management and exhibition solutions." url="/about" />
       <Navbar />
 
       {/* ════════════════════════════════════

@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Footer/Footer'
 import Marquee from '../components/Marquee/Marquee'
 import GoogleReviews from '../components/GoogleReviews/GoogleReviews'
+import SEO from '../components/SEO/SEO'
 import './ServicesPage.css'
 
 const servicesList = [
@@ -130,6 +131,7 @@ export default function ServicesPage() {
 
   return (
     <div className="services-page">
+      <SEO title="Our Services" description="Elite Eventure offers premium services in Events, Exhibitions, MICE, Brand Activations, and Virtual Events." url="/services" />
       <Navbar />
 
       {/* ════════════════════════════════════

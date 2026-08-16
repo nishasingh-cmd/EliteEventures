@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import emailjs from '@emailjs/browser'
 import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Footer/Footer'
+import SEO from '../components/SEO/SEO'
 import './ContactPage.css'
 
 const EMAILJS_SERVICE_ID = 'service_h21vg5l'
@@ -150,6 +151,7 @@ export default function ContactPage() {
 
   return (
     <div className="contact-page">
+      <SEO title="Contact Us" description="Get in touch with Elite Eventure for premium exhibition stalls, events, and brand activations." url="/contact" />
       <Navbar />
 
       {/* Hero Banner */}
