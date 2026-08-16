@@ -20,6 +20,8 @@ import GalleryPage from './pages/GalleryPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import ServicesPage from './pages/ServicesPage'
+import { HelmetProvider } from 'react-helmet-async'
+import SEO from './components/SEO/SEO'
 
 // Scroll-to-top on every route change
 function ScrollToTop() {
@@ -33,6 +35,11 @@ function ScrollToTop() {
 function HomePage() {
   return (
     <>
+      <SEO 
+        title="Exhibition Stalls & Brand Activations" 
+        description="Elite Eventure designs and builds premium exhibition stalls, brand activations, corporate events, and MICE experiences globally." 
+        url="/" 
+      />
       <main id="main-content">
         <Hero />
         <Marquee />
@@ -84,9 +91,11 @@ function AppInner() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <AppInner />
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <AppInner />
+      </BrowserRouter>
+    </HelmetProvider>
   )
 }
 
