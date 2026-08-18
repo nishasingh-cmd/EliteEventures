@@ -14,10 +14,11 @@ const servicesList = [
     desc: 'Professional planning and execution of corporate and live events tailored to your brand objectives.',
     bullets: ['Venue sourcing & logistics', 'Conference & event production', 'Guest & attendee management'],
     images: [
-      '/images/landscape_1.jpeg',
-      '/images/pepe_jeans_stall.png',
-      '/images/deal_jeans_stall.png',
+      '/images/events_stage_wide.jpg',
+      '/images/mufti_led_cube_2.jpeg',
+      '/images/landscape_12.jpeg',
       '/images/lacoste_stall.png',
+      '/images/pepe_jeans_stall.png',
     ],
   },
   {
@@ -25,7 +26,7 @@ const servicesList = [
     desc: 'Creative exhibition solutions designed to maximize brand visibility and audience engagement.',
     bullets: ['Stall design & fabrication', 'Exhibition management', 'Visitor engagement solutions'],
     images: [
-      '/images/landscape_12.jpeg',
+      '/images/dr_rashel_glow_up_arcade.png',
       '/images/vijay_mamra_stall.png',
       '/images/hello_watch_stall.jpeg',
       '/images/vijay_mamra_stall_2.jpeg',
@@ -46,10 +47,10 @@ const servicesList = [
     desc: 'Innovative brand activation experiences that create meaningful audience connections.',
     bullets: ['Mall activations', 'Product promotions', 'Experiential marketing campaigns'],
     images: [
-      '/images/dr_rashel.jpeg',
-      '/images/dr_rashel_stage.jpeg',
-      '/images/dr_rashel_pavilion_interior.png',
-      '/images/dr_rashel_glow_up_arcade.png',
+      '/images/deal_jeans_stall.png',
+      '/images/mufti_led_cube_1.jpeg',
+      '/images/house_of_cavalli_stall.png',
+      '/images/landscape_3.jpeg',
     ],
   },
   {
@@ -57,10 +58,9 @@ const servicesList = [
     desc: 'Engaging virtual and hybrid event experiences that connect audiences across the globe.',
     bullets: ['Virtual conference management', 'Live streaming solutions', 'Interactive audience engagement'],
     images: [
-      '/images/mufti_led_cube_2.jpeg',
-      '/images/landscape_1.jpeg',
-      '/images/landscape_4.jpeg',
-      '/images/portrait_4.jpeg',
+      '/images/virtual_event_stall_3.jpg',
+      '/images/virtual_event_stall_1.jpg',
+      '/images/virtual_event_stall_2.jpg',
     ],
   },
 ]
@@ -168,7 +168,7 @@ export default function ServicesPage() {
           <div className="sp-gallery-card"><img src="/images/landscape_2.jpeg" alt="Gallery 3" /></div>
           <div className="sp-gallery-card"><img src="/images/portrait_2.jpeg" alt="Gallery 4" /></div>
           <div className="sp-gallery-card"><img src="/images/landscape_3.jpeg" alt="Gallery 5" /></div>
-          <div className="sp-gallery-card"><img src="/images/dr_rashel.jpeg" alt="Gallery 6" /></div>
+          <div className="sp-gallery-card"><img src="/images/landscape_5.jpeg" alt="Gallery 6" /></div>
           <div className="sp-gallery-card"><img src="/images/portrait_3.jpeg" alt="Gallery 7" /></div>
           <div className="sp-gallery-card"><img src="/images/landscape_4.jpeg" alt="Gallery 8" /></div>
         </motion.div>
