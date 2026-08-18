@@ -143,7 +143,7 @@ export default function AboutPage() {
           <div className="ap-stat-divider"></div>
           <div className="ap-stat-item">
             <span className="ap-stat-number">
-              <CountUp to={98} suffix="%" />
+              <CountUp to={100} suffix="%" />
             </span>
             <span className="ap-stat-label">Satisfied<br />Clients</span>
           </div>

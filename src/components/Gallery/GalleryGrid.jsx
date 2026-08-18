@@ -75,10 +75,10 @@ const GALLERY_ITEMS = [
   },
   {
     id: 8,
-    title: 'Smarr Realty',
-    subtitle: 'ARCHITECTURAL EXPO',
-    category: 'Exhibition',
-    image: '/images/smarr_realty_stall.png',
+    title: '',
+    subtitle: '3D LED EXPERIENCE ZONE',
+    category: 'Activation',
+    image: '/images/mufti_led_cube_1.jpeg',
     aspectRatio: '4 / 5',
   },
   {
