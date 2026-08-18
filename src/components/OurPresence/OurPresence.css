@@ -155,9 +155,11 @@
   cursor: pointer;
   background: #0E0E14;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: flex 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
-              border-color 0.4s ease, 
-              box-shadow 0.4s ease;
+  transition: flex 0.38s cubic-bezier(0.2, 0, 0, 1), 
+              border-color 0.25s ease, 
+              box-shadow 0.25s ease;
+  will-change: flex;
+  transform: translateZ(0);
   user-select: none;
 }
 
@@ -179,14 +181,15 @@
   inset: 0;
   background-size: cover;
   background-position: center;
-  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease;
-  transform: scale(1.05);
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1), filter 0.3s ease;
+  transform: scale(1.04) translateZ(0);
   filter: brightness(0.4) saturate(0.85);
+  will-change: transform, filter;
 }
 
 .hub-exp-card.active .hub-card-bg {
   filter: brightness(0.7) saturate(1.1);
-  transform: scale(1);
+  transform: scale(1) translateZ(0);
 }
 
 /* Overlay Gradients */
@@ -245,7 +248,7 @@
   height: 6px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .hub-exp-card:hover .hub-collapsed-dot {
@@ -262,6 +265,18 @@
   flex-direction: column;
   justify-content: flex-end;
   z-index: 5;
+  animation: hubFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes hubFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hub-active-city-wrap {
@@ -295,6 +310,16 @@
   height: 100%;
   background: linear-gradient(90deg, #FFC72C, #FFE17D);
   box-shadow: 0 0 10px #FFC72C;
+  animation: hubProgressFill 3.5s linear forwards;
+}
+
+.hub-progress-bar-fill.paused {
+  animation-play-state: paused;
+}
+
+@keyframes hubProgressFill {
+  from { width: 0%; }
+  to { width: 100%; }
 }
 
 /* ── NAV STRIP (ON TOP) ── */

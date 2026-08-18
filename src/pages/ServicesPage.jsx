@@ -15,8 +15,7 @@ const servicesList = [
     bullets: ['Venue sourcing & logistics', 'Conference & event production', 'Guest & attendee management'],
     images: [
       '/images/events_stage_wide.jpg',
-      '/images/mufti_led_cube_2.jpeg',
-      '/images/landscape_12.jpeg',
+      '/images/mufti_led_cube_portrait.jpg',
       '/images/lacoste_stall.png',
       '/images/pepe_jeans_stall.png',
     ],
@@ -48,7 +47,7 @@ const servicesList = [
     bullets: ['Mall activations', 'Product promotions', 'Experiential marketing campaigns'],
     images: [
       '/images/deal_jeans_stall.png',
-      '/images/mufti_led_cube_1.jpeg',
+      '/images/mufti_led_cube_wide.jpg',
       '/images/house_of_cavalli_stall.png',
       '/images/landscape_3.jpeg',
     ],
@@ -58,9 +57,9 @@ const servicesList = [
     desc: 'Engaging virtual and hybrid event experiences that connect audiences across the globe.',
     bullets: ['Virtual conference management', 'Live streaming solutions', 'Interactive audience engagement'],
     images: [
-      '/images/virtual_event_stall_3.jpg',
+      '/images/virtual_event_lobby.jpg',
+      '/images/virtual_event_lobby_dark.jpg',
       '/images/virtual_event_stall_1.jpg',
-      '/images/virtual_event_stall_2.jpg',
     ],
   },
 ]

@@ -48,20 +48,18 @@ const hubList = [
 ]
 
 export default function OurPresence() {
-  // Default opened location is Mumbai (index 0)
   const [activeIndex, setActiveIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
-  const timerRef = useRef(null)
 
-  // Smooth auto-slide every 4 seconds, pauses on hover
+  // Auto-slide every 3.5s, resets cleanly on change or pause
   useEffect(() => {
     if (isPaused) return
-    timerRef.current = setInterval(() => {
+    const timer = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % hubList.length)
-    }, 4000)
+    }, 3500)
 
-    return () => clearInterval(timerRef.current)
-  }, [isPaused])
+    return () => clearInterval(timer)
+  }, [isPaused, activeIndex])
 
   return (
     <section className="hub-presence-section" id="our-presence">
@@ -81,7 +79,7 @@ export default function OurPresence() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
             Warehouses Across India. <span className="hub-title-gold">Execution Without Limits.</span>
           </motion.h2>
@@ -91,7 +89,7 @@ export default function OurPresence() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
             7 strategic warehouse depots & fabrication workshops powering rapid 24/7 on-ground deployment.
           </motion.p>
@@ -145,12 +143,10 @@ export default function OurPresence() {
               const isActive = activeIndex === idx
 
               return (
-                <motion.div
+                <div
                   key={hub.id}
                   className={`hub-exp-card ${isActive ? 'active' : ''}`}
                   onClick={() => setActiveIndex(idx)}
-                  layout
-                  transition={{ type: 'spring', stiffness: 350, damping: 30 }}
                 >
                   {/* Background Stall Imagery */}
                   <div 
@@ -169,34 +165,23 @@ export default function OurPresence() {
                     </div>
                   )}
 
-                  {/* Expanded Active State: ONLY the clean prominent City Name */}
-                  <AnimatePresence>
-                    {isActive && (
-                      <motion.div 
-                        className="hub-expanded-content"
-                        initial={{ opacity: 0, y: 15 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.35, delay: 0.1 }}
-                      >
-                        <div className="hub-active-city-wrap">
-                          <h3 className="hub-city-heading">{hub.name}</h3>
-                        </div>
+                  {/* Expanded Active State */}
+                  {isActive && (
+                    <div className="hub-expanded-content">
+                      <div className="hub-active-city-wrap">
+                        <h3 className="hub-city-heading">{hub.name}</h3>
+                      </div>
 
-                        {/* Subtle bottom progress bar */}
-                        <div className="hub-progress-line">
-                          <motion.div 
-                            className="hub-progress-bar-fill"
-                            initial={{ width: '0%' }}
-                            animate={{ width: isPaused ? '100%' : '100%' }}
-                            transition={{ duration: 4.0, ease: 'linear' }}
-                            key={activeIndex}
-                          />
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
+                      {/* Subtle bottom progress bar */}
+                      <div className="hub-progress-line">
+                        <div 
+                          className={`hub-progress-bar-fill ${isPaused ? 'paused' : ''}`}
+                          key={activeIndex}
+                        />
+                      </div>
+                    </div>
+                  )}
+                </div>
               )
             })}
           </div>
