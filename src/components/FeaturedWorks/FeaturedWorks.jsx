@@ -20,7 +20,7 @@ const works = [
   { id: 14, src: '/images/flexiworld_stall.png',        label: 'Flexiworld Tech Pavilion',               cat: 'Corporate Event'  },
   { id: 15, src: '/images/deal_jeans_stall.png',        label: 'Deal Jeans Trade Show Stand',            cat: 'Trade Show'       },
   { id: 16, src: '/images/hello_watch_stall.jpeg',      label: 'Hello EDC Luxury Watch Booth',           cat: 'Exhibition'       },
-  { id: 17, src: '/images/smarr_realty_stall.png',      label: 'Smarr Realty Architectural Expo',        cat: 'Exhibition'       },
+  { id: 17, src: '/images/mufti_led_cube_portrait.jpg', label: '3D LED Experience Zone',        cat: 'Brand Activation' },
   { id: 18, src: '/images/lacoste_stall.png',           label: 'Lacoste Sportswear Booth',               cat: 'Trade Show'       },
   { id: 19, src: '/images/flexiworld_stall_2.jpeg',      label: 'Flexiworld Logistics Stand',             cat: 'Exhibition'       },
   { id: 20, src: '/images/vijay_mamra_stall_2.jpeg',     label: 'Vijay Mamra Premium Exhibition Booth',   cat: 'Exhibition'       },

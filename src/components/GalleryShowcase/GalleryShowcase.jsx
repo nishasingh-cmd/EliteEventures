@@ -10,7 +10,7 @@ const columnsData = [
     { id: 'c1-1', src: '/images/pepe_jeans_stall.png',        label: 'Pepe Jeans London Fashion Booth',        cat: 'Brand Activation', ratioClass: 'fw-item--1' },
     { id: 'c1-2', src: '/images/dr_rashel.jpeg',               label: 'Dr. Rashel Skincare Pavilion',           cat: 'Brand Activation', ratioClass: 'fw-item--2' },
     { id: 'c2-1', src: '/images/deal_jeans_stall.png',        label: 'Deal Jeans Trade Show Stand',            cat: 'Trade Show',       ratioClass: 'fw-item--1' },
-    { id: 'c1-4', src: '/images/smarr_realty_stall.png',      label: 'Smarr Realty Architectural Expo',        cat: 'Exhibition',       ratioClass: 'fw-item--1' },
+    { id: 'c1-4', src: '/images/mufti_led_cube_portrait.jpg', label: '3D LED Experience Zone',        cat: 'Brand Activation', ratioClass: 'fw-item--1' },
     { id: 'c1-5', src: '/images/dr_rashel_charcoal_zone.png', label: 'Dr. Rashel Charcoal Gaming & Skincare',  cat: 'Brand Activation', ratioClass: 'fw-item--2' },
     { id: 'c1-6', src: '/images/dr_rashel_3d_concept.png',    label: 'Dr. Rashel Multi-Zone 3D Concept Model', cat: '3D Render',        ratioClass: 'fw-item--3' },
   ],
