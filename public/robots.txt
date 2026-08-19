@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Host
+Host: https://www.eliteeventure.com
+
+# Sitemaps
 Sitemap: https://www.eliteeventure.com/sitemap.xml
+

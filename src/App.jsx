@@ -33,12 +33,30 @@ function ScrollToTop() {
 }
 
 function HomePage() {
+  const homeSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': 'https://www.eliteeventure.com/#webpage',
+    url: 'https://www.eliteeventure.com/',
+    name: 'Elite Eventure | Exhibition Stalls, Brand Activations & Corporate Events',
+    description: 'Elite Eventure is a premier exhibition stall design, fabrication, and brand activation agency in Mumbai, Delhi, Bengaluru, and across India.',
+    isPartOf: {
+      '@id': 'https://www.eliteeventure.com/#website',
+    },
+    about: {
+      '@id': 'https://www.eliteeventure.com/#organization',
+    },
+  }
+
   return (
     <>
       <SEO 
-        title="Exhibition Stalls & Brand Activations" 
-        description="Elite Eventure designs and builds premium exhibition stalls, brand activations, corporate events, and MICE experiences globally." 
-        url="/" 
+        title="Exhibition Stalls, Brand Activations & Corporate Events" 
+        description="Elite Eventure is a premier exhibition stall design, fabrication, and brand activation agency in Mumbai, Delhi, Bengaluru, and across India. Turnkey solutions for corporate events, MICE, and custom expo booths." 
+        url="/"
+        keywords="exhibition stall design Mumbai, custom exhibition stands, exhibition booth fabricators, brand activations, corporate event management, MICE India, trade show stall builders, Elite Eventure"
+        image="https://www.eliteeventure.com/images/contact-hero-bg.png"
+        schema={homeSchema}
       />
       <main id="main-content">
         <Hero />

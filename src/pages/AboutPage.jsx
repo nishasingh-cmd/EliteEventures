@@ -47,9 +47,33 @@ export default function AboutPage() {
 
   useEffect(() => { window.scrollTo(0, 0) }, [])
 
+  const aboutSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    '@id': 'https://www.eliteeventure.com/about#aboutpage',
+    url: 'https://www.eliteeventure.com/about',
+    name: 'About Elite Eventure | Exhibition Stall & Event Management Specialists',
+    description: 'Learn about Elite Eventure’s legacy of 800+ completed projects, expert craftsmanship in exhibition stall fabrication, and bespoke corporate events.',
+    mainEntity: {
+      '@id': 'https://www.eliteeventure.com/#organization',
+    },
+  }
+
+  const breadcrumbs = [
+    { name: 'Home', url: '/' },
+    { name: 'About Us', url: '/about' },
+  ]
+
   return (
     <div className="about-page">
-      <SEO title="About Us" description="Learn about Elite Eventure's vision to redefine excellence in event management and exhibition solutions." url="/about" />
+      <SEO 
+        title="About Us | Exhibition Stall & Event Management Specialists" 
+        description="Learn about Elite Eventure's vision, 800+ completed projects, and unmatched expertise in designing premium exhibition stalls, corporate events, and brand activations." 
+        url="/about"
+        keywords="about Elite Eventure, exhibition booth agency, stall designers Mumbai, corporate event company, brand activation experts India"
+        schema={aboutSchema}
+        breadcrumbs={breadcrumbs}
+      />
       <Navbar />
 
       {/* ════════════════════════════════════
