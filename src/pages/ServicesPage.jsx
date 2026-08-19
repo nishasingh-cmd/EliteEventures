@@ -64,7 +64,7 @@ const servicesList = [
   },
 ]
 
-function ServiceGallery({ images }) {
+function ServiceGallery({ images, title }) {
   const [active, setActive] = useState(0)
 
   return (
@@ -74,7 +74,7 @@ function ServiceGallery({ images }) {
           <motion.img
             key={active}
             src={images[active]}
-            alt="Main display"
+            alt={`${title} - Elite Eventure Showcase ${active + 1}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -89,7 +89,7 @@ function ServiceGallery({ images }) {
             className={`sp-sg-thumb ${i === active ? 'active' : ''}`}
             onClick={() => setActive(i)}
           >
-            <img src={img} alt={`Thumbnail ${i}`} />
+            <img src={img} alt={`${title} Thumbnail ${i + 1}`} />
           </div>
         ))}
       </div>
@@ -129,16 +129,42 @@ export default function ServicesPage() {
   // We want to move left, so x starts at 0% (flush left) and goes negative.
   const galleryX = useTransform(smoothScroll, [0, 1], ["0%", "-30%"])
 
+  const servicesSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: servicesList.map((srv, index) => ({
+      '@type': 'Service',
+      position: index + 1,
+      name: srv.title,
+      description: srv.desc,
+      provider: {
+        '@id': 'https://www.eliteeventure.com/#organization',
+      },
+    })),
+  }
+
+  const breadcrumbs = [
+    { name: 'Home', url: '/' },
+    { name: 'Services', url: '/services' },
+  ]
+
   return (
     <div className="services-page">
-      <SEO title="Our Services" description="Elite Eventure offers premium services in Events, Exhibitions, MICE, Brand Activations, and Virtual Events." url="/services" />
+      <SEO 
+        title="Our Services | Exhibition Stalls, Brand Activation & MICE Solutions" 
+        description="Explore Elite Eventure's core services: Custom Exhibition Stalls, Experiential Brand Activations, Corporate Events, MICE management, and Virtual Conferences." 
+        url="/services"
+        keywords="exhibition stall design services, brand activation agency, corporate event planning, MICE conference organizer, virtual event production, Elite Eventure services"
+        schema={servicesSchema}
+        breadcrumbs={breadcrumbs}
+      />
       <Navbar />
 
       {/* ════════════════════════════════════
           HERO (Same layout as Contact/About)
       ════════════════════════════════════ */}
       <section className="services-hero">
-        <img src="/images/contact-hero-bg.png" alt="Services Hero" className="services-hero-img" />
+        <img src="/images/contact-hero-bg.png" alt="Elite Eventure Services - Exhibition and Event Production" className="services-hero-img" />
         <div className="services-hero-overlay" />
         <div className="services-hero-line" />
 
@@ -162,14 +188,14 @@ export default function ServicesPage() {
       ════════════════════════════════════ */}
       <section className="sp-intro" ref={introRef}>
         <motion.div className="sp-intro-gallery" style={{ x: galleryX }}>
-          <div className="sp-gallery-card"><img src="/images/landscape_1.jpeg" alt="Gallery 1" /></div>
-          <div className="sp-gallery-card"><img src="/images/portrait_1.jpeg" alt="Gallery 2" /></div>
-          <div className="sp-gallery-card"><img src="/images/landscape_2.jpeg" alt="Gallery 3" /></div>
-          <div className="sp-gallery-card"><img src="/images/portrait_2.jpeg" alt="Gallery 4" /></div>
-          <div className="sp-gallery-card"><img src="/images/landscape_3.jpeg" alt="Gallery 5" /></div>
-          <div className="sp-gallery-card"><img src="/images/landscape_5.jpeg" alt="Gallery 6" /></div>
-          <div className="sp-gallery-card"><img src="/images/portrait_3.jpeg" alt="Gallery 7" /></div>
-          <div className="sp-gallery-card"><img src="/images/landscape_4.jpeg" alt="Gallery 8" /></div>
+          <div className="sp-gallery-card"><img src="/images/landscape_1.jpeg" alt="Elite Eventure Exhibition Pavilion Design" /></div>
+          <div className="sp-gallery-card"><img src="/images/portrait_1.jpeg" alt="Elite Eventure Brand Activation Showcase" /></div>
+          <div className="sp-gallery-card"><img src="/images/landscape_2.jpeg" alt="Elite Eventure Custom Trade Show Stand" /></div>
+          <div className="sp-gallery-card"><img src="/images/portrait_2.jpeg" alt="Elite Eventure Corporate Event Setup" /></div>
+          <div className="sp-gallery-card"><img src="/images/landscape_3.jpeg" alt="Elite Eventure Experiential Marketing Installation" /></div>
+          <div className="sp-gallery-card"><img src="/images/landscape_5.jpeg" alt="Elite Eventure Premium Exhibition Booth" /></div>
+          <div className="sp-gallery-card"><img src="/images/portrait_3.jpeg" alt="Elite Eventure Brand Experience Space" /></div>
+          <div className="sp-gallery-card"><img src="/images/landscape_4.jpeg" alt="Elite Eventure Stage and Lighting Production" /></div>
         </motion.div>
       </section>
 
@@ -196,7 +222,7 @@ export default function ServicesPage() {
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <ServiceGallery images={srv.images} />
+                  <ServiceGallery images={srv.images} title={srv.title} />
                 </motion.div>
 
                 <motion.div

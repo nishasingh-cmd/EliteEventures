@@ -149,16 +149,40 @@ export default function ContactPage() {
     }
   }
 
+  const contactSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    '@id': 'https://www.eliteeventure.com/contact#contactpage',
+    url: 'https://www.eliteeventure.com/contact',
+    name: 'Contact Elite Eventure | Exhibition Stall & Event Inquiry',
+    description: 'Get in touch with Elite Eventure for custom exhibition stall quotes, brand activations, and turnkey corporate event fabrication across India.',
+    mainEntity: {
+      '@id': 'https://www.eliteeventure.com/#localbusiness',
+    },
+  }
+
+  const breadcrumbs = [
+    { name: 'Home', url: '/' },
+    { name: 'Contact Us', url: '/contact' },
+  ]
+
   return (
     <div className="contact-page">
-      <SEO title="Contact Us" description="Get in touch with Elite Eventure for premium exhibition stalls, events, and brand activations." url="/contact" />
+      <SEO 
+        title="Contact Us | Request an Exhibition Stall Design Quote" 
+        description="Connect with Elite Eventure for bespoke exhibition stalls, 3D booth designs, brand activations, and corporate event management. Request a free brief quote today." 
+        url="/contact"
+        keywords="contact Elite Eventure, exhibition booth quote, stall designer contact Mumbai, event fabrication inquiry, hire exhibition contractor India"
+        schema={contactSchema}
+        breadcrumbs={breadcrumbs}
+      />
       <Navbar />
 
       {/* Hero Banner */}
       <section className="contact-hero">
         <img
           src="/images/contact-hero-bg.png"
-          alt="Contact Elite Eventure"
+          alt="Contact Elite Eventure Exhibition Design Team"
           className="contact-hero-img"
         />
         <div className="contact-hero-overlay" />
