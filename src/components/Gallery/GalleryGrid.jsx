@@ -18,6 +18,30 @@ const ENTRANCE_DIRECTIONS = [
 
 const GALLERY_ITEMS = [
   {
+    id: 101,
+    title: 'Dr. Rashel',
+    subtitle: 'BEAUTY ELIXIRS PAVILION',
+    category: 'Activation',
+    image: '/images/dr_rashel_beauty_elixirs.png',
+    aspectRatio: '16 / 10',
+  },
+  {
+    id: 102,
+    title: 'Mary Jo K',
+    subtitle: 'CULT MAKEUP BOOTH',
+    category: 'Activation',
+    image: '/images/mary_jo_k_cult_makeup.png',
+    aspectRatio: '16 / 10',
+  },
+  {
+    id: 103,
+    title: 'Sponsor Nail Artistry',
+    subtitle: 'EXPO EXHIBIT',
+    category: 'Exhibition',
+    image: '/images/sponsor_nail_artistry.png',
+    aspectRatio: '16 / 10',
+  },
+  {
     id: 1,
     title: 'Pepe Jeans London',
     subtitle: 'FASHION BOOTH',

@@ -50,9 +50,9 @@ function HomePage() {
 
   return (
     <>
-      <SEO 
-        title="Exhibition Stalls, Brand Activations & Corporate Events" 
-        description="Elite Eventure is a premier exhibition stall design, fabrication, and brand activation agency in Mumbai, Delhi, Bengaluru, and across India. Turnkey solutions for corporate events, MICE, and custom expo booths." 
+      <SEO
+        title="Exhibition Stalls, Brand Activations & Corporate Events"
+        description="Elite Eventure is a premier exhibition stall design, fabrication, and brand activation agency in Mumbai, Delhi, Bengaluru, and across India. Turnkey solutions for corporate events, MICE, and custom expo booths."
         url="/"
         keywords="exhibition stall design Mumbai, custom exhibition stands, exhibition booth fabricators, brand activations, corporate event management, MICE India, trade show stall builders, Elite Eventure"
         image="https://www.eliteeventure.com/images/contact-hero-bg.png"

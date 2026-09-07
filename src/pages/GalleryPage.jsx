@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Navbar from '../components/Navbar/Navbar'
 import GalleryHero from '../components/GalleryHero/GalleryHero'
-import GalleryGrid from '../components/Gallery/GalleryGrid'
+import GalleryShowcase from '../components/GalleryShowcase/GalleryShowcase'
 import Footer from '../components/Footer/Footer'
 import SEO from '../components/SEO/SEO'
 
@@ -42,8 +42,9 @@ export default function GalleryPage() {
       />
       <Navbar />
       <GalleryHero />
-      <GalleryGrid />
+      <GalleryShowcase />
       <Footer />
     </div>
   )
 }
+
