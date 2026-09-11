@@ -23,7 +23,7 @@ const GALLERY_ITEMS = [
     subtitle: 'BEAUTY ELIXIRS PAVILION',
     category: 'Activation',
     image: '/images/dr_rashel_beauty_elixirs.png',
-    aspectRatio: '16 / 10',
+    aspectRatio: '16 / 9',
   },
   {
     id: 102,
@@ -31,7 +31,7 @@ const GALLERY_ITEMS = [
     subtitle: 'CULT MAKEUP BOOTH',
     category: 'Activation',
     image: '/images/mary_jo_k_cult_makeup.png',
-    aspectRatio: '16 / 10',
+    aspectRatio: '16 / 9',
   },
   {
     id: 103,
@@ -39,7 +39,7 @@ const GALLERY_ITEMS = [
     subtitle: 'EXPO EXHIBIT',
     category: 'Exhibition',
     image: '/images/sponsor_nail_artistry.png',
-    aspectRatio: '16 / 10',
+    aspectRatio: '16 / 9',
   },
   {
     id: 1,

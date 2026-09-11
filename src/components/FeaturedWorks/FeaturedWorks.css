@@ -135,10 +135,11 @@
   box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 22px rgba(234, 179, 8, 0.3);
 }
 
-/* Three height variants to create clean masonry rhythm */
+/* Height variants to create clean masonry rhythm */
 .fw-item--1 { aspect-ratio: 1 / 1.1; }  /* portrait */
 .fw-item--2 { aspect-ratio: 16 / 11.5; } /* wide landscape */
 .fw-item--3 { aspect-ratio: 1 / 1; }   /* square */
+.fw-item--16-9 { aspect-ratio: 16 / 9; } /* native uncropped 16:9 */
 
 .fw-img-wrap {
   position: absolute;
