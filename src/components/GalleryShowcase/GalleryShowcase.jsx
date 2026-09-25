@@ -1,5 +1,5 @@
-import React, { useRef } from "react"
-import { motion, useInView } from "framer-motion"
+import React, { useRef, useState, useEffect } from "react"
+import { motion, useInView, AnimatePresence } from "framer-motion"
 import "./GalleryShowcase.css"
 import "../FeaturedWorks/FeaturedWorks.css"
 
@@ -7,6 +7,7 @@ import "../FeaturedWorks/FeaturedWorks.css"
 const columnsData = [
   // Column 1
   [
+    { id: 'c1-vn-tech', src: '/images/vn_technology_stall.png', label: 'V. N. Technology Exhibition Stall', cat: 'Exhibition Stall', ratioClass: 'fw-item--16-9' },
     { id: 'c1-1', src: '/images/pepe_jeans_stall.png', label: 'Pepe Jeans London Fashion Booth', cat: 'Brand Activation', ratioClass: 'fw-item--1' },
     { id: 'c1-stall-new', src: '/images/dr_rashel_beauty_elixirs.png', label: 'Dr. Rashel Beauty Elixirs', cat: 'Brand Activation', ratioClass: 'fw-item--16-9' },
     { id: 'c1-2', src: '/images/dr_rashel.jpeg', label: 'Dr. Rashel Skincare Pavilion', cat: 'Brand Activation', ratioClass: 'fw-item--2' },
@@ -27,6 +28,7 @@ const columnsData = [
   ],
   // Column 3
   [
+    { id: 'c3-lumora', src: '/images/lumora_advertising_stall.png', label: 'Lumora Advertising Exhibition Stall', cat: 'Exhibition Stall', ratioClass: 'fw-item--16-9' },
     { id: 'c3-1', src: '/images/dr_rashel_rumi_glow.png', label: 'Dr. Rashel Rumi’s Glow Club Display', cat: 'Brand Activation', ratioClass: 'fw-item--1' },
     { id: 'c3-stall-new', src: '/images/sponsor_nail_artistry.png', label: 'Sponsor Nail Artistry', cat: 'Exhibition', ratioClass: 'fw-item--16-9' },
     { id: 'c3-2', src: '/images/flexiworld_stall.png', label: 'Flexiworld Tech Pavilion', cat: 'Corporate Event', ratioClass: 'fw-item--2' },
@@ -62,6 +64,25 @@ export default function GalleryShowcase({
 }) {
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: true, margin: "-40px" })
+  const [activeModalItem, setActiveModalItem] = useState(null)
+
+  useEffect(() => {
+    function handleKeyDown(e) {
+      if (e.key === "Escape") {
+        setActiveModalItem(null)
+      }
+    }
+    if (activeModalItem) {
+      window.addEventListener("keydown", handleKeyDown)
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown)
+      document.body.style.overflow = ""
+    }
+  }, [activeModalItem])
 
   return (
     <section
@@ -108,6 +129,7 @@ export default function GalleryShowcase({
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.05 }}
                 whileHover={{ scale: 1.04, transition: { duration: 0.25, ease: 'easeOut' } }}
+                onClick={() => setActiveModalItem(work)}
               >
                 <div className="fw-img-wrap">
                   <img
@@ -126,6 +148,46 @@ export default function GalleryShowcase({
           </div>
         ))}
       </div>
+
+      {/* ── Fullscreen Lightbox Modal (Zero crop, 100% full view) ── */}
+      <AnimatePresence>
+        {activeModalItem && (
+          <motion.div
+            className="gsc-lb-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            onClick={() => setActiveModalItem(null)}
+          >
+            <div className="gsc-lb-topbar" onClick={(e) => e.stopPropagation()}>
+              <div className="gsc-lb-meta">
+                <span className="gsc-lb-category">{activeModalItem.cat}</span>
+                <span className="gsc-lb-dot">•</span>
+                <span className="gsc-lb-title">{activeModalItem.label}</span>
+              </div>
+              <button
+                className="gsc-lb-close"
+                onClick={() => setActiveModalItem(null)}
+                aria-label="Close Lightbox"
+              >
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+            </div>
+
+            <div className="gsc-lb-stage" onClick={(e) => e.stopPropagation()}>
+              <img
+                src={activeModalItem.src}
+                alt={activeModalItem.label}
+                className="gsc-lb-main-img"
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }

@@ -54,6 +54,21 @@ const brands = [
     name: 'Sponsor Nail Artistry',
     logo: <img src="/images/logo-sponsor.png" alt="Sponsor Nail Artistry" className="brand-logo-img" loading="lazy" />,
   },
+  {
+    id: 13,
+    name: 'V. N. Technology',
+    logo: <img src="/images/logo-vn-technology.png" alt="V. N. Technology" className="brand-logo-img" loading="lazy" />,
+  },
+  {
+    id: 14,
+    name: 'Lumora Advertising',
+    logo: <img src="/images/logo-lumora.png" alt="Lumora Advertising" className="brand-logo-img" loading="lazy" />,
+  },
+  {
+    id: 15,
+    name: 'Moorx',
+    logo: <img src="/images/logo-moorx.png" alt="Moorx" className="brand-logo-img" loading="lazy" />,
+  },
 ]
 
 // Duplicate list for seamless loop

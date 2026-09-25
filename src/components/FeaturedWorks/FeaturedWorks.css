@@ -139,7 +139,16 @@
 .fw-item--1 { aspect-ratio: 1 / 1.1; }  /* portrait */
 .fw-item--2 { aspect-ratio: 16 / 11.5; } /* wide landscape */
 .fw-item--3 { aspect-ratio: 1 / 1; }   /* square */
-.fw-item--16-9 { aspect-ratio: 16 / 9; } /* native uncropped 16:9 */
+.fw-item--16-9 { aspect-ratio: 16 / 9 !important; } /* native uncropped 16:9 */
+
+.fw-item--16-9 .fw-img {
+  object-fit: contain;
+  background-color: #08080a;
+}
+
+.fw-item--16-9:hover .fw-img {
+  transform: none; /* Keep full photo uncropped on hover */
+}
 
 .fw-img-wrap {
   position: absolute;
@@ -233,6 +242,9 @@
   .fw-item--2,
   .fw-item--3 {
     aspect-ratio: 1 / 1;
+  }
+  .fw-item--16-9 {
+    aspect-ratio: 16 / 9 !important;
   }
   .fw-section {
     padding: 64px 0 72px;
