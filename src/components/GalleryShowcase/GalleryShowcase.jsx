@@ -9,6 +9,7 @@ const columnsData = [
   [
     { id: 'c1-vn-tech', src: '/images/vn_technology_stall.png', label: 'V. N. Technology Exhibition Stall', cat: 'Exhibition Stall', ratioClass: 'fw-item--16-9' },
     { id: 'c1-1', src: '/images/pepe_jeans_stall.png', label: 'Pepe Jeans London Fashion Booth', cat: 'Brand Activation', ratioClass: 'fw-item--1' },
+    { id: 'c1-morix-vista', src: '/images/morix_stall_corner_vista.png', label: 'MORIX Interactive Totem & Exhibit Zone', cat: 'Exhibition Stall', ratioClass: 'fw-item--16-9' },
     { id: 'c1-stall-new', src: '/images/dr_rashel_beauty_elixirs.png', label: 'Dr. Rashel Beauty Elixirs', cat: 'Brand Activation', ratioClass: 'fw-item--16-9' },
     { id: 'c1-2', src: '/images/dr_rashel.jpeg', label: 'Dr. Rashel Skincare Pavilion', cat: 'Brand Activation', ratioClass: 'fw-item--2' },
     { id: 'c2-1', src: '/images/deal_jeans_stall.png', label: 'Deal Jeans Trade Show Stand', cat: 'Trade Show', ratioClass: 'fw-item--1' },
@@ -18,6 +19,7 @@ const columnsData = [
   ],
   // Column 2
   [
+    { id: 'c2-morix-front', src: '/images/morix_stall_front.png', label: 'MORIX Motion Meets Innovation Stall', cat: 'Exhibition Stall', ratioClass: 'fw-item--16-9' },
     { id: 'c1-3', src: '/images/vijay_mamra_stall.png', label: 'Vijay Mamra Food Expo Stall', cat: 'Exhibition', ratioClass: 'fw-item--3' },
     { id: 'c2-stall-new', src: '/images/mary_jo_k_cult_makeup.png', label: 'Mary Jo K Cult Makeup', cat: 'Brand Activation', ratioClass: 'fw-item--16-9' },
     { id: 'c2-2', src: '/images/dr_rashel_detan_booth.png', label: 'Dr. Rashel De-Tan Scrub Beach Pavilion', cat: 'Brand Activation', ratioClass: 'fw-item--2' },
@@ -30,6 +32,7 @@ const columnsData = [
   [
     { id: 'c3-lumora', src: '/images/lumora_advertising_stall.png', label: 'Lumora Advertising Exhibition Stall', cat: 'Exhibition Stall', ratioClass: 'fw-item--16-9' },
     { id: 'c3-1', src: '/images/dr_rashel_rumi_glow.png', label: 'Dr. Rashel Rumi’s Glow Club Display', cat: 'Brand Activation', ratioClass: 'fw-item--1' },
+    { id: 'c3-morix-eazee', src: '/images/morix_stall_corner_eazee.png', label: 'MORIX Modern Pavilion & Digital Display', cat: 'Exhibition Stall', ratioClass: 'fw-item--16-9' },
     { id: 'c3-stall-new', src: '/images/sponsor_nail_artistry.png', label: 'Sponsor Nail Artistry', cat: 'Exhibition', ratioClass: 'fw-item--16-9' },
     { id: 'c3-2', src: '/images/flexiworld_stall.png', label: 'Flexiworld Tech Pavilion', cat: 'Corporate Event', ratioClass: 'fw-item--2' },
     { id: 'c3-3', src: '/images/dr_rashel_stage.jpeg', label: 'Dr. Rashel Beauty Elixirs Stage', cat: 'Stage & Events', ratioClass: 'fw-item--3' },

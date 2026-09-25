@@ -5,7 +5,10 @@ import './FeaturedWorks.css'
 /* ── Real user project photos at top, 3D & AI renders at bottom ──── */
 const works = [
   { id: 'vn-tech-stall', src: '/images/vn_technology_stall.png', label: 'V. N. Technology Exhibition Stall', cat: 'Exhibition Stall' },
+  { id: 'morix-front-stall', src: '/images/morix_stall_front.png', label: 'MORIX Motion Meets Innovation Stall', cat: 'Exhibition Stall' },
   { id: 'lumora-stall', src: '/images/lumora_advertising_stall.png', label: 'Lumora Advertising Exhibition Stall', cat: 'Exhibition Stall' },
+  { id: 'morix-corner-eazee', src: '/images/morix_stall_corner_eazee.png', label: 'MORIX Modern Pavilion & Digital Display', cat: 'Exhibition Stall' },
+  { id: 'morix-corner-vista', src: '/images/morix_stall_corner_vista.png', label: 'MORIX Interactive Totem & Exhibit Zone', cat: 'Exhibition Stall' },
   { id: 1,  src: '/images/dr_rashel_glow_up_arcade.png',label: 'Dr. Rashel Glow Up Arcade Grand Arch',   cat: 'Brand Activation' },
   { id: 2,  src: '/images/dr_rashel_detan_booth.png',   label: 'Dr. Rashel De-Tan Scrub Beach Pavilion', cat: 'Brand Activation' },
   { id: 3,  src: '/images/dr_rashel_kderma_glow.png',   label: 'Dr. Rashel K-Derma Flawless Glow Zone',  cat: 'Experience Zone'  },
