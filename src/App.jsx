@@ -33,20 +33,88 @@ function ScrollToTop() {
 }
 
 function HomePage() {
-  const homeSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    '@id': 'https://www.eliteeventure.com/#webpage',
-    url: 'https://www.eliteeventure.com/',
-    name: 'Elite Eventure | Exhibition Stalls, Brand Activations & Corporate Events',
-    description: 'Elite Eventure is a premier exhibition stall design, fabrication, and brand activation agency in Mumbai, Delhi, Bengaluru, and across India.',
-    isPartOf: {
-      '@id': 'https://www.eliteeventure.com/#website',
+  const homeSchema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': 'https://www.eliteeventure.com/#webpage',
+      url: 'https://www.eliteeventure.com/',
+      name: 'Elite Eventure | Exhibition Stalls, Brand Activations & Corporate Events',
+      description:
+        'Elite Eventure is a premier exhibition stall design, fabrication, and brand activation agency in Mumbai, Delhi, Bengaluru, and across India.',
+      isPartOf: {
+        '@id': 'https://www.eliteeventure.com/#website',
+      },
+      about: {
+        '@id': 'https://www.eliteeventure.com/#organization',
+      },
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: 'https://www.eliteeventure.com/images/contact-hero-bg.png',
+      },
     },
-    about: {
-      '@id': 'https://www.eliteeventure.com/#organization',
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ProfessionalService',
+      '@id': 'https://www.eliteeventure.com/#service',
+      name: 'Elite Eventure',
+      url: 'https://www.eliteeventure.com/',
+      image: 'https://www.eliteeventure.com/images/contact-hero-bg.png',
+      telephone: '+91-7208939926',
+      priceRange: '₹₹₹₹',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress:
+          'S 14, A Wing Express Zone Mall, Western Express Highway, Near Dindoshi Metro Station, Goregaon East',
+        addressLocality: 'Mumbai',
+        addressRegion: 'Maharashtra',
+        postalCode: '400063',
+        addressCountry: 'IN',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 19.17377,
+        longitude: 72.859666,
+      },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '5.0',
+        reviewCount: '11',
+        bestRating: '5',
+        worstRating: '1',
+      },
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Exhibition & Event Services',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Custom Exhibition Stall Design & Fabrication',
+              description: 'Bespoke trade show booths, custom exhibition stands, and modular expo pavilions.',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Brand Activation & Experiential Marketing',
+              description: 'Interactive brand experiences, mall activations, and experiential launch zones.',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Corporate Event Management & MICE',
+              description: 'Turnkey conference planning, delegate management, gala stage production, and MICE.',
+            },
+          },
+        ],
+      },
     },
-  }
+  ]
 
   return (
     <>

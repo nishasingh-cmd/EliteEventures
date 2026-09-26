@@ -7,7 +7,7 @@ export default function GalleryHero() {
     <section className="gallery-hero">
       <img
         src="/images/contact-hero-bg.png"
-        alt="Elite Eventure Gallery"
+        alt="Elite Eventure Exhibition Stall and Brand Activation Portfolio Gallery"
         className="gallery-hero-img"
       />
       <div className="gallery-hero-overlay" />
@@ -21,6 +21,7 @@ export default function GalleryHero() {
       >
         <h1 className="gallery-hero-heading">
           Our <span className="gallery-hero-gold">Gallery</span>
+          <span className="sr-only"> - Custom Exhibition Stalls, Trade Show Booths & Brand Activation Gallery</span>
         </h1>
         <p className="gallery-hero-sub">
           Explore our portfolio of premium exhibition stalls, brand activations, and exceptional corporate events.

@@ -18,9 +18,17 @@ export default function SEO({
     description ||
     'Elite Eventure is a premier exhibition stall design, fabrication, and brand activation agency in Mumbai, Delhi, Bengaluru, and across India.';
   const defaultKeywords =
-    'exhibition stall design, custom exhibition stands, exhibition booth fabricators Mumbai, brand activations, MICE events, corporate event management, stall designer India, Elite Eventure';
+    'exhibition stall design, custom exhibition stands, exhibition booth fabricators Mumbai, brand activations, MICE events, corporate event management, stall designer India, trade show booth builders, Elite Eventure';
   const metaKeywords = keywords || defaultKeywords;
-  const canonicalUrl = url ? `https://www.eliteeventure.com${url.startsWith('/') ? url : `/${url}`}` : 'https://www.eliteeventure.com/';
+  
+  // Normalise canonical URL
+  const cleanPath = url ? (url.startsWith('/') ? url : `/${url}`) : '/';
+  const canonicalUrl = `https://www.eliteeventure.com${cleanPath === '/' ? '/' : cleanPath.replace(/\/+$/, '')}`;
+
+  // Normalise image URL
+  const fullImageUrl = image.startsWith('http')
+    ? image
+    : `https://www.eliteeventure.com${image.startsWith('/') ? image : `/${image}`}`;
 
   // Construct BreadcrumbList schema if breadcrumbs are passed
   const breadcrumbsSchema = breadcrumbs
@@ -38,6 +46,13 @@ export default function SEO({
       }
     : null;
 
+  // Normalise schemas (can be a single object or an array of schema objects)
+  const schemasList = schema
+    ? Array.isArray(schema)
+      ? schema
+      : [schema]
+    : [];
+
   return (
     <Helmet>
       {/* Standard metadata tags */}
@@ -48,6 +63,12 @@ export default function SEO({
       <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       <link rel="canonical" href={canonicalUrl} />
 
+      {/* Geo / Local Business SEO */}
+      <meta name="geo.region" content="IN-MH" />
+      <meta name="geo.placename" content="Mumbai" />
+      <meta name="geo.position" content="19.173770;72.859666" />
+      <meta name="ICBM" content="19.173770, 72.859666" />
+
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content={siteName} />
@@ -55,23 +76,28 @@ export default function SEO({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={fullImageUrl} />
+      <meta property="og:image:secure_url" content={fullImageUrl} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content={fullTitle} />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@eliteeventure" />
+      <meta name="twitter:creator" content="@eliteeventure" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:url" content={canonicalUrl} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={fullImageUrl} />
       <meta name="twitter:image:alt" content={fullTitle} />
 
       {/* Page Specific Structured Data (JSON-LD) */}
-      {schema && (
-        <script type="application/ld+json">
-          {JSON.stringify(schema)}
+      {schemasList.map((item, idx) => (
+        <script key={`schema-${idx}`} type="application/ld+json">
+          {JSON.stringify(item)}
         </script>
-      )}
+      ))}
 
       {/* Breadcrumb Structured Data */}
       {breadcrumbsSchema && (
@@ -82,4 +108,3 @@ export default function SEO({
     </Helmet>
   );
 }
-

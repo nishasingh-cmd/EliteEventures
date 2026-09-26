@@ -1,9 +1,17 @@
 User-agent: *
 Allow: /
 
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 # Host
 Host: https://www.eliteeventure.com
 
 # Sitemaps
 Sitemap: https://www.eliteeventure.com/sitemap.xml
-

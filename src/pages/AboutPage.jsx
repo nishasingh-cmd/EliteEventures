@@ -1,9 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { motion, useInView, animate, useScroll, useTransform } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useRef } from 'react'
+import { motion, useInView, animate } from 'framer-motion'
 import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Footer/Footer'
-import Marquee from '../components/Marquee/Marquee'
 import WhyChooseSection from '../components/WhyChooseSection/WhyChooseSection'
 import GoogleReviews from '../components/GoogleReviews/GoogleReviews'
 import BrandsSection from '../components/BrandsSection/BrandsSection'
@@ -39,25 +37,76 @@ function CountUp({ to, suffix = '' }) {
 /* ── Main page ───────────────────────────────────────────── */
 export default function AboutPage() {
   const mainRef = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: mainRef,
-    offset: ['start end', 'end start'],
-  })
-  const parallaxY = useTransform(scrollYProgress, [0, 1], [40, -40])
 
   useEffect(() => { window.scrollTo(0, 0) }, [])
 
-  const aboutSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'AboutPage',
-    '@id': 'https://www.eliteeventure.com/about#aboutpage',
-    url: 'https://www.eliteeventure.com/about',
-    name: 'About Elite Eventure | Exhibition Stall & Event Management Specialists',
-    description: 'Learn about Elite Eventure’s legacy of 800+ completed projects, expert craftsmanship in exhibition stall fabrication, and bespoke corporate events.',
-    mainEntity: {
-      '@id': 'https://www.eliteeventure.com/#organization',
+  const aboutSchema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'AboutPage',
+      '@id': 'https://www.eliteeventure.com/about#aboutpage',
+      url: 'https://www.eliteeventure.com/about',
+      name: 'About Elite Eventure | Exhibition Stall & Event Management Specialists',
+      description: 'Learn about Elite Eventure’s legacy of 800+ completed projects, expert craftsmanship in exhibition stall fabrication, and bespoke corporate events.',
+      mainEntity: {
+        '@id': 'https://www.eliteeventure.com/#organization',
+      },
     },
-  }
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      'mainEntity': [
+        {
+          '@type': 'Question',
+          'name': 'What types of events does Elite Eventure specialize in?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Elite Eventure specializes in exhibition stall design & fabrication, corporate events, brand activations, product launches, MICE experiences, and trade show participation. We handle everything from concept to on-site execution.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'How far in advance should I book Elite Eventure for my event?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'We recommend reaching out at least 4–8 weeks before your event date to ensure ample time for concept development, design approvals, and fabrication. For large-scale exhibitions or international events, 3–6 months in advance is ideal.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'Do you handle exhibitions outside of India?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Yes! Elite Eventure has experience executing events across India and internationally. We manage all logistics, transportation, and on-site installation to ensure a seamless experience regardless of location.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'What is included in your end-to-end event management service?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Our end-to-end service covers concept ideation, 3D design & visualization, material procurement, fabrication, logistics, on-site installation, event-day management, and post-event dismantling — all handled by a single dedicated team.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'Can you work within a specific budget?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Absolutely. We work with clients across various budget ranges and always strive to deliver maximum impact within your constraints. Share your requirements and we\'ll tailor a solution that fits.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'How do I get a quote for my event?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Simply reach out through our Contact page or email us with your event details — type of event, expected dates, location, and any specific requirements. Our team will get back to you with a customised proposal within 24–48 hours.'
+          }
+        }
+      ]
+    }
+  ]
 
   const breadcrumbs = [
     { name: 'Home', url: '/' },
@@ -70,7 +119,7 @@ export default function AboutPage() {
         title="About Us | Exhibition Stall & Event Management Specialists" 
         description="Learn about Elite Eventure's vision, 800+ completed projects, and unmatched expertise in designing premium exhibition stalls, corporate events, and brand activations." 
         url="/about"
-        keywords="about Elite Eventure, exhibition booth agency, stall designers Mumbai, corporate event company, brand activation experts India"
+        keywords="about Elite Eventure, exhibition booth agency, stall designers Mumbai, corporate event company, brand activation experts India, trade show contractor"
         schema={aboutSchema}
         breadcrumbs={breadcrumbs}
       />
@@ -82,7 +131,7 @@ export default function AboutPage() {
       <section className="about-hero">
         <img
           src="/images/contact-hero-bg.png"
-          alt="Elite Eventure Exhibition"
+          alt="Elite Eventure Exhibition Design and Corporate Event Production"
           className="about-hero-img"
         />
         <div className="about-hero-overlay" />
@@ -96,6 +145,7 @@ export default function AboutPage() {
         >
           <h1 className="about-hero-heading">
             About <span className="about-hero-gold">Elite Eventure</span>
+            <span className="sr-only"> - Exhibition Stand Builders, Booth Fabricators & Event Management Agency</span>
           </h1>
           <p className="about-hero-sub">
             Designing extraordinary exhibitions, immersive brand activations,
@@ -124,7 +174,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div style={{ width: '100%', height: '220px', borderRadius: '24px', overflow: 'hidden', background: '#222' }}>
-              <img src="/images/portrait_7.jpeg" alt="Architecture" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src="/images/portrait_7.jpeg" alt="Modern Architectural Exhibition Stall Design and Fabrication" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </motion.div>
 

@@ -1,43 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage -->
   <url>
     <loc>https://www.eliteeventure.com/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://www.eliteeventure.com/images/contact-hero-bg.png</image:loc>
       <image:title>Elite Eventure - Exhibition Stalls &amp; Brand Activations</image:title>
+      <image:caption>Premier exhibition stall design and brand activation agency in Mumbai and across India</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.eliteeventure.com/images/dr_rashel_glow_up.jpg</image:loc>
+      <image:title>Dr. Rashel Glow Up Juice Bar Exhibition Stall</image:title>
+      <image:caption>Award-winning custom exhibition booth designed and fabricated by Elite Eventure</image:caption>
     </image:image>
   </url>
-  <url>
-    <loc>https://www.eliteeventure.com/about</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.eliteeventure.com/services</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+
+  <!-- Gallery & Portfolio -->
   <url>
     <loc>https://www.eliteeventure.com/gallery</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
+      <image:loc>https://www.eliteeventure.com/images/morix_stall_front.png</image:loc>
+      <image:title>MORIX Motion Meets Innovation Exhibition Stand</image:title>
+      <image:caption>Custom experiential technology exhibition stall fabrication</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.eliteeventure.com/images/vn_technology_stall.png</image:loc>
+      <image:title>V. N. Technology Exhibition Stall Design</image:title>
+      <image:caption>Modern industrial technology exhibition booth fabrication</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.eliteeventure.com/images/pepe_jeans_stall.png</image:loc>
+      <image:title>Pepe Jeans London Fashion Booth Fabrication</image:title>
+      <image:caption>Immersive brand activation stand for Pepe Jeans London</image:caption>
+    </image:image>
+    <image:image>
       <image:loc>https://www.eliteeventure.com/images/dr_rashel_3d_concept.png</image:loc>
-      <image:title>Exhibition Stall Design Portfolio</image:title>
+      <image:title>Dr. Rashel Multi-Zone 3D Concept Model</image:title>
+      <image:caption>Photorealistic 3D exhibition booth render and architectural walkthrough</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.eliteeventure.com/images/flexiworld_stall.png</image:loc>
+      <image:title>Flexiworld Tech Pavilion</image:title>
+      <image:caption>Corporate technology conference pavilion and digital booth</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.eliteeventure.com/images/deal_jeans_stall.png</image:loc>
+      <image:title>Deal Jeans Trade Show Stand</image:title>
+      <image:caption>Apparel and fashion trade show exhibition stand</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.eliteeventure.com/images/vijay_mamra_stall.png</image:loc>
+      <image:title>Vijay Mamra Food Expo Stall</image:title>
+      <image:caption>FMCG food expo pavilion and sampling booth</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.eliteeventure.com/images/lumora_advertising_stall.png</image:loc>
+      <image:title>Lumora Advertising Exhibition Stall</image:title>
+      <image:caption>Advertising and media expo stall design by Elite Eventure</image:caption>
     </image:image>
   </url>
+
+  <!-- Services -->
   <url>
-    <loc>https://www.eliteeventure.com/contact</loc>
-    <lastmod>2025-01-15</lastmod>
+    <loc>https://www.eliteeventure.com/services</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.eliteeventure.com/images/events_stage_wide.jpg</image:loc>
+      <image:title>Corporate Event Stage and Audio-Visual Production</image:title>
+      <image:caption>Turnkey corporate event management and stage design solutions</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.eliteeventure.com/images/dr_rashel_glow_up_arcade.png</image:loc>
+      <image:title>Custom Exhibition Stall Fabrication</image:title>
+      <image:caption>Full-service exhibition stall fabrication across India</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About Us -->
+  <url>
+    <loc>https://www.eliteeventure.com/about</loc>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.eliteeventure.com/images/portrait_7.jpeg</image:loc>
+      <image:title>Architectural Stall Design and Fabrication Craftsmanship</image:title>
+      <image:caption>Elite Eventure’s legacy of 800+ completed exhibition and event projects</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Contact Us -->
+  <url>
+    <loc>https://www.eliteeventure.com/contact</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.eliteeventure.com/images/contact-hero-bg.png</image:loc>
+      <image:title>Contact Elite Eventure - Exhibition Stand Design Quote</image:title>
+      <image:caption>Office in Goregaon East, Mumbai and pan-India exhibition services</image:caption>
+    </image:image>
   </url>
 </urlset>
-

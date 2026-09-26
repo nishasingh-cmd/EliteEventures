@@ -43,13 +43,13 @@ const Hero = () => {
       {/* Header / Navbar */}
       <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="navbar-container">
-          <a href="#" className="logo-brand-container">
-            <img src="/images/EliteEventureLogoNew.png" alt="Elite Eventure Logo" className="logo-image" style={{ height: '40px', width: 'auto' }} />
-          </a>
+          <Link to="/" className="logo-brand-container" aria-label="Elite Eventure Homepage">
+            <img src="/images/EliteEventureLogoNew.png" alt="Elite Eventure - Exhibition Stalls and Brand Activations" className="logo-image" style={{ height: '40px', width: 'auto' }} />
+          </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="desktop-nav">
-            <a href="/" className="nav-link active">Home</a>
+          <nav className="desktop-nav" aria-label="Main Navigation">
+            <Link to="/" className="nav-link active">Home</Link>
             <Link to="/gallery" className="nav-link">Gallery</Link>
             <Link to="/services" className="nav-link">Services</Link>
             <Link to="/about" className="nav-link">About Us</Link>
@@ -78,8 +78,8 @@ const Hero = () => {
 
       {/* Mobile Navigation Dropdown */}
       <div className={`mobile-nav-menu ${mobileMenuOpen ? 'open' : ''}`}>
-        <nav className="mobile-nav-links">
-          <a href="/" className="mobile-link" onClick={toggleMobileMenu}>Home</a>
+        <nav className="mobile-nav-links" aria-label="Mobile Navigation">
+          <Link to="/" className="mobile-link" onClick={toggleMobileMenu}>Home</Link>
           <Link to="/gallery" className="mobile-link" onClick={toggleMobileMenu}>Gallery</Link>
           <Link to="/services" className="mobile-link" onClick={toggleMobileMenu}>Services</Link>
           <Link to="/about" className="mobile-link" onClick={toggleMobileMenu}>About Us</Link>
@@ -97,6 +97,7 @@ const Hero = () => {
           <h1 className="hero-split-headline">
             Your Brand.<br />
             Our Stage.
+            <span className="sr-only"> - Exhibition Stall Design, Fabrication & Brand Activations in Mumbai, Delhi & Pan-India</span>
           </h1>
         </div>
 
@@ -107,9 +108,9 @@ const Hero = () => {
           </p>
 
           <div className="hero-left-actions">
-            <a href="gallery" className="btn btn-gold-pill">
+            <Link to="/gallery" className="btn btn-gold-pill">
               Explore Projects ↗
-            </a>
+            </Link>
           </div>
 
         </div>

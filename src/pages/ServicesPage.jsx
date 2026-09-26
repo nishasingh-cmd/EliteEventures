@@ -98,20 +98,7 @@ function ServiceGallery({ images, title }) {
 }
 
 export default function ServicesPage() {
-  const [itemsPerView, setItemsPerView] = useState(3)
-
   useEffect(() => { window.scrollTo(0, 0) }, [])
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 768) setItemsPerView(1)
-      else if (window.innerWidth <= 1024) setItemsPerView(2)
-      else setItemsPerView(3)
-    }
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
 
   const marqueeText = "• Elite Eventure is known for its Precision, Project Management skills and exceptional client outcomes. "
 
@@ -132,11 +119,15 @@ export default function ServicesPage() {
   const servicesSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
+    name: 'Elite Eventure Services',
+    description: 'Premier exhibition stall design, fabrication, brand activation, and corporate event management services across India.',
     itemListElement: servicesList.map((srv, index) => ({
       '@type': 'Service',
       position: index + 1,
       name: srv.title,
       description: srv.desc,
+      serviceType: srv.title,
+      areaServed: ['Mumbai', 'Delhi', 'Bengaluru', 'Ahmedabad', 'Hyderabad', 'Kolkata', 'Chennai'],
       provider: {
         '@id': 'https://www.eliteeventure.com/#organization',
       },
@@ -154,7 +145,7 @@ export default function ServicesPage() {
         title="Our Services | Exhibition Stalls, Brand Activation & MICE Solutions" 
         description="Explore Elite Eventure's core services: Custom Exhibition Stalls, Experiential Brand Activations, Corporate Events, MICE management, and Virtual Conferences." 
         url="/services"
-        keywords="exhibition stall design services, brand activation agency, corporate event planning, MICE conference organizer, virtual event production, Elite Eventure services"
+        keywords="exhibition stall design services, brand activation agency, corporate event planning, MICE conference organizer, virtual event production, Elite Eventure services, trade show stall builders"
         schema={servicesSchema}
         breadcrumbs={breadcrumbs}
       />
@@ -176,6 +167,7 @@ export default function ServicesPage() {
         >
           <h1 className="services-hero-heading">
             Our <span className="services-hero-gold">Services</span>
+            <span className="sr-only"> - Turnkey Exhibition Stall Fabrication, Experiential Brand Activation & MICE Conference Management</span>
           </h1>
           <p className="services-hero-sub">
             Bringing Exceptional Experiences to Life. From Exhibitions to Virtual Events.

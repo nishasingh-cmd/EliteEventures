@@ -10,20 +10,41 @@ export default function GalleryPage() {
     window.scrollTo(0, 0)
   }, [])
 
-  const gallerySchema = {
-    '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    '@id': 'https://www.eliteeventure.com/gallery#gallerypage',
-    url: 'https://www.eliteeventure.com/gallery',
-    name: 'Exhibition Stall & Event Design Portfolio | Elite Eventure Gallery',
-    description: 'Explore our portfolio of custom exhibition stalls, interactive brand activations, corporate stage designs, and trade show booths across India.',
-    isPartOf: {
-      '@id': 'https://www.eliteeventure.com/#website',
+  const gallerySchema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      '@id': 'https://www.eliteeventure.com/gallery#gallerypage',
+      url: 'https://www.eliteeventure.com/gallery',
+      name: 'Exhibition Stall & Event Design Portfolio | Elite Eventure Gallery',
+      description: 'Explore our portfolio of custom exhibition stalls, interactive brand activations, corporate stage designs, and trade show booths across India.',
+      isPartOf: {
+        '@id': 'https://www.eliteeventure.com/#website',
+      },
+      about: {
+        '@id': 'https://www.eliteeventure.com/#organization',
+      },
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: 'https://www.eliteeventure.com/images/dr_rashel_3d_concept.png',
+      },
     },
-    about: {
-      '@id': 'https://www.eliteeventure.com/#organization',
-    },
-  }
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ImageGallery',
+      name: 'Elite Eventure Exhibition Stall & Booth Design Showcase',
+      description: 'Award-winning bespoke exhibition stand designs, 3D renders, and brand activation installations across India.',
+      image: [
+        'https://www.eliteeventure.com/images/dr_rashel_3d_concept.png',
+        'https://www.eliteeventure.com/images/morix_stall_front.png',
+        'https://www.eliteeventure.com/images/pepe_jeans_stall.png',
+        'https://www.eliteeventure.com/images/vn_technology_stall.png',
+        'https://www.eliteeventure.com/images/flexiworld_stall.png',
+        'https://www.eliteeventure.com/images/vijay_mamra_stall.png',
+        'https://www.eliteeventure.com/images/lacoste_stall.png'
+      ]
+    }
+  ]
 
   const breadcrumbs = [
     { name: 'Home', url: '/' },

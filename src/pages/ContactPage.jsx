@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import emailjs from '@emailjs/browser'
 import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Footer/Footer'
 import SEO from '../components/SEO/SEO'
 import './ContactPage.css'
-
-const EMAILJS_SERVICE_ID = 'service_h21vg5l'
-const EMAILJS_TEMPLATE_ID = 'template_q14bb2o'
-const EMAILJS_PUBLIC_KEY = 'wjD_E-t8WgHm3lzbu'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -149,17 +144,50 @@ export default function ContactPage() {
     }
   }
 
-  const contactSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'ContactPage',
-    '@id': 'https://www.eliteeventure.com/contact#contactpage',
-    url: 'https://www.eliteeventure.com/contact',
-    name: 'Contact Elite Eventure | Exhibition Stall & Event Inquiry',
-    description: 'Get in touch with Elite Eventure for custom exhibition stall quotes, brand activations, and turnkey corporate event fabrication across India.',
-    mainEntity: {
-      '@id': 'https://www.eliteeventure.com/#localbusiness',
+  const contactSchema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ContactPage',
+      '@id': 'https://www.eliteeventure.com/contact#contactpage',
+      url: 'https://www.eliteeventure.com/contact',
+      name: 'Contact Elite Eventure | Exhibition Stall & Event Inquiry',
+      description: 'Get in touch with Elite Eventure for custom exhibition stall quotes, brand activations, and turnkey corporate event fabrication across India.',
+      mainEntity: {
+        '@id': 'https://www.eliteeventure.com/#localbusiness',
+      },
     },
-  }
+    {
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      '@id': 'https://www.eliteeventure.com/#localbusiness',
+      name: 'Elite Eventure',
+      url: 'https://www.eliteeventure.com/contact',
+      telephone: '+91-7208939926',
+      email: 'info@eliteeventure.com',
+      image: 'https://www.eliteeventure.com/images/contact-hero-bg.png',
+      priceRange: '₹₹₹₹',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'S 14, A Wing Express Zone Mall, Western Express Highway, Near Dindoshi Metro Station, Goregaon East',
+        addressLocality: 'Mumbai',
+        addressRegion: 'Maharashtra',
+        postalCode: '400063',
+        addressCountry: 'IN',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 19.173770,
+        longitude: 72.859666,
+      },
+      openingHoursSpecification: {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        opens: '09:30',
+        closes: '19:00',
+      },
+      areaServed: ['Mumbai', 'Delhi', 'Bengaluru', 'Ahmedabad', 'Kolkata', 'Chennai', 'Hyderabad'],
+    }
+  ]
 
   const breadcrumbs = [
     { name: 'Home', url: '/' },
@@ -172,7 +200,7 @@ export default function ContactPage() {
         title="Contact Us | Request an Exhibition Stall Design Quote" 
         description="Connect with Elite Eventure for bespoke exhibition stalls, 3D booth designs, brand activations, and corporate event management. Request a free brief quote today." 
         url="/contact"
-        keywords="contact Elite Eventure, exhibition booth quote, stall designer contact Mumbai, event fabrication inquiry, hire exhibition contractor India"
+        keywords="contact Elite Eventure, exhibition booth quote, stall designer contact Mumbai, event fabrication inquiry, hire exhibition contractor India, exhibition stall cost India"
         schema={contactSchema}
         breadcrumbs={breadcrumbs}
       />
@@ -182,7 +210,7 @@ export default function ContactPage() {
       <section className="contact-hero">
         <img
           src="/images/contact-hero-bg.png"
-          alt="Contact Elite Eventure Exhibition Design Team"
+          alt="Contact Elite Eventure Exhibition Design Team in Mumbai and Delhi"
           className="contact-hero-img"
         />
         <div className="contact-hero-overlay" />
@@ -196,6 +224,7 @@ export default function ContactPage() {
         >
           <h1 className="contact-hero-heading">
             Contact <span className="contact-hero-gold">Us</span>
+            <span className="sr-only"> - Exhibition Stall Design, Fabrication Quotes & Corporate Event Management</span>
           </h1>
           <p className="contact-hero-sub">
             Tell us about the event, the brand, and the moment you want to create.
@@ -216,7 +245,7 @@ export default function ContactPage() {
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="contact-form-header">
-              <h3>Send us a brief</h3>
+              <h2>Send us a brief</h2>
             </div>
 
             <form onSubmit={handleSubmit} className="contact-brief-form">
@@ -224,8 +253,9 @@ export default function ContactPage() {
                 
                 {/* Name */}
                 <div className="contact-input-group">
-                  <label>NAME</label>
+                  <label htmlFor="contact-fullName">NAME</label>
                   <input
+                    id="contact-fullName"
                     type="text"
                     placeholder="Your name"
                     value={formData.fullName}
@@ -240,8 +270,9 @@ export default function ContactPage() {
 
                 {/* Email */}
                 <div className="contact-input-group">
-                  <label>EMAIL</label>
+                  <label htmlFor="contact-email">EMAIL</label>
                   <input
+                    id="contact-email"
                     type="email"
                     placeholder="you@brand.com"
                     value={formData.email}
@@ -259,8 +290,9 @@ export default function ContactPage() {
                 
                 {/* Phone */}
                 <div className="contact-input-group">
-                  <label>PHONE</label>
+                  <label htmlFor="contact-phone">PHONE</label>
                   <input
+                    id="contact-phone"
                     type="tel"
                     placeholder="+91 ..."
                     value={formData.phone}
@@ -275,8 +307,9 @@ export default function ContactPage() {
 
                 {/* Brand / Company */}
                 <div className="contact-input-group">
-                  <label>BRAND / COMPANY</label>
+                  <label htmlFor="contact-brand">BRAND / COMPANY</label>
                   <input
+                    id="contact-brand"
                     type="text"
                     placeholder="Brand name"
                     value={formData.brand}
@@ -287,8 +320,9 @@ export default function ContactPage() {
 
               {/* Event Details */}
               <div className="contact-input-group full-width">
-                <label>EVENT DETAILS</label>
+                <label htmlFor="contact-eventDetails">EVENT DETAILS</label>
                 <textarea
+                  id="contact-eventDetails"
                   placeholder="Which event, dates, footprint, any references..."
                   rows="6"
                   value={formData.eventDetails}
