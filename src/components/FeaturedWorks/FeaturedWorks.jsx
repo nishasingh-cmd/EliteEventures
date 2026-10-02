@@ -73,9 +73,10 @@ export default function FeaturedWorks() {
             <div className="fw-img-wrap">
               <img
                 src={work.src}
-                alt={work.label}
+                alt={`${work.label} - Elite Eventure Exhibition Stall & Booth Fabrication`}
                 className="fw-img"
-                loading="eager"
+                loading={i < 4 ? 'eager' : 'lazy'}
+                decoding={i < 4 ? 'sync' : 'async'}
               />
               {/* Hover overlay */}
               <div className="fw-overlay">

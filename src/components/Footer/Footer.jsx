@@ -15,11 +15,12 @@ function Footer() {
           
           {/* Left Column: Logo, Short Desc, Socials */}
           <div className="corp-footer-col corp-left-col">
-            <Link to="/" className="corp-footer-logo-link">
+            <Link to="/" className="corp-footer-logo-link" aria-label="Elite Eventure Home">
               <img
                 src="/images/EliteEventureLogoNew.png"
-                alt="Elite Eventure Logo"
+                alt="Elite Eventure - Premier Exhibition Stall Design & Brand Activations"
                 className="corp-footer-logo"
+                loading="lazy"
               />
             </Link>
             <p className="corp-footer-desc">

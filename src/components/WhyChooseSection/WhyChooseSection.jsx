@@ -121,7 +121,7 @@ function ProjectCard({ project, index }) {
       <div className="project-card-img-wrap">
         <img
           src={project.img}
-          alt={project.brand}
+          alt={`${project.brand} - Custom Exhibition Stall Design & Fabrication by Elite Eventure`}
           className={`project-card-img ${loaded ? 'loaded' : 'loading'}`}
           onLoad={() => setLoaded(true)}
           loading="lazy"

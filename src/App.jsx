@@ -83,6 +83,38 @@ function HomePage() {
         bestRating: '5',
         worstRating: '1',
       },
+      areaServed: [
+        'Mumbai',
+        'Delhi NCR',
+        'Bengaluru',
+        'Ahmedabad',
+        'Hyderabad',
+        'Kolkata',
+        'Chennai',
+        'Pune',
+        'Pan-India',
+        'Dubai, UAE',
+      ],
+      review: [
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Sonam Yadav' },
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Sincere appreciation to the Elite Eventure team for outstanding support during our IICS booth setup! Special thanks to Nidhi for her proactive dedication and professionalism.',
+        },
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Shivani Joshi' },
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Thank you for bringing our Glam Up booth to life so beautifully! The stall looked absolutely amazing, and the response we received from everyone was incredible.',
+        },
+        {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'Riya Tiwari' },
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Thank you Elite Eventure for making our Glam Up booth such a success. We appreciate all the hard work, creativity, and effort that went into making it happen.',
+        },
+      ],
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
         name: 'Exhibition & Event Services',

@@ -31,13 +31,13 @@ const brands = [
   },
   {
     id: 7,
-    name: 'House of Cavalli / Smarr',
-    logo: <img src="/images/logo2.png" alt="House of Cavalli / Smarr" className="brand-logo-img" loading="lazy" />,
+    name: 'House of Cavalli',
+    logo: <img src="/images/logo-cavalli.png" alt="House of Cavalli" className="brand-logo-img cavalli-logo" loading="lazy" />,
   },
   {
-    id: 8,
-    name: 'Lacoste',
-    logo: <img src="/images/logo3.png" alt="Lacoste" className="brand-logo-img" loading="lazy" />,
+    id: 9,
+    name: 'Smarr Realty',
+    logo: <img src="/images/logo-smarr.png" alt="Smarr Realty" className="brand-logo-img smarr-logo" loading="lazy" />,
   },
   {
     id: 10,
