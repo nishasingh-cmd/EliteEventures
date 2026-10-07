@@ -124,9 +124,10 @@ function InteriorDesign() {
                 onError={(e) => {
                   e.currentTarget.src = '/images/interior-design-1.jpg'
                 }}
-                alt="Modern corporate office interior design"
+                alt="Elite Eventure Modern corporate office interior design and architectural experience"
                 className="interior-img"
                 loading="lazy"
+                decoding="async"
               />
               <div className="interior-img-overlay" />
               <div className="interior-floating-tag tag-primary">
@@ -150,9 +151,10 @@ function InteriorDesign() {
                 onError={(e) => {
                   e.currentTarget.src = '/images/interior-design-2.jpg'
                 }}
-                alt="Elegant modern interior with warm lighting and wood paneling"
+                alt="Elite Eventure Elegant modern interior architecture with warm ambient lighting"
                 className="interior-img"
                 loading="lazy"
+                decoding="async"
               />
               <div className="interior-img-overlay" />
               <div className="interior-floating-tag tag-secondary">

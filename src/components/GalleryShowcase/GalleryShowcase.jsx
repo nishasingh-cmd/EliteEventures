@@ -137,9 +137,10 @@ export default function GalleryShowcase({
                 <div className="fw-img-wrap">
                   <img
                     src={work.src}
-                    alt={work.label}
+                    alt={`${work.label} - Elite Eventure ${work.cat} Design & Fabrication`}
                     className="fw-img"
                     loading="lazy"
+                    decoding="async"
                   />
                   <div className="fw-overlay">
                     <span className="fw-overlay-cat">{work.cat}</span>
@@ -184,8 +185,9 @@ export default function GalleryShowcase({
             <div className="gsc-lb-stage" onClick={(e) => e.stopPropagation()}>
               <img
                 src={activeModalItem.src}
-                alt={activeModalItem.label}
+                alt={`${activeModalItem.label} - Elite Eventure ${activeModalItem.cat}`}
                 className="gsc-lb-main-img"
+                decoding="async"
               />
             </div>
           </motion.div>

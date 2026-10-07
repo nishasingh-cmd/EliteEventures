@@ -197,8 +197,8 @@ export default function ContactPage() {
   return (
     <div className="contact-page">
       <SEO 
-        title="Contact Us | Request an Exhibition Stall Design Quote" 
-        description="Connect with Elite Eventure for bespoke exhibition stalls, 3D booth designs, brand activations, and corporate event management. Request a free brief quote today." 
+        title="Contact Elite Eventure | Exhibition Stall Design Quote" 
+        description="Get a free quote for custom exhibition stall design, booth fabrication, brand activations, and corporate event management in Mumbai, Delhi, and pan-India." 
         url="/contact"
         keywords="contact Elite Eventure, exhibition booth quote, stall designer contact Mumbai, event fabrication inquiry, hire exhibition contractor India, exhibition stall cost India"
         schema={contactSchema}
@@ -212,6 +212,7 @@ export default function ContactPage() {
           src="/images/contact-hero-bg.png"
           alt="Contact Elite Eventure Exhibition Design Team in Mumbai and Delhi"
           className="contact-hero-img"
+          decoding="async"
         />
         <div className="contact-hero-overlay" />
         <div className="contact-hero-line" />
@@ -256,6 +257,8 @@ export default function ContactPage() {
                   <label htmlFor="contact-fullName">NAME</label>
                   <input
                     id="contact-fullName"
+                    name="fullName"
+                    autoComplete="name"
                     type="text"
                     placeholder="Your name"
                     value={formData.fullName}
@@ -273,6 +276,8 @@ export default function ContactPage() {
                   <label htmlFor="contact-email">EMAIL</label>
                   <input
                     id="contact-email"
+                    name="email"
+                    autoComplete="email"
                     type="email"
                     placeholder="you@brand.com"
                     value={formData.email}
@@ -293,6 +298,8 @@ export default function ContactPage() {
                   <label htmlFor="contact-phone">PHONE</label>
                   <input
                     id="contact-phone"
+                    name="phone"
+                    autoComplete="tel"
                     type="tel"
                     placeholder="+91 ..."
                     value={formData.phone}
@@ -310,6 +317,8 @@ export default function ContactPage() {
                   <label htmlFor="contact-brand">BRAND / COMPANY</label>
                   <input
                     id="contact-brand"
+                    name="brand"
+                    autoComplete="organization"
                     type="text"
                     placeholder="Brand name"
                     value={formData.brand}
@@ -323,6 +332,7 @@ export default function ContactPage() {
                 <label htmlFor="contact-eventDetails">EVENT DETAILS</label>
                 <textarea
                   id="contact-eventDetails"
+                  name="eventDetails"
                   placeholder="Which event, dates, footprint, any references..."
                   rows="6"
                   value={formData.eventDetails}

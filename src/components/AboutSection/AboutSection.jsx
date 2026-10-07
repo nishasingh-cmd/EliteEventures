@@ -53,9 +53,10 @@ function AboutSection() {
           >
             <img 
               src="/images/dr_rashel_glow_up.jpg" 
-              alt="Elite Eventure Dr. Rashel Glow Up Juice Bar Stall" 
+              alt="Elite Eventure Dr. Rashel Glow Up Juice Bar Stall - Award Winning Custom Exhibition Booth" 
               className="about-card-img" 
               loading="lazy" 
+              decoding="async" 
             />
           </motion.div>
         </motion.div>

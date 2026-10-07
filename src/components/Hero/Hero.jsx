@@ -44,7 +44,7 @@ const Hero = () => {
       <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="navbar-container">
           <Link to="/" className="logo-brand-container" aria-label="Elite Eventure Homepage">
-            <img src="/images/EliteEventureLogoNew.png" alt="Elite Eventure - Exhibition Stalls and Brand Activations" className="logo-image" style={{ height: '40px', width: 'auto' }} />
+            <img src="/images/EliteEventureLogoNew.png" alt="Elite Eventure - Exhibition Stalls and Brand Activations" className="logo-image" width="160" height="40" decoding="async" style={{ height: '40px', width: 'auto' }} />
           </Link>
 
           {/* Desktop Navigation Links */}

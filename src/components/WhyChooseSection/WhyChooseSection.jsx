@@ -125,6 +125,7 @@ function ProjectCard({ project, index }) {
           className={`project-card-img ${loaded ? 'loaded' : 'loading'}`}
           onLoad={() => setLoaded(true)}
           loading="lazy"
+          decoding="async"
           style={{ objectPosition: project.objectPosition || 'center center' }}
         />
         <div className="project-card-img-overlay" />

@@ -42,7 +42,7 @@ const Navbar = () => {
       <header className={navbarClass}>
         <div className="navbar-container">
           <NavLink to="/" className="logo-brand-container" aria-label="Elite Eventure Homepage">
-            <img src="/images/EliteEventureLogoNew.png" alt="Elite Eventure - Exhibition Stalls and Brand Activations" className="logo-image" style={{ height: '40px', width: 'auto' }} />
+            <img src="/images/EliteEventureLogoNew.png" alt="Elite Eventure - Exhibition Stalls and Brand Activations" className="logo-image" width="160" height="40" decoding="async" style={{ height: '40px', width: 'auto' }} />
           </NavLink>
 
           {/* Desktop Navigation Links */}

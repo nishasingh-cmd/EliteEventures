@@ -21,6 +21,9 @@ function Footer() {
                 alt="Elite Eventure - Premier Exhibition Stall Design & Brand Activations"
                 className="corp-footer-logo"
                 loading="lazy"
+                decoding="async"
+                width="160"
+                height="40"
               />
             </Link>
             <p className="corp-footer-desc">

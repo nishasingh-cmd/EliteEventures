@@ -12,8 +12,11 @@ export default function SEO({
   breadcrumbs,
 }) {
   const siteName = 'Elite Eventure';
-  const defaultTitle = 'Elite Eventure | Exhibition Stalls, Brand Activations & Corporate Events';
-  const fullTitle = title ? `${title} | ${siteName}` : defaultTitle;
+  const fullTitle = title
+    ? title.includes(siteName)
+      ? title
+      : `${title} | ${siteName}`
+    : defaultTitle;
   const metaDescription =
     description ||
     'Elite Eventure is a premier exhibition stall design, fabrication, and brand activation agency in Mumbai, Delhi, Bengaluru, and across India.';
@@ -57,11 +60,16 @@ export default function SEO({
     <Helmet>
       {/* Standard metadata tags */}
       <title>{fullTitle}</title>
+      <meta name="title" content={fullTitle} />
       <meta name="description" content={metaDescription} />
       <meta name="keywords" content={metaKeywords} />
       <meta name="author" content={siteName} />
       <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      <meta name="theme-color" content="#070707" />
+      <meta name="format-detection" content="telephone=no" />
       <link rel="canonical" href={canonicalUrl} />
+      <link rel="alternate" hrefLang="en" href={canonicalUrl} />
+      <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
 
       {/* Geo / Local Business SEO */}
       <meta name="geo.region" content="IN-MH" />
@@ -78,6 +86,7 @@ export default function SEO({
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={fullImageUrl} />
       <meta property="og:image:secure_url" content={fullImageUrl} />
+      <meta property="og:image:type" content={fullImageUrl.endsWith('.png') ? 'image/png' : 'image/jpeg'} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content={fullTitle} />

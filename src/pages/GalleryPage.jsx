@@ -54,8 +54,8 @@ export default function GalleryPage() {
   return (
     <div className="gallery-page-container" style={{ background: '#08080a' }}>
       <SEO 
-        title="Portfolio & Gallery | Custom Exhibition Stalls & Brand Activations" 
-        description="Explore Elite Eventure's design portfolio featuring award-winning exhibition stalls, brand activations, corporate pavilions, and trade show booths across Mumbai, Delhi, and global venues." 
+        title="Exhibition Stall Portfolio & Booth Designs | Elite Eventure" 
+        description="Explore Elite Eventure's portfolio of custom exhibition stalls, trade show booths, experiential brand activations, and event pavilions across India." 
         url="/gallery"
         keywords="exhibition stall portfolio, trade show booth gallery, event setup designs, stall design photos, brand activation showcase, Elite Eventure gallery"
         schema={gallerySchema}

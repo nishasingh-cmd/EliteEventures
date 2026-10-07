@@ -122,14 +122,17 @@ export default function ServicesPage() {
     name: 'Elite Eventure Services',
     description: 'Premier exhibition stall design, fabrication, brand activation, and corporate event management services across India.',
     itemListElement: servicesList.map((srv, index) => ({
-      '@type': 'Service',
+      '@type': 'ListItem',
       position: index + 1,
-      name: srv.title,
-      description: srv.desc,
-      serviceType: srv.title,
-      areaServed: ['Mumbai', 'Delhi', 'Bengaluru', 'Ahmedabad', 'Hyderabad', 'Kolkata', 'Chennai'],
-      provider: {
-        '@id': 'https://www.eliteeventure.com/#organization',
+      item: {
+        '@type': 'Service',
+        name: srv.title,
+        description: srv.desc,
+        serviceType: srv.title,
+        areaServed: ['Mumbai', 'Delhi', 'Bengaluru', 'Ahmedabad', 'Hyderabad', 'Kolkata', 'Chennai'],
+        provider: {
+          '@id': 'https://www.eliteeventure.com/#organization',
+        },
       },
     })),
   }
@@ -142,8 +145,8 @@ export default function ServicesPage() {
   return (
     <div className="services-page">
       <SEO 
-        title="Our Services | Exhibition Stalls, Brand Activation & MICE Solutions" 
-        description="Explore Elite Eventure's core services: Custom Exhibition Stalls, Experiential Brand Activations, Corporate Events, MICE management, and Virtual Conferences." 
+        title="Exhibition Stall Fabrication & Event Services | Elite Eventure" 
+        description="Explore our turnkey services: custom exhibition stall design & fabrication, experiential brand activations, MICE conferences, and corporate event management." 
         url="/services"
         keywords="exhibition stall design services, brand activation agency, corporate event planning, MICE conference organizer, virtual event production, Elite Eventure services, trade show stall builders"
         schema={servicesSchema}
@@ -178,16 +181,16 @@ export default function ServicesPage() {
       {/* ════════════════════════════════════
           INTRO SECTION (Gallery Parallax)
       ════════════════════════════════════ */}
-      <section className="sp-intro" ref={introRef}>
+      <section className="sp-intro" ref={introRef} aria-label="Services Gallery Showcase">
         <motion.div className="sp-intro-gallery" style={{ x: galleryX }}>
-          <div className="sp-gallery-card"><img src="/images/landscape_1.jpeg" alt="Elite Eventure Exhibition Pavilion Design" /></div>
-          <div className="sp-gallery-card"><img src="/images/portrait_1.jpeg" alt="Elite Eventure Brand Activation Showcase" /></div>
-          <div className="sp-gallery-card"><img src="/images/landscape_2.jpeg" alt="Elite Eventure Custom Trade Show Stand" /></div>
-          <div className="sp-gallery-card"><img src="/images/portrait_2.jpeg" alt="Elite Eventure Corporate Event Setup" /></div>
-          <div className="sp-gallery-card"><img src="/images/landscape_3.jpeg" alt="Elite Eventure Experiential Marketing Installation" /></div>
-          <div className="sp-gallery-card"><img src="/images/landscape_5.jpeg" alt="Elite Eventure Premium Exhibition Booth" /></div>
-          <div className="sp-gallery-card"><img src="/images/portrait_3.jpeg" alt="Elite Eventure Brand Experience Space" /></div>
-          <div className="sp-gallery-card"><img src="/images/landscape_4.jpeg" alt="Elite Eventure Stage and Lighting Production" /></div>
+          <div className="sp-gallery-card"><img src="/images/landscape_1.jpeg" alt="Elite Eventure Exhibition Pavilion Design" loading="lazy" decoding="async" /></div>
+          <div className="sp-gallery-card"><img src="/images/portrait_1.jpeg" alt="Elite Eventure Brand Activation Showcase" loading="lazy" decoding="async" /></div>
+          <div className="sp-gallery-card"><img src="/images/landscape_2.jpeg" alt="Elite Eventure Custom Trade Show Stand" loading="lazy" decoding="async" /></div>
+          <div className="sp-gallery-card"><img src="/images/portrait_2.jpeg" alt="Elite Eventure Corporate Event Setup" loading="lazy" decoding="async" /></div>
+          <div className="sp-gallery-card"><img src="/images/landscape_3.jpeg" alt="Elite Eventure Experiential Marketing Installation" loading="lazy" decoding="async" /></div>
+          <div className="sp-gallery-card"><img src="/images/landscape_5.jpeg" alt="Elite Eventure Premium Exhibition Booth" loading="lazy" decoding="async" /></div>
+          <div className="sp-gallery-card"><img src="/images/portrait_3.jpeg" alt="Elite Eventure Brand Experience Space" loading="lazy" decoding="async" /></div>
+          <div className="sp-gallery-card"><img src="/images/landscape_4.jpeg" alt="Elite Eventure Stage and Lighting Production" loading="lazy" decoding="async" /></div>
         </motion.div>
       </section>
 
@@ -201,7 +204,8 @@ export default function ServicesPage() {
       {/* ════════════════════════════════════
           SERVICES LIST
       ════════════════════════════════════ */}
-      <section className="sp-services-list">
+      <section className="sp-services-list" aria-label="Our Services">
+        <h2 className="sr-only">Our Core Exhibition, Brand Activation and Event Production Solutions</h2>
         {servicesList.map((srv, idx) => {
           const isReverse = idx % 2 !== 0;
           return (

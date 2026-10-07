@@ -7,67 +7,67 @@ const brands = [
   {
     id: 1,
     name: 'Dr. Rashel',
-    logo: <img src="/images/logo1.png" alt="Dr. Rashel" className="brand-logo-img" loading="lazy" />,
+    logo: <img src="/images/logo1.png" alt="Dr. Rashel - Elite Eventure Client" className="brand-logo-img" loading="lazy" decoding="async" />,
   },
   {
     id: 3,
     name: 'Hello EDC',
-    logo: <img src="/images/logo6.png" alt="Hello EDC" className="brand-logo-img" loading="lazy" />,
+    logo: <img src="/images/logo6.png" alt="Hello EDC - Elite Eventure Client" className="brand-logo-img" loading="lazy" decoding="async" />,
   },
   {
     id: 4,
     name: 'Flexiworld',
-    logo: <img src="/images/logo7.png" alt="Flexiworld" className="brand-logo-img dark-logo" loading="lazy" />,
+    logo: <img src="/images/logo7.png" alt="Flexiworld - Elite Eventure Client" className="brand-logo-img dark-logo" loading="lazy" decoding="async" />,
   },
   {
     id: 5,
     name: 'Vijay Mamra',
-    logo: <img src="/images/logo8.png" alt="Vijay Mamra" className="brand-logo-img" loading="lazy" />,
+    logo: <img src="/images/logo8.png" alt="Vijay Mamra - Elite Eventure Client" className="brand-logo-img" loading="lazy" decoding="async" />,
   },
   {
     id: 6,
     name: 'Pepe Jeans London',
-    logo: <img src="/images/logo-pepe-jeans.png" alt="Pepe Jeans London" className="brand-logo-img dark-logo" loading="lazy" />,
+    logo: <img src="/images/logo-pepe-jeans.png" alt="Pepe Jeans London - Elite Eventure Client" className="brand-logo-img dark-logo" loading="lazy" decoding="async" />,
   },
   {
     id: 7,
     name: 'House of Cavalli',
-    logo: <img src="/images/logo-cavalli.png" alt="House of Cavalli" className="brand-logo-img cavalli-logo" loading="lazy" />,
+    logo: <img src="/images/logo-cavalli.png" alt="House of Cavalli - Elite Eventure Client" className="brand-logo-img cavalli-logo" loading="lazy" decoding="async" />,
   },
   {
     id: 9,
     name: 'Smarr Realty',
-    logo: <img src="/images/logo-smarr.png" alt="Smarr Realty" className="brand-logo-img smarr-logo" loading="lazy" />,
+    logo: <img src="/images/logo-smarr.png" alt="Smarr Realty - Elite Eventure Client" className="brand-logo-img smarr-logo" loading="lazy" decoding="async" />,
   },
   {
     id: 10,
     name: 'Deal Jeans',
-    logo: <img src="/images/logo9.png" alt="Deal Jeans" className="brand-logo-img" loading="lazy" />,
+    logo: <img src="/images/logo9.png" alt="Deal Jeans - Elite Eventure Client" className="brand-logo-img" loading="lazy" decoding="async" />,
   },
   {
     id: 11,
     name: 'Mary Jo K',
-    logo: <img src="/images/logo-mary-jo-k.png" alt="Mary Jo K Cult Makeup" className="brand-logo-img" loading="lazy" />,
+    logo: <img src="/images/logo-mary-jo-k.png" alt="Mary Jo K Cult Makeup - Elite Eventure Client" className="brand-logo-img" loading="lazy" decoding="async" />,
   },
   {
     id: 12,
     name: 'Sponsor Nail Artistry',
-    logo: <img src="/images/logo-sponsor.png" alt="Sponsor Nail Artistry" className="brand-logo-img" loading="lazy" />,
+    logo: <img src="/images/logo-sponsor.png" alt="Sponsor Nail Artistry - Elite Eventure Client" className="brand-logo-img" loading="lazy" decoding="async" />,
   },
   {
     id: 13,
     name: 'V. N. Technology',
-    logo: <img src="/images/logo-vn-technology.png" alt="V. N. Technology" className="brand-logo-img" loading="lazy" />,
+    logo: <img src="/images/logo-vn-technology.png" alt="V. N. Technology - Elite Eventure Client" className="brand-logo-img" loading="lazy" decoding="async" />,
   },
   {
     id: 14,
     name: 'Lumora Advertising',
-    logo: <img src="/images/logo-lumora.png" alt="Lumora Advertising" className="brand-logo-img" loading="lazy" />,
+    logo: <img src="/images/logo-lumora.png" alt="Lumora Advertising - Elite Eventure Client" className="brand-logo-img" loading="lazy" decoding="async" />,
   },
   {
     id: 15,
     name: 'Moorx',
-    logo: <img src="/images/logo-moorx.png" alt="Moorx" className="brand-logo-img" loading="lazy" />,
+    logo: <img src="/images/logo-moorx.png" alt="Moorx - Elite Eventure Client" className="brand-logo-img" loading="lazy" decoding="async" />,
   },
 ]
 

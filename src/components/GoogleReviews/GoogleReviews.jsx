@@ -134,7 +134,8 @@ export default function GoogleReviews() {
   }
 
   return (
-    <section className="sp-reviews-section">
+    <section className="sp-reviews-section" aria-label="Client Reviews">
+      <h2 className="sr-only">Client Testimonials &amp; Google Reviews for Elite Eventure</h2>
 
       <div className="sp-reviews-carousel-wrapper">
         <button className="sp-carousel-btn sp-carousel-btn-left" onClick={prevReview} aria-label="Previous">

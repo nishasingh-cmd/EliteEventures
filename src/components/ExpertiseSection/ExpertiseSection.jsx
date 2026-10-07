@@ -155,7 +155,7 @@ function ExpertiseSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <img src="/images/pepe_jeans_stall.png" alt="Pepe Jeans London Stall" className="collage-img" loading="lazy" />
+              <img src="/images/pepe_jeans_stall.png" alt="Pepe Jeans London Custom Exhibition Stand - Elite Eventure" className="collage-img" loading="lazy" decoding="async" />
               <div className="collage-glass-overlay" />
             </motion.div>
 
@@ -167,7 +167,7 @@ function ExpertiseSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <img src="/images/flexiworld_stall.png" alt="Flexiworld Corporate Tech Pavilion" className="collage-img" loading="lazy" />
+              <img src="/images/flexiworld_stall.png" alt="Flexiworld Corporate Tech Pavilion - Elite Eventure" className="collage-img" loading="lazy" decoding="async" />
               <div className="collage-glass-overlay" />
             </motion.div>
 
@@ -179,7 +179,7 @@ function ExpertiseSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
-              <img src="/images/dr_rashel.jpeg" alt="Dr. Rashel Skincare Exhibition Stand" className="collage-img" loading="lazy" />
+              <img src="/images/dr_rashel.jpeg" alt="Dr. Rashel Skincare Exhibition Stand - Elite Eventure" className="collage-img" loading="lazy" decoding="async" />
               <div className="collage-glass-overlay" />
             </motion.div>
 
@@ -191,7 +191,7 @@ function ExpertiseSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <img src="/images/vijay_mamra_stall.png" alt="Vijay Mamra Food Expo Stall" className="collage-img" loading="lazy" />
+              <img src="/images/vijay_mamra_stall.png" alt="Vijay Mamra Food Expo Stall - Elite Eventure" className="collage-img" loading="lazy" decoding="async" />
               <div className="collage-glass-overlay" />
             </motion.div>
           </motion.div>

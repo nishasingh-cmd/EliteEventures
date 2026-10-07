@@ -9,6 +9,7 @@ export default function GalleryHero() {
         src="/images/contact-hero-bg.png"
         alt="Elite Eventure Exhibition Stall and Brand Activation Portfolio Gallery"
         className="gallery-hero-img"
+        decoding="async"
       />
       <div className="gallery-hero-overlay" />
       <div className="gallery-hero-line" />

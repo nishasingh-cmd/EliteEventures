@@ -116,8 +116,8 @@ export default function AboutPage() {
   return (
     <div className="about-page">
       <SEO 
-        title="About Us | Exhibition Stall & Event Management Specialists" 
-        description="Learn about Elite Eventure's vision, 800+ completed projects, and unmatched expertise in designing premium exhibition stalls, corporate events, and brand activations." 
+        title="About Elite Eventure | Premier Exhibition Stand Builders" 
+        description="Learn about Elite Eventure's legacy of 800+ completed exhibition stalls, brand activations, and corporate events across Mumbai, Delhi, and pan-India." 
         url="/about"
         keywords="about Elite Eventure, exhibition booth agency, stall designers Mumbai, corporate event company, brand activation experts India, trade show contractor"
         schema={aboutSchema}
@@ -133,6 +133,7 @@ export default function AboutPage() {
           src="/images/contact-hero-bg.png"
           alt="Elite Eventure Exhibition Design and Corporate Event Production"
           className="about-hero-img"
+          decoding="async"
         />
         <div className="about-hero-overlay" />
         <div className="about-hero-line" />
@@ -157,7 +158,8 @@ export default function AboutPage() {
       {/* ════════════════════════════════════
           NEW LAYOUT STRUCTURE
       ════════════════════════════════════ */}
-      <section className="ap-new-layout-section" ref={mainRef} style={{ padding: '100px 5%', background: '#070707', display: 'flex', flexDirection: 'column', gap: '80px', alignItems: 'center' }}>
+      <section className="ap-new-layout-section" ref={mainRef} style={{ padding: '100px 5%', background: '#070707', display: 'flex', flexDirection: 'column', gap: '80px', alignItems: 'center' }} aria-label="About Elite Eventure">
+        <h2 className="sr-only">Our Story, Philosophy and Legacy in Event Architecture</h2>
 
         {/* TOP ROW: Quote & About Us Card */}
         <div className="ap-top-grid">
@@ -174,7 +176,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div style={{ width: '100%', height: '220px', borderRadius: '24px', overflow: 'hidden', background: '#222' }}>
-              <img src="/images/portrait_7.jpeg" alt="Modern Architectural Exhibition Stall Design and Fabrication" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src="/images/portrait_7.jpeg" alt="Modern Architectural Exhibition Stall Design and Fabrication" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </motion.div>
 
@@ -266,7 +268,7 @@ export default function AboutPage() {
             }}
             style={{ borderRadius: '24px', overflow: 'hidden', height: '100%', minHeight: '200px' }}
           >
-            <img src="/images/dr_rashel_3d_concept.png" alt="Dr. Rashel 3D Concept Exhibition Stand" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src="/images/dr_rashel_3d_concept.png" alt="Dr. Rashel 3D Concept Exhibition Stand" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </motion.div>
 
           {/* Mission Card */}
