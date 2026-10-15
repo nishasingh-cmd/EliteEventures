@@ -250,7 +250,6 @@ export default function GalleryGrid() {
                   }}
                   whileHover={{
                     y: -6,
-                    scale: 1.02,
                     transition: { duration: 0.35, ease: 'easeOut' },
                   }}
                 >

@@ -212,7 +212,7 @@
 
 .brand-card:hover .brand-logo-img.cavalli-logo,
 .brand-card:hover .brand-logo img.cavalli-logo {
-  transform: scale(1.25);
+  transform: scale(1.18);
 }
 
 /* Smarr Realty logo: balanced scale with comfortable breathing margins */
@@ -229,7 +229,7 @@
 
 .brand-card:hover .brand-logo-img.smarr-logo,
 .brand-card:hover .brand-logo img.smarr-logo {
-  transform: scale(1.06);
+  transform: none;
   filter: brightness(1.22) contrast(1.15);
 }
 

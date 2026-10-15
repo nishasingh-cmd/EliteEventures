@@ -119,7 +119,7 @@
 }
 
 .sp-gallery-card:hover img {
-  transform: scale(1.05);
+  /* zoom removed */
 }
 
 @media (max-width: 768px) {

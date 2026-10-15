@@ -126,7 +126,7 @@
 }
 
 .gg-card:hover .gg-card-img {
-  transform: scale(1.05);
+  /* zoom removed */
 }
 
 /* Bottom Dark Gradient Overlay & Text */

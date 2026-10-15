@@ -68,7 +68,7 @@ export default function FeaturedWorks() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
-            whileHover={{ scale: 1.03, transition: { duration: 0.25, ease: 'easeOut' } }}
+            whileHover={{ y: -4, transition: { duration: 0.25, ease: 'easeOut' } }}
           >
             <div className="fw-img-wrap">
               <img

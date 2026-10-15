@@ -699,7 +699,9 @@
 .gsc-lb-arrow:hover {
   background: #FFC107;
   color: #000000;
-  transform: translateY(-50%) scale(1.12);
+  border-color: #FFC107;
+  box-shadow: 0 0 25px rgba(255, 193, 7, 0.5);
+  transform: translateY(-50%);
 }
 
 .gsc-lb-arrow--left {
@@ -768,14 +770,12 @@
 
 .gsc-lb-thumb-item:hover {
   opacity: 0.95;
-  transform: scale(1.05);
 }
 
 .gsc-lb-thumb-item.active {
   opacity: 1;
   border-color: #FFC107;
   box-shadow: 0 0 0 2.5px #FFC107, 0 0 16px rgba(255, 193, 7, 0.4);
-  transform: scale(1.08);
 }
 
 .gsc-lb-thumb-img {
@@ -783,5 +783,47 @@
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+@media (max-width: 768px) {
+  .gsc-lb-backdrop {
+    padding: 14px 12px 12px;
+  }
+  .gsc-lb-topbar {
+    max-width: 100%;
+    margin-bottom: 6px;
+  }
+  .gsc-lb-title {
+    font-size: 0.95rem;
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .gsc-lb-arrow {
+    width: 44px;
+    height: 44px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .gsc-lb-arrow svg {
+    width: 20px;
+    height: 20px;
+  }
+  .gsc-lb-arrow--left {
+    left: 8px;
+  }
+  .gsc-lb-arrow--right {
+    right: 8px;
+  }
+  .gsc-lb-stage {
+    width: 96vw;
+    height: 64vh;
+  }
+  .gsc-lb-thumb-item {
+    width: 56px;
+    height: 38px;
+  }
 }
 

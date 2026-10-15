@@ -114,7 +114,7 @@ function InteriorDesign() {
             {/* Primary Dominant Frame (Image 1 - Corporate Interior) */}
             <motion.div
               className="interior-frame-primary"
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ y: -4 }}
               transition={{ duration: 0.4, ease: 'easeOut' }}
             >
               <div className="interior-corner corner-tl" />
@@ -142,7 +142,7 @@ function InteriorDesign() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.9, delay: 0.45, ease: customEase }}
-              whileHover={{ scale: 1.03, y: -4 }}
+              whileHover={{ y: -4 }}
             >
               <div className="interior-corner corner-tr" />
               <div className="interior-corner corner-bl" />

@@ -191,7 +191,7 @@
 }
 
 .ac-card:hover {
-  transform: translateY(-8px) scale(1.025);
+  transform: translateY(-8px);
   box-shadow: 0 30px 70px rgba(244, 194, 13, 0.14);
   border-color: rgba(244, 194, 13, 0.6);
   z-index: 10;
@@ -206,7 +206,7 @@
 }
 
 .ac-card:hover img {
-  transform: scale(1.06);
+  /* zoom removed */
 }
 
 /* Card positions */

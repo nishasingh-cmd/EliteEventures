@@ -54,7 +54,7 @@
 }
 
 .about-single-card:hover .about-card-img {
-  transform: scale(1.15);
+  /* zoom removed */
 }
 
 /* Glass Badge on Image */

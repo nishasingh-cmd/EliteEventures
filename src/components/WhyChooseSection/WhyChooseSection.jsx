@@ -116,7 +116,7 @@ function ProjectCard({ project, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.6, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={{ y: -6, scale: 1.02 }}
+      whileHover={{ y: -6 }}
     >
       <div className="project-card-img-wrap">
         <img

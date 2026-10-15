@@ -169,7 +169,6 @@
 }
 
 .fw-item:hover .fw-img {
-  transform: scale(1.08);
   filter: brightness(1.08);
 }
 

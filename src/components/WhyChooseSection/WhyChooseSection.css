@@ -173,7 +173,7 @@
 }
 
 .project-card:hover .project-card-img {
-  transform: scale(1.35);
+  transform: scale(1.25);
 }
 
 .project-card-img-overlay {

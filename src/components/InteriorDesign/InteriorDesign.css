@@ -279,7 +279,7 @@
 
 .interior-frame-primary:hover .interior-img,
 .interior-frame-secondary:hover .interior-img {
-  transform: scale(1.05);
+  /* zoom removed */
 }
 
 /* Soft Vignette Overlay */
